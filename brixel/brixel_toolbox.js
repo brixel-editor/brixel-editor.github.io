@@ -225,6 +225,10 @@ function generateToolbox(boardType = 'uno') {
             <block type="util_record_play_stop"></block>
             <sep gap="10"></sep>
             <block type="util_record_reset"></block>
+
+        <sep gap="32"></sep>
+
+        <label text="${Blockly.Msg.BKY_UTIL_RECORD_LABEL || 'Block Recorder'}"></label>
             <block type="util_record_status"></block>
             <sep gap="10"></sep>
             <block type="util_record_event_count"></block>
@@ -234,6 +238,30 @@ function generateToolbox(boardType = 'uno') {
             <block type="util_record_start_time"></block>
             <sep gap="10"></sep>
             <block type="util_record_end_time"></block>
+
+        <sep gap="32"></sep>
+
+        <label text="${Blockly.Msg.BKY_UTIL_NONBLOCK_LABEL || 'Non-blocking Timers'}"></label>
+        <block type="util_interval">
+            <value name="INTERVAL">
+                <shadow type="math_number">
+                    <field name="NUM">500</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="util_stopwatch_reset">
+            <field name="ID">1</field>
+        </block>
+        <block type="util_stopwatch_elapsed">
+            <field name="ID">1</field>
+        </block>
+        <block type="util_timeout">
+            <value name="DELAY">
+                <shadow type="math_number">
+                    <field name="NUM">3000</field>
+                </shadow>
+            </value>
+        </block>
             <sep gap="40"></sep>
         </category>
 

@@ -70,7 +70,12 @@ body {
 .toolbar-left {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 15px; /* 조정: 로고와 타이틀 간격을 조금 줄임 (기존 25px -> 15px) */
+}
+
+.toolbar-logo {
+    height: 40px; /* 툴바 높이 60px 내에서 적절한 크기 */
+    width: auto;
 }
 
 /* 3-2. 메인 타이틀 (h1) */
@@ -91,18 +96,18 @@ body {
 .mode-toggle {
     display: flex;
     background: #f1f3f4;
-    border-radius: 25px;
-    padding: 4px;
+    border-radius: 15px; /* Reduced from 25px */
+    padding: 3px; /* Reduced from 4px */
     gap: 4px;
 }
 
 .mode-btn {
-    padding: 12px 24px;
+    padding: 5px 15px; /* Reduced from 12px 24px */
     border: none;
-    border-radius: 20px;
+    border-radius: 12px; /* Reduced from 20px */
     background: transparent;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 13px; /* Reduced from 14px */
     font-weight: 600;
     transition: all 0.3s ease;
     color: #666;
@@ -111,7 +116,7 @@ body {
 .mode-btn.active {
     background: var(--primary-color);
     color: white;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3); /* Adjusted shadow */
 }
 
 /* 3-4. 툴바 오른쪽 버튼들 (.toolbar-buttons) */

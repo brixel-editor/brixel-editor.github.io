@@ -154,6 +154,106 @@ Arduino.forBlock['timer_non_blocking_delay'] = function (block, generator) {
   return code;
 };
 
+// ============================================================
+// 논블로킹 헬퍼 클래스 및 블록 생성기
+// ============================================================
+
+// 공통 헬퍼 클래스 정의 (NonBlockTimer)
+function ensureNonBlockTimerClass(generator) {
+  const gen = generator || Arduino;
+  if (!gen.definitions_['nonblock_timer_class']) {
+    gen.definitions_['nonblock_timer_class'] = `
+class NonBlockTimer {
+public:
+  unsigned long prev = 0;
+  bool check(unsigned long interval) {
+    unsigned long now = millis();
+    if (now - prev >= interval) {
+      prev = now;
+      return true;
+    }
+    return false;
+  }
+  void reset() { prev = millis(); }
+};
+`;
+  }
+}
+
+// 1. N초 마다 실행 (Interval)
+Arduino.forBlock['util_interval'] = function (block, generator) {
+  const gen = generator || Arduino;
+  ensureNonBlockTimerClass(gen);
+  const interval = block.getFieldValue('INTERVAL') || '1000';
+  const statements = gen.statementToCode(block, 'DO');
+
+  // 블록 ID를 기반으로 유니크한 변수명 생성 (특수문자 제거)
+  const safeId = block.id.replace(/[^a-zA-Z0-9]/g, '_');
+  const varName = `__interval_${safeId}`;
+
+  const code = `
+{
+  static NonBlockTimer ${varName};
+  if (${varName}.check(${interval})) {
+    ${statements}
+  }
+}
+`;
+  return code;
+};
+
+// 2. 타이머 초기화 (Stopwatch Reset)
+Arduino.forBlock['util_stopwatch_reset'] = function (block, generator) {
+  const gen = generator || Arduino;
+  ensureNonBlockTimerClass(gen);
+  const id = block.getFieldValue('ID');
+  const varName = `__stopwatch_timer_${id}`;
+
+  // 전역 변수로 선언하여 어디서든 접근 가능하게 함 (값 반환 블록과 공유)
+  gen.definitions_[`var_${varName}`] = `NonBlockTimer ${varName};`;
+
+  const code = `${varName}.reset();\n`;
+  return code;
+};
+
+// 3. 타이머 경과 시간 (Stopwatch Elapsed)
+Arduino.forBlock['util_stopwatch_elapsed'] = function (block, generator) {
+  const gen = generator || Arduino;
+  ensureNonBlockTimerClass(gen);
+  const id = block.getFieldValue('ID');
+  const varName = `__stopwatch_timer_${id}`;
+
+  // 전역 변수 선언 (혹시 리셋 블록 없이 쓰일 경우를 대비해 초기화)
+  gen.definitions_[`var_${varName}`] = `NonBlockTimer ${varName};`;
+
+  const code = `(millis() - ${varName}.prev)`;
+  return [code, Arduino.ORDER_ATOMIC];
+};
+
+// 4. N초 후 한 번만 실행 (Timeout)
+Arduino.forBlock['util_timeout'] = function (block, generator) {
+  const gen = generator || Arduino;
+  ensureNonBlockTimerClass(gen);
+  const delayMs = block.getFieldValue('DELAY') || '1000';
+  const statements = gen.statementToCode(block, 'DO');
+
+  const safeId = block.id.replace(/[^a-zA-Z0-9]/g, '_');
+  const varName = `__timeout_${safeId}`;
+  const doneFlag = `__timeout_done_${safeId}`;
+
+  const code = `
+{
+  static bool ${doneFlag} = false;
+  static NonBlockTimer ${varName};
+  if (!${doneFlag} && ${varName}.check(${delayMs})) {
+    ${doneFlag} = true;
+    ${statements}
+  }
+}
+`;
+  return code;
+};
+
 Arduino.forBlock['tone_out'] = function (block, generator) {
   let pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '8';
   let freq = generator.valueToCode(block, 'FREQUENCY', Arduino.ORDER_ATOMIC) || '262';
@@ -5003,8 +5103,8 @@ Arduino.forBlock['ir_setup'] = function (block, generator) {
     'uint32_t _ir_last_command = 0;\n' +
     'bool _ir_data_available = false;';
 
-  // setup()에서 IR 수신기 초기화
-  generator.setups_['ir_begin'] = 'IrReceiver.begin(' + pin + ', ENABLE_LED_FEEDBACK);';
+  // setup()에서 IR 수신기 초기화 (LED 피드백 비활성화 - 핀 13 충돌 방지)
+  generator.setups_['ir_begin'] = 'IrReceiver.begin(' + pin + ', DISABLE_LED_FEEDBACK);';
 
   return '';
 };

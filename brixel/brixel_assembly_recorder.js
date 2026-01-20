@@ -49,16 +49,156 @@ window.BlockAssemblyRecorder = {
     init(workspace) {
         this.workspace = workspace;
         console.log('[BlockAssemblyRecorder] 초기화 완료');
-        
-        // CSS 스타일 주입 (툴팁 애니메이션 등)
+
+        // CSS 스타일 주입 (툴팁 애니메이션 및 블록 트랜지션)
+        this._injectAnimationStyles();
+    },
+
+    // =================================================================
+    // 🛠️ 헬퍼 메서드 (애니메이션 & 카테고리)
+    // =================================================================
+
+    _injectAnimationStyles() {
+        if (document.getElementById('block-recorder-styles')) return;
+
         const style = document.createElement('style');
+        style.id = 'block-recorder-styles';
         style.textContent = `
             @keyframes fadeIn {
                 from { opacity: 0; transform: translateY(5px); }
                 to { opacity: 1; transform: translateY(0); }
             }
+            .block-recorder-animate {
+                transition: transform 0.02s ease-out;
+            }
         `;
         document.head.appendChild(style);
+    },
+
+    // 블록 타입에서 카테고리 ID를 유추하여 툴박스에서 선택 (DOM 클릭 시뮬레이션)
+    async _selectCategoryForBlockType(blockType) {
+        if (!this.workspace) return;
+
+        // 블록 타입 prefix에서 카테고리 ID 추출
+        const prefix = blockType.split('_')[0];
+
+        // [수정] 브릭셀 에디터 전용: 블록 prefix -> 실제 카테고리 라벨 매핑
+        const brixelCategoryMap = {
+            // 기본 블록
+            'pin': '핀 제어', 'set': '핀 제어', 'read': '핀 제어',
+            'delay': '제어', 'control': '제어', 'loop': '제어', 'if': '논리',
+            'logic': '논리', 'compare': '논리',
+            'math': '계산', 'number': '계산', 'random': '계산',
+            'text': '문자', 'string': '문자',
+            'variable': '변수', 'variables': '변수',
+            'list': '리스트', 'array': '리스트',
+            'function': '함수', 'procedures': '함수',
+            'util': '유틸리티', 'serial': 'USB시리얼',
+            // I/O 장치
+            'lcd': '디스플레이', 'oled': '고급 디스플레이',
+            'sensor': '일반 센서', 'dht': '일반 센서', 'ultrasonic': '일반 센서',
+            'motor': '모터 장치', 'servo': '모터 장치',
+            'led': '출력 장치', 'buzzer': '출력 장치',
+            'bluetooth': '통신 장치', 'wifi': '통신 장치',
+            'esp32': 'ESP32-CAM'
+        };
+        const koreanLabel = brixelCategoryMap[prefix] || prefix;
+
+        try {
+            // [핵심 수정] DOM 클릭 시뮬레이션 방식 - .blocklyToolboxCategory 사용
+            const categoryButtons = document.querySelectorAll('.blocklyToolboxCategory');
+
+            // 디버그: 찾는 카테고리 출력 (목록은 생략)
+            // console.log(`[BlockRecorder] 찾는 카테고리: ${prefix} (한글: ${koreanLabel})`);
+
+            for (const btn of categoryButtons) {
+                // 카테고리 라벨(이름) 가져오기
+                const labelEl = btn.querySelector('.blocklyToolboxCategoryLabel');
+                const labelText = labelEl ? labelEl.textContent : '';
+                const btnId = btn.id ? btn.id.toLowerCase() : '';
+
+                // 한글 라벨 또는 영어 ID로 매칭 (대소문자 구분 없이 비교)
+                const isMatch = btnId.includes(prefix) ||
+                    labelText.includes(koreanLabel) ||
+                    labelText.toLowerCase().includes(prefix);
+
+                if (isMatch) {
+                    // console.log(`[BlockRecorder] 카테고리 클릭: ${prefix} -> ${labelText.trim()}`);
+
+                    // 임시로 pointer-events 허용 (플라이아웃이 열리도록)
+                    const blocklyDiv = document.getElementById('blocklyDiv');
+                    const originalPointerEvents = blocklyDiv ? blocklyDiv.style.pointerEvents : '';
+                    if (blocklyDiv) blocklyDiv.style.pointerEvents = 'auto';
+
+                    // 실제 클릭 이벤트 발생
+                    btn.click();
+
+                    // 플라이아웃이 열릴 시간을 주고, pointer-events 복구
+                    await new Promise(resolve => setTimeout(resolve, 500));
+                    if (blocklyDiv) blocklyDiv.style.pointerEvents = originalPointerEvents || 'none';
+
+                    return;
+                }
+            }
+
+            // DOM 방식 실패 시 API 폴백
+            const toolbox = this.workspace.getToolbox();
+            if (toolbox && toolbox.setSelectedCategoryById) {
+                toolbox.setSelectedCategoryById(prefix);
+            }
+            await new Promise(resolve => setTimeout(resolve, 300));
+        } catch (e) {
+            console.warn('[BlockRecorder] 카테고리 자동 선택 실패:', prefix, e);
+        }
+    },
+
+    _getFlyoutWidth() {
+        try {
+            if (this.workspace && this.workspace.getFlyout) {
+                const flyout = this.workspace.getFlyout();
+                if (flyout && flyout.getWidth) return flyout.getWidth();
+            }
+        } catch (e) { }
+        return 250;
+    },
+
+    async _animateBlockToPosition(block, targetX, targetY) {
+        if (!block) return;
+        try {
+            const currentPos = block.getRelativeToSurfaceXY();
+            const startX = currentPos.x;
+            const startY = targetY;
+
+            block.moveBy(0, startY - currentPos.y);
+            block.addSelect();
+
+            const blockSvg = block.getSvgRoot();
+            if (blockSvg) blockSvg.classList.add('block-recorder-animate');
+
+            const steps = 15;
+            const totalDistanceX = targetX - startX;
+
+            for (let i = 1; i <= steps; i++) {
+                const progress = i / steps;
+                const easedProgress = 1 - Math.pow(1 - progress, 3);
+                const currentX = startX + (totalDistanceX * easedProgress);
+
+                await new Promise(r => setTimeout(r, 20));
+
+                const nowPos = block.getRelativeToSurfaceXY();
+                block.moveBy(currentX - nowPos.x, 0);
+            }
+
+            const finalPos = block.getRelativeToSurfaceXY();
+            block.moveBy(targetX - finalPos.x, targetY - finalPos.y);
+
+            if (blockSvg) blockSvg.classList.remove('block-recorder-animate');
+
+            await new Promise(r => setTimeout(r, 100));
+            block.removeSelect();
+        } catch (e) {
+            console.warn('[BlockRecorder] 블록 애니메이션 실패:', e);
+        }
     },
 
     /**
@@ -148,6 +288,13 @@ window.BlockAssemblyRecorder = {
         const validTypes = ['create', 'delete', 'move', 'change'];
         if (!validTypes.includes(event.type.toLowerCase())) return;
 
+        // [수정] 쉐도우 블록(입력 필드 등)의 독립적인 이동/생성 이벤트 무시
+        const targetBlock = this.workspace.getBlockById(event.blockId);
+        if (targetBlock && targetBlock.isShadow()) {
+            // 변경(change) 이벤트는 값 입력이므로 허용, 단순 이동(move)은 부모를 따라가므로 무시
+            if (event.type === 'move') return;
+        }
+
         try {
             const recordedEvent = this.extractEventData(event);
             if (recordedEvent) {
@@ -187,10 +334,20 @@ window.BlockAssemblyRecorder = {
                 };
             }
             case 'delete': {
+                let blockType = 'unknown';
+                if (event.oldXml) {
+                    if (typeof event.oldXml === 'string') {
+                        try {
+                            blockType = Blockly.utils.xml.textToDom(event.oldXml).getAttribute('type');
+                        } catch (e) { blockType = 'unknown'; }
+                    } else if (event.oldXml.getAttribute) {
+                        blockType = event.oldXml.getAttribute('type');
+                    }
+                }
                 return {
                     ...baseEvent,
-                    blockType: event.oldXml ? Blockly.Xml.textToDom(event.oldXml).getAttribute('type') : 'unknown',
-                    data: { oldXml: event.oldXml }
+                    blockType: blockType,
+                    data: { oldXml: typeof event.oldXml === 'string' ? event.oldXml : Blockly.Xml.domToText(event.oldXml) }
                 };
             }
             case 'move': {
@@ -265,7 +422,7 @@ window.BlockAssemblyRecorder = {
     /**
      * 다음 이벤트 재생 (속도 문제 수정됨)
      */
-    playNextEvent() {
+    async playNextEvent() {
         if (!this.playback.isPlaying || this.playback.currentIndex >= this.events.length) {
             this.stopPlaying();
             return;
@@ -274,7 +431,7 @@ window.BlockAssemblyRecorder = {
         const currentEvent = this.events[this.playback.currentIndex];
 
         try {
-            this.executeEvent(currentEvent);
+            await this.executeEvent(currentEvent);
         } catch (error) {
             console.error('이벤트 실행 실패:', error);
         }
@@ -283,11 +440,7 @@ window.BlockAssemblyRecorder = {
 
         if (this.playback.currentIndex < this.events.length) {
             const nextEvent = this.events[this.playback.currentIndex];
-            // [수정됨] 실제 시간 차이를 배속으로 나눔
             const delay = (nextEvent.timestamp - currentEvent.timestamp) / this.playback.speed;
-
-            // [핵심 수정] 최소 지연 시간을 0ms로 변경하여 고속 재생 시 병목 현상 제거
-            // 기존 Math.max(10, delay) 때문에 2배속, 4배속이 안 먹히던 문제 해결
             const actualDelay = Math.max(0, delay);
 
             this.playback.timerId = setTimeout(() => {
@@ -301,7 +454,7 @@ window.BlockAssemblyRecorder = {
     /**
      * 이벤트 실행 로직
      */
-    executeEvent(event) {
+    async executeEvent(event) {
         if (!event || !event.type) return;
 
         switch (event.type.toLowerCase()) {
@@ -309,71 +462,154 @@ window.BlockAssemblyRecorder = {
                 if (event.data && event.data.xml) {
                     try {
                         const xmlDom = Blockly.utils.xml.textToDom(event.data.xml);
-                        // block 태그 찾기 로직 강화
                         const blockElement = xmlDom.tagName === 'block' ? xmlDom : xmlDom.querySelector('block');
-                        
-                        if (blockElement) {
-                            const newBlock = Blockly.Xml.domToBlock(blockElement, this.workspace);
-                            if (newBlock) {
-                                this.playback.blockIdMap[event.blockId] = newBlock.id;
-                            }
+                        const blockType = blockElement ? blockElement.getAttribute('type') : null;
+
+                        // 카테고리 선택 및 시각적 대기
+                        if (blockType) {
+                            await this._selectCategoryForBlockType(blockType);
                         }
+
+                        // 버퍼에 저장 (move 이벤트에서 생성)
+                        if (!this.playback._pendingBlockCreations) {
+                            this.playback._pendingBlockCreations = new Map();
+                        }
+                        this.playback._pendingBlockCreations.set(event.blockId, {
+                            xml: event.data.xml,
+                            blockType: blockType
+                        });
                     } catch (e) { console.warn('Create Error', e); }
                 }
                 break;
             }
 
             case 'delete': {
+                // [수정] 생성 대기 중인 블록 삭제 시, 생성 자체를 취소 (좀비 블록 방지)
+                if (this.playback._pendingBlockCreations && this.playback._pendingBlockCreations.has(event.blockId)) {
+                    this.playback._pendingBlockCreations.delete(event.blockId);
+                    console.log(`[BlockRecorder] 생성 전 삭제 처리됨 (Block ID: ${event.blockId})`);
+                    break; // break하여 아래 로직(이미 없는 블록 삭제 시도) 실행 방지
+                }
+
                 const blockId = this.playback.blockIdMap[event.blockId] || event.blockId;
                 const block = this.workspace.getBlockById(blockId);
                 if (block) {
                     block.dispose(false);
+                }
+
+                // 맵핑 정보 제거
+                if (this.playback.blockIdMap[event.blockId]) {
                     delete this.playback.blockIdMap[event.blockId];
                 }
                 break;
             }
 
             case 'move': {
-                const blockId = this.playback.blockIdMap[event.blockId] || event.blockId;
-                const block = this.workspace.getBlockById(blockId);
-                
-                if (block && event.data) {
-                    // 1. 좌표 이동 (부모 연결 해제 후 이동)
+                // 1. 신규 블록인지 확인 (버퍼 체크)
+                const pendingBlock = this.playback._pendingBlockCreations ? this.playback._pendingBlockCreations.get(event.blockId) : null;
+
+                if (pendingBlock) {
+                    // 버퍼에서 제거
+                    this.playback._pendingBlockCreations.delete(event.blockId);
+
+                    // 목표 위치 계산
+                    let targetX = 100, targetY = 100;
                     if (event.data.newCoordinate) {
-                        if (block.getParent()) block.unplug();
-                        block.moveBy(
-                            event.data.newCoordinate.x - block.getRelativeToSurfaceXY().x,
-                            event.data.newCoordinate.y - block.getRelativeToSurfaceXY().y
-                        );
+                        targetX = event.data.newCoordinate.x;
+                        targetY = event.data.newCoordinate.y;
+                    } else if (event.data.newParentId) {
+                        const pId = this.playback.blockIdMap[event.data.newParentId] || event.data.newParentId;
+                        const parent = this.workspace.getBlockById(pId);
+                        if (parent) {
+                            const parentPos = parent.getRelativeToSurfaceXY();
+                            targetX = parentPos.x;
+                            targetY = parentPos.y + 30; // 대략적인 위치
+                        }
                     }
 
-                    // 2. 연결 처리
-                    if (event.data.newParentId) {
-                        const parentId = this.playback.blockIdMap[event.data.newParentId] || event.data.newParentId;
-                        const parentBlock = this.workspace.getBlockById(parentId);
+                    // 블록 생성 (화면 밖 -flyoutWidth)
+                    const flyoutWidth = this._getFlyoutWidth();
+                    const xmlDom = Blockly.utils.xml.textToDom(pendingBlock.xml);
 
-                        if (parentBlock) {
-                            let parentConnection = null;
-                            let childConnection = null;
+                    // XML에 시작 좌표 강제 설정
+                    const blockNode = xmlDom.tagName === 'block' ? xmlDom : xmlDom.querySelector('block');
+                    if (blockNode) {
+                        blockNode.setAttribute('x', String(-flyoutWidth));
+                        blockNode.setAttribute('y', String(targetY));
+                    }
 
-                            if (event.data.newInputName) {
-                                const input = parentBlock.getInput(event.data.newInputName);
-                                if (input) {
-                                    parentConnection = input.connection;
-                                    childConnection = block.outputConnection || block.previousConnection;
+                    const newBlock = Blockly.Xml.domToBlock(blockNode || xmlDom, this.workspace);
+                    if (newBlock) {
+                        this.playback.blockIdMap[event.blockId] = newBlock.id;
+
+                        // 애니메이션 실행
+                        await this._animateBlockToPosition(newBlock, targetX, targetY);
+
+                        // 연결 처리 (애니메이션 후)
+                        if (event.data.newParentId) {
+                            const pId = this.playback.blockIdMap[event.data.newParentId] || event.data.newParentId;
+                            const parentBlock = this.workspace.getBlockById(pId);
+                            if (parentBlock) {
+                                let parentConn = null;
+                                let childConn = null;
+
+                                if (event.data.newInputName) {
+                                    const input = parentBlock.getInput(event.data.newInputName);
+                                    if (input) {
+                                        parentConn = input.connection;
+                                        childConn = newBlock.outputConnection || newBlock.previousConnection;
+                                    }
+                                } else {
+                                    parentConnection = parentBlock.nextConnection;
+                                    childConnection = newBlock.previousConnection;
                                 }
-                            } else {
-                                parentConnection = parentBlock.nextConnection;
-                                childConnection = block.previousConnection;
-                            }
 
-                            if (parentConnection && childConnection) {
-                                try { childConnection.connect(parentConnection); } catch (e) {}
+                                if (parentConn && childConn) {
+                                    try { childConnection.connect(parentConn); } catch (e) { }
+                                }
                             }
                         }
-                    } 
-                    else if (event.data.oldParentId && !event.data.newParentId) {
-                        if (block.getParent()) block.unplug();
+                    }
+                } else {
+                    // 기존 블록 이동 (기존 로직 유지)
+                    const blockId = this.playback.blockIdMap[event.blockId] || event.blockId;
+                    const block = this.workspace.getBlockById(blockId);
+
+                    if (block && event.data) {
+                        if (event.data.newCoordinate) {
+                            if (block.getParent()) block.unplug();
+                            block.moveBy(
+                                event.data.newCoordinate.x - block.getRelativeToSurfaceXY().x,
+                                event.data.newCoordinate.y - block.getRelativeToSurfaceXY().y
+                            );
+                        }
+
+                        if (event.data.newParentId) {
+                            const parentId = this.playback.blockIdMap[event.data.newParentId] || event.data.newParentId;
+                            const parentBlock = this.workspace.getBlockById(parentId);
+
+                            if (parentBlock) {
+                                let parentConnection = null;
+                                let childConnection = null;
+
+                                if (event.data.newInputName) {
+                                    const input = parentBlock.getInput(event.data.newInputName);
+                                    if (input) {
+                                        parentConnection = input.connection;
+                                        childConnection = block.outputConnection || block.previousConnection;
+                                    }
+                                } else {
+                                    parentConnection = parentBlock.nextConnection;
+                                    childConnection = block.previousConnection;
+                                }
+
+                                if (parentConnection && childConnection) {
+                                    try { childConnection.connect(parentConnection); } catch (e) { }
+                                }
+                            }
+                        } else if (event.data.oldParentId && !event.data.newParentId) {
+                            if (block.getParent()) block.unplug();
+                        }
                     }
                 }
                 break;
@@ -409,7 +645,7 @@ window.BlockAssemblyRecorder = {
         const blocklyDiv = document.getElementById('blocklyDiv');
         if (blocklyDiv) {
             blocklyDiv.style.pointerEvents = 'none';
-            
+
             // 오버레이 생성
             const overlay = document.createElement('div');
             overlay.id = 'playback-overlay';
@@ -418,16 +654,16 @@ window.BlockAssemblyRecorder = {
                 z-index: 9999; display: flex; flex-direction: column; align-items: center; gap: 10px;
                 pointer-events: auto; font-family: 'Malgun Gothic', sans-serif;
             `;
-            
+
             const badge = document.createElement('div');
             badge.style.cssText = `background-color: #E65100; color: white; padding: 12px 30px; border-radius: 8px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2);`;
             badge.innerHTML = `<span>▶️ 블록 조립 재생 중 (${this.playback.speed}배속)</span>`;
-            
+
             const btn = document.createElement('button');
             btn.style.cssText = `background-color: #333; color: white; border: 2px solid white; padding: 8px 25px; border-radius: 20px; font-size: 14px; cursor: pointer; font-weight: bold;`;
             btn.innerHTML = '⏹ 중지';
             btn.onclick = (e) => { e.stopPropagation(); window.BlockAssemblyRecorder.stopPlaying(); };
-            
+
             overlay.appendChild(badge);
             overlay.appendChild(btn);
             blocklyDiv.parentElement.appendChild(overlay);
@@ -449,6 +685,7 @@ window.BlockAssemblyRecorder = {
         this.events = [];
         this.metadata = { startTime: null, endTime: null, totalDuration: 0, eventCount: 0 };
         this.playback.currentIndex = 0;
+        this.playback._pendingBlockCreations = new Map(); // 버퍼 초기화
         console.log('🔄 초기화 완료');
         window.IDEUtils.logToConsole('🔄 블록 조립 기록 초기화 완료');
     },
@@ -588,7 +825,7 @@ function showBlockTooltip(block, text, color = '#333') {
     const svgRoot = block.getSvgRoot();
     if (!svgRoot) return;
     const rect = svgRoot.getBoundingClientRect();
-    
+
     const tooltip = document.createElement('div');
     tooltip.id = 'block-custom-tooltip';
     tooltip.style.cssText = `
@@ -598,14 +835,14 @@ function showBlockTooltip(block, text, color = '#333') {
         z-index: 10000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); pointer-events: none;
         animation: fadeIn 0.2s ease-out;
     `;
-    
+
     const arrow = document.createElement('div');
     arrow.style.cssText = `
         position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%) rotate(45deg);
         width: 10px; height: 10px; background-color: white;
         border-right: 2px solid ${color}; border-bottom: 2px solid ${color};
     `;
-    
+
     tooltip.textContent = text;
     tooltip.appendChild(arrow);
     document.body.appendChild(tooltip);

@@ -112,9 +112,10 @@ class IntegratedArduinoIDE {
                 // console.log('Arduino 커스텀 블록 정의 완료');
             }
 
-            // 3. 에디터 초기화
+            // 3. Blockly 에디터 초기화 (Monaco는 텍스트 모드 전환 시 지연 로딩)
             await window.IDEEditors.initializeBlockly();
-            await window.IDEEditors.initializeMonaco();
+            // 🔥 Monaco는 텍스트 모드 전환 시 지연 로딩 (초기 로딩 ~2MB 절감)
+            // await window.IDEEditors.initializeMonaco();
 
             // 4. UI 초기 상태 설정
             this.updateBoardIndicator();
@@ -151,9 +152,9 @@ class IntegratedArduinoIDE {
     async checkAgentConnection() {
         try {
             const isConnected = await window.IDEServerComm.checkAgentConnection();
-            const statusIndicator = this.elements.agentStatusIndicator || 
-                                  document.getElementById('agentStatusIndicator');
-            
+            const statusIndicator = this.elements.agentStatusIndicator ||
+                document.getElementById('agentStatusIndicator');
+
             if (statusIndicator) {
                 if (isConnected) {
                     statusIndicator.textContent = '🟢 연결됨';
@@ -169,7 +170,7 @@ class IntegratedArduinoIDE {
                     );
                 }
             }
-            
+
             return isConnected;
         } catch (error) {
             console.error('에이전트 연결 확인 실패:', error);
@@ -233,7 +234,7 @@ class IntegratedArduinoIDE {
             );
             return;
         }
-        
+
         window.IDEServerComm.compileCode();
     }
 
@@ -249,7 +250,7 @@ class IntegratedArduinoIDE {
             );
             return;
         }
-        
+
         window.IDEServerComm.uploadCode();
     }
 
@@ -265,7 +266,7 @@ class IntegratedArduinoIDE {
             );
             return;
         }
-        
+
         window.IDEServerComm.requestPorts();
     }
 
@@ -286,7 +287,7 @@ class IntegratedArduinoIDE {
      */
     updateEditorTemplate() {
         const boardType = this.elements.boardSelect ? this.elements.boardSelect.value : 'uno';
-        
+
         // 🔥 [NEW] 제너레이터에 보드 정보 전달 (코드 생성 분기용)
         if (typeof Arduino !== 'undefined') {
             Arduino.selectedBoard = boardType;
@@ -381,19 +382,28 @@ class IntegratedArduinoIDE {
 //================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Monaco Editor를 위한 RequireJS 설정
-    require.config({
-        paths: {
-            'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0/min/vs'
-        }
-    });
+    // 🔥 최적화: Blockly와 Brixel 스크립트 로딩 완료 후 IDE 초기화
+    // Monaco는 텍스트 모드 전환 시 지연 로딩
 
-    // Monaco Editor 로드 완료 후 IDE 인스턴스 생성
-    require(['vs/editor/editor.main'], () => {
+    const waitForDependencies = () => {
+        const blocklyReady = typeof Blockly !== 'undefined' && window.blocklyLoaded;
+        const brixelReady = window.brixelScriptsLoaded;
+
+        if (blocklyReady && brixelReady) {
+            console.log('✅ 모든 의존성 로딩 완료, IDE 초기화 시작');
+            initializeIDE();
+        } else {
+            if (!blocklyReady) console.log('⏳ Blockly 로딩 대기 중...');
+            if (!brixelReady) console.log('⏳ Brixel 스크립트 로딩 대기 중...');
+            setTimeout(waitForDependencies, 100);
+        }
+    };
+
+    const initializeIDE = () => {
         try {
             // 전역 IDE 인스턴스 생성
             window.arduinoIDE = new IntegratedArduinoIDE();
-            
+
             // 브라우저 종료 시 정리 작업 (다운로드 중에는 실행하지 않음)
             window.addEventListener('beforeunload', (e) => {
                 // 다운로드 중에는 cleanup 실행하지 않음
@@ -405,9 +415,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            console.log('✅ 정적 웹 IDE 인스턴스 생성 완료');
+            console.log('✅ 정적 웹 IDE 인스턴스 생성 완료 (Monaco 지연 로딩 모드)');
         } catch (error) {
             console.error('❌ IDE 인스턴스 생성 실패:', error);
         }
-    });
+    };
+
+    // 모든 의존성 로딩 완료 대기 후 초기화
+    waitForDependencies();
 });

@@ -200,24 +200,147 @@ window.IDEEditors = {
 
     /**
      * Monaco 텍스트 에디터를 초기화합니다.
+     * 🔥 최적화: 지연 로딩 (Lazy Loading) + CDN Fallback 적용
      * RequireJS를 사용하여 비동기적으로 로드됩니다.
      * RTL 언어 지원을 위한 설정이 추가되었습니다.
      */
     async initializeMonaco() {
-        return new Promise((resolve, reject) => {
-            require.config({
-                paths: {
-                    'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0/min/vs'
-                }
-            });
+        // 이미 초기화된 경우 스킵
+        if (this.monacoEditor) {
+            return Promise.resolve();
+        }
 
+        // Monaco 로딩 상태 추적
+        if (!window.monacoLoadPromise) {
+            window.monacoLoadPromise = this._loadMonacoWithFallback();
+        }
+
+        try {
+            await window.monacoLoadPromise;
+            return this._createMonacoEditor();
+        } catch (error) {
+            console.error('Monaco 초기화 실패:', error);
+            throw error;
+        }
+    },
+
+    /**
+     * 🔥 Monaco Editor를 CDN Fallback으로 로드합니다.
+     * 여러 CDN을 순회하며 성공할 때까지 시도합니다.
+     * @private
+     */
+    async _loadMonacoWithFallback() {
+        // 이미 로드된 경우
+        if (typeof require !== 'undefined' && require.config && window.monacoLoaderReady) {
+            return Promise.resolve();
+        }
+
+        const cdnSources = [
+            'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0/min',
+            'https://cdn.jsdelivr.net/npm/monaco-editor@0.34.0/min',
+            'https://unpkg.com/monaco-editor@0.34.0/min'
+        ];
+
+        // CSS 로드 헬퍼
+        const loadCSS = (url) => {
+            return new Promise((resolve, reject) => {
+                const existing = document.querySelector(`link[href="${url}"]`);
+                if (existing) {
+                    resolve();
+                    return;
+                }
+
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = url;
+                link.setAttribute('data-name', 'vs/editor/editor.main');
+
+                link.onload = () => resolve();
+                link.onerror = () => reject(new Error('CSS 로드 실패: ' + url));
+
+                document.head.appendChild(link);
+            });
+        };
+
+        // Script 로드 헬퍼
+        const loadScript = (url) => {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = url;
+                script.async = true;
+
+                const timeout = setTimeout(() => {
+                    script.remove();
+                    reject(new Error('Timeout: ' + url));
+                }, 15000);
+
+                script.onload = () => {
+                    clearTimeout(timeout);
+                    resolve();
+                };
+                script.onerror = () => {
+                    clearTimeout(timeout);
+                    script.remove();
+                    reject(new Error('Failed: ' + url));
+                };
+
+                document.head.appendChild(script);
+            });
+        };
+
+        // CDN 순회 시도
+        for (let i = 0; i < cdnSources.length; i++) {
+            const baseUrl = cdnSources[i];
+            console.log(`🔄 Monaco 로드 시도 (CDN ${i + 1}/${cdnSources.length}): ${baseUrl}`);
+
+            try {
+                // CSS 로드
+                await loadCSS(`${baseUrl}/vs/editor/editor.main.css`);
+
+                // Loader 스크립트 로드
+                await loadScript(`${baseUrl}/vs/loader.min.js`);
+
+                // RequireJS 설정
+                if (typeof require !== 'undefined' && require.config) {
+                    require.config({
+                        paths: {
+                            'vs': `${baseUrl}/vs`
+                        }
+                    });
+
+                    window.monacoLoaderReady = true;
+                    window.monacoBaseUrl = baseUrl;
+                    console.log(`✅ Monaco loader 로드 성공 (CDN ${i + 1}): ${baseUrl}`);
+                    return;
+                }
+            } catch (error) {
+                console.warn(`⚠️ Monaco CDN ${i + 1} 실패:`, error.message);
+            }
+        }
+
+        // 모든 CDN 실패
+        const errorMsg = 'Monaco Editor를 불러올 수 없습니다. 네트워크 연결을 확인하세요.';
+        console.error('❌ ' + errorMsg);
+        throw new Error(errorMsg);
+    },
+
+    /**
+     * 🔥 Monaco 에디터 인스턴스를 생성합니다.
+     * @private
+     */
+    _createMonacoEditor() {
+        return new Promise((resolve, reject) => {
             require(['vs/editor/editor.main'], () => {
                 try {
                     const monacoDiv = document.getElementById('monacoEditor');
 
+                    // 🔥 로딩 인디케이터 제거 (에디터 생성 전 필수)
+                    monacoDiv.innerHTML = '';
+
                     // RTL 언어 대응: Monaco 에디터는 항상 LTR 방향 유지
+                    // 초기 value는 빈 문자열로 설정 (switchMode에서 코드를 설정함)
                     this.monacoEditor = monaco.editor.create(monacoDiv, {
-                        value: window.IDEI18n ? window.IDEI18n.getMsg('template_arduino') : '// Arduino 코드를 여기에 작성하세요',
+                        value: '',
                         language: 'cpp',
                         theme: 'vs-dark',
                         automaticLayout: true,
@@ -227,19 +350,23 @@ window.IDEEditors = {
                         wordWrap: 'on',
                         renderControlCharacters: false,
                         renderWhitespace: 'none',
-                        // Monaco 에디터 자체는 direction 옵션이 없으므로 DOM에서 처리
                     });
 
                     // RTL 언어 대응: 에디터 컨테이너의 방향성 강제 설정
                     this.forceMonacoLTRDirection(monacoDiv);
-
-                    // console.log('Monaco 에디터 초기화 완료 (RTL 대응 포함)');
 
                     // 컴파일 버튼 활성화
                     const compileBtn = document.getElementById('compileBtn');
                     if (compileBtn) {
                         compileBtn.disabled = false;
                     }
+
+                    // 에디터 레이아웃 강제 업데이트
+                    setTimeout(() => {
+                        if (this.monacoEditor) {
+                            this.monacoEditor.layout();
+                        }
+                    }, 50);
 
                     resolve();
                 } catch (error) {
@@ -280,9 +407,10 @@ window.IDEEditors = {
 
     /**
      * 블록코딩 모드와 텍스트코딩 모드 간의 UI 전환을 처리합니다.
+     * 🔥 텍스트 모드로 전환 시 Monaco 지연 로딩 수행
      * @param {string} mode - 전환할 모드 ('block' 또는 'text')
      */
-    switchMode(mode) {
+    async switchMode(mode) {
         this.currentMode = mode;
         const isBlockMode = mode === 'block';
 
@@ -297,34 +425,80 @@ window.IDEEditors = {
         const editorArea = document.getElementById('editorArea');
         const blocklyPanel = document.getElementById('blocklyPanel');
         const codePreview = document.getElementById('codePreview');
-        const monacoEditor = document.getElementById('monacoEditor');
+        const monacoEditorDiv = document.getElementById('monacoEditor');
 
         if (editorArea) editorArea.classList.toggle('text-mode', !isBlockMode);
         if (blocklyPanel) blocklyPanel.classList.toggle('hidden', !isBlockMode);
         if (codePreview) codePreview.style.display = isBlockMode ? 'block' : 'none';
-        if (monacoEditor) monacoEditor.classList.toggle('hidden', isBlockMode);
+        if (monacoEditorDiv) monacoEditorDiv.classList.toggle('hidden', isBlockMode);
 
         // UI 텍스트 업데이트
         if (window.IDEI18n) {
             window.IDEI18n.updateUITexts();
         }
 
-        // 텍스트 모드로 전환 시 Monaco 에디터 설정
-        if (!isBlockMode && this.monacoEditor) {
-            setTimeout(() => {
-                // RTL 언어 대응: Monaco 에디터 방향성 재설정
-                const monacoDiv = document.getElementById('monacoEditor');
-                if (monacoDiv) {
-                    this.forceMonacoLTRDirection(monacoDiv);
+        // 🔥 텍스트 모드로 전환 시 Monaco 지연 로딩
+        if (!isBlockMode) {
+            if (!this.monacoEditor) {
+                // Monaco가 아직 로드되지 않았으면 로딩 인디케이터 표시
+                if (monacoEditorDiv) {
+                    monacoEditorDiv.innerHTML = `
+                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #1e1e1e; color: #fff;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 24px; margin-bottom: 10px;">⏳</div>
+                                <div>Monaco Editor 로딩 중...</div>
+                            </div>
+                        </div>
+                    `;
                 }
 
-                this.monacoEditor.layout();
-                const generatedCode = this.generateArduinoCode();
-                if (generatedCode && generatedCode.trim() &&
-                    !generatedCode.includes('블록을 배치하면')) {
-                    this.monacoEditor.setValue(generatedCode);
+                try {
+                    await this.initializeMonaco();
+                } catch (error) {
+                    console.error('❌ Monaco 로딩 실패:', error);
+                    if (monacoEditorDiv) {
+                        monacoEditorDiv.innerHTML = `
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #1e1e1e; color: #ff6b6b;">
+                                <div style="text-align: center;">
+                                    <div style="font-size: 24px; margin-bottom: 10px;">❌</div>
+                                    <div>Monaco Editor 로딩 실패</div>
+                                    <div style="font-size: 12px; margin-top: 5px;">네트워크 연결을 확인하세요</div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                    return;
                 }
-            }, 100);
+            }
+
+            // Monaco 에디터 설정 - 즉시 실행
+            // RTL 언어 대응: Monaco 에디터 방향성 재설정
+            const monacoDiv = document.getElementById('monacoEditor');
+            if (monacoDiv) {
+                this.forceMonacoLTRDirection(monacoDiv);
+            }
+
+            if (this.monacoEditor) {
+                // 🔥 코드 생성 및 에디터에 표시
+                const generatedCode = this.generateArduinoCode();
+
+                if (generatedCode && generatedCode.trim()) {
+                    this.monacoEditor.setValue(generatedCode);
+                } else {
+                    // 블록이 없는 경우 기본 템플릿 표시
+                    const template = window.IDEI18n ?
+                        window.IDEI18n.getMsg('template_arduino', '// Arduino 코드를 여기에 작성하세요') :
+                        '// Arduino 코드를 여기에 작성하세요';
+                    this.monacoEditor.setValue(template);
+                }
+
+                // 레이아웃 재조정 (코드 설정 후)
+                setTimeout(() => {
+                    if (this.monacoEditor) {
+                        this.monacoEditor.layout();
+                    }
+                }, 100);
+            }
         }
 
         // 로그 출력 - 번역 키 적용

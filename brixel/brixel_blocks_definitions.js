@@ -6026,6 +6026,115 @@ Blockly.Blocks['util_record_end_time'] = {
     }
 };
 
+// ============================================================
+// 논블로킹 타이머 헬퍼 블록 (UTIL 카테고리)
+// ============================================================
+
+// 1. N초 마다 실행 (Interval)
+Blockly.Blocks['util_interval'] = {
+    init: function () {
+        this.jsonInit({
+            "type": "util_interval",
+            "message0": Blockly.Msg.BKY_UTIL_INTERVAL || "%1 ms마다 실행",
+            "args0": [
+                {
+                    "type": "field_number",
+                    "name": "INTERVAL",
+                    "value": 500,
+                    "min": 1
+                }
+            ],
+            "message1": "%1",
+            "args1": [
+                {
+                    "type": "input_statement",
+                    "name": "DO"
+                }
+            ],
+            "previousStatement": null,
+            "nextStatement": null,
+            "colour": "#08B89F",
+            "tooltip": Blockly.Msg.BKY_UTIL_INTERVAL_TOOLTIP || "내부 블록을 지정한 시간 간격(ms)마다 차단(blocking) 없이 반복 실행합니다.",
+            "helpUrl": ""
+        });
+    }
+};
+
+// 2. 타이머 초기화 (Stopwatch Reset)
+Blockly.Blocks['util_stopwatch_reset'] = {
+    init: function () {
+        this.jsonInit({
+            "type": "util_stopwatch_reset",
+            "message0": Blockly.Msg.BKY_UTIL_STOPWATCH_RESET || "타이머 %1 초기화",
+            "args0": [
+                {
+                    "type": "field_number",
+                    "name": "ID",
+                    "value": 1,
+                    "min": 1
+                }
+            ],
+            "previousStatement": null,
+            "nextStatement": null,
+            "colour": "#08B89F",
+            "tooltip": Blockly.Msg.BKY_UTIL_STOPWATCH_RESET_TOOLTIP || "지정한 ID의 타이머를 0으로 초기화합니다.",
+            "helpUrl": ""
+        });
+    }
+};
+
+// 3. 타이머 경과 시간 (Stopwatch Elapsed)
+Blockly.Blocks['util_stopwatch_elapsed'] = {
+    init: function () {
+        this.jsonInit({
+            "type": "util_stopwatch_elapsed",
+            "message0": Blockly.Msg.BKY_UTIL_STOPWATCH_ELAPSED || "타이머 %1 경과 시간(ms)",
+            "args0": [
+                {
+                    "type": "field_number",
+                    "name": "ID",
+                    "value": 1,
+                    "min": 1
+                }
+            ],
+            "output": "Number",
+            "colour": "#08B89F",
+            "tooltip": Blockly.Msg.BKY_UTIL_STOPWATCH_ELAPSED_TOOLTIP || "마지막 초기화 이후 경과한 시간(밀리초)을 반환합니다.",
+            "helpUrl": ""
+        });
+    }
+};
+
+// 4. N초 후 한 번만 실행 (Timeout)
+Blockly.Blocks['util_timeout'] = {
+    init: function () {
+        this.jsonInit({
+            "type": "util_timeout",
+            "message0": Blockly.Msg.BKY_UTIL_TIMEOUT || "%1 ms 뒤에 한 번 실행",
+            "args0": [
+                {
+                    "type": "field_number",
+                    "name": "DELAY",
+                    "value": 3000,
+                    "min": 0
+                }
+            ],
+            "message1": "%1",
+            "args1": [
+                {
+                    "type": "input_statement",
+                    "name": "DO"
+                }
+            ],
+            "previousStatement": null,
+            "nextStatement": null,
+            "colour": "#08B89F",
+            "tooltip": Blockly.Msg.BKY_UTIL_TIMEOUT_TOOLTIP || "지정한 시간이 지난 후 내부 블록을 한 번만 실행합니다. (논블로킹)",
+            "helpUrl": ""
+        });
+    }
+};
+
 // ============================================================================
 // ESP32-CAM 블록 정의
 // ============================================================================
