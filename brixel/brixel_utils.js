@@ -416,3 +416,505 @@ window.IDEBlocklyUtils.detectUnknownBlocksInWorkspace = function(workspace) {
         return unknownBlocks;
     }
 };
+
+/**
+ * ========================================
+ * Phase 5: 블록 이미지 저장 시스템 (단순화 버전)
+ * ========================================
+ *
+ * PNG 저장 시 foreignObject (HTML 입력 필드) 내의 텍스트는
+ * Canvas 보안 제한으로 인해 표시되지 않을 수 있습니다.
+ * 완전한 이미지가 필요한 경우 SVG 저장을 권장합니다.
+ */
+
+window.BlockImageSaver = window.BlockImageSaver || {};
+
+/**
+ * 메인 블록과 연결된 모든 블록 수집
+ */
+window.BlockImageSaver.getAllConnectedBlocks = function(block) {
+    const blocks = [];
+
+    function collect(b) {
+        if (!b || blocks.includes(b)) return;
+        blocks.push(b);
+
+        if (b.getNextBlock()) collect(b.getNextBlock());
+
+        b.inputList.forEach(input => {
+            if (input.connection && input.connection.targetBlock()) {
+                collect(input.connection.targetBlock());
+            }
+        });
+    }
+
+    collect(block);
+    return blocks;
+};
+
+/**
+ * 최상위 메인 블록 찾기
+ */
+window.BlockImageSaver.findTopMainBlock = function(workspace) {
+    const allBlocks = workspace.getAllBlocks(false);
+    let topBlock = allBlocks.find(b => b.type === 'arduino_uno_starts_up') ||
+                   allBlocks.find(b => b.type === 'arduino_setup') ||
+                   allBlocks.find(b => b.type === 'arduino_loop');
+
+    if (!topBlock) return null;
+
+    while (topBlock.getPreviousBlock()) {
+        topBlock = topBlock.getPreviousBlock();
+    }
+
+    return topBlock;
+};
+
+/**
+ * 블록들의 bounding box 계산 (Blockly API 사용)
+ */
+window.BlockImageSaver.calculateBoundingBox = function(blocks) {
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+
+    blocks.forEach(block => {
+        try {
+            // Blockly의 getBoundingRectangle() 사용 - 가장 정확한 방법
+            if (block.getBoundingRectangle) {
+                const rect = block.getBoundingRectangle();
+                minX = Math.min(minX, rect.left);
+                minY = Math.min(minY, rect.top);
+                maxX = Math.max(maxX, rect.right);
+                maxY = Math.max(maxY, rect.bottom);
+            } else {
+                // fallback: getRelativeToSurfaceXY 사용
+                const xy = block.getRelativeToSurfaceXY();
+                const hw = block.getHeightWidth();
+                minX = Math.min(minX, xy.x);
+                minY = Math.min(minY, xy.y);
+                maxX = Math.max(maxX, xy.x + hw.width);
+                maxY = Math.max(maxY, xy.y + hw.height);
+            }
+        } catch (e) {
+            console.warn('블록 크기 계산 실패:', e);
+        }
+    });
+
+    // 전체 블록 영역 크기 계산
+    const totalWidth = maxX - minX;
+    const totalHeight = maxY - minY;
+
+    const padding = 40;
+    return {
+        x: minX - padding,
+        y: minY - padding,
+        width: totalWidth + padding * 2,
+        height: totalHeight + padding * 2
+    };
+};
+
+/**
+ * SVG 복제 및 정리
+ */
+window.BlockImageSaver.prepareClonedSvg = function(workspace, bbox) {
+    const svg = workspace.getParentSvg();
+    const clone = svg.cloneNode(true);
+
+    // blocklyBlockCanvas의 현재 transform 가져오기
+    const canvas = clone.querySelector('.blocklyBlockCanvas');
+    let canvasTranslateX = 0, canvasTranslateY = 0, scale = 1;
+    if (canvas) {
+        const transform = canvas.getAttribute('transform');
+        if (transform) {
+            const tm = transform.match(/translate\(([-\d.]+),?\s*([-\d.]+)?\)/);
+            if (tm) {
+                canvasTranslateX = parseFloat(tm[1]) || 0;
+                canvasTranslateY = parseFloat(tm[2]) || 0;
+            }
+            const sm = transform.match(/scale\(([-\d.]+)\)/);
+            if (sm) {
+                scale = parseFloat(sm[1]) || 1;
+            }
+        }
+        // canvas transform 제거하고 새로운 transform 설정
+        // 블록을 원점 기준으로 이동
+        const newTranslateX = -bbox.x + 40;
+        const newTranslateY = -bbox.y + 40;
+        canvas.setAttribute('transform', `translate(${newTranslateX}, ${newTranslateY})`);
+    }
+
+    // viewBox를 0,0 기준으로 설정
+    clone.setAttribute('viewBox', `0 0 ${bbox.width} ${bbox.height}`);
+    clone.setAttribute('width', bbox.width);
+    clone.setAttribute('height', bbox.height);
+    clone.style.backgroundColor = 'transparent';
+
+    // 배경 투명
+    const bg = clone.querySelector('.blocklyMainBackground');
+    if (bg) {
+        bg.setAttribute('fill', 'none');
+        bg.setAttribute('fill-opacity', '0');
+    }
+
+    // 불필요한 요소 제거
+    ['.blocklyFlyout', '.blocklyTrash', '.blocklyZoom',
+     '.blocklyScrollbarBackground', '.blocklyScrollbarHandle',
+     '.blocklyGridPattern', '.blocklyGridLine', '.blocklyToolboxDiv'
+    ].forEach(sel => {
+        clone.querySelectorAll(sel).forEach(el => el.remove());
+    });
+
+    return clone;
+};
+
+/**
+ * Blockly 필드 값을 SVG에 반영 (PNG 저장용)
+ */
+window.BlockImageSaver.applyFieldValuesToSvg = function(svgClone, workspace) {
+    const blocks = workspace.getAllBlocks(false);
+    const originalSvg = workspace.getParentSvg();
+
+    // 1. 모든 블록의 필드 값을 블록ID와 함께 수집
+    const fieldData = [];
+    blocks.forEach(block => {
+        const blockId = block.id;
+        block.inputList.forEach(input => {
+            input.fieldRow.forEach(field => {
+                if (field.getText) {
+                    const text = field.getText();
+                    const name = field.name || '';
+                    if (text) {
+                        fieldData.push({ blockId, name, text });
+                    }
+                }
+            });
+        });
+    });
+
+    // 2. SVG 클론에서 각 블록 그룹을 찾아 텍스트 업데이트
+    fieldData.forEach(({ blockId, name, text }) => {
+        const blockGroup = svgClone.querySelector(`g[data-id="${blockId}"]`);
+        if (!blockGroup) return;
+
+        const textElements = blockGroup.querySelectorAll('text.blocklyText');
+        textElements.forEach(textEl => {
+            if (!textEl.textContent || textEl.textContent.trim() === '') {
+                const parentG = textEl.closest('g[class*="blocklyField"]');
+                if (parentG) {
+                    const fieldId = parentG.getAttribute('id') || '';
+                    if (fieldId.includes(name) || name === '') {
+                        textEl.textContent = text;
+                    }
+                }
+            }
+        });
+    });
+
+    // 3. rect 색상은 변경하지 않음 (원본 유지)
+
+    // 4. foreignObject 처리 - 입력 필드를 흰색 배경 + 검정색 텍스트로 변환
+    const originalFOs = Array.from(originalSvg.querySelectorAll('foreignObject'));
+    const cloneFOs = Array.from(svgClone.querySelectorAll('foreignObject'));
+
+    originalFOs.forEach((origFo, idx) => {
+        const input = origFo.querySelector('input, textarea');
+        const textValue = input ? input.value : '';
+
+        if (cloneFOs[idx]) {
+            const fo = cloneFOs[idx];
+            const x = parseFloat(fo.getAttribute('x')) || 0;
+            const y = parseFloat(fo.getAttribute('y')) || 0;
+            const width = parseFloat(fo.getAttribute('width')) || 50;
+            const height = parseFloat(fo.getAttribute('height')) || 20;
+
+            const parent = fo.parentNode;
+            if (parent) {
+                // 흰색 배경 rect 추가
+                const bgRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                bgRect.setAttribute('x', x);
+                bgRect.setAttribute('y', y);
+                bgRect.setAttribute('width', width);
+                bgRect.setAttribute('height', height);
+                bgRect.setAttribute('fill', '#FFFFFF');
+                bgRect.setAttribute('rx', '4');
+                bgRect.setAttribute('ry', '4');
+                parent.insertBefore(bgRect, fo);
+
+                // 검정색 텍스트 추가
+                if (textValue) {
+                    const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    textEl.setAttribute('x', x + 4);
+                    textEl.setAttribute('y', y + height / 2);
+                    textEl.setAttribute('fill', '#000000');
+                    textEl.setAttribute('font-family', 'sans-serif, Arial');
+                    textEl.setAttribute('font-size', '11px');
+                    textEl.setAttribute('dominant-baseline', 'middle');
+                    textEl.textContent = textValue;
+                    parent.insertBefore(textEl, fo);
+                }
+            }
+            fo.remove();
+        }
+    });
+
+    // 5. 남은 foreignObject 제거
+    svgClone.querySelectorAll('foreignObject').forEach(fo => fo.remove());
+
+    // 6. 선택된 블록 처리 - 클래스 제거 및 텍스트 색상 강제 설정
+    svgClone.querySelectorAll('.blocklySelected, .blocklyActiveFocus').forEach(el => {
+        // 선택된 블록 내부의 모든 텍스트에 명시적 색상 설정
+        el.querySelectorAll('text').forEach(textEl => {
+            textEl.setAttribute('fill', '#000000');
+            textEl.setAttribute('visibility', 'visible');
+            textEl.setAttribute('opacity', '1');
+        });
+        // 클래스 제거
+        el.classList.remove('blocklySelected', 'blocklyActiveFocus');
+    });
+
+    // path 요소의 blocklyActiveFocus 클래스도 제거
+    svgClone.querySelectorAll('path.blocklyActiveFocus').forEach(path => {
+        path.classList.remove('blocklyActiveFocus');
+    });
+
+    // 7. 텍스트 블록 내부의 텍스트는 흰색으로 (어두운 배경에서 보이도록)
+    svgClone.querySelectorAll('g.text_blocks text, g[class*="text_blocks"] text').forEach(textEl => {
+        textEl.setAttribute('fill', '#FFFFFF');
+    });
+
+    // 8. 텍스트 요소 기본 스타일 보장
+    svgClone.querySelectorAll('text').forEach(textEl => {
+        // fill이 없으면 검정색으로
+        if (!textEl.getAttribute('fill')) {
+            textEl.setAttribute('fill', '#000000');
+        }
+        textEl.setAttribute('font-family', 'sans-serif, Arial');
+    });
+};
+
+/**
+ * SVG를 PNG로 변환
+ */
+window.BlockImageSaver.svgToPng = function(svgElement, width, height, filename) {
+    return new Promise((resolve, reject) => {
+        const serializer = new XMLSerializer();
+        let svgString = serializer.serializeToString(svgElement);
+
+        // 네임스페이스 추가
+        if (!svgString.includes('xmlns="http://www.w3.org/2000/svg"')) {
+            svgString = svgString.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+        }
+
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        const scale = 2;
+
+        canvas.width = width * scale;
+        canvas.height = height * scale;
+        ctx.scale(scale, scale);
+
+        const img = new Image();
+
+        img.onload = () => {
+            ctx.drawImage(img, 0, 0, width, height);
+            canvas.toBlob(blob => {
+                if (blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${filename}.png`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    resolve();
+                } else {
+                    reject(new Error('PNG 변환 실패'));
+                }
+            }, 'image/png');
+        };
+
+        img.onerror = () => reject(new Error('이미지 로드 실패'));
+
+        const blob = new Blob([svgString], {type: 'image/svg+xml;charset=utf-8'});
+        img.src = URL.createObjectURL(blob);
+    });
+};
+
+/**
+ * PNG 이미지로 저장
+ */
+window.BlockImageSaver.saveMainBlocksAsImage = async function(workspace, filename = 'brixel_blocks') {
+    const topBlock = this.findTopMainBlock(workspace);
+    if (!topBlock) {
+        alert('저장할 블록이 없습니다.');
+        return;
+    }
+
+    // 블록 선택 해제 (선택된 블록 텍스트 숨김 문제 해결)
+    if (Blockly.common && Blockly.common.getSelected) {
+        const selected = Blockly.common.getSelected();
+        if (selected && selected.unselect) {
+            selected.unselect();
+        }
+    } else if (Blockly.selected) {
+        Blockly.selected.unselect();
+    }
+
+    // 약간의 지연 후 SVG 복제 (선택 해제 반영을 위해)
+    await new Promise(resolve => setTimeout(resolve, 50));
+
+    const blocks = this.getAllConnectedBlocks(topBlock);
+    const bbox = this.calculateBoundingBox(blocks);
+    const svgClone = this.prepareClonedSvg(workspace, bbox);
+
+    // Blockly 필드 값을 SVG에 반영하고 foreignObject 제거
+    this.applyFieldValuesToSvg(svgClone, workspace);
+
+    await this.svgToPng(svgClone, bbox.width, bbox.height, filename);
+};
+
+/**
+ * foreignObject 내 input 값을 복원 (SVG 저장용)
+ */
+window.BlockImageSaver.preserveForeignObjectValues = function(svgClone, originalSvg) {
+    // 원본 SVG의 foreignObject에서 input 값들을 수집
+    const originalFOs = originalSvg.querySelectorAll('foreignObject');
+    const cloneFOs = svgClone.querySelectorAll('foreignObject');
+
+    originalFOs.forEach((origFo, idx) => {
+        const origInput = origFo.querySelector('input, textarea');
+        if (origInput && cloneFOs[idx]) {
+            const cloneInput = cloneFOs[idx].querySelector('input, textarea');
+            if (cloneInput && origInput.value) {
+                // 값을 attribute로 설정 (SVG 저장 시 유지됨)
+                cloneInput.setAttribute('value', origInput.value);
+                cloneInput.value = origInput.value;
+            }
+        }
+    });
+};
+
+/**
+ * SVG 파일로 저장 (foreignObject 유지 - 텍스트 완전 보존)
+ */
+window.BlockImageSaver.saveMainBlocksAsSvg = async function(workspace, filename = 'brixel_blocks') {
+    const topBlock = this.findTopMainBlock(workspace);
+    if (!topBlock) {
+        alert('저장할 블록이 없습니다.');
+        return;
+    }
+
+    // 블록 선택 해제 (선택된 블록 텍스트 숨김 문제 해결)
+    if (Blockly.common && Blockly.common.getSelected) {
+        const selected = Blockly.common.getSelected();
+        if (selected && selected.unselect) {
+            selected.unselect();
+        }
+    } else if (Blockly.selected) {
+        Blockly.selected.unselect();
+    }
+
+    // 약간의 지연 후 SVG 복제 (선택 해제 반영을 위해)
+    await new Promise(resolve => setTimeout(resolve, 50));
+
+    const blocks = this.getAllConnectedBlocks(topBlock);
+    const bbox = this.calculateBoundingBox(blocks);
+
+    // 원본 SVG 참조 유지
+    const originalSvg = workspace.getParentSvg();
+    const svgClone = this.prepareClonedSvg(workspace, bbox);
+
+    // foreignObject 내 input 값 복원
+    this.preserveForeignObjectValues(svgClone, originalSvg);
+
+    // 선택된 블록 클래스 제거
+    svgClone.querySelectorAll('.blocklySelected, .blocklyActiveFocus').forEach(el => {
+        el.classList.remove('blocklySelected', 'blocklyActiveFocus');
+    });
+
+    // 텍스트 블록 내부의 텍스트는 흰색으로 (어두운 배경에서 보이도록)
+    svgClone.querySelectorAll('g.text_blocks text, g[class*="text_blocks"] text').forEach(textEl => {
+        textEl.setAttribute('fill', '#FFFFFF');
+    });
+
+    // SVG는 foreignObject 유지 (텍스트 보존)
+    const serializer = new XMLSerializer();
+    let svgString = serializer.serializeToString(svgClone);
+
+    if (!svgString.includes('xmlns="http://www.w3.org/2000/svg"')) {
+        svgString = svgString.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+    }
+
+    const blob = new Blob([svgString], {type: 'image/svg+xml;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${filename}.svg`;
+    a.click();
+    URL.revokeObjectURL(url);
+};
+
+/**
+ * 메인 블록 체인 연결 확인
+ */
+window.BlockImageSaver.isConnectedToMainBlocks = function(block) {
+    if (!block) return false;
+
+    const mainTypes = ['arduino_uno_starts_up', 'arduino_setup', 'arduino_loop'];
+    let current = block;
+
+    while (current) {
+        if (mainTypes.includes(current.type)) return true;
+        current = current.getPreviousBlock() || current.getSurroundParent();
+    }
+
+    return false;
+};
+
+/**
+ * 컨텍스트 메뉴 등록
+ */
+window.BlockImageSaver.registerContextMenu = function() {
+    if (!Blockly || !Blockly.ContextMenuRegistry) return;
+
+    const genFilename = () => {
+        const d = new Date();
+        return `brixel_blocks_${d.toISOString().slice(0,19).replace(/[:-]/g,'').replace('T','_')}`;
+    };
+
+    const precondition = (scope) => {
+        return scope.block && this.isConnectedToMainBlocks(scope.block) ? 'enabled' : 'hidden';
+    };
+
+    // PNG 메뉴
+    if (!Blockly.ContextMenuRegistry.registry.getItem('save_blocks_as_png')) {
+        Blockly.ContextMenuRegistry.registry.register({
+            id: 'save_blocks_as_png',
+            weight: 200,
+            displayText: () => 'PNG 이미지로 저장',
+            preconditionFn: precondition,
+            callback: (scope) => {
+                if (scope.block) this.saveMainBlocksAsImage(scope.block.workspace, genFilename());
+            },
+            scopeType: Blockly.ContextMenuRegistry.ScopeType.BLOCK
+        });
+    }
+
+    // SVG 메뉴
+    if (!Blockly.ContextMenuRegistry.registry.getItem('save_blocks_as_svg')) {
+        Blockly.ContextMenuRegistry.registry.register({
+            id: 'save_blocks_as_svg',
+            weight: 201,
+            displayText: () => 'SVG 파일로 저장 (권장)',
+            preconditionFn: precondition,
+            callback: (scope) => {
+                if (scope.block) this.saveMainBlocksAsSvg(scope.block.workspace, genFilename());
+            },
+            scopeType: Blockly.ContextMenuRegistry.ScopeType.BLOCK
+        });
+    }
+
+    console.log('블록 이미지 저장 메뉴 등록 완료');
+};
+
+// 전역 함수
+window.saveBlocksAsImage = (ws, fn) => window.BlockImageSaver.saveMainBlocksAsImage(ws, fn);
+window.saveBlocksAsSvg = (ws, fn) => window.BlockImageSaver.saveMainBlocksAsSvg(ws, fn);
