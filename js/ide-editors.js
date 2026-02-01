@@ -142,6 +142,11 @@ window.IDEEditors = {
                 }
             }
 
+            // 블록 이미지 저장 컨텍스트 메뉴 등록
+            if (typeof window.BlockImageSaver !== 'undefined' && window.BlockImageSaver.registerContextMenu) {
+                window.BlockImageSaver.registerContextMenu();
+            }
+
             setTimeout(() => {
                 // ✅ 초기 블록 배치: 최초 1회만 시작, 셋업, 루프 블록을 기본으로 표시 (연결된 상태)
                 if (this.workspace && !this.initialBlocksAdded && this.workspace.getAllBlocks(false).length === 0) {
@@ -207,6 +212,7 @@ window.IDEEditors = {
     async initializeMonaco() {
         // 이미 초기화된 경우 스킵
         if (this.monacoEditor) {
+            console.log('✅ Monaco 에디터 이미 초기화됨');
             return Promise.resolve();
         }
 
@@ -334,13 +340,9 @@ window.IDEEditors = {
                 try {
                     const monacoDiv = document.getElementById('monacoEditor');
 
-                    // 🔥 로딩 인디케이터 제거 (에디터 생성 전 필수)
-                    monacoDiv.innerHTML = '';
-
                     // RTL 언어 대응: Monaco 에디터는 항상 LTR 방향 유지
-                    // 초기 value는 빈 문자열로 설정 (switchMode에서 코드를 설정함)
                     this.monacoEditor = monaco.editor.create(monacoDiv, {
-                        value: '',
+                        value: window.IDEI18n ? window.IDEI18n.getMsg('template_arduino') : '// Arduino 코드를 여기에 작성하세요',
                         language: 'cpp',
                         theme: 'vs-dark',
                         automaticLayout: true,
@@ -355,18 +357,13 @@ window.IDEEditors = {
                     // RTL 언어 대응: 에디터 컨테이너의 방향성 강제 설정
                     this.forceMonacoLTRDirection(monacoDiv);
 
+                    console.log('✅ Monaco 에디터 초기화 완료 (지연 로딩 + CDN Fallback)');
+
                     // 컴파일 버튼 활성화
                     const compileBtn = document.getElementById('compileBtn');
                     if (compileBtn) {
                         compileBtn.disabled = false;
                     }
-
-                    // 에디터 레이아웃 강제 업데이트
-                    setTimeout(() => {
-                        if (this.monacoEditor) {
-                            this.monacoEditor.layout();
-                        }
-                    }, 50);
 
                     resolve();
                 } catch (error) {
@@ -453,7 +450,9 @@ window.IDEEditors = {
                 }
 
                 try {
+                    console.log('🔄 Monaco 지연 로딩 시작...');
                     await this.initializeMonaco();
+                    console.log('✅ Monaco 지연 로딩 완료');
                 } catch (error) {
                     console.error('❌ Monaco 로딩 실패:', error);
                     if (monacoEditorDiv) {
@@ -471,34 +470,23 @@ window.IDEEditors = {
                 }
             }
 
-            // Monaco 에디터 설정 - 즉시 실행
-            // RTL 언어 대응: Monaco 에디터 방향성 재설정
-            const monacoDiv = document.getElementById('monacoEditor');
-            if (monacoDiv) {
-                this.forceMonacoLTRDirection(monacoDiv);
-            }
-
-            if (this.monacoEditor) {
-                // 🔥 코드 생성 및 에디터에 표시
-                const generatedCode = this.generateArduinoCode();
-
-                if (generatedCode && generatedCode.trim()) {
-                    this.monacoEditor.setValue(generatedCode);
-                } else {
-                    // 블록이 없는 경우 기본 템플릿 표시
-                    const template = window.IDEI18n ?
-                        window.IDEI18n.getMsg('template_arduino', '// Arduino 코드를 여기에 작성하세요') :
-                        '// Arduino 코드를 여기에 작성하세요';
-                    this.monacoEditor.setValue(template);
+            // Monaco 에디터 설정
+            setTimeout(() => {
+                // RTL 언어 대응: Monaco 에디터 방향성 재설정
+                const monacoDiv = document.getElementById('monacoEditor');
+                if (monacoDiv) {
+                    this.forceMonacoLTRDirection(monacoDiv);
                 }
 
-                // 레이아웃 재조정 (코드 설정 후)
-                setTimeout(() => {
-                    if (this.monacoEditor) {
-                        this.monacoEditor.layout();
+                if (this.monacoEditor) {
+                    this.monacoEditor.layout();
+                    const generatedCode = this.generateArduinoCode();
+                    if (generatedCode && generatedCode.trim() &&
+                        !generatedCode.includes('블록을 배치하면')) {
+                        this.monacoEditor.setValue(generatedCode);
                     }
-                }, 100);
-            }
+                }
+            }, 100);
         }
 
         // 로그 출력 - 번역 키 적용
