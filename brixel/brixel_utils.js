@@ -740,9 +740,13 @@ window.BlockImageSaver.svgToPng = function(svgElement, width, height, filename) 
 
 /**
  * PNG 이미지로 저장
+ * @param {Blockly.Workspace} workspace - 워크스페이스
+ * @param {string} filename - 파일명
+ * @param {Blockly.Block} startBlock - 시작 블록 (옵션, 없으면 메인 블록부터)
  */
-window.BlockImageSaver.saveMainBlocksAsImage = async function(workspace, filename = 'brixel_blocks') {
-    const topBlock = this.findTopMainBlock(workspace);
+window.BlockImageSaver.saveMainBlocksAsImage = async function(workspace, filename = 'brixel_blocks', startBlock = null) {
+    // 시작 블록 결정: 전달된 블록 또는 메인 블록
+    let topBlock = startBlock || this.findTopMainBlock(workspace);
     if (!topBlock) {
         alert('저장할 블록이 없습니다.');
         return;
@@ -795,8 +799,15 @@ window.BlockImageSaver.preserveForeignObjectValues = function(svgClone, original
 /**
  * SVG 파일로 저장 (foreignObject 유지 - 텍스트 완전 보존)
  */
-window.BlockImageSaver.saveMainBlocksAsSvg = async function(workspace, filename = 'brixel_blocks') {
-    const topBlock = this.findTopMainBlock(workspace);
+/**
+ * SVG 파일로 저장
+ * @param {Blockly.Workspace} workspace - 워크스페이스
+ * @param {string} filename - 파일명
+ * @param {Blockly.Block} startBlock - 시작 블록 (옵션, 없으면 메인 블록부터)
+ */
+window.BlockImageSaver.saveMainBlocksAsSvg = async function(workspace, filename = 'brixel_blocks', startBlock = null) {
+    // 시작 블록 결정: 전달된 블록 또는 메인 블록
+    let topBlock = startBlock || this.findTopMainBlock(workspace);
     if (!topBlock) {
         alert('저장할 블록이 없습니다.');
         return;
@@ -881,32 +892,33 @@ window.BlockImageSaver.registerContextMenu = function() {
     };
 
     const precondition = (scope) => {
-        return scope.block && this.isConnectedToMainBlocks(scope.block) ? 'enabled' : 'hidden';
+        // 모든 블록에서 메뉴 표시 (우클릭한 블록부터 저장)
+        return scope.block ? 'enabled' : 'hidden';
     };
 
-    // PNG 메뉴
+    // PNG 메뉴 - 우클릭한 블록부터 저장
     if (!Blockly.ContextMenuRegistry.registry.getItem('save_blocks_as_png')) {
         Blockly.ContextMenuRegistry.registry.register({
             id: 'save_blocks_as_png',
             weight: 200,
-            displayText: () => 'PNG 이미지로 저장',
+            displayText: () => 'PNG 이미지로 저장 (이 블록부터)',
             preconditionFn: precondition,
             callback: (scope) => {
-                if (scope.block) this.saveMainBlocksAsImage(scope.block.workspace, genFilename());
+                if (scope.block) this.saveMainBlocksAsImage(scope.block.workspace, genFilename(), scope.block);
             },
             scopeType: Blockly.ContextMenuRegistry.ScopeType.BLOCK
         });
     }
 
-    // SVG 메뉴
+    // SVG 메뉴 - 우클릭한 블록부터 저장
     if (!Blockly.ContextMenuRegistry.registry.getItem('save_blocks_as_svg')) {
         Blockly.ContextMenuRegistry.registry.register({
             id: 'save_blocks_as_svg',
             weight: 201,
-            displayText: () => 'SVG 파일로 저장 (권장)',
+            displayText: () => 'SVG 파일로 저장 (이 블록부터)',
             preconditionFn: precondition,
             callback: (scope) => {
-                if (scope.block) this.saveMainBlocksAsSvg(scope.block.workspace, genFilename());
+                if (scope.block) this.saveMainBlocksAsSvg(scope.block.workspace, genFilename(), scope.block);
             },
             scopeType: Blockly.ContextMenuRegistry.ScopeType.BLOCK
         });
