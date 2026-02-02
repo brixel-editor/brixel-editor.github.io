@@ -181,6 +181,11 @@ body {
     display: none;
 }
 
+/* 텍스트 모드에서 전체 영역 차지 */
+.editor-area.text-mode {
+    grid-template-rows: 1fr;
+}
+
 /* 4-1. 블록코딩 패널 (.blockly-panel) */
 /* HTML: <div class="blockly-panel" id="blocklyPanel">...</div> */
 .blockly-panel {
@@ -270,8 +275,26 @@ body {
 /* 4-2-2. Monaco 에디터 영역 (#monacoEditor) */
 /* HTML: <div id="monacoEditor" class="hidden"></div> */
 #monacoEditor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 100%;
     width: 100%;
+}
+
+/* 텍스트 모드에서 code-panel이 전체 영역을 차지하도록 설정 */
+.editor-area.text-mode .code-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.editor-area.text-mode .code-content {
+    flex: 1;
+    position: relative;
+    min-height: 0;
 }
 
 /* ======================================================================================== */
