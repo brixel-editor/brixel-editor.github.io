@@ -104,6 +104,29 @@ class I18nManager {
         this.messages = { ...this.blocklyMessages, ...this.uiMessages };
         // console.log(`🔗 번역 병합 완료: Blockly(${Object.keys(this.blocklyMessages).length}) + UI(${Object.keys(this.uiMessages).length}) = 총 ${Object.keys(this.messages).length}개 키`);
         this.detectKeyConflicts();
+
+        // Blockly.Msg에 번역 적용 (BKY_ 접두사 키들)
+        this.applyToBlocklyMsg();
+    }
+
+    /**
+     * 병합된 번역 메시지를 Blockly.Msg에 적용합니다.
+     * BKY_ 접두사를 가진 키들을 Blockly.Msg에 할당하여 블록 정의에서 사용할 수 있게 합니다.
+     */
+    applyToBlocklyMsg() {
+        if (typeof Blockly === 'undefined' || !Blockly.Msg) {
+            // console.warn('⚠️ Blockly.Msg가 아직 로드되지 않았습니다.');
+            return;
+        }
+
+        let appliedCount = 0;
+        for (const key in this.messages) {
+            if (key.startsWith('BKY_')) {
+                Blockly.Msg[key] = this.messages[key];
+                appliedCount++;
+            }
+        }
+        // console.log(`🔗 Blockly.Msg에 ${appliedCount}개 번역 적용 완료`);
     }
 
     /**

@@ -440,7 +440,7 @@ window.IDEEditors = {
                 // Monaco가 아직 로드되지 않았으면 로딩 인디케이터 표시
                 if (monacoEditorDiv) {
                     monacoEditorDiv.innerHTML = `
-                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #1e1e1e; color: #fff;">
+                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #1e1e1e; color: #fff; position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
                             <div style="text-align: center;">
                                 <div style="font-size: 24px; margin-bottom: 10px;">⏳</div>
                                 <div>Monaco Editor 로딩 중...</div>
@@ -457,7 +457,7 @@ window.IDEEditors = {
                     console.error('❌ Monaco 로딩 실패:', error);
                     if (monacoEditorDiv) {
                         monacoEditorDiv.innerHTML = `
-                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #1e1e1e; color: #ff6b6b;">
+                            <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #1e1e1e; color: #ff6b6b; position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
                                 <div style="text-align: center;">
                                     <div style="font-size: 24px; margin-bottom: 10px;">❌</div>
                                     <div>Monaco Editor 로딩 실패</div>
@@ -470,8 +470,8 @@ window.IDEEditors = {
                 }
             }
 
-            // Monaco 에디터 설정
-            setTimeout(() => {
+            // Monaco 에디터 설정 - 레이아웃이 적용될 때까지 여러 번 갱신
+            const setupMonacoLayout = () => {
                 // RTL 언어 대응: Monaco 에디터 방향성 재설정
                 const monacoDiv = document.getElementById('monacoEditor');
                 if (monacoDiv) {
@@ -486,7 +486,12 @@ window.IDEEditors = {
                         this.monacoEditor.setValue(generatedCode);
                     }
                 }
-            }, 100);
+            };
+
+            // 레이아웃 갱신을 여러 번 수행하여 CSS 적용 후에도 제대로 렌더링되도록 함
+            setTimeout(setupMonacoLayout, 50);
+            setTimeout(setupMonacoLayout, 200);
+            setTimeout(setupMonacoLayout, 500);
         }
 
         // 로그 출력 - 번역 키 적용

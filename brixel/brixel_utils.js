@@ -901,7 +901,7 @@ window.BlockImageSaver.registerContextMenu = function() {
         Blockly.ContextMenuRegistry.registry.register({
             id: 'save_blocks_as_png',
             weight: 200,
-            displayText: () => 'PNG 이미지로 저장 (이 블록부터)',
+            displayText: () => Blockly.Msg.BKY_CONTEXT_SAVE_PNG || 'PNG 이미지로 저장 (이 블록부터)',
             preconditionFn: precondition,
             callback: (scope) => {
                 if (scope.block) this.saveMainBlocksAsImage(scope.block.workspace, genFilename(), scope.block);
@@ -915,7 +915,7 @@ window.BlockImageSaver.registerContextMenu = function() {
         Blockly.ContextMenuRegistry.registry.register({
             id: 'save_blocks_as_svg',
             weight: 201,
-            displayText: () => 'SVG 파일로 저장 (이 블록부터)',
+            displayText: () => Blockly.Msg.BKY_CONTEXT_SAVE_SVG || 'SVG 파일로 저장 (이 블록부터)',
             preconditionFn: precondition,
             callback: (scope) => {
                 if (scope.block) this.saveMainBlocksAsSvg(scope.block.workspace, genFilename(), scope.block);

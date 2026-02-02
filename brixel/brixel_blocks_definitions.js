@@ -5561,6 +5561,14 @@ function defineArduinoBlocks() {
             "helpUrl": "https://www.gorillacell.kr/bowerbird/"
         },
         {
+            "type": "go_to_circuit_config",
+            "message0": Blockly.Msg.BKY_GO_TO_CIRCUIT_CONFIG || "🔌 Go to Circuit Config",
+            "nextStatement": null,
+            "style": "event_blocks",
+            "tooltip": Blockly.Msg.BKY_GO_TO_CIRCUIT_CONFIG_TOOLTIP || "Link to Circuit Config tool.",
+            "helpUrl": "https://www.gorillacell.kr/circuit/"
+        },
+        {
             "type": "go_to_k12_projectHub",
             "message0": Blockly.Msg.BKY_GO_TO_K12_PROJECTHUB || "Go to K12 Project Hub",
             "nextStatement": null,
@@ -6406,6 +6414,306 @@ Blockly.Blocks['esp32s3cam_setup'] = {
         });
     }
 };
+
+// Part 12: 허스키렌즈(HuskyLens) 카테고리
+function defineHuskyLensBlocks() {
+    const blockDefinitionsPart12 = [
+    // =============================================================== 허스키렌즈 카테고리 ===============================================================
+    // HuskyLens I2C 설정
+    {
+        "type": "huskylens_setup_i2c",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_SETUP_I2C || "🐶 허스키렌즈 I2C 연결 설정",
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_SETUP_I2C_TIP || "허스키렌즈를 I2C로 연결합니다. (SDA, SCL 핀 사용)"
+    },
+    // HuskyLens 시리얼 설정
+    {
+        "type": "huskylens_setup_serial",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_SETUP_SERIAL || "🐶 허스키렌즈 시리얼 연결 RX %1 TX %2",
+        "args0": [
+            { "type": "input_value", "name": "RX", "check": "Number" },
+            { "type": "input_value", "name": "TX", "check": "Number" }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_SETUP_SERIAL_TIP || "허스키렌즈를 소프트웨어 시리얼로 연결합니다."
+    },
+    // HuskyLens 알고리즘 설정
+    {
+        "type": "huskylens_set_algorithm",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_SET_ALGORITHM || "🐶 허스키렌즈 알고리즘 %1 설정",
+        "args0": [
+            {
+                "type": "field_dropdown", "name": "ALGORITHM", "options": [
+                    [Blockly.Msg.BKY_HUSKYLENS_ALG_FACE || "얼굴 인식", "ALGORITHM_FACE_RECOGNITION"],
+                    [Blockly.Msg.BKY_HUSKYLENS_ALG_TRACK || "객체 추적", "ALGORITHM_OBJECT_TRACKING"],
+                    [Blockly.Msg.BKY_HUSKYLENS_ALG_RECOG || "객체 인식", "ALGORITHM_OBJECT_RECOGNITION"],
+                    [Blockly.Msg.BKY_HUSKYLENS_ALG_LINE || "라인 추적", "ALGORITHM_LINE_TRACKING"],
+                    [Blockly.Msg.BKY_HUSKYLENS_ALG_COLOR || "색상 인식", "ALGORITHM_COLOR_RECOGNITION"],
+                    [Blockly.Msg.BKY_HUSKYLENS_ALG_TAG || "태그 인식", "ALGORITHM_TAG_RECOGNITION"],
+                    [Blockly.Msg.BKY_HUSKYLENS_ALG_CLASS || "객체 분류", "ALGORITHM_OBJECT_CLASSIFICATION"],
+                    [Blockly.Msg.BKY_HUSKYLENS_ALG_QR || "QR코드 인식", "ALGORITHM_QR_RECOGNITION"],
+                    [Blockly.Msg.BKY_HUSKYLENS_ALG_BARCODE || "바코드 인식", "ALGORITHM_BARCODE_RECOGNITION"]
+                ]
+            }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_SET_ALGORITHM_TIP || "허스키렌즈의 인식 알고리즘을 설정합니다."
+    },
+    // HuskyLens 데이터 요청
+    {
+        "type": "huskylens_request",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_REQUEST || "🐶 허스키렌즈 데이터 요청",
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_REQUEST_TIP || "허스키렌즈에서 현재 인식된 모든 데이터를 요청합니다."
+    },
+    // HuskyLens 특정 ID 데이터 요청
+    {
+        "type": "huskylens_request_by_id",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_REQUEST_BY_ID || "🐶 허스키렌즈 ID %1 데이터 요청",
+        "args0": [
+            { "type": "input_value", "name": "ID", "check": "Number" }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_REQUEST_BY_ID_TIP || "허스키렌즈에서 특정 ID의 데이터만 요청합니다."
+    },
+    // HuskyLens 객체 감지 여부
+    {
+        "type": "huskylens_available",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_AVAILABLE || "🐶 허스키렌즈 객체 감지됨?",
+        "inputsInline": true,
+        "output": "Boolean",
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_AVAILABLE_TIP || "허스키렌즈가 객체를 감지했는지 확인합니다."
+    },
+    // HuskyLens ID 학습 여부
+    {
+        "type": "huskylens_is_learned",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_IS_LEARNED || "🐶 허스키렌즈 ID %1 학습됨?",
+        "args0": [
+            { "type": "input_value", "name": "ID", "check": "Number" }
+        ],
+        "inputsInline": true,
+        "output": "Boolean",
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_IS_LEARNED_TIP || "특정 ID가 학습되었는지 확인합니다."
+    },
+    // HuskyLens 학습된 ID 수
+    {
+        "type": "huskylens_count_learned_ids",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_COUNT_LEARNED || "🐶 허스키렌즈 학습된 ID 개수",
+        "inputsInline": true,
+        "output": "Number",
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_COUNT_LEARNED_TIP || "학습된 ID의 총 개수를 반환합니다."
+    },
+    // HuskyLens 블록 개수
+    {
+        "type": "huskylens_count_blocks",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_COUNT_BLOCKS || "🐶 허스키렌즈 블록(사각형) 개수",
+        "inputsInline": true,
+        "output": "Number",
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_COUNT_BLOCKS_TIP || "감지된 블록(사각형)의 개수를 반환합니다."
+    },
+    // HuskyLens 화살표 개수
+    {
+        "type": "huskylens_count_arrows",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_COUNT_ARROWS || "🐶 허스키렌즈 화살표(선) 개수",
+        "inputsInline": true,
+        "output": "Number",
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_COUNT_ARROWS_TIP || "감지된 화살표(선)의 개수를 반환합니다."
+    },
+    // HuskyLens 블록 정보 (화면 중앙에서 가장 가까운)
+    {
+        "type": "huskylens_block_info",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_BLOCK_INFO || "🐶 허스키렌즈 중앙 블록의 %1",
+        "args0": [
+            {
+                "type": "field_dropdown", "name": "PROPERTY", "options": [
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_X || "X좌표", "xCenter"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_Y || "Y좌표", "yCenter"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_W || "너비", "width"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_H || "높이", "height"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_ID || "ID", "ID"]
+                ]
+            }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_BLOCK_INFO_TIP || "화면 중앙에서 가장 가까운 블록의 정보를 반환합니다."
+    },
+    // HuskyLens 특정 ID 블록 정보
+    {
+        "type": "huskylens_block_info_by_id",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_BLOCK_INFO_ID || "🐶 허스키렌즈 ID %1 블록의 %2",
+        "args0": [
+            { "type": "input_value", "name": "ID", "check": "Number" },
+            {
+                "type": "field_dropdown", "name": "PROPERTY", "options": [
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_X || "X좌표", "xCenter"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_Y || "Y좌표", "yCenter"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_W || "너비", "width"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_H || "높이", "height"]
+                ]
+            }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_BLOCK_INFO_ID_TIP || "특정 ID 블록의 정보를 반환합니다."
+    },
+    // HuskyLens 화살표 정보 (화면 중앙에서 가장 가까운)
+    {
+        "type": "huskylens_arrow_info",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_ARROW_INFO || "🐶 허스키렌즈 중앙 화살표의 %1",
+        "args0": [
+            {
+                "type": "field_dropdown", "name": "PROPERTY", "options": [
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_X_ORIGIN || "시작X", "xOrigin"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_Y_ORIGIN || "시작Y", "yOrigin"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_X_TARGET || "끝X", "xTarget"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_Y_TARGET || "끝Y", "yTarget"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_ID || "ID", "ID"]
+                ]
+            }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_ARROW_INFO_TIP || "화면 중앙에서 가장 가까운 화살표의 정보를 반환합니다."
+    },
+    // HuskyLens 특정 ID 화살표 정보
+    {
+        "type": "huskylens_arrow_info_by_id",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_ARROW_INFO_ID || "🐶 허스키렌즈 ID %1 화살표의 %2",
+        "args0": [
+            { "type": "input_value", "name": "ID", "check": "Number" },
+            {
+                "type": "field_dropdown", "name": "PROPERTY", "options": [
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_X_ORIGIN || "시작X", "xOrigin"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_Y_ORIGIN || "시작Y", "yOrigin"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_X_TARGET || "끝X", "xTarget"],
+                    [Blockly.Msg.BKY_HUSKYLENS_PROP_Y_TARGET || "끝Y", "yTarget"]
+                ]
+            }
+        ],
+        "inputsInline": true,
+        "output": "Number",
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_ARROW_INFO_ID_TIP || "특정 ID 화살표의 정보를 반환합니다."
+    },
+    // HuskyLens 한번 학습
+    {
+        "type": "huskylens_learn_once",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_LEARN_ONCE || "🐶 허스키렌즈 ID %1 로 학습",
+        "args0": [
+            { "type": "input_value", "name": "ID", "check": "Number" }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_LEARN_ONCE_TIP || "현재 화면의 객체를 지정한 ID로 학습합니다."
+    },
+    // HuskyLens 학습 삭제
+    {
+        "type": "huskylens_forget",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_FORGET || "🐶 허스키렌즈 학습 내용 삭제",
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_FORGET_TIP || "현재 알고리즘의 모든 학습 내용을 삭제합니다."
+    },
+    // HuskyLens 화면에 텍스트 표시
+    {
+        "type": "huskylens_write_osd",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_WRITE_OSD || "🐶 허스키렌즈 화면에 %1 표시 X %2 Y %3",
+        "args0": [
+            { "type": "input_value", "name": "TEXT", "check": "String" },
+            { "type": "input_value", "name": "X", "check": "Number" },
+            { "type": "input_value", "name": "Y", "check": "Number" }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_WRITE_OSD_TIP || "허스키렌즈 화면에 텍스트를 표시합니다. (X: 0-319, Y: 0-239)"
+    },
+    // HuskyLens 화면 텍스트 지우기
+    {
+        "type": "huskylens_clear_osd",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_CLEAR_OSD || "🐶 허스키렌즈 화면 텍스트 지우기",
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_CLEAR_OSD_TIP || "허스키렌즈 화면의 모든 텍스트를 지웁니다."
+    },
+    // HuskyLens 스크린샷
+    {
+        "type": "huskylens_screenshot",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_SCREENSHOT || "🐶 허스키렌즈 스크린샷 저장",
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_SCREENSHOT_TIP || "현재 화면을 SD카드에 스크린샷으로 저장합니다."
+    },
+    // HuskyLens 모델 저장
+    {
+        "type": "huskylens_save_model",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_SAVE_MODEL || "🐶 허스키렌즈 모델 %1 번에 저장",
+        "args0": [
+            { "type": "input_value", "name": "INDEX", "check": "Number" }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_SAVE_MODEL_TIP || "현재 학습된 모델을 SD카드에 저장합니다."
+    },
+    // HuskyLens 모델 로드
+    {
+        "type": "huskylens_load_model",
+        "message0": Blockly.Msg.BKY_HUSKYLENS_LOAD_MODEL || "🐶 허스키렌즈 모델 %1 번 불러오기",
+        "args0": [
+            { "type": "input_value", "name": "INDEX", "check": "Number" }
+        ],
+        "inputsInline": true,
+        "previousStatement": null,
+        "nextStatement": null,
+        "colour": "#F75ACF",
+        "tooltip": Blockly.Msg.BKY_HUSKYLENS_LOAD_MODEL_TIP || "SD카드에서 저장된 모델을 불러옵니다."
+    }
+];
+
+    // Part 12 블록들을 등록
+    Blockly.common.defineBlocksWithJsonArray(blockDefinitionsPart12);
+}
+
+// HuskyLens 블록 초기 등록
+defineHuskyLensBlocks();
+
+// 전역 함수로 내보내기 (언어 변경 시 재호출용)
+window.defineHuskyLensBlocks = defineHuskyLensBlocks;
 
 // 전역 함수로 내보내기
 window.createUnknownBlockPlaceholder = createUnknownBlockPlaceholder;

@@ -6403,3 +6403,192 @@ Arduino.forBlock['esp32s3cam_setup'] = function (block, generator) {
 
   return code;
 };
+
+// ======================================================== 허스키렌즈 (HuskyLens) 코드 생성기 =====================================================================
+
+// HuskyLens I2C 연결 설정
+Arduino.forBlock['huskylens_setup_i2c'] = function (block, generator) {
+  generator.definitions_['include_wire'] = '#include <Wire.h>';
+  generator.definitions_['include_huskylens'] = '#include "HUSKYLENS.h"';
+  generator.definitions_['var_huskylens'] = 'HUSKYLENS huskylens;';
+
+  generator.setups_['wire_begin'] = 'Wire.begin();';
+  generator.setups_['huskylens_begin'] = `while (!huskylens.begin(Wire)) {
+    Serial.println(F("HuskyLens I2C connection failed!"));
+    delay(100);
+  }`;
+
+  return '';
+};
+
+// HuskyLens 시리얼 연결 설정
+Arduino.forBlock['huskylens_setup_serial'] = function (block, generator) {
+  const rx = generator.valueToCode(block, 'RX', Arduino.ORDER_ATOMIC) || '10';
+  const tx = generator.valueToCode(block, 'TX', Arduino.ORDER_ATOMIC) || '11';
+
+  generator.definitions_['include_softserial'] = '#include <SoftwareSerial.h>';
+  generator.definitions_['include_huskylens'] = '#include "HUSKYLENS.h"';
+  generator.definitions_['var_huskylens'] = 'HUSKYLENS huskylens;';
+  generator.definitions_['var_huskylens_serial'] = `SoftwareSerial huskySerial(${rx}, ${tx});`;
+
+  generator.setups_['huskylens_serial_begin'] = 'huskySerial.begin(9600);';
+  generator.setups_['huskylens_begin'] = `while (!huskylens.begin(huskySerial)) {
+    Serial.println(F("HuskyLens Serial connection failed!"));
+    delay(100);
+  }`;
+
+  return '';
+};
+
+// HuskyLens 알고리즘 설정
+Arduino.forBlock['huskylens_set_algorithm'] = function (block, generator) {
+  const algorithm = block.getFieldValue('ALGORITHM');
+  return `huskylens.writeAlgorithm(${algorithm});\n`;
+};
+
+// HuskyLens 데이터 요청
+Arduino.forBlock['huskylens_request'] = function (block, generator) {
+  return 'huskylens.request();\n';
+};
+
+// HuskyLens 특정 ID 데이터 요청
+Arduino.forBlock['huskylens_request_by_id'] = function (block, generator) {
+  const id = generator.valueToCode(block, 'ID', Arduino.ORDER_ATOMIC) || '1';
+  return `huskylens.request(${id});\n`;
+};
+
+// HuskyLens 객체 감지 여부
+Arduino.forBlock['huskylens_available'] = function (block, generator) {
+  const code = '(huskylens.available() > 0)';
+  return [code, Arduino.ORDER_RELATIONAL];
+};
+
+// HuskyLens ID 학습 여부
+Arduino.forBlock['huskylens_is_learned'] = function (block, generator) {
+  const id = generator.valueToCode(block, 'ID', Arduino.ORDER_ATOMIC) || '1';
+  const code = `huskylens.isLearned(${id})`;
+  return [code, Arduino.ORDER_FUNCTION_CALL];
+};
+
+// HuskyLens 학습된 ID 개수
+Arduino.forBlock['huskylens_count_learned_ids'] = function (block, generator) {
+  const code = 'huskylens.countLearnedIDs()';
+  return [code, Arduino.ORDER_FUNCTION_CALL];
+};
+
+// HuskyLens 블록(사각형) 개수
+Arduino.forBlock['huskylens_count_blocks'] = function (block, generator) {
+  const code = 'huskylens.countBlocks()';
+  return [code, Arduino.ORDER_FUNCTION_CALL];
+};
+
+// HuskyLens 화살표(선) 개수
+Arduino.forBlock['huskylens_count_arrows'] = function (block, generator) {
+  const code = 'huskylens.countArrows()';
+  return [code, Arduino.ORDER_FUNCTION_CALL];
+};
+
+// HuskyLens 블록 정보 (화면 중앙에서 가장 가까운)
+Arduino.forBlock['huskylens_block_info'] = function (block, generator) {
+  const property = block.getFieldValue('PROPERTY');
+
+  // 헬퍼 함수 정의
+  generator.definitions_['func_huskylens_center_block'] = `
+HUSKYLENSResult _huskylens_getCenterBlock() {
+  int32_t distMin = INT32_MAX;
+  int16_t indexMin = -1;
+  for (int i = 0; i < huskylens.countBlocks(); i++) {
+    HUSKYLENSResult r = huskylens.readDirect(i);
+    if (r.command == 0x2B) { // COMMAND_RETURN_BLOCK
+      int32_t dist = sq(r.xCenter - 160) + sq(r.yCenter - 120);
+      if (dist < distMin) { distMin = dist; indexMin = i; }
+    }
+  }
+  return (indexMin >= 0) ? huskylens.readDirect(indexMin) : HUSKYLENSResult();
+}`;
+
+  const code = `_huskylens_getCenterBlock().${property}`;
+  return [code, Arduino.ORDER_MEMBER];
+};
+
+// HuskyLens 특정 ID 블록 정보
+Arduino.forBlock['huskylens_block_info_by_id'] = function (block, generator) {
+  const id = generator.valueToCode(block, 'ID', Arduino.ORDER_ATOMIC) || '1';
+  const property = block.getFieldValue('PROPERTY');
+
+  const code = `huskylens.blocks.read(${id}).${property}`;
+  return [code, Arduino.ORDER_MEMBER];
+};
+
+// HuskyLens 화살표 정보 (화면 중앙에서 가장 가까운)
+Arduino.forBlock['huskylens_arrow_info'] = function (block, generator) {
+  const property = block.getFieldValue('PROPERTY');
+
+  // 헬퍼 함수 정의
+  generator.definitions_['func_huskylens_center_arrow'] = `
+HUSKYLENSResult _huskylens_getCenterArrow() {
+  int32_t distMin = INT32_MAX;
+  int16_t indexMin = -1;
+  for (int i = 0; i < huskylens.countArrows(); i++) {
+    HUSKYLENSResult r = huskylens.readDirect(i);
+    if (r.command == 0x2C) { // COMMAND_RETURN_ARROW
+      int32_t dist = sq((r.xOrigin + r.xTarget)/2 - 160) + sq((r.yOrigin + r.yTarget)/2 - 120);
+      if (dist < distMin) { distMin = dist; indexMin = i; }
+    }
+  }
+  return (indexMin >= 0) ? huskylens.readDirect(indexMin) : HUSKYLENSResult();
+}`;
+
+  const code = `_huskylens_getCenterArrow().${property}`;
+  return [code, Arduino.ORDER_MEMBER];
+};
+
+// HuskyLens 특정 ID 화살표 정보
+Arduino.forBlock['huskylens_arrow_info_by_id'] = function (block, generator) {
+  const id = generator.valueToCode(block, 'ID', Arduino.ORDER_ATOMIC) || '1';
+  const property = block.getFieldValue('PROPERTY');
+
+  const code = `huskylens.arrows.read(${id}).${property}`;
+  return [code, Arduino.ORDER_MEMBER];
+};
+
+// HuskyLens 한번 학습
+Arduino.forBlock['huskylens_learn_once'] = function (block, generator) {
+  const id = generator.valueToCode(block, 'ID', Arduino.ORDER_ATOMIC) || '1';
+  return `huskylens.learnOnece(${id});\n`;
+};
+
+// HuskyLens 학습 삭제
+Arduino.forBlock['huskylens_forget'] = function (block, generator) {
+  return 'huskylens.forgetLearn();\n';
+};
+
+// HuskyLens 화면에 텍스트 표시
+Arduino.forBlock['huskylens_write_osd'] = function (block, generator) {
+  const text = generator.valueToCode(block, 'TEXT', Arduino.ORDER_ATOMIC) || '""';
+  const x = generator.valueToCode(block, 'X', Arduino.ORDER_ATOMIC) || '0';
+  const y = generator.valueToCode(block, 'Y', Arduino.ORDER_ATOMIC) || '0';
+  return `huskylens.writeOSD(String(${text}), ${x}, ${y});\n`;
+};
+
+// HuskyLens 화면 텍스트 지우기
+Arduino.forBlock['huskylens_clear_osd'] = function (block, generator) {
+  return 'huskylens.clearOSD();\n';
+};
+
+// HuskyLens 스크린샷
+Arduino.forBlock['huskylens_screenshot'] = function (block, generator) {
+  return 'huskylens.screenshotToSDCard();\n';
+};
+
+// HuskyLens 모델 저장
+Arduino.forBlock['huskylens_save_model'] = function (block, generator) {
+  const index = generator.valueToCode(block, 'INDEX', Arduino.ORDER_ATOMIC) || '1';
+  return `huskylens.saveModelToTFCard(${index});\n`;
+};
+
+// HuskyLens 모델 로드
+Arduino.forBlock['huskylens_load_model'] = function (block, generator) {
+  const index = generator.valueToCode(block, 'INDEX', Arduino.ORDER_ATOMIC) || '1';
+  return `huskylens.loadModelFromTFCard(${index});\n`;
+};

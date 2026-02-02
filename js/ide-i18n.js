@@ -118,6 +118,10 @@ window.IDEI18n = {
                 if (typeof window.defineArduinoBlocks === 'function') {
                     window.defineArduinoBlocks();
                 }
+                // HuskyLens 블록 재정의
+                if (typeof window.defineHuskyLensBlocks === 'function') {
+                    window.defineHuskyLensBlocks();
+                }
 
                 // 워크스페이스 재생성 (다른 모듈에서 처리)
                 if (window.IDEEditors && window.IDEEditors.recreateWorkspace) {
