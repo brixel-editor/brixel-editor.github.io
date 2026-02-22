@@ -1,0 +1,18 @@
+# robots.txt for Brixel Web Editor
+# https://www.gorillacell.kr/webide/
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.gorillacell.kr/webide/sitemap.xml
+
+# Disallow certain directories if needed
+# Disallow: /private/
+# Disallow: /temp/
+
+# Allow search engines to crawl everything
+Disallow:
+
+# Crawl-delay (optional, adjust as needed)
+# Crawl-delay: 1

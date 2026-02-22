@@ -1,0 +1,357 @@
+{
+  "ADD_COMMENT": "افزودن نظر",
+  "CANNOT_DELETE_VARIABLE_PROCEDURE": "نمی‌توان متغیر '%1' را حذف کرد زیرا بخشی از تعریف تابع '%2' است",
+  "CHANGE_VALUE_TITLE": "تغییر مقدار:",
+  "CLEAN_UP": "مرتب کردن بلوک‌ها",
+  "COLLAPSE_ALL": "بستن همه بلوک‌ها",
+  "COLLAPSE_BLOCK": "بستن بلوک",
+  "COLOUR_BLEND_COLOUR1": "رنگ ۱",
+  "COLOUR_BLEND_COLOUR2": "رنگ ۲",
+  "COLOUR_BLEND_RATIO": "نسبت",
+  "COLOUR_BLEND_TITLE": "ترکیب",
+  "COLOUR_BLEND_TOOLTIP": "دو رنگ را با نسبت مشخص (۰.۰ - ۱.۰) ترکیب می‌کند.",
+  "COLOUR_PICKER_TOOLTIP": "یک رنگ از پالت انتخاب کنید.",
+  "COLOUR_RANDOM_TITLE": "رنگ تصادفی",
+  "COLOUR_RANDOM_TOOLTIP": "یک رنگ به تصادف انتخاب کنید.",
+  "COLOUR_RGB_BLUE": "آبی",
+  "COLOUR_RGB_GREEN": "سبز",
+  "COLOUR_RGB_RED": "قرمز",
+  "COLOUR_RGB_TITLE": "رنگ با",
+  "COLOUR_RGB_TOOLTIP": "یک رنگ با مقدار مشخص قرمز، سبز و آبی ایجاد کنید. همه مقادیر باید بین ۰ و ۱۰۰ باشند.",
+  "CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK": "خروج از حلقه",
+  "CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE": "ادامه با تکرار بعدی حلقه",
+  "CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK": "از حلقه محتوی خارج شوید.",
+  "CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE": "بقیه این حلقه را نادیده گیرید و با تکرار بعدی ادامه دهید.",
+  "CONTROLS_FLOW_STATEMENTS_WARNING": "هشدار: این بلوک تنها در داخل یک حلقه قابل استفاده است.",
+  "CONTROLS_FOR_TITLE": "شمارش با %1 از %2 تا %3 با گام %4",
+  "CONTROLS_FOR_TOOLTIP": "متغیر '%1' مقادیر از عدد شروع تا عدد پایان را با فاصله مشخص می‌گیرد و بلوک‌های مشخص شده را اجرا می‌کند.",
+  "CONTROLS_FOREACH_TITLE": "برای هر عنصر %1 در فهرست %2",
+  "CONTROLS_FOREACH_TOOLTIP": "برای هر عنصر در فهرست، متغیر '%1' را برابر با آن عنصر قرار دهید، سپس دستوراتی را اجرا کنید.",
+  "CONTROLS_IF_ELSEIF_TOOLTIP": "یک شرط به بلوک if اضافه کنید.",
+  "CONTROLS_IF_ELSE_TOOLTIP": "یک شرط نهایی و جامع به بلوک if اضافه کنید.",
+  "CONTROLS_IF_MSG_ELSE": "وگرنه",
+  "CONTROLS_IF_MSG_ELSEIF": "وگرنه اگر",
+  "CONTROLS_IF_MSG_IF": "اگر",
+  "CONTROLS_IF_MSG_THEN": "انجام دهید",
+  "CONTROLS_IF_TOOLTIP_1": "اگر یک مقدار درست باشد، آنگاه دستوراتی را اجرا کنید.",
+  "CONTROLS_IF_TOOLTIP_2": "اگر یک مقدار درست باشد، بلوک اول دستورات را اجرا کنید. وگرنه، بلوک دوم دستورات را اجرا کنید.",
+  "CONTROLS_IF_TOOLTIP_3": "اگر مقدار اول درست باشد، بلوک اول دستورات را اجرا کنید. وگرنه، اگر مقدار دوم درست باشد، بلوک دوم دستورات را اجرا کنید.",
+  "CONTROLS_IF_TOOLTIP_4": "اگر مقدار اول درست باشد، بلوک اول دستورات را اجرا کنید. وگرنه، اگر مقدار دوم درست باشد، بلوک دوم دستورات را اجرا کنید. اگر هیچ یک از مقادیر درست نباشد، بلوک آخر دستورات را اجرا کنید.",
+  "CONTROLS_REPEAT_INPUT_DO": "انجام دهید",
+  "CONTROLS_REPEAT_TITLE": "تکرار %1 بار",
+  "CONTROLS_REPEAT_TOOLTIP": "دستوراتی را چند بار اجرا کنید.",
+  "CONTROLS_WHILEUNTIL_OPERATOR_UNTIL": "تکرار تا زمانی که",
+  "CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "تکرار تا زمانی که",
+  "CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL": "تا زمانی که یک مقدار غلط است، دستوراتی را اجرا کنید.",
+  "CONTROLS_WHILEUNTIL_TOOLTIP_WHILE": "تا زمانی که یک مقدار درست است، دستوراتی را اجرا کنید.",
+  "DELETE_ALL_BLOCKS": "همه %1 بلوک حذف شود؟",
+  "DELETE_BLOCK": "حذف بلوک",
+  "DELETE_VARIABLE": "حذف متغیر '%1'",
+  "DELETE_VARIABLE_CONFIRMATION": "%1 استفاده از متغیر '%2' حذف شود؟",
+  "DELETE_X_BLOCKS": "حذف %1 بلوک",
+  "DISABLE_BLOCK": "غیرفعال کردن بلوک",
+  "DUPLICATE_BLOCK": "کپی",
+  "DUPLICATE_COMMENT": "کپی نظر",
+  "ENABLE_BLOCK": "فعال کردن بلوک",
+  "EXPAND_ALL": "باز کردن همه بلوک‌ها",
+  "EXPAND_BLOCK": "باز کردن بلوک",
+  "EXTERNAL_INPUTS": "ورودی‌های خارجی",
+  "HELP": "راهنما",
+  "INLINE_INPUTS": "ورودی‌های درون خطی",
+  "LISTS_CREATE_EMPTY_TITLE": "ایجاد فهرست خالی",
+  "LISTS_CREATE_EMPTY_TOOLTIP": "فهرستی با طول ۰ و بدون رکورد داده برمی‌گرداند",
+  "LISTS_CREATE_WITH_CONTAINER_TITLE_ADD": "فهرست",
+  "LISTS_CREATE_WITH_CONTAINER_TOOLTIP": "بخش‌ها را اضافه، حذف یا مرتب کنید تا این بلوک فهرست را پیکربندی مجدد کنید.",
+  "LISTS_CREATE_WITH_INPUT_WITH": "ایجاد فهرست با",
+  "LISTS_CREATE_WITH_ITEM_TOOLTIP": "یک عنصر به فهرست اضافه کنید.",
+  "LISTS_CREATE_WITH_TOOLTIP": "فهرستی با تعداد دلخواه عنصر ایجاد کنید.",
+  "LISTS_GET_INDEX_FIRST": "اول",
+  "LISTS_GET_INDEX_FROM_END": "گرفتن # از انتها",
+  "LISTS_GET_INDEX_FROM_START": "گرفتن #",
+  "LISTS_GET_INDEX_GET": "گرفتن",
+  "LISTS_GET_INDEX_GET_REMOVE": "گرفتن و حذف",
+  "LISTS_GET_INDEX_LAST": "آخر",
+  "LISTS_GET_INDEX_RANDOM": "تصادفی",
+  "LISTS_GET_INDEX_REMOVE": "حذف",
+  "LISTS_GET_INDEX_TOOLTIP_GET_FIRST": "اولین عنصر فهرست را برمی‌گرداند.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_FROM_END": "عنصر در موقعیت مشخص در فهرست را برمی‌گرداند. #۱ آخرین عنصر است.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_FROM_START": "عنصر در موقعیت مشخص در فهرست را برمی‌گرداند. #۱ اولین عنصر است.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_LAST": "آخرین عنصر فهرست را برمی‌گرداند.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_RANDOM": "عنصری تصادفی از فهرست برمی‌گرداند.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_FIRST": "اولین عنصر فهرست را حذف کرده و برمی‌گرداند.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_FROM_END": "عنصر در موقعیت مشخص در فهرست را حذف کرده و برمی‌گرداند. #۱ آخرین عنصر است.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_FROM_START": "عنصر در موقعیت مشخص در فهرست را حذف کرده و برمی‌گرداند. #۱ اولین عنصر است.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_LAST": "آخرین عنصر فهرست را حذف کرده و برمی‌گرداند.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_RANDOM": "عنصری تصادفی را از فهرست حذف کرده و برمی‌گرداند.",
+  "LISTS_GET_INDEX_TOOLTIP_REMOVE_FIRST": "اولین عنصر فهرست را حذف می‌کند.",
+  "LISTS_GET_INDEX_TOOLTIP_REMOVE_FROM_END": "عنصر در موقعیت مشخص در فهرست را حذف می‌کند. #۱ آخرین عنصر است.",
+  "LISTS_GET_INDEX_TOOLTIP_REMOVE_FROM_START": "عنصر در موقعیت مشخص در فهرست را حذف می‌کند. #۱ اولین عنصر است.",
+  "LISTS_GET_INDEX_TOOLTIP_REMOVE_LAST": "آخرین عنصر فهرست را حذف می‌کند.",
+  "LISTS_GET_INDEX_TOOLTIP_REMOVE_RANDOM": "عنصری تصادفی را از فهرست حذف می‌کند.",
+  "LISTS_GET_SUBLIST_END_FROM_END": "تا # از انتها",
+  "LISTS_GET_SUBLIST_END_FROM_START": "تا #",
+  "LISTS_GET_SUBLIST_END_LAST": "تا آخر",
+  "LISTS_GET_SUBLIST_START_FIRST": "گرفتن زیرفهرست از اول",
+  "LISTS_GET_SUBLIST_START_FROM_END": "گرفتن زیرفهرست از # از انتها",
+  "LISTS_GET_SUBLIST_START_FROM_START": "گرفتن زیرفهرست از #",
+  "LISTS_INDEX_OF_FIRST": "یافتن اولین وقوع عنصر",
+  "LISTS_INDEX_OF_LAST": "یافتن آخرین وقوع عنصر",
+  "LISTS_INDEX_OF_TOOLTIP": "شاخص اولین/آخرین وقوع عنصر در فهرست را برمی‌گرداند. اگر عنصر یافت نشود %1 برمی‌گرداند.",
+  "LISTS_ISEMPTY_TITLE": "%1 خالی است",
+  "LISTS_ISEMPTY_TOOLTIP": "اگر فهرست خالی باشد درست برمی‌گرداند.",
+  "LISTS_LENGTH_TITLE": "طول %1",
+  "LISTS_LENGTH_TOOLTIP": "طول یک فهرست را برمی‌گرداند.",
+  "LISTS_REPEAT_TITLE": "ایجاد فهرست با عنصر %1 تکرار شده %2 بار",
+  "LISTS_REPEAT_TOOLTIP": "فهرستی متشکل از مقدار داده شده که تعداد مشخصی تکرار شده ایجاد می‌کند.",
+  "LISTS_SET_INDEX_INSERT": "درج در",
+  "LISTS_SET_INDEX_SET": "تنظیم",
+  "LISTS_SET_INDEX_TOOLTIP_INSERT_FIRST": "عنصر را در ابتدای فهرست درج می‌کند.",
+  "LISTS_SET_INDEX_TOOLTIP_INSERT_FROM_END": "عنصر را در موقعیت مشخص در فهرست درج می‌کند. #۱ آخرین عنصر است.",
+  "LISTS_SET_INDEX_TOOLTIP_INSERT_FROM_START": "عنصر را در موقعیت مشخص در فهرست درج می‌کند. #۱ اولین عنصر است.",
+  "LISTS_SET_INDEX_TOOLTIP_INSERT_LAST": "عنصر را به انتهای فهرست اضافه می‌کند.",
+  "LISTS_SET_INDEX_TOOLTIP_INSERT_RANDOM": "عنصر را به تصادف در فهرست درج می‌کند.",
+  "LISTS_SET_INDEX_TOOLTIP_SET_FIRST": "اولین عنصر فهرست را تنظیم می‌کند.",
+  "LISTS_SET_INDEX_TOOLTIP_SET_FROM_END": "عنصر در موقعیت مشخص در فهرست را تنظیم می‌کند. #۱ آخرین عنصر است.",
+  "LISTS_SET_INDEX_TOOLTIP_SET_FROM_START": "عنصر در موقعیت مشخص در فهرست را تنظیم می‌کند. #۱ اولین عنصر است.",
+  "LISTS_SET_INDEX_TOOLTIP_SET_LAST": "آخرین عنصر فهرست را تنظیم می‌کند.",
+  "LISTS_SET_INDEX_TOOLTIP_SET_RANDOM": "عنصری تصادفی در فهرست را تنظیم می‌کند.",
+  "LOGIC_BOOLEAN_FALSE": "غلط",
+  "LOGIC_BOOLEAN_TRUE": "درست",
+  "LOGIC_BOOLEAN_TOOLTIP": "درست یا غلط برمی‌گرداند.",
+  "LOGIC_COMPARE_TOOLTIP_EQ": "اگر هر دو ورودی با هم برابر باشند درست برمی‌گرداند.",
+  "LOGIC_COMPARE_TOOLTIP_GT": "اگر ورودی اول بزرگتر از ورودی دوم باشد درست برمی‌گرداند.",
+  "LOGIC_COMPARE_TOOLTIP_GTE": "اگر ورودی اول بزرگتر یا مساوی ورودی دوم باشد درست برمی‌گرداند.",
+  "LOGIC_COMPARE_TOOLTIP_LT": "اگر ورودی اول کوچکتر از ورودی دوم باشد درست برمی‌گرداند.",
+  "LOGIC_COMPARE_TOOLTIP_LTE": "اگر ورودی اول کوچکتر یا مساوی ورودی دوم باشد درست برمی‌گرداند.",
+  "LOGIC_COMPARE_TOOLTIP_NEQ": "اگر هر دو ورودی با هم برابر نباشند درست برمی‌گرداند.",
+  "LOGIC_NEGATE_TITLE": "نه %1",
+  "LOGIC_NEGATE_TOOLTIP": "اگر ورودی غلط باشد درست برمی‌گرداند. اگر ورودی درست باشد غلط برمی‌گرداند.",
+  "LOGIC_NULL": "تهی",
+  "LOGIC_NULL_TOOLTIP": "تهی برمی‌گرداند.",
+  "LOGIC_OPERATION_AND": "و",
+  "LOGIC_OPERATION_OR": "یا",
+  "LOGIC_OPERATION_TOOLTIP_AND": "اگر هر دو ورودی درست باشند درست برمی‌گرداند.",
+  "LOGIC_OPERATION_TOOLTIP_OR": "اگر حداقل یکی از ورودی‌ها درست باشد درست برمی‌گرداند.",
+  "LOGIC_TERNARY_CONDITION": "آزمون",
+  "LOGIC_TERNARY_IF_FALSE": "اگر غلط",
+  "LOGIC_TERNARY_IF_TRUE": "اگر درست",
+  "LOGIC_TERNARY_TOOLTIP": "شرط در 'آزمون' را بررسی کنید. اگر شرط درست باشد، مقدار 'اگر درست' را برمی‌گرداند؛ وگرنه مقدار 'اگر غلط' را برمی‌گرداند.",
+  "MATH_ADDITION_SYMBOL": "+",
+  "MATH_ARITHMETIC_HELPURL": "https://en.wikipedia.org/wiki/Arithmetic",
+  "MATH_ARITHMETIC_TOOLTIP_ADD": "مجموع دو عدد را برمی‌گرداند.",
+  "MATH_ARITHMETIC_TOOLTIP_DIVIDE": "خارج قسمت دو عدد را برمی‌گرداند.",
+  "MATH_ARITHMETIC_TOOLTIP_MINUS": "تفاوت دو عدد را برمی‌گرداند.",
+  "MATH_ARITHMETIC_TOOLTIP_MULTIPLY": "حاصلضرب دو عدد را برمی‌گرداند.",
+  "MATH_ARITHMETIC_TOOLTIP_POWER": "عدد اول به توان عدد دوم را برمی‌گرداند.",
+  "MATH_ATAN2_HELPURL": "https://en.wikipedia.org/wiki/Atan2",
+  "MATH_ATAN2_TITLE": "atan2 از X:%1 Y:%2",
+  "MATH_ATAN2_TOOLTIP": "آرک تانژانت نقطه (X, Y) را بر حسب درجه از -۱۸۰ تا ۱۸۰ برمی‌گرداند.",
+  "MATH_CHANGE_HELPURL": "https://en.wikipedia.org/wiki/Programming_idiom#Incrementing_a_counter",
+  "MATH_CHANGE_TITLE": "تغییر %1 به اندازه %2",
+  "MATH_CHANGE_TITLE_ITEM": "عنصر",
+  "MATH_CHANGE_TOOLTIP": "عددی به متغیر '%1' اضافه کنید.",
+  "MATH_CONSTANT_E": "e",
+  "MATH_CONSTANT_GOLDEN_RATIO": "نسبت طلایی",
+  "MATH_CONSTANT_HELPURL": "https://en.wikipedia.org/wiki/Mathematical_constant",
+  "MATH_CONSTANT_INFINITY": "بی‌نهایت",
+  "MATH_CONSTANT_PI": "π",
+  "MATH_CONSTANT_SQRT1_2": "sqrt(½)",
+  "MATH_CONSTANT_SQRT2": "sqrt(2)",
+  "MATH_CONSTANT_TOOLTIP": "یکی از ثابت‌های رایج را برمی‌گرداند: π (3.141…), e (2.718…), φ (1.618…), sqrt(2) (1.414…), sqrt(½) (0.707…), یا ∞ (بی‌نهایت).",
+  "MATH_CONSTRAIN_HELPURL": "https://en.wikipedia.org/wiki/Clamping_(graphics)",
+  "MATH_CONSTRAIN_TITLE": "محدود کردن %1 کمینه %2 بیشینه %3",
+  "MATH_CONSTRAIN_TOOLTIP": "یک عدد را در بین حدود مشخص (شامل) محدود کنید.",
+  "MATH_DIVISION_SYMBOL": "÷",
+  "MATH_IS_DIVISIBLE_BY": "بخش‌پذیر بر",
+  "MATH_IS_EVEN": "زوج است",
+  "MATH_IS_NEGATIVE": "منفی است",
+  "MATH_IS_ODD": "فرد است",
+  "MATH_IS_POSITIVE": "مثبت است",
+  "MATH_IS_PRIME": "اول است",
+  "MATH_IS_TOOLTIP": "بررسی کنید که آیا عددی زوج، فرد، اول، کامل، مثبت، منفی است یا بر عدد خاصی بخش‌پذیر است. درست یا غلط برمی‌گرداند.",
+  "MATH_IS_WHOLE": "کامل است",
+  "MATH_MODULO_HELPURL": "https://en.wikipedia.org/wiki/Modulo_operation",
+  "MATH_MODULO_TITLE": "باقیمانده %1 ÷ %2",
+  "MATH_MODULO_TOOLTIP": "باقیمانده تقسیم دو عدد را برمی‌گرداند.",
+  "MATH_MULTIPLICATION_SYMBOL": "×",
+  "MATH_NUMBER_HELPURL": "https://en.wikipedia.org/wiki/Number",
+  "MATH_NUMBER_TOOLTIP": "یک عدد.",
+  "MATH_ONLIST_HELPURL": "",
+  "MATH_ONLIST_OPERATOR_AVERAGE": "میانگین فهرست",
+  "MATH_ONLIST_OPERATOR_MAX": "بیشینه فهرست",
+  "MATH_ONLIST_OPERATOR_MEDIAN": "میانه فهرست",
+  "MATH_ONLIST_OPERATOR_MIN": "کمینه فهرست",
+  "MATH_ONLIST_OPERATOR_MODE": "مد فهرست",
+  "MATH_ONLIST_OPERATOR_RANDOM": "عنصر تصادفی فهرست",
+  "MATH_ONLIST_OPERATOR_STD_DEV": "انحراف معیار فهرست",
+  "MATH_ONLIST_OPERATOR_SUM": "مجموع فهرست",
+  "MATH_ONLIST_TOOLTIP_AVERAGE": "میانگین (میانگین حسابی) مقادیر عددی در فهرست را برمی‌گرداند.",
+  "MATH_ONLIST_TOOLTIP_MAX": "بزرگترین عدد در فهرست را برمی‌گرداند.",
+  "MATH_ONLIST_TOOLTIP_MEDIAN": "عدد میانه در فهرست را برمی‌گرداند.",
+  "MATH_ONLIST_TOOLTIP_MIN": "کوچکترین عدد در فهرست را برمی‌گرداند.",
+  "MATH_ONLIST_TOOLTIP_MODE": "فهرستی از رایج‌ترین عنصر(ها) در فهرست را برمی‌گرداند.",
+  "MATH_ONLIST_TOOLTIP_RANDOM": "عنصری تصادفی از فهرست برمی‌گرداند.",
+  "MATH_ONLIST_TOOLTIP_STD_DEV": "انحراف معیار فهرست را برمی‌گرداند.",
+  "MATH_ONLIST_TOOLTIP_SUM": "مجموع همه اعداد در فهرست را برمی‌گرداند.",
+  "MATH_POWER_SYMBOL": "^",
+  "MATH_RANDOM_FLOAT_HELPURL": "https://en.wikipedia.org/wiki/Random_number_generation",
+  "MATH_RANDOM_FLOAT_TITLE_RANDOM": "کسر تصادفی",
+  "MATH_RANDOM_FLOAT_TOOLTIP": "کسری تصادفی بین ۰.۰ (شامل) و ۱.۰ (غیرشامل) برمی‌گرداند.",
+  "MATH_RANDOM_INT_HELPURL": "https://en.wikipedia.org/wiki/Random_number_generation",
+  "MATH_RANDOM_INT_TITLE": "عدد صحیح تصادفی از %1 تا %2",
+  "MATH_RANDOM_INT_TOOLTIP": "عددی صحیح تصادفی بین دو حد مشخص شده (شامل) برمی‌گرداند.",
+  "MATH_ROUND_HELPURL": "https://en.wikipedia.org/wiki/Rounding",
+  "MATH_ROUND_OPERATOR_ROUND": "گرد کردن",
+  "MATH_ROUND_OPERATOR_ROUNDDOWN": "گرد کردن به پایین",
+  "MATH_ROUND_OPERATOR_ROUNDUP": "گرد کردن به بالا",
+  "MATH_ROUND_TOOLTIP": "عددی را به بالا یا پایین گرد کنید.",
+  "MATH_SINGLE_HELPURL": "https://en.wikipedia.org/wiki/Square_root",
+  "MATH_SINGLE_OP_ABSOLUTE": "قدر مطلق",
+  "MATH_SINGLE_OP_EXP": "e^",
+  "MATH_SINGLE_OP_LN": "ln",
+  "MATH_SINGLE_OP_LOG10": "log10",
+  "MATH_SINGLE_OP_NEG": "منفی کردن",
+  "MATH_SINGLE_OP_POW10": "10^",
+  "MATH_SINGLE_OP_ROOT": "جذر",
+  "MATH_SINGLE_TOOLTIP_ABS": "قدر مطلق یک عدد را برمی‌گرداند.",
+  "MATH_SINGLE_TOOLTIP_EXP": "e به توان یک عدد را برمی‌گرداند.",
+  "MATH_SINGLE_TOOLTIP_LN": "لگاریتم طبیعی یک عدد را برمی‌گرداند.",
+  "MATH_SINGLE_TOOLTIP_LOG10": "لگاریتم مبنای ۱۰ یک عدد را برمی‌گرداند.",
+  "MATH_SINGLE_TOOLTIP_NEG": "منفی یک عدد را برمی‌گرداند.",
+  "MATH_SINGLE_TOOLTIP_POW10": "۱۰ به توان یک عدد را برمی‌گرداند.",
+  "MATH_SINGLE_TOOLTIP_ROOT": "جذر یک عدد را برمی‌گرداند.",
+  "MATH_SUBTRACTION_SYMBOL": "-",
+  "MATH_TRIG_ACOS": "acos",
+  "MATH_TRIG_ASIN": "asin",
+  "MATH_TRIG_ATAN": "atan",
+  "MATH_TRIG_COS": "cos",
+  "MATH_TRIG_HELPURL": "https://en.wikipedia.org/wiki/Trigonometric_functions",
+  "MATH_TRIG_SIN": "sin",
+  "MATH_TRIG_TAN": "tan",
+  "MATH_TRIG_TOOLTIP_ACOS": "آرک کسینوس یک عدد را برمی‌گرداند.",
+  "MATH_TRIG_TOOLTIP_ASIN": "آرک سینوس یک عدد را برمی‌گرداند.",
+  "MATH_TRIG_TOOLTIP_ATAN": "آرک تانژانت یک عدد را برمی‌گرداند.",
+  "MATH_TRIG_TOOLTIP_COS": "کسینوس یک درجه (نه رادیان) را برمی‌گرداند.",
+  "MATH_TRIG_TOOLTIP_SIN": "سینوس یک درجه (نه رادیان) را برمی‌گرداند.",
+  "MATH_TRIG_TOOLTIP_TAN": "تانژانت یک درجه (نه رادیان) را برمی‌گرداند.",
+  "NEW_COLOUR_VARIABLE": "ایجاد متغیر رنگ...",
+  "NEW_COLOUR_VARIABLE_TITLE": "نام متغیر رنگ جدید:",
+  "NEW_NUMBER_VARIABLE": "ایجاد متغیر عدد...",
+  "NEW_NUMBER_VARIABLE_TITLE": "نام متغیر عدد جدید:",
+  "NEW_STRING_VARIABLE": "ایجاد متغیر رشته...",
+  "NEW_STRING_VARIABLE_TITLE": "نام متغیر رشته جدید:",
+  "NEW_VARIABLE": "ایجاد متغیر...",
+  "NEW_VARIABLE_NAME": "نام متغیر",
+  "NEW_VARIABLE_TITLE": "نام متغیر جدید:",
+  "PROCEDURES_ALLOW_STATEMENTS": "اجازه دستورات",
+  "PROCEDURES_BEFORE_PARAMS": "با:",
+  "PROCEDURES_CALL_BEFORE_PARAMS": "با:",
+  "PROCEDURES_CALLNORETURN_CALL": "",
+  "PROCEDURES_CALLNORETURN_HELPURL": "https://en.wikipedia.org/wiki/Subroutine",
+  "PROCEDURES_CALLNORETURN_TOOLTIP": "تابع تعریف شده توسط کاربر '%1' را اجرا کنید.",
+  "PROCEDURES_CALLRETURN_CALL": "",
+  "PROCEDURES_CALLRETURN_HELPURL": "https://en.wikipedia.org/wiki/Subroutine",
+  "PROCEDURES_CALLRETURN_TOOLTIP": "تابع تعریف شده توسط کاربر '%1' را اجرا کرده و خروجی آن را استفاده کنید.",
+  "PROCEDURES_CREATE_DO": "ایجاد '%1'",
+  "PROCEDURES_DEF_DUPLICATE_WARNING": "هشدار: این تابع دارای پارامترهای تکراری است.",
+  "PROCEDURES_DEFNORETURN_COMMENT": "این تابع را توضیح دهید...",
+  "PROCEDURES_DEFNORETURN_DO": "",
+  "PROCEDURES_DEFNORETURN_HELPURL": "https://en.wikipedia.org/wiki/Subroutine",
+  "PROCEDURES_DEFNORETURN_PROCEDURE": "کاری انجام دهید",
+  "PROCEDURES_DEFNORETURN_TITLE": "برای",
+  "PROCEDURES_DEFNORETURN_TOOLTIP": "تابعی بدون خروجی ایجاد می‌کند.",
+  "PROCEDURES_DEFRETURN_DO": "",
+  "PROCEDURES_DEFRETURN_HELPURL": "https://en.wikipedia.org/wiki/Subroutine",
+  "PROCEDURES_DEFRETURN_PROCEDURE": "کاری انجام دهید",
+  "PROCEDURES_DEFRETURN_RETURN": "برگردان",
+  "PROCEDURES_DEFRETURN_TITLE": "برای",
+  "PROCEDURES_DEFRETURN_TOOLTIP": "تابعی با خروجی ایجاد می‌کند.",
+  "PROCEDURES_HIGHLIGHT_DEF": "برجسته کردن تعریف تابع",
+  "PROCEDURES_IFRETURN_HELPURL": "http://c2.com/cgi/wiki?GuardClause",
+  "PROCEDURES_IFRETURN_TOOLTIP": "اگر مقداری درست باشد، آنگاه مقدار دوم را برگردانید.",
+  "PROCEDURES_IFRETURN_WARNING": "هشدار: این بلوک تنها در داخل تعریف یک تابع قابل استفاده است.",
+  "PROCEDURES_MUTATORARG_TITLE": "نام ورودی:",
+  "PROCEDURES_MUTATORARG_TOOLTIP": "ورودی به تابع اضافه کنید.",
+  "PROCEDURES_MUTATORCONTAINER_TITLE": "ورودی‌ها",
+  "PROCEDURES_MUTATORCONTAINER_TOOLTIP": "ورودی‌ها را به این تابع اضافه، حذف یا مرتب کنید.",
+  "REDO": "انجام مجدد",
+  "REMOVE_COMMENT": "حذف نظر",
+  "RENAME_VARIABLE": "تغییر نام متغیر...",
+  "RENAME_VARIABLE_MODAL_TITLE": "تغییر نام متغیر",
+  "RENAME_VARIABLE_TITLE": "تغییر نام همه متغیرهای '%1' به:",
+  "TEXT_APPEND_TITLE": "به %1 متن %2 اضافه کن",
+  "TEXT_APPEND_TOOLTIP": "متنی به متغیر '%1' اضافه کنید.",
+  "TEXT_APPEND_VARIABLE": "عنصر",
+  "TEXT_CHANGECASE_OPERATOR_LOWERCASE": "به حروف کوچک",
+  "TEXT_CHANGECASE_OPERATOR_TITLECASE": "به حروف عنوان",
+  "TEXT_CHANGECASE_OPERATOR_UPPERCASE": "به حروف بزرگ",
+  "TEXT_CREATE_JOIN_ITEM_TOOLTIP": "عنصری به متن اضافه کنید.",
+  "TEXT_CREATE_JOIN_TITLE_JOIN": "پیوند",
+  "TEXT_CREATE_JOIN_TOOLTIP": "بخش‌ها را اضافه، حذف یا مرتب کنید تا این بلوک متن را پیکربندی مجدد کنید.",
+  "TEXT_GET_INDEX_FIRST": "اول",
+  "TEXT_GET_INDEX_FROM_END": "حرف # از انتها",
+  "TEXT_GET_INDEX_FROM_START": "حرف #",
+  "TEXT_GET_INDEX_LAST": "آخر",
+  "TEXT_GET_INDEX_RANDOM": "تصادفی",
+  "TEXT_INDEXOF_OPERATOR_FIRST": "یافتن اولین وقوع متن",
+  "TEXT_INDEXOF_OPERATOR_LAST": "یافتن آخرین وقوع متن",
+  "TEXT_INDEXOF_TITLE": "در متن %1 %2 %3",
+  "TEXT_INDEXOF_TOOLTIP": "شاخص اولین/آخرین وقوع متن اول در متن دوم را برمی‌گرداند. اگر متن یافت نشود %1 برمی‌گرداند.",
+  "TEXT_ISEMPTY_TITLE": "%1 خالی است",
+  "TEXT_ISEMPTY_TOOLTIP": "اگر متن ارائه شده خالی باشد درست برمی‌گرداند.",
+  "TEXT_JOIN_TITLE_CREATEWITH": "ایجاد متن با",
+  "TEXT_JOIN_TOOLTIP": "با پیوند دادن تعدادی عنصر، متنی ایجاد کنید.",
+  "TEXT_LENGTH_TITLE": "طول %1",
+  "TEXT_LENGTH_TOOLTIP": "تعداد حروف (شامل فاصله‌ها) در متن ارائه شده را برمی‌گرداند.",
+  "TEXT_TEXT_TOOLTIP": "یک حرف، کلمه یا خط متن.",
+  "TEXT_TRIM_OPERATOR_BOTH": "حذف فاصله‌ها از هر دو طرف",
+  "TEXT_TRIM_OPERATOR_LEFT": "حذف فاصله‌ها از سمت چپ",
+  "TEXT_TRIM_OPERATOR_RIGHT": "حذف فاصله‌ها از سمت راست",
+  "UNDO": "برگردان",
+  "VARIABLE_ALREADY_EXISTS": "متغیری با نام '%1' از قبل وجود دارد.",
+  "VARIABLES_DEFAULT_NAME": "عنصر",
+  "VARIABLES_GET_CREATE_SET": "ایجاد 'تنظیم %1'",
+  "VARIABLES_GET_HELPURL": "https://github.com/google/blockly/wiki/Variables#get",
+  "VARIABLES_GET_TOOLTIP": "مقدار این متغیر را برمی‌گرداند.",
+  "VARIABLES_SET": "تنظیم %1 به %2",
+  "VARIABLES_SET_CREATE_GET": "ایجاد 'گرفتن %1'",
+  "VARIABLES_SET_HELPURL": "https://github.com/google/blockly/wiki/Variables#set",
+  "VARIABLES_SET_TOOLTIP": "این متغیر را برابر با ورودی تنظیم می‌کند.",
+  "BKY_ESP32CAM_FLIP": "📷 تنظیمات صفحه دوربین نوع %1 فعال‌سازی %2",
+  "BKY_ESP32CAM_FLIP_TOOLTIP": "چرخش یا آینه‌ای کردن تصویر دوربین.",
+  "BKY_ESP32CAM_FLIP_TYPE_VFLIP": "چرخش عمودی",
+  "BKY_ESP32CAM_FLIP_TYPE_HMIRROR": "آینه افقی",
+  "BKY_ESP32CAM_FLIP_ENABLE_ON": "روشن",
+  "BKY_ESP32CAM_FLIP_ENABLE_OFF": "خاموش",
+  "BKY_UTIL_RECORD_PLAY_LABEL": "ضبط/پخش مونتاژ بلوک",
+  "BKY_UTIL_RECORD_LABEL": "وضعیت ضبط‌کننده بلوک",
+  "BKY_UTIL_NONBLOCK_LABEL": "تایمرهای غیرمسدودکننده",
+  "BKY_UTIL_RECORD_START": "🔴 شروع ضبط مونتاژ بلوک",
+  "BKY_UTIL_RECORD_START_TOOLTIP": "برای شروع ضبط فرآیند مونتاژ بلوک، روی این بلوک دوبار کلیک کنید.",
+  "BKY_UTIL_RECORD_STOP": "⏹️ توقف ضبط مونتاژ بلوک",
+  "BKY_UTIL_RECORD_STOP_TOOLTIP": "برای توقف ضبط مونتاژ بلوک، روی این بلوک دوبار کلیک کنید.",
+  "BKY_UTIL_RECORD_PLAY": "▶️ پخش مونتاژ بلوک %1",
+  "BKY_UTIL_RECORD_PLAY_TOOLTIP": "برای پخش مونتاژ بلوک ضبط شده، روی این بلوک دوبار کلیک کنید. می‌توانید سرعت پخش را انتخاب کنید.",
+  "BKY_UTIL_RECORD_PLAY_STOP": "⏹️ توقف پخش مونتاژ بلوک",
+  "BKY_UTIL_RECORD_PLAY_STOP_TOOLTIP": "برای توقف پخش مونتاژ بلوک، روی این بلوک دوبار کلیک کنید.",
+  "BKY_UTIL_RECORD_RESET": "🔄 بازنشانی ضبط مونتاژ بلوک",
+  "BKY_UTIL_RECORD_RESET_TOOLTIP": "برای حذف همه ضبط‌های مونتاژ بلوک، روی این بلوک دوبار کلیک کنید.",
+  "BKY_UTIL_RECORD_STATUS": "📊 وضعیت ضبط",
+  "BKY_UTIL_RECORD_STATUS_TOOLTIP": "وضعیت ضبط فعلی را برمی‌گرداند (متوقف/در حال ضبط/در حال پخش). برای خروج به کنسول IDE دوبار کلیک کنید.",
+  "BKY_UTIL_RECORD_EVENT_COUNT": "📊 تعداد رویدادها",
+  "BKY_UTIL_RECORD_EVENT_COUNT_TOOLTIP": "تعداد رویدادهای ضبط شده را برمی‌گرداند. برای خروج به کنسول IDE دوبار کلیک کنید.",
+  "BKY_UTIL_RECORD_DURATION": "📊 زمان کل مونتاژ",
+  "BKY_UTIL_RECORD_DURATION_TOOLTIP": "زمان کل صرف شده برای مونتاژ بلوک را برمی‌گرداند. برای خروج به کنسول IDE دوبار کلیک کنید.",
+  "BKY_UTIL_RECORD_START_TIME": "📊 زمان شروع مونتاژ",
+  "BKY_UTIL_RECORD_START_TIME_TOOLTIP": "زمان شروع مونتاژ بلوک را برمی‌گرداند. برای خروج به کنسول IDE دوبار کلیک کنید.",
+  "BKY_UTIL_RECORD_END_TIME": "📊 زمان پایان مونتاژ",
+  "BKY_UTIL_RECORD_END_TIME_TOOLTIP": "زمان پایان مونتاژ بلوک را برمی‌گرداند. برای خروج به کنسول IDE دوبار کلیک کنید.",
+  "BKY_UTIL_INTERVAL": "هر %1 میلی‌ثانیه اجرا کن",
+  "BKY_UTIL_INTERVAL_TOOLTIP": "بلوک‌های داخلی را به طور مکرر در فاصله زمانی مشخص (میلی‌ثانیه) بدون مسدود کردن اجرا می‌کند.",
+  "BKY_UTIL_STOPWATCH_RESET": "بازنشانی تایمر %1",
+  "BKY_UTIL_STOPWATCH_RESET_TOOLTIP": "تایمر با شناسه مشخص را به ۰ بازنشانی می‌کند.",
+  "BKY_UTIL_STOPWATCH_ELAPSED": "تایمر %1 زمان سپری شده (میلی‌ثانیه)",
+  "BKY_UTIL_STOPWATCH_ELAPSED_TOOLTIP": "زمان سپری شده (میلی‌ثانیه) از آخرین بازنشانی را برمی‌گرداند.",
+  "BKY_UTIL_TIMEOUT": "پس از %1 میلی‌ثانیه یک بار اجرا کن",
+  "BKY_UTIL_TIMEOUT_TOOLTIP": "بلوک‌های داخلی را یک بار پس از زمان مشخص اجرا می‌کند. (غیرمسدودکننده)"
+}

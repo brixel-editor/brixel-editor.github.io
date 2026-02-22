@@ -1,0 +1,126 @@
+{
+  "enabled": true,
+  "popups": [
+    {
+      "id": "welcome-popup",
+      "version": "1.0",
+      "showOnce": true,
+      "width": "500px",
+      "translations": {
+        "ko": {
+          "title": "🎉 환영합니다!",
+          "content": [
+            "<p>브릭셀 웹에디터를 방문해 주셔서 감사합니다.</p>",
+            "<p><strong>새로운 기능:</strong></p>",
+            "<ul>",
+            "<li>24개국 언어파일은 AI로 번역 했습니다. 자국어 번역에 도움 주실 분은 이메일(alphaco@naver.com)로 연락주세요.</li>",
+            "<li>처음 사용자는 로컬에서 컴파일과 업로드를 도와주는 PC-에이전트(2.6.0)를 다운 받으세요. 다운로드를 허용하세요.</li>",
+            "<li>아두이노계열 우노, 나노, 메가 보드와 ESP32계열, 라즈베리파이 피코 계열 보드를 지원합니다.</li>",
+            "<li>안내 메뉴의 <a href=\"https://ai4coding.github.io/\" target=\"_blank\">AI*ROBOT Scratch</a>와 함께 사용하세요.</li>",
+            "<li>데이터 수집 사이트인 <a href=\"https://bowerbird-pro.github.io/\" target=\"_blank\">바우어버드 프로</a>와 함께 사용하세요.</li>",
+            "<li>스웨덴어, 폴란드어, 한글OLED, 360서보모터, 블록조립기록기능, 시리얼통신, 블루투스통신, WiFi통신(스크래치호환), PC-에이전트2.6 업데이트(재설치하세요), 20251227</li>",
+            "<li>로그인 필요 없음, 무료, K-12교육용, 피지컬AI교육에 사용하세요. 브릭셀, 고릴라셀 입출력장치(120+) 모두를 지원합니다.</li>",
+            "<li>현재는 베타테스트 기간입니다. 사용해 보시고 문제점 발견해 알려주세요. SW사용성평가에 참여해 주시면 감사하겠습니다.</li>",
+            "</ul>"
+          ],
+          "buttonText": "확인",
+          "dontShowAgain": "다시 보지 않기"
+        },
+        "en": {
+          "title": "🎉 Welcome!",
+          "content": [
+            "<p>Thank you for visiting Brixel Web Editor.</p>",
+            "<p><strong>New Features:</strong></p>",
+            "<ul>",
+            "<li>24 language files are AI-translated. If you can help with native translation, please contact us by email (alphaco@naver.com).</li>",
+            "<li>First-time users, please download PC Agent (2.6.0) that helps with local compilation and upload. Allow the download.</li>",
+            "<li>Supports Arduino (Uno, Nano, Mega), ESP32, and Raspberry Pi Pico series boards.</li>",
+            "<li>Use together with <a href=\"https://ai4coding.github.io/\" target=\"_blank\">AI*ROBOT Scratch</a> in the Guide menu.</li>",
+            "<li>Use together with <a href=\"https://bowerbird-pro.github.io/\" target=\"_blank\">Bowerbird Pro</a> (Data collection site).</li>",
+            "<li>Swedish, Polish, Korean OLED, 360 servo motor, block assembly recording, serial/Bluetooth/WiFi communication (Scratch compatible), PC Agent 2.6 update (please reinstall), 20251227</li>",
+            "<li>No login required, free, for K-12 education. Supports all Brixel and Gorillacell I/O devices (120+).</li>",
+            "<li>This is currently the beta testing period. We appreciate your participation in the software usability evaluation.</li>",
+            "</ul>"
+          ],
+          "buttonText": "OK",
+          "dontShowAgain": "Don't show again"
+        },
+        "es": {
+          "title": "🎉 ¡Bienvenido!",
+          "content": [
+            "<p>Gracias por visitar el Editor Web de Brixel.</p>",
+            "<p><strong>Nuevas funciones:</strong></p>",
+            "<ul>",
+            "<li>Los archivos de 24 idiomas fueron traducidos por IA. Si puedes ayudar con la traducción nativa, contáctanos por correo electrónico (alphaco@naver.com).</li>",
+            "<li>Los usuarios nuevos deben descargar el Agente de PC (2.6.0) para la compilación y carga local.</li>",
+            "<li>Compatible con placas Arduino (Uno, Nano, Mega), ESP32 y Raspberry Pi Pico.</li>",
+            "<li>Úsalo junto con <a href=\"https://ai4coding.github.io/\" target=\"_blank\">AI*ROBOT Scratch</a> en el menú de Guía.</li>",
+            "<li>Úsalo junto con <a href=\"https://bowerbird-pro.github.io/\" target=\"_blank\">Bowerbird Pro</a> (sitio de recolección de datos).</li>",
+            "<li>Sueco, polaco, OLED coreano, servomotor 360, grabación de ensamblaje de bloques, comunicación serial/Bluetooth, actualización del Agente de PC 2.6 (reinstale por favor), 20251227</li>",
+            "<li>Sin inicio de sesión, gratis, para educación K-12. Soporta todos los dispositivos de E/S de Brixel y Gorillacell (120+).</li>",
+            "<li>Actualmente en período de prueba beta. Agradecemos su participación en la evaluación de usabilidad del software.</li>",
+            "</ul>"
+          ],
+          "buttonText": "Aceptar",
+          "dontShowAgain": "No mostrar de nuevo"
+        },
+        "ja": {
+          "title": "🎉 ようこそ!",
+          "content": [
+            "<p>ブリクセルウェブエディタをご利用いただきありがとうございます。</p>",
+            "<p><strong>新機能:</strong></p>",
+            "<ul>",
+            "<li>24か国語のファイルはAIによって翻訳されました。母国語の翻訳に協力していただける方は、メール(alphaco@naver.com)でご連絡ください。</li>",
+            "<li>初めての方は、ローカルでのコンパイルとアップ로드をサポートするPCエージェント(2.6.0)をダウンロードしてください。</li>",
+            "<li>Arduino (Uno, Nano, Mega)、ESP32、Raspberry Pi Picoシリーズを完全にサポートしています。</li>",
+            "<li>ガイドメニューの<a href=\"https://ai4coding.github.io/\" target=\"_blank\">AI*ROBOT Scratch</a>と一緒に使用してください。</li>",
+            "<li>データ収集サイト<a href=\"https://bowerbird-pro.github.io/\" target=\"_blank\">Bowerbird Pro</a>と一緒に使用してください。</li>",
+            "<li>スウェーデン語、ポーランド語、韓国語OLED、360サーボモーター、ブロック組立記録機能、シリアル/Bluetooth通信、PCエージェント2.6アップデート（再インストールしてください）、20251227</li>",
+            "<li>現在ベータテスト期間中です。ソフトウェアユーザビリティ評価へのご参加をお願いいたします。</li>",
+            "</ul>"
+          ],
+          "buttonText": "OK",
+          "dontShowAgain": "今後表示しない"
+        },
+        "zh": {
+          "title": "🎉 欢迎！",
+          "content": [
+            "<p>感谢您访问Brixel网页编辑器。</p>",
+            "<p><strong>新功能：</strong></p>",
+            "<ul>",
+            "<li>24种语言文件由AI翻译完成。如能协助本地语言翻译，请通过电子邮件联系我们。(alphaco@naver.com)</li>",
+            "<li>首次使用者请下载帮助本地编译和上传的PC代理程序(2.6.0)，并允许下载。</li>",
+            "<li>完全支持Arduino Uno、Nano、Mega以及ESP32、Raspberry Pi Pico系列开发板。</li>",
+            "<li>请与指南菜单中的<a href=\"https://ai4coding.github.io/\" target=\"_blank\">AI*ROBOT Scratch</a>一起使用。</li>",
+            "<li>请与数据采集网站 <a href=\"https://bowerbird-pro.github.io/\" target=\"_blank\">Bowerbird Pro</a> 一起使用。</li>",
+            "<li>瑞典语、波兰语、韩文OLED、360舵机、积木组装记录功能、串口/蓝牙通信、PC代理2.6更新（请重新安装），20251227</li>",
+            "<li>无需登录、免费、适用于 K-12 教育。支持所有 Brixel 和 Gorillacell I/O 设备 (120+)。</li>",
+            "<li>目前处于测试阶段。感谢您参与软件可用性评估。</li>",
+            "</ul>"
+          ],
+          "buttonText": "确定",
+          "dontShowAgain": "不再显示"
+        },
+        "ar": {
+          "title": "🎉 مرحباً!",
+          "content": [
+            "<p>شكراً لزيارتك محرر Brixel الإلكتروني.</p>",
+            "<p><strong>ميزات جديدة:</strong></p>",
+            "<ul>",
+            "<li>تمت ترجمة ملفات 24 لغة بواسطة الذكاء الاصطناعي. إذا كنت تستطيع المساعدة في الترجمة، يرجى التواصل عبر البريد الإلكتروني (alphaco@naver.com).</li>",
+            "<li>يُرجى من المستخدمين الجدد تنزيل وكيل الكمبيوتر (2.6.0) الذي يساعد في التجميع والتحميل المحلي.</li>",
+            "<li>يدعم لوحات Arduino (Uno, Nano, Mega) و ESP32 و Raspberry Pi Pico.</li>",
+            "<li>استخدمه مع <a href=\"https://ai4coding.github.io/\" target=\"_blank\">AI*ROBOT Scratch</a> في قائمة الدليل.</li>",
+            "<li>استخدمه مع <a href=\"https://bowerbird-pro.github.io/\" target=\"_blank\">Bowerbird Pro</a> (موقع جمع البيانات).</li>",
+            "<li>السويدية، البولندية، OLED الكورية، محرك سيرفو 360، وظيفة تسجيل تجميع الكتل، الاتصال التسلسلي/البلوتوث، تحديث وكيل الكمبيوتر 2.6 (يرجى إعادة التثبيت)، 20251227</li>",
+            "<li>لا يتطلب تسجيل دخول، مجاني، للتعليم K-12. يدعم جميع أجهزة Brixel و Gorillacell I/O (+120).</li>",
+            "<li>نحن حالياً في فترة الاختبار التجريبي. نقدر مشاركتك في تقييم قابلية استخدام البرنامج.</li>",
+            "</ul>"
+          ],
+          "buttonText": "حسناً",
+          "dontShowAgain": "لا تظهر مرة أخرى"
+        }
+      }
+    }
+  ]
+}
