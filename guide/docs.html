@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brixel Block Coding Guide</title>
+<meta name="description" content="브릭셀 블록코딩 에디터 공식 가이드 - 350+ 블록, 하드웨어 입출력 장치 사용법">
+<link rel="icon" href="../brixel-logo.svg" type="image/svg+xml">
+<style>
+/* ============================================================
+   Brixel Docs — Inline CSS
+   ============================================================ */
+
+/* --- Reset & Variables --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --docs-primary: #4F46E5;
+  --docs-primary-light: #6366F1;
+  --docs-primary-bg: #EEF2FF;
+  --docs-bg: #F9FAFB;
+  --docs-surface: #FFFFFF;
+  --docs-text: #1F2937;
+  --docs-text-secondary: #6B7280;
+  --docs-border: #E5E7EB;
+  --docs-border-light: #F3F4F6;
+  --docs-sidebar-width: 260px;
+  --docs-header-height: 56px;
+  --docs-code-bg: #1E293B;
+  --docs-code-text: #E2E8F0;
+  --docs-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  --docs-shadow-lg: 0 4px 12px rgba(0,0,0,0.1);
+  --docs-radius: 8px;
+  --docs-radius-sm: 4px;
+  --docs-transition: 0.2s ease;
+}
+
+body.dark-mode {
+  --docs-primary: #818CF8;
+  --docs-primary-light: #A5B4FC;
+  --docs-primary-bg: #1E1B4B;
+  --docs-bg: #0F172A;
+  --docs-surface: #1E293B;
+  --docs-text: #E2E8F0;
+  --docs-text-secondary: #94A3B8;
+  --docs-border: #334155;
+  --docs-border-light: #1E293B;
+  --docs-code-bg: #0F172A;
+  --docs-code-text: #E2E8F0;
+  --docs-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  --docs-shadow-lg: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+html { font-size: 15px; scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans KR', sans-serif;
+  background: var(--docs-bg);
+  color: var(--docs-text);
+  line-height: 1.6;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* --- Header --- */
+.docs-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--docs-header-height);
+  background: var(--docs-surface);
+  border-bottom: 1px solid var(--docs-border);
+  display: flex; align-items: center;
+  padding: 0 16px;
+  box-shadow: var(--docs-shadow);
+}
+.docs-header-logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; color: var(--docs-text);
+  font-weight: 700; font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.docs-header-logo img { height: 28px; width: auto; object-fit: contain; }
+.docs-header-logo span { white-space: nowrap; }
+
+.docs-header-search {
+  flex: 1; max-width: 400px; margin: 0 20px; position: relative;
+}
+.docs-header-search input {
+  width: 100%; padding: 7px 12px 7px 34px;
+  border: 1px solid var(--docs-border); border-radius: 20px;
+  background: var(--docs-bg); color: var(--docs-text);
+  font-size: 0.87rem; outline: none; transition: border var(--docs-transition);
+}
+.docs-header-search input:focus { border-color: var(--docs-primary); }
+.docs-header-search input::placeholder { color: var(--docs-text-secondary); }
+.docs-header-search-icon {
+  position: absolute; left: 11px; top: 50%; transform: translateY(-50%);
+  color: var(--docs-text-secondary); font-size: 0.9rem; pointer-events: none;
+}
+.docs-search-results {
+  display: none; position: absolute; top: 100%; left: 0; right: 0;
+  margin-top: 4px; background: var(--docs-surface); border: 1px solid var(--docs-border);
+  border-radius: var(--docs-radius); box-shadow: var(--docs-shadow-lg);
+  max-height: 320px; overflow-y: auto; z-index: 200;
+}
+.docs-search-results.active { display: block; }
+.docs-search-item {
+  padding: 8px 14px; cursor: pointer; display: flex; align-items: center; gap: 8px;
+  font-size: 0.85rem; border-bottom: 1px solid var(--docs-border-light);
+}
+.docs-search-item:hover { background: var(--docs-primary-bg); }
+.docs-search-item .badge {
+  font-size: 0.7rem; padding: 2px 6px; border-radius: 4px;
+  color: #fff; flex-shrink: 0; white-space: nowrap;
+}
+
+.docs-header-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-shrink: 0; }
+.docs-btn-icon {
+  width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--docs-border);
+  background: var(--docs-bg); cursor: pointer; display: flex; align-items: center;
+  justify-content: center; font-size: 1.1rem; transition: all var(--docs-transition);
+  color: var(--docs-text);
+}
+.docs-btn-icon:hover { background: var(--docs-primary-bg); border-color: var(--docs-primary); }
+.docs-lang-toggle { font-size: 0.75rem; font-weight: 700; letter-spacing: -0.5px; }
+.docs-menu-toggle { display: none; }
+
+/* --- Layout --- */
+.docs-layout {
+  display: flex;
+  margin-top: var(--docs-header-height);
+  height: calc(100vh - var(--docs-header-height));
+}
+
+/* --- Sidebar --- */
+.docs-sidebar {
+  width: var(--docs-sidebar-width); flex-shrink: 0;
+  background: var(--docs-surface);
+  border-right: 1px solid var(--docs-border);
+  overflow-y: auto; overflow-x: hidden;
+  padding: 12px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--docs-border) transparent;
+}
+.docs-sidebar::-webkit-scrollbar { width: 4px; }
+.docs-sidebar::-webkit-scrollbar-thumb { background: var(--docs-border); border-radius: 4px; }
+
+.docs-nav-home {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 16px; cursor: pointer;
+  font-size: 0.87rem; font-weight: 600;
+  color: var(--docs-primary);
+  border-bottom: 1px solid var(--docs-border);
+  margin-bottom: 4px;
+  transition: all var(--docs-transition);
+  user-select: none;
+}
+.docs-nav-home:hover { background: var(--docs-primary-bg); }
+.docs-nav-home .docs-nav-icon { font-size: 1.1rem; }
+
+.docs-nav-group-title {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  color: var(--docs-text-secondary); padding: 16px 16px 6px;
+  letter-spacing: 0.5px;
+}
+.docs-nav-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 16px; cursor: pointer;
+  font-size: 0.87rem; color: var(--docs-text);
+  border-left: 3px solid transparent;
+  transition: all var(--docs-transition);
+  user-select: none;
+}
+.docs-nav-item:hover { background: var(--docs-primary-bg); }
+.docs-nav-item.active {
+  background: var(--docs-primary-bg);
+  border-left-color: var(--docs-primary);
+  color: var(--docs-primary);
+  font-weight: 600;
+}
+.docs-nav-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.docs-nav-icon { font-size: 1rem; flex-shrink: 0; width: 20px; text-align: center; }
+.docs-nav-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* --- Content Area --- */
+.docs-content {
+  flex: 1; overflow-y: auto; padding: 28px 36px 60px;
+  scroll-behavior: smooth;
+}
+.docs-content::-webkit-scrollbar { width: 6px; }
+.docs-content::-webkit-scrollbar-thumb { background: var(--docs-border); border-radius: 4px; }
+
+/* --- Welcome Page --- */
+.docs-welcome { max-width: 900px; }
+.docs-welcome h1 {
+  font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--docs-primary), #EC4899);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.docs-welcome .subtitle {
+  color: var(--docs-text-secondary); font-size: 1rem; margin-bottom: 28px;
+}
+.docs-welcome-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;
+}
+.docs-welcome-card {
+  background: var(--docs-surface); border: 1px solid var(--docs-border);
+  border-radius: var(--docs-radius); padding: 20px;
+  cursor: pointer; transition: all var(--docs-transition);
+  box-shadow: var(--docs-shadow);
+}
+.docs-welcome-card:hover { transform: translateY(-2px); box-shadow: var(--docs-shadow-lg); border-color: var(--docs-primary); }
+.docs-welcome-card h3 { font-size: 1rem; margin-bottom: 4px; }
+.docs-welcome-card p { font-size: 0.82rem; color: var(--docs-text-secondary); margin-bottom: 12px; }
+.docs-welcome-card-items {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.docs-welcome-chip {
+  font-size: 0.72rem; padding: 3px 8px; border-radius: 12px;
+  background: var(--docs-bg); color: var(--docs-text-secondary);
+  border: 1px solid var(--docs-border);
+}
+
+/* --- Section Page --- */
+.docs-section { max-width: 900px; }
+.docs-section-header {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 8px;
+}
+.docs-section-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 20px; font-weight: 700;
+  font-size: 1.1rem; color: #fff;
+}
+.docs-section-badge .icon { font-size: 1.2rem; }
+.docs-section-desc {
+  color: var(--docs-text-secondary); font-size: 0.9rem; margin-bottom: 24px;
+}
+
+/* Hardware Image Grid */
+.docs-hw-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px; margin-bottom: 28px;
+}
+.docs-hw-card {
+  background: var(--docs-surface); border: 1px solid var(--docs-border);
+  border-radius: var(--docs-radius); overflow: hidden;
+  cursor: pointer; transition: all var(--docs-transition);
+}
+.docs-hw-card:hover { box-shadow: var(--docs-shadow-lg); transform: translateY(-1px); }
+.docs-hw-card img {
+  width: 100%; aspect-ratio: 1; object-fit: contain;
+  background: #f8f8f8; padding: 6px;
+}
+body.dark-mode .docs-hw-card img { background: #263040; }
+.docs-hw-card .label {
+  padding: 6px 8px; font-size: 0.72rem; text-align: center;
+  border-top: 1px solid var(--docs-border); color: var(--docs-text-secondary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Subsection */
+.docs-subsection { margin-bottom: 28px; }
+.docs-subsection-title {
+  font-size: 1rem; font-weight: 700; margin-bottom: 12px;
+  padding-bottom: 6px; border-bottom: 2px solid var(--docs-border);
+}
+
+/* Block Table */
+.docs-block-table {
+  width: 100%; border-collapse: collapse; margin-bottom: 20px;
+  font-size: 0.85rem;
+}
+.docs-block-table thead th {
+  background: var(--docs-bg); padding: 8px 12px;
+  text-align: left; font-weight: 600; font-size: 0.78rem;
+  text-transform: uppercase; color: var(--docs-text-secondary);
+  border-bottom: 2px solid var(--docs-border);
+  position: sticky; top: 0; z-index: 1;
+}
+.docs-block-table tbody tr { border-bottom: 1px solid var(--docs-border-light); }
+.docs-block-table tbody tr:hover { background: var(--docs-primary-bg); }
+.docs-block-table td { padding: 8px 12px; vertical-align: top; }
+.docs-block-table .block-name {
+  font-weight: 600; white-space: nowrap; color: var(--docs-text);
+}
+.docs-block-table .block-id {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.75rem; color: var(--docs-text-secondary);
+  display: block; margin-top: 2px;
+}
+.docs-block-table .block-params {
+  display: flex; flex-wrap: wrap; gap: 4px;
+}
+.docs-block-table .param-chip {
+  font-family: monospace; font-size: 0.72rem;
+  background: var(--docs-bg); padding: 1px 6px;
+  border-radius: 3px; border: 1px solid var(--docs-border);
+  color: var(--docs-primary);
+}
+.docs-block-table .block-output {
+  font-family: monospace; font-size: 0.75rem;
+  background: #DCFCE7; color: #166534; padding: 1px 6px;
+  border-radius: 3px;
+}
+body.dark-mode .docs-block-table .block-output {
+  background: #14532D; color: #86EFAC;
+}
+.docs-block-table .block-img-cell { min-width: 120px; text-align: left; vertical-align: middle; overflow: visible; }
+.docs-block-img {
+  max-width: 240px; max-height: 48px; border-radius: 4px;
+  cursor: pointer; transition: transform 0.2s ease;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+  transform-origin: left center;
+}
+.docs-block-img:hover { transform: scale(2); z-index: 100; position: relative; }
+
+/* Block Image Placeholder */
+.docs-block-placeholder {
+  width: 80px; height: 32px; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem; color: #fff; font-weight: 600;
+  opacity: 0.7;
+}
+
+/* Code Block */
+.docs-code-block {
+  background: var(--docs-code-bg); color: var(--docs-code-text);
+  border-radius: var(--docs-radius); padding: 14px 18px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.82rem; line-height: 1.5;
+  overflow-x: auto; margin-bottom: 16px;
+  position: relative;
+}
+.docs-code-block .code-label {
+  position: absolute; top: 6px; right: 10px;
+  font-size: 0.65rem; color: #64748B; text-transform: uppercase;
+}
+.docs-code-block .kw { color: #C084FC; }
+.docs-code-block .fn { color: #67E8F9; }
+.docs-code-block .str { color: #86EFAC; }
+.docs-code-block .num { color: #FCD34D; }
+.docs-code-block .cmt { color: #64748B; font-style: italic; }
+
+/* Tips */
+.docs-tips {
+  background: var(--docs-primary-bg); border-left: 4px solid var(--docs-primary);
+  border-radius: 0 var(--docs-radius) var(--docs-radius) 0;
+  padding: 12px 16px; margin-bottom: 20px;
+}
+.docs-tips-title {
+  font-size: 0.82rem; font-weight: 700; color: var(--docs-primary);
+  margin-bottom: 4px;
+}
+.docs-tips ul { list-style: none; padding: 0; }
+.docs-tips li {
+  font-size: 0.82rem; padding: 2px 0; color: var(--docs-text-secondary);
+}
+.docs-tips li::before { content: '💡 '; }
+
+/* --- Lightbox --- */
+.docs-lightbox {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.85); align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+.docs-lightbox.active { display: flex; }
+.docs-lightbox img {
+  max-width: 90vw; max-height: 85vh; border-radius: var(--docs-radius);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.docs-lightbox-caption {
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  color: #fff; font-size: 0.9rem; background: rgba(0,0,0,0.6);
+  padding: 6px 16px; border-radius: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .docs-menu-toggle { display: flex; }
+  .docs-sidebar {
+    position: fixed; top: var(--docs-header-height); left: 0; bottom: 0;
+    z-index: 90; transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: var(--docs-shadow-lg);
+  }
+  .docs-sidebar.open { transform: translateX(0); }
+  .docs-sidebar-overlay {
+    display: none; position: fixed; inset: 0; z-index: 80;
+    background: rgba(0,0,0,0.4);
+    top: var(--docs-header-height);
+  }
+  .docs-sidebar-overlay.active { display: block; }
+  .docs-content { padding: 20px 16px 60px; }
+  .docs-welcome-grid { grid-template-columns: 1fr; }
+  .docs-header-search { max-width: 200px; margin: 0 10px; }
+  .docs-header-logo span { display: none; }
+  .docs-hw-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .docs-header-search { display: none; }
+  .docs-block-table { font-size: 0.78rem; }
+  .docs-block-table td, .docs-block-table th { padding: 6px 8px; }
+}
+
+/* --- Scrollbar & Misc --- */
+::selection { background: var(--docs-primary); color: #fff; }
+a { color: var(--docs-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Back to top */
+.docs-back-top {
+  position: fixed; bottom: 20px; right: 20px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--docs-primary); color: #fff;
+  border: none; cursor: pointer; font-size: 1.2rem;
+  display: none; align-items: center; justify-content: center;
+  box-shadow: var(--docs-shadow-lg); z-index: 50;
+  transition: all var(--docs-transition);
+}
+.docs-back-top:hover { transform: scale(1.1); }
+.docs-back-top.visible { display: flex; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="docs-header">
+  <button class="docs-btn-icon docs-menu-toggle" id="menuToggle" title="메뉴">☰</button>
+  <a href="https://brixel-editor.github.io/" class="docs-header-logo">
+    <img src="../brixel-logo.svg" alt="Brixel">
+    <span>Brixel Docs</span>
+  </a>
+  <div class="docs-header-search">
+    <span class="docs-header-search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="블록 검색..." autocomplete="off">
+    <div class="docs-search-results" id="searchResults"></div>
+  </div>
+  <div class="docs-header-actions">
+    <button class="docs-btn-icon docs-lang-toggle" id="langToggle" title="한국어/English">한/EN</button>
+    <button class="docs-btn-icon" id="darkModeToggle" title="다크모드">🌙</button>
+    <a href="https://brixel-editor.github.io/" class="docs-btn-icon" id="homeLink" title="에디터로 돌아가기">🏠</a>
+  </div>
+</header>
+
+<!-- Layout -->
+<div class="docs-layout">
+  <!-- Sidebar -->
+  <nav class="docs-sidebar" id="sidebar"></nav>
+  <div class="docs-sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Content -->
+  <main class="docs-content" id="content"></main>
+</div>
+
+<!-- Lightbox -->
+<div class="docs-lightbox" id="lightbox">
+  <img id="lightboxImg" src="" alt="">
+  <div class="docs-lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- Back to top -->
+<button class="docs-back-top" id="backTop" title="맨 위로">↑</button>
+
+<!-- Data -->
+<script id="docsDataScript"></script>
+<script>
+  (function() {
+    var lang = localStorage.getItem('brixel-docs-lang') || 'ko';
+    var s = document.getElementById('docsDataScript');
+    s.src = lang === 'en' ? 'docs-data-en.js' : 'docs-data.js';
+    s.onload = function() {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          window.brixelDocs = new BrixelDocs();
+          window.brixelDocs.init();
+        });
+      } else {
+        window.brixelDocs = new BrixelDocs();
+        window.brixelDocs.init();
+      }
+    };
+  })();
+</script>
+
+<!-- App -->
+<script>
+/* ============================================================
+   BrixelDocs — SPA Controller
+   ============================================================ */
+class BrixelDocs {
+  constructor() {
+    this.currentSection = null;
+    this.renderedSections = {};
+    this.allBlocks = [];  // for search index
+    this.currentLang = localStorage.getItem('brixel-docs-lang') || 'ko';
+    this._uiStrings = {
+      ko: {
+        mainScreen: '메인 화면',
+        tipsTitle: '팁 & 참고',
+        thBlockImage: '블록 이미지',
+        thBlock: '블록',
+        thParams: '파라미터',
+        thDesc: '설명',
+        welcomeSubtitle: '350+ 블록과 다양한 하드웨어 모듈을 활용한 아두이노 블록코딩 가이드',
+        welcomeSW: '프로그래밍 기초 블록 — 제어, 논리, 수학, 변수, 함수 등',
+        welcomeHW: '센서, 모터, 디스플레이 등 하드웨어 입출력 장치 안내',
+        searchPlaceholder: '블록 검색...',
+        noResults: '검색 결과 없음',
+        backToTop: '맨 위로',
+        darkMode: '다크모드',
+        backToEditor: '에디터로 돌아가기',
+        menu: '메뉴'
+      },
+      en: {
+        mainScreen: 'Main Screen',
+        tipsTitle: 'Tips & Notes',
+        thBlockImage: 'Block Image',
+        thBlock: 'Block',
+        thParams: 'Parameters',
+        thDesc: 'Description',
+        welcomeSubtitle: 'Arduino block coding guide with 350+ blocks and various hardware modules',
+        welcomeSW: 'Basic programming blocks — Control, Logic, Math, Variables, Functions, etc.',
+        welcomeHW: 'Hardware I/O device guide — Sensors, Motors, Displays, etc.',
+        searchPlaceholder: 'Search blocks...',
+        noResults: 'No results found',
+        backToTop: 'Back to top',
+        darkMode: 'Dark mode',
+        backToEditor: 'Back to editor',
+        menu: 'Menu'
+      }
+    };
+  }
+
+  _t(key) {
+    const lang = this.currentLang || 'ko';
+    return (this._uiStrings[lang] && this._uiStrings[lang][key]) || this._uiStrings['ko'][key] || key;
+  }
+
+  /* ── Init ── */
+  init() {
+    this.els = {
+      sidebar: document.getElementById('sidebar'),
+      content: document.getElementById('content'),
+      searchInput: document.getElementById('searchInput'),
+      searchResults: document.getElementById('searchResults'),
+      lightbox: document.getElementById('lightbox'),
+      lightboxImg: document.getElementById('lightboxImg'),
+      lightboxCaption: document.getElementById('lightboxCaption'),
+      menuToggle: document.getElementById('menuToggle'),
+      sidebarOverlay: document.getElementById('sidebarOverlay'),
+      darkModeToggle: document.getElementById('darkModeToggle'),
+      langToggle: document.getElementById('langToggle'),
+      backTop: document.getElementById('backTop'),
+      homeLink: document.getElementById('homeLink'),
+    };
+
+    this.updateUIStrings();
+    this.buildNavigation();
+    this.buildSearchIndex();
+    this.initEventListeners();
+    this.restoreDarkMode();
+
+    // Route from hash or show welcome
+    const hash = location.hash.slice(1);
+    if (hash && DOCS_DATA[hash]) {
+      this.navigateTo(hash);
+    } else {
+      this.showWelcome();
+    }
+  }
+
+  /* ── Navigation ── */
+  buildNavigation() {
+    let html = `
+      <div class="docs-nav-home" id="navHome">
+        <span class="docs-nav-icon">🏠</span>
+        <span class="docs-nav-label">${this._t('mainScreen')}</span>
+      </div>`;
+    DOCS_NAV.forEach(group => {
+      html += `<div class="docs-nav-group-title">${group.title}</div>`;
+      group.items.forEach(item => {
+        html += `
+          <div class="docs-nav-item" data-section="${item.id}">
+            <span class="docs-nav-dot" style="background:${item.color}"></span>
+            <span class="docs-nav-icon">${item.icon}</span>
+            <span class="docs-nav-label">${item.name}</span>
+          </div>`;
+      });
+    });
+    this.els.sidebar.innerHTML = html;
+
+    // Bind home button (re-bind after innerHTML rebuild)
+    document.getElementById('navHome').addEventListener('click', () => {
+      location.hash = '';
+      this.showWelcome();
+      this.toggleSidebar(false);
+    });
+  }
+
+  /* ── Search Index ── */
+  buildSearchIndex() {
+    this.allBlocks = [];
+    Object.entries(DOCS_DATA).forEach(([sectionId, section]) => {
+      const addBlocks = (blocks) => {
+        if (!blocks) return;
+        blocks.forEach(b => {
+          this.allBlocks.push({
+            id: b.id,
+            name: b.name,
+            description: b.description || '',
+            sectionId: sectionId,
+            sectionTitle: section.title,
+            color: section.color
+          });
+        });
+      };
+      addBlocks(section.blocks);
+      if (section.subsections) {
+        section.subsections.forEach(sub => addBlocks(sub.blocks));
+      }
+    });
+  }
+
+  /* ── Events ── */
+  initEventListeners() {
+    // Sidebar clicks (event delegation — survives innerHTML rebuild)
+    this.els.sidebar.addEventListener('click', e => {
+      const item = e.target.closest('.docs-nav-item');
+      if (item) this.navigateTo(item.dataset.section);
+    });
+
+    // Search
+    this.els.searchInput.addEventListener('input', e => this.handleSearch(e.target.value));
+    this.els.searchInput.addEventListener('focus', () => {
+      if (this.els.searchInput.value.length >= 1) {
+        this.els.searchResults.classList.add('active');
+      }
+    });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.docs-header-search')) {
+        this.els.searchResults.classList.remove('active');
+      }
+    });
+
+    // Dark mode
+    this.els.darkModeToggle.addEventListener('click', () => this.toggleDarkMode());
+
+    // Language toggle
+    this.els.langToggle.addEventListener('click', () => {
+      const newLang = this.currentLang === 'ko' ? 'en' : 'ko';
+      this.applyLang(newLang);
+    });
+
+    // Mobile menu
+    this.els.menuToggle.addEventListener('click', () => this.toggleSidebar());
+    this.els.sidebarOverlay.addEventListener('click', () => this.toggleSidebar(false));
+
+    // Lightbox
+    this.els.lightbox.addEventListener('click', () => this.closeLightbox());
+
+    // Back to top
+    this.els.content.addEventListener('scroll', () => {
+      this.els.backTop.classList.toggle('visible', this.els.content.scrollTop > 300);
+    });
+    this.els.backTop.addEventListener('click', () => {
+      this.els.content.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Hash change
+    window.addEventListener('hashchange', () => {
+      const hash = location.hash.slice(1);
+      if (hash && DOCS_DATA[hash] && hash !== this.currentSection) {
+        this.navigateTo(hash);
+      }
+    });
+
+    // Welcome card clicks
+    this.els.content.addEventListener('click', e => {
+      const card = e.target.closest('.docs-welcome-card[data-section]');
+      if (card) this.navigateTo(card.dataset.section);
+
+      const img = e.target.closest('.docs-hw-card img, .docs-block-img');
+      if (img) this.openLightbox(img.src, img.alt);
+    });
+  }
+
+  /* ── Navigate ── */
+  navigateTo(sectionId) {
+    if (!DOCS_DATA[sectionId]) return;
+    this.currentSection = sectionId;
+    location.hash = sectionId;
+
+    // Active state
+    this.els.sidebar.querySelectorAll('.docs-nav-item').forEach(el => {
+      el.classList.toggle('active', el.dataset.section === sectionId);
+    });
+
+    // Lazy render
+    if (!this.renderedSections[sectionId]) {
+      this.renderedSections[sectionId] = this.renderSection(sectionId);
+    }
+    this.els.content.innerHTML = '';
+    this.els.content.appendChild(this.renderedSections[sectionId]);
+    this.els.content.scrollTop = 0;
+
+    // Close mobile sidebar
+    this.toggleSidebar(false);
+    this.els.searchInput.value = '';
+    this.els.searchResults.classList.remove('active');
+  }
+
+  /* ── Render Section ── */
+  renderSection(sectionId) {
+    const data = DOCS_DATA[sectionId];
+    const frag = document.createElement('div');
+    frag.className = 'docs-section';
+
+    let html = '';
+
+    // Header badge
+    html += `
+      <div class="docs-section-header">
+        <span class="docs-section-badge" style="background:${data.color}">
+          <span class="icon">${this._getIcon(sectionId)}</span>
+          ${data.title}
+        </span>
+      </div>
+      <p class="docs-section-desc">${data.description}</p>`;
+
+    // Hardware images (if any)
+    if (data.hardwareImages && data.hardwareImages.length > 0) {
+      html += '<div class="docs-hw-grid">';
+      data.hardwareImages.forEach(img => {
+        html += `
+          <div class="docs-hw-card">
+            <img src="${img.src}" alt="${img.label}" loading="lazy"
+                 onerror="this.style.display='none'">
+            <div class="label">${img.label}</div>
+          </div>`;
+      });
+      html += '</div>';
+    }
+
+    // Blocks — with or without subsections
+    if (data.subsections) {
+      data.subsections.forEach(sub => {
+        html += `
+          <div class="docs-subsection">
+            <h3 class="docs-subsection-title">${sub.label}</h3>
+            ${this._renderBlockTable(sub.blocks, data.color)}
+          </div>`;
+      });
+    } else if (data.blocks && data.blocks.length > 0) {
+      html += this._renderBlockTable(data.blocks, data.color);
+    }
+
+    // Code example (if any)
+    if (data.codeExample) {
+      html += `
+        <div class="docs-code-block">
+          <span class="code-label">Arduino</span>
+          <pre>${data.codeExample}</pre>
+        </div>`;
+    }
+
+    // Tips
+    if (data.tips && data.tips.length > 0) {
+      html += `
+        <div class="docs-tips">
+          <div class="docs-tips-title">${this._t('tipsTitle')}</div>
+          <ul>${data.tips.map(t => `<li>${t}</li>`).join('')}</ul>
+        </div>`;
+    }
+
+    frag.innerHTML = html;
+    return frag;
+  }
+
+  /* ── Block Table HTML ── */
+  _renderBlockTable(blocks, color) {
+    if (!blocks || blocks.length === 0) return '';
+    let html = `
+      <table class="docs-block-table">
+        <thead>
+          <tr>
+            <th style="width:auto">${this._t('thBlockImage')}</th>
+            <th>${this._t('thBlock')}</th>
+            <th>${this._t('thParams')}</th>
+            <th>${this._t('thDesc')}</th>
+          </tr>
+        </thead>
+        <tbody>`;
+
+    blocks.forEach(b => {
+      // Block image: section "display-a" -> file prefix "display_a"
+      const fileSection = (this.currentSection || '').replace(/-/g, '_');
+      const imgDir = this.currentLang === 'en' ? 'block_images_en' : 'block_images_ko';
+      const imgPath = `${imgDir}/${fileSection}_${b.id}.svg`;
+
+      // Params
+      const params = b.params
+        ? b.params.map(p => `<span class="param-chip">${p}</span>`).join('')
+        : '<span style="color:var(--docs-text-secondary);font-size:0.78rem">—</span>';
+
+      // Output badge
+      const output = b.output
+        ? ` <span class="block-output">→ ${b.output}</span>`
+        : '';
+
+      html += `
+        <tr>
+          <td class="block-img-cell">
+            <img class="docs-block-img" src="${imgPath}" alt="${b.id}" loading="lazy"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+            ><div class="docs-block-placeholder" style="background:${color};display:none">${b.id}</div>
+          </td>
+          <td>
+            <span class="block-name">${b.name}</span>
+            <span class="block-id">${b.id}</span>
+          </td>
+          <td><div class="block-params">${params}</div></td>
+          <td>${b.description || ''}${output}</td>
+        </tr>`;
+    });
+
+    html += '</tbody></table>';
+    return html;
+  }
+
+  /* ── Welcome Page ── */
+  showWelcome() {
+    this.currentSection = null;
+    // Remove active from nav
+    this.els.sidebar.querySelectorAll('.docs-nav-item').forEach(el => el.classList.remove('active'));
+
+    let html = `
+      <div class="docs-welcome">
+        <h1>Brixel Block Coding Guide</h1>
+        <p class="subtitle">${this._t('welcomeSubtitle')}</p>
+        <div class="docs-welcome-grid">`;
+
+    DOCS_NAV.forEach(group => {
+      const isHW = group.group === 'hardware';
+      html += `
+        <div class="docs-welcome-card" data-section="${group.items[0].id}">
+          <h3>${group.title}</h3>
+          <p>${isHW ? this._t('welcomeHW') : this._t('welcomeSW')}</p>
+          <div class="docs-welcome-card-items">
+            ${group.items.map(i => `<span class="docs-welcome-chip" style="border-color:${i.color}">${i.icon} ${i.name}</span>`).join('')}
+          </div>
+        </div>`;
+    });
+
+    html += '</div></div>';
+    this.els.content.innerHTML = html;
+  }
+
+  /* ── Search ── */
+  handleSearch(query) {
+    query = query.trim().toLowerCase();
+    if (query.length < 1) {
+      this.els.searchResults.classList.remove('active');
+      return;
+    }
+
+    const results = this.allBlocks.filter(b =>
+      b.name.toLowerCase().includes(query) ||
+      b.id.toLowerCase().includes(query) ||
+      b.description.toLowerCase().includes(query)
+    ).slice(0, 15);
+
+    if (results.length === 0) {
+      this.els.searchResults.innerHTML = '<div style="padding:12px;text-align:center;color:var(--docs-text-secondary);font-size:0.85rem">' + this._t('noResults') + '</div>';
+    } else {
+      this.els.searchResults.innerHTML = results.map(r => `
+        <div class="docs-search-item" data-section="${r.sectionId}" data-block="${r.id}">
+          <span class="badge" style="background:${r.color}">${r.sectionTitle}</span>
+          <span><strong>${r.name}</strong> — ${r.description}</span>
+        </div>`).join('');
+    }
+    this.els.searchResults.classList.add('active');
+
+    // Click search result
+    this.els.searchResults.querySelectorAll('.docs-search-item').forEach(el => {
+      el.addEventListener('click', () => {
+        this.navigateTo(el.dataset.section);
+      });
+    });
+  }
+
+  /* ── Dark Mode ── */
+  toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    localStorage.setItem('brixel-docs-dark', isDark ? '1' : '0');
+    this.els.darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+  }
+
+  restoreDarkMode() {
+    if (localStorage.getItem('brixel-docs-dark') === '1') {
+      document.body.classList.add('dark-mode');
+      this.els.darkModeToggle.textContent = '☀️';
+    }
+  }
+
+  /* ── UI Strings ── */
+  updateUIStrings() {
+    const lang = this.currentLang;
+    this.els.langToggle.textContent = lang === 'ko' ? '한/EN' : 'KO/En';
+    this.els.langToggle.title = lang === 'ko' ? 'Switch to English' : '한국어로 전환';
+    this.els.searchInput.placeholder = this._t('searchPlaceholder');
+    this.els.backTop.title = this._t('backToTop');
+    this.els.darkModeToggle.title = this._t('darkMode');
+    this.els.homeLink.title = this._t('backToEditor');
+    this.els.menuToggle.title = this._t('menu');
+  }
+
+  /* ── Language ── */
+  applyLang(lang) {
+    this.currentLang = lang;
+    localStorage.setItem('brixel-docs-lang', lang);
+    this.updateUIStrings();
+
+    // Load data & rebuild
+    const dataScript = lang === 'en' ? 'docs-data-en.js' : 'docs-data.js';
+    const existingScript = document.getElementById('docsDataScript');
+    if (existingScript) existingScript.remove();
+
+    const script = document.createElement('script');
+    script.id = 'docsDataScript';
+    script.src = dataScript;
+    script.onload = () => {
+      this.renderedSections = {};
+      this.buildNavigation();
+      this.buildSearchIndex();
+      if (this.currentSection && DOCS_DATA[this.currentSection]) {
+        this.navigateTo(this.currentSection);
+      } else {
+        this.showWelcome();
+      }
+    };
+    document.head.appendChild(script);
+  }
+
+  /* ── Mobile Sidebar ── */
+  toggleSidebar(forceState) {
+    const isOpen = typeof forceState === 'boolean' ? forceState : !this.els.sidebar.classList.contains('open');
+    this.els.sidebar.classList.toggle('open', isOpen);
+    this.els.sidebarOverlay.classList.toggle('active', isOpen);
+  }
+
+  /* ── Lightbox ── */
+  openLightbox(src, caption) {
+    this.els.lightboxImg.src = src;
+    this.els.lightboxCaption.textContent = caption || '';
+    this.els.lightbox.classList.add('active');
+  }
+
+  closeLightbox() {
+    this.els.lightbox.classList.remove('active');
+    this.els.lightboxImg.src = '';
+  }
+
+  /* ── Helpers ── */
+  _getIcon(sectionId) {
+    for (const group of DOCS_NAV) {
+      const item = group.items.find(i => i.id === sectionId);
+      if (item) return item.icon;
+    }
+    return '';
+  }
+}
+
+/* ── Launch ── */
+// Initialization is handled by the data script onload callback above
+</script>
+</body>
+</html>

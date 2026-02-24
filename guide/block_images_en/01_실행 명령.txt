@@ -1,0 +1,11 @@
+영어 블록이미지 저장 실행 명령 - F12 콘솔에 붙여 넣기
+=============================================
+
+[사전 작업] 에디터 UI에서 언어를 English로 변경 후 페이지 새로고침(F5)
+
+[전체] 모든 블록 저장 (TinyML 포함)
+fetch("/guide/block_images_en/save_all_blocks_en.js").then(r=>r.text()).then(eval)
+
+- ESP32 toolbox를 사용하므로 TinyML 포함
+- 완료 후 다운로드 폴더에서 block_images_en 폴더로 이동:
+  Move-Item "$env:USERPROFILE\Downloads\*_*.svg" "guide\block_images_en\"

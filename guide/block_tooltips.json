@@ -1,0 +1,2146 @@
+{
+  "accelstepper_control": {
+    "tooltip": "Control AccelStepper operation.",
+    "block_label": "AccelStepper",
+    "generator_comment": "AccelStepper 제어"
+  },
+  "accelstepper_move": {
+    "tooltip": "Move AccelStepper to position.",
+    "block_label": "AccelStepper Position",
+    "generator_comment": "AccelStepper 이동 제어"
+  },
+  "accelstepper_settings": {
+    "tooltip": "Configure AccelStepper parameters.",
+    "block_label": "AccelStepper MaxSpeed Accel Speed Steps/Rev",
+    "generator_comment": "AccelStepper 설정 (속도, 가속도 등)"
+  },
+  "accelstepper_setup": {
+    "tooltip": "Setup AccelStepper motor.",
+    "block_label": "Setup AccelStepper Interface Pin1 Pin2",
+    "generator_comment": "AccelStepper 라이브러리 설정"
+  },
+  "accelstepper_status": {
+    "tooltip": "Get AccelStepper status information.",
+    "block_label": "AccelStepper Get",
+    "generator_comment": "AccelStepper 상태 확인"
+  },
+  "apds9960_gesture_available": {
+    "tooltip": "Check if gesture data is available.",
+    "block_label": "APDS9960 Gesture Available",
+    "generator_comment": "APDS9960 제스처 사용 가능 확인"
+  },
+  "apds9960_gesture_control": {
+    "tooltip": "Read or check gestures from APDS9960.",
+    "block_label": "APDS9960 Gesture",
+    "generator_comment": "APDS9960 제스처 제어 (읽기/확인 통합)"
+  },
+  "apds9960_read_light": {
+    "tooltip": "Read light values from APDS9960.",
+    "block_label": "APDS9960 Read Light",
+    "generator_comment": "APDS9960 광량 읽기"
+  },
+  "apds9960_read_proximity": {
+    "tooltip": "Read proximity value from APDS9960.",
+    "block_label": "APDS9960 Read Proximity",
+    "generator_comment": "APDS9960 근접센서 읽기"
+  },
+  "apds9960_sensor_control": {
+    "tooltip": "Control APDS9960 sensors.",
+    "block_label": "APDS9960 Interrupt",
+    "generator_comment": "APDS9960 센서 제어 (활성화/비활성화 통합)"
+  },
+  "apds9960_setup": {
+    "tooltip": "Setup APDS9960 gesture and light sensor.",
+    "block_label": "Setup APDS9960",
+    "generator_comment": "APDS9960 센서 초기화"
+  },
+  "arduino_bt_available": {
+    "tooltip": "블루투스 모듈로 수신된 데이터가 있는지 확인합니다.",
+    "block_label": "📱 BT 모듈 메시지가 있는가?"
+  },
+  "arduino_bt_get_value": {
+    "tooltip": "분석된 BT 데이터 중 원하는 순서의 값을 가져와 문자로 반환합니다.",
+    "block_label": "📱 번째 분석된 BT 값"
+  },
+  "arduino_bt_msg_ready": {
+    "tooltip": "줄바꿈(\\\n)으로 끝나는 완성된 메시지가 수신되었는지 확인합니다.",
+    "block_label": "📱 BT \\ 메시지가 있는가?"
+  },
+  "arduino_bt_parse": {
+    "tooltip": "수신된 BT 데이터를 구분자로 분석하여 저장합니다.",
+    "block_label": "📱 받은 BT 데이터를 (으)로 분석하기"
+  },
+  "arduino_bt_raw_available": {
+    "tooltip": "줄바꿈 없이도 수신된 원시 데이터가 있는지 확인합니다.",
+    "block_label": "📱 BT 원시 데이터가 있는가?"
+  },
+  "arduino_bt_read": {
+    "tooltip": "블루투스 모듈로 수신된 데이터를 읽어옵니다.",
+    "block_label": "📱 BT 모듈로 받은 메시지"
+  },
+  "arduino_bt_read_auto": {
+    "tooltip": "수신 데이터를 읽기 쉬운 문자로 변환합니다. 예: \"ABC\" 수신 → \"ABC\" 반환. 문자 변수에 저장하세요.",
+    "block_label": "📱 BT 수신 데이터 (자동 변환)"
+  },
+  "arduino_bt_read_hex": {
+    "tooltip": "수신 데이터를 16진수로 변환합니다. 예: \"ABC\" 수신 → \"41 42 43\" 반환. 문자 변수에 저장하세요.",
+    "block_label": "📱 BT 수신 데이터 (HEX)"
+  },
+  "arduino_bt_read_raw": {
+    "tooltip": "수신된 첫 번째 바이트를 숫자로 반환합니다. 예: \"A\" 수신 → 65 반환. 숫자 변수에 저장하세요.",
+    "block_label": "📱 BT 수신 바이트 값"
+  },
+  "arduino_bt_setup": {
+    "tooltip": "아두이노에 연결한 외부 블루투스 모듈(JDY-33 등)을 설정합니다.",
+    "block_label": "📱 아두이노 BT(JDY-33) 설정 RX TX 이름 속도",
+    "generator_comment": "[0. 아두이노 BT 모듈 통신 (JDY-33 etc. - SoftwareSerial)]"
+  },
+  "arduino_bt_write": {
+    "tooltip": "데이터를 블루투스 모듈로 전송합니다.",
+    "block_label": "📱 BT 모듈로 보내기"
+  },
+  "arduino_interrupt": {
+    "tooltip": "Execute code when pin state changes.",
+    "block_label": "When Pin"
+  },
+  "arduino_loop": {
+    "tooltip": "Loop function runs continuously.",
+    "block_label": "Loop"
+  },
+  "arduino_setup": {
+    "tooltip": "Setup function runs once at startup.",
+    "block_label": "Setup"
+  },
+  "arduino_uno_starts_up": {
+    "tooltip": "Includes essential libraries when the program starts.",
+    "block_label": "When MCU Board Starts Up!",
+    "generator_comment": "코드 생성 함수 (Arduino C++) / index.html 순서에 맞춰 재정렬됨"
+  },
+  "array_append": {
+    "tooltip": "Add value to end of array",
+    "block_label": "append to array"
+  },
+  "array_clear": {
+    "tooltip": "Fill entire array with specified value",
+    "block_label": "fill array with"
+  },
+  "array_clear_at": {
+    "tooltip": "배열의 특정 위치를 지정한 값으로 초기화합니다 (보통 0)",
+    "block_label": "배열 인덱스 를 로 초기화"
+  },
+  "array_contains": {
+    "tooltip": "Check if value exists in array",
+    "block_label": "array contains"
+  },
+  "array_copy": {
+    "tooltip": "Copy all values from source array to destination array",
+    "block_label": "copy array from to"
+  },
+  "array_create": {
+    "tooltip": "Create an array with initial values",
+    "block_label": "create array type with values",
+    "generator_comment": "7-1. 리스트 카테고리"
+  },
+  "array_create_empty": {
+    "tooltip": "Create an empty array with specified size",
+    "block_label": "create empty array type size"
+  },
+  "array_find": {
+    "tooltip": "Find value in array and return index (-1 if not found)",
+    "block_label": "find in array"
+  },
+  "array_get": {
+    "tooltip": "Get value from array at specified index",
+    "block_label": "get array at index"
+  },
+  "array_length": {
+    "tooltip": "Get the length of array",
+    "block_label": "length of array"
+  },
+  "array_remove": {
+    "tooltip": "배열의 특정 위치 값을 삭제하고 뒤 요소들을 앞으로 이동합니다",
+    "block_label": "배열 인덱스 삭제하기"
+  },
+  "array_set": {
+    "tooltip": "Set array value at specified index",
+    "block_label": "set array at index to"
+  },
+  "array_strlen": {
+    "tooltip": "Get actual length of character array (string)",
+    "block_label": "string length of"
+  },
+  "attach_servo": {
+    "tooltip": "Attach servo to pin",
+    "block_label": "Attach Servo Pin",
+    "generator_comment": "서보 연결 (기본)"
+  },
+  "attach_servo_minmax": {
+    "tooltip": "Attach servo with custom min/max pulse width",
+    "block_label": "Attach Servo Pin Min Max",
+    "generator_comment": "서보 연결 (최소/최대값 설정)"
+  },
+  "bmp280_read_value": {
+    "tooltip": "Read BMP280 sensor values.",
+    "block_label": "BMP280 Read"
+  },
+  "bmp280_set_reference": {
+    "tooltip": "Set reference altitude.",
+    "block_label": "BMP280 Set Reference Altitude m"
+  },
+  "bmp280_set_sea_pressure": {
+    "tooltip": "Set sea level pressure for altitude calculation.",
+    "block_label": "BMP280 Set Sea Level Pressure Pa"
+  },
+  "bmp280_setup": {
+    "tooltip": "Setup BMP280 pressure and altitude sensor.",
+    "block_label": "Setup BMP280",
+    "generator_comment": "BMP280 설정 및 제어 (DFRobot_BMP280 라이브러리 기준)"
+  },
+  "buzzer_play_note": {
+    "tooltip": "Play musical note on buzzer.",
+    "block_label": "Buzzer Pin Play Note Beat"
+  },
+  "buzzer_set_tempo": {
+    "tooltip": "Set buzzer tempo in beats per minute.",
+    "block_label": "Buzzer Set Tempo BPM"
+  },
+  "buzzer_stop": {
+    "tooltip": "Stop buzzer sound.",
+    "block_label": "Buzzer Pin Stop"
+  },
+  "buzzer_tone_setup": {
+    "tooltip": "Setup buzzer tone library for music playback.",
+    "block_label": "Setup Buzzer Tone Library"
+  },
+  "bx_mpu_calc_offsets": {
+    "tooltip": "Calculate MPU6050 calibration offsets.",
+    "block_label": "MPU6050 Calculate Offsets Delay Before After",
+    "generator_comment": "오프셋 자동 계산 (콘솔 출력 없음)"
+  },
+  "bx_mpu_read_value": {
+    "tooltip": "Read MPU6050 sensor values.",
+    "block_label": "MPU6050 Read",
+    "generator_comment": "값 읽기"
+  },
+  "bx_mpu_set_offsets": {
+    "tooltip": "Set MPU6050 calibration offsets.",
+    "block_label": "MPU6050 Set Offsets X Y Z",
+    "generator_comment": "오프셋 수동 설정"
+  },
+  "bx_mpu_setup": {
+    "tooltip": "Setup MPU6050 gyroscope and accelerometer.",
+    "block_label": "Setup MPU6050",
+    "generator_comment": "ㅡMPU 6050블록들 ⓐ 블록 타입이 bx_mpu_setup 인 경우"
+  },
+  "bx_mpu_update": {
+    "tooltip": "Update MPU6050 sensor readings.",
+    "block_label": "MPU6050 Update",
+    "generator_comment": "값 갱신"
+  },
+  "color_sensor_get_data": {
+    "tooltip": "Get color sensor data.",
+    "block_label": "Color Sensor Get",
+    "generator_comment": "컬러센서 데이터 가져오기"
+  },
+  "color_sensor_init": {
+    "tooltip": "Initialize color sensor.",
+    "block_label": "Color Sensor Initialize",
+    "generator_comment": "컬러센서 초기화"
+  },
+  "color_sensor_is_color": {
+    "tooltip": "Check if detected color matches.",
+    "block_label": "Color Sensor Is",
+    "generator_comment": "컬러센서 특정 색상 확인"
+  },
+  "color_sensor_setup": {
+    "tooltip": "Setup color sensor.",
+    "block_label": "Setup Color Sensor",
+    "generator_comment": "컬러센서 설정"
+  },
+  "color_sensor_trigger": {
+    "tooltip": "Trigger color measurement.",
+    "block_label": "Color Sensor Trigger",
+    "generator_comment": "컬러센서 색상감지 트리거"
+  },
+  "colour_blend_custom": {
+    "tooltip": "Blend two colors.",
+    "block_label": "Blend and ratio"
+  },
+  "colour_flag": {
+    "tooltip": "Color category identifier.",
+    "block_label": "Color Flag"
+  },
+  "colour_picker_custom": {
+    "tooltip": "Pick a color.",
+    "block_label": "Color",
+    "generator_comment": "6-1. 색상 카테고리"
+  },
+  "colour_random_custom": {
+    "tooltip": "Generate random color.",
+    "block_label": "Random Color"
+  },
+  "colour_rgb_custom": {
+    "tooltip": "Create color from RGB values.",
+    "block_label": "Color Red Green Blue"
+  },
+  "colour_to_hex": {
+    "tooltip": "Convert color to hex string.",
+    "block_label": "Color to hex"
+  },
+  "colour_to_rgb_values": {
+    "tooltip": "Get RGB component value.",
+    "block_label": "value of"
+  },
+  "comm_flag": {
+    "tooltip": "Communication category identifier.",
+    "block_label": "Communication Flag"
+  },
+  "control_flag": {
+    "tooltip": "Control flow category identifier.",
+    "block_label": "Control Flow Flag"
+  },
+  "custom_ad_block": {
+    "tooltip": "Custom advertisement block.",
+    "block_label": "Custom Advertisement"
+  },
+  "custom_text_char_at": {
+    "tooltip": "Get character at specified index.",
+    "block_label": "Character at index of"
+  },
+  "custom_text_compare": {
+    "tooltip": "Compare two text values."
+  },
+  "custom_text_contains": {
+    "tooltip": "Check if text contains substring.",
+    "block_label": "contains"
+  },
+  "custom_text_join": {
+    "tooltip": "Join two text strings together.",
+    "block_label": "Join"
+  },
+  "custom_text_length": {
+    "tooltip": "Get length of text string.",
+    "block_label": "Length of"
+  },
+  "dallas_temp_count": {
+    "tooltip": "Get number of Dallas sensors found.",
+    "block_label": "Dallas Temperature Sensor Count"
+  },
+  "dallas_temp_read": {
+    "tooltip": "Read temperature from Dallas sensor.",
+    "block_label": "Dallas Temperature Sensor Unit"
+  },
+  "dallas_temp_request": {
+    "tooltip": "Request temperature from all Dallas sensors.",
+    "block_label": "Dallas Temperature Request All"
+  },
+  "dallas_temp_setup": {
+    "tooltip": "Setup Dallas temperature sensors.",
+    "block_label": "Setup Dallas Temperature Pin",
+    "generator_comment": "물온도센서 코드 생성기"
+  },
+  "dcmotor_run": {
+    "tooltip": "Run DC motor at specified speed and direction.",
+    "block_label": "DC Motor Speed Direction"
+  },
+  "dcmotor_setup": {
+    "tooltip": "Setup DC motor with L9110 driver.",
+    "block_label": "Setup DC Motor Pin A Pin B",
+    "generator_comment": "DC모터 블록 시작"
+  },
+  "dcmotor_stop": {
+    "tooltip": "Stop DC motor.",
+    "block_label": "DC Motor Stop"
+  },
+  "delay_ms": {
+    "tooltip": "Pause execution for specified milliseconds.",
+    "block_label": "Delay milliseconds"
+  },
+  "detach_servo": {
+    "tooltip": "Detach servo from pin",
+    "block_label": "Detach Servo Pin",
+    "generator_comment": "서보 분리"
+  },
+  "developer_info_block": {
+    "tooltip": "Information about the developer.",
+    "block_label": "Developer Info"
+  },
+  "dfrobot_ph_calibration": {
+    "tooltip": "Send calibration command to pH sensor",
+    "block_label": "pH calibration command",
+    "generator_comment": "보정 모드 블록 코드 생성기"
+  },
+  "dfrobot_ph_read": {
+    "tooltip": "Read pH value with temperature compensation",
+    "block_label": "Read pH value at temperature °C",
+    "generator_comment": "pH 값 읽기 블록 코드 생성기"
+  },
+  "dfrobot_ph_setup": {
+    "tooltip": "Initialize pH sensor with analog pin",
+    "block_label": "Setup pH Sensor pin",
+    "generator_comment": "DFRobot_PH 코드 생성기 1. 설정 블록 코드 생성기"
+  },
+  "dfrobot_ph_voltage": {
+    "tooltip": "Read raw voltage from pH sensor",
+    "block_label": "Read pH sensor voltage",
+    "generator_comment": "전압 읽기 블록 코드 생성기"
+  },
+  "dht_convert_temperature": {
+    "tooltip": "Convert temperature between Celsius and Fahrenheit.",
+    "block_label": "Convert Temperature From To"
+  },
+  "dht_heat_index": {
+    "tooltip": "Calculate heat index.",
+    "block_label": "Heat Index Temperature Humidity Unit"
+  },
+  "dht_read_humidity": {
+    "tooltip": "Read humidity from DHT sensor.",
+    "block_label": "DHT Pin Humidity"
+  },
+  "dht_read_temperature": {
+    "tooltip": "Read temperature from DHT sensor.",
+    "block_label": "DHT Pin Temperature"
+  },
+  "dht_setup": {
+    "tooltip": "Setup DHT temperature and humidity sensor.",
+    "block_label": "Setup DHT Pin Type",
+    "generator_comment": "DHT 라이브러리 코드 생성기"
+  },
+  "dis01_flag": {
+    "tooltip": "Basic display category identifier.",
+    "block_label": "Basic Display Flag"
+  },
+  "dis02_flag": {
+    "tooltip": "Advanced display category identifier.",
+    "block_label": "Advanced Display Flag"
+  },
+  "ds1307_clock_control": {
+    "tooltip": "Start or stop the RTC clock.",
+    "block_label": "RTC Clock",
+    "generator_comment": "클록 제어"
+  },
+  "ds1307_get_time": {
+    "tooltip": "Get specific time value from RTC module.",
+    "block_label": "RTC Get",
+    "generator_comment": "시간 읽기"
+  },
+  "ds1307_get_time_string": {
+    "tooltip": "Get formatted time string from RTC.",
+    "block_label": "RTC Get Time String Format",
+    "generator_comment": "현재 시간 가져오기 (문자열)"
+  },
+  "ds1307_set_time": {
+    "tooltip": "Set current date and time on RTC module.",
+    "block_label": "RTC Set Time Year Month Date Hour Minute Second",
+    "generator_comment": "시간 설정"
+  },
+  "ds1307_setup": {
+    "tooltip": "Initialize DS1307 Real-Time Clock module.",
+    "block_label": "Setup DS1307 RTC",
+    "generator_comment": "DS1307 RTC 설정"
+  },
+  "ds1307_sqw_output": {
+    "tooltip": "Set SQW pin output type.",
+    "block_label": "RTC SQW Output",
+    "generator_comment": "SQW 출력 설정"
+  },
+  "esp32_bt_setup": {
+    "tooltip": "ESP32 내장 BLE를 설정합니다. 아이폰/안드로이드 블루투스 앱과 통신할 수 있습니다.",
+    "block_label": "📱 ESP32 블루투스 설정 이름"
+  },
+  "esp32cam_declare": {
+    "tooltip": "ESP32-CAM 사용을 위한 라이브러리와 변수를 선언합니다.",
+    "block_label": "📷 ESP32-CAM 보드가 시작되었을 때",
+    "generator_comment": "ESP32-CAM 선언부"
+  },
+  "esp32cam_flip": {
+    "tooltip": "카메라 화면을 상하 반전하거나 좌우 거울모드로 설정합니다.",
+    "block_label": "📷 카메라 화면 설정 구분 동작",
+    "generator_comment": "카메라 화면 설정 (상하반전/좌우거울)"
+  },
+  "esp32cam_led_control": {
+    "tooltip": "ESP32-CAM의 내장 플래시 LED를 켜거나 끕니다. (GPIO 4)",
+    "block_label": "💡 ESP32-CAM LED",
+    "generator_comment": "ESP32-CAM 내장 LED 제어"
+  },
+  "esp32cam_loop": {
+    "tooltip": "카메라로부터 프레임을 캡처하고 UDP로 전송합니다.",
+    "block_label": "📡 UDP로 영상 전송",
+    "generator_comment": "UDP 영상 전송 (loop 안에 배치)"
+  },
+  "esp32cam_receiver_config": {
+    "tooltip": "UDP 수신자의 IP, 포트, 청크 크기를 설정합니다.",
+    "block_label": "📡 수신자 설정 IP 포트 청크크기",
+    "generator_comment": "수신자 설정"
+  },
+  "esp32cam_setup": {
+    "tooltip": "WiFi에 연결하고 카메라를 초기화합니다. JPEG 품질은 10~63 (낮을수록 고품질), 밝기/대비/채도는 -2~2 범위입니다.",
+    "block_label": "📷 카메라 초기화 프레임크기 JPEG품질 밝기 대비 채도",
+    "generator_comment": "카메라 초기화 (setup 안에 배치)"
+  },
+  "esp32cam_wifi_config": {
+    "tooltip": "WiFi 연결을 위한 SSID와 비밀번호를 설정합니다.",
+    "block_label": "📡 WiFi 설정 SSID 비밀번호",
+    "generator_comment": "WiFi 설정"
+  },
+  "esp32s3cam_declare": {
+    "tooltip": "ESP32 S3 CAM 사용을 위한 라이브러리와 변수를 선언합니다. (Freenove ESP32-S3 CAM 핀맵)",
+    "block_label": "📷 ESP32 S3 CAM 보드가 시작되었을 때",
+    "generator_comment": "ESP32 S3 CAM 선언부"
+  },
+  "esp32s3cam_setup": {
+    "tooltip": "WiFi에 연결하고 ESP32 S3 카메라를 초기화합니다. PSRAM 자동 감지 및 최적화 적용. JPEG 품질은 10~63 (낮을수록 고품질), 밝기/대비/채도는 -2~2 범위입니다.",
+    "block_label": "📷 S3 카메라 초기화 프레임크기 JPEG품질 밝기 대비 채도",
+    "generator_comment": "ESP32 S3 CAM 초기화 (setup 안에 배치)"
+  },
+  "fingerprint_database": {
+    "tooltip": "Manage fingerprint database.",
+    "block_label": "Fingerprint Database ID"
+  },
+  "fingerprint_enroll_process": {
+    "tooltip": "Process fingerprint enrollment steps.",
+    "block_label": "Fingerprint ID"
+  },
+  "fingerprint_get_result": {
+    "tooltip": "Get fingerprint search results.",
+    "block_label": "Fingerprint Get"
+  },
+  "fingerprint_led_control": {
+    "tooltip": "Control fingerprint sensor LED.",
+    "block_label": "Fingerprint LED"
+  },
+  "fingerprint_search": {
+    "tooltip": "Search for fingerprint match.",
+    "block_label": "Fingerprint Search"
+  },
+  "fingerprint_setup": {
+    "tooltip": "Setup fingerprint sensor.",
+    "block_label": "Setup Fingerprint RX Pin TX Pin Baud",
+    "generator_comment": "Adafruit 지문센서"
+  },
+  "func_flag": {
+    "tooltip": "Function category identifier.",
+    "block_label": "Function Flag"
+  },
+  "geekservo_angle_360": {
+    "tooltip": "Geekservo 5KG Position Control (500-2500us)",
+    "block_label": "Geekservo Pin Set Angle (0~360)",
+    "generator_comment": "Geekservo 각도 제어 (360도)"
+  },
+  "geekservo_setup": {
+    "tooltip": "Initialize GeekServo on pin (angle: 500-2500μs, motor: 3000-5000μs)",
+    "block_label": "Setup GeekServo on Pin",
+    "generator_comment": "5 Geekservo 설정 블록"
+  },
+  "geekservo_stop": {
+    "tooltip": "Stop GeekServo motor (speed 0). Connection maintained. (5KG model only)",
+    "block_label": "GeekServo Stop Pin",
+    "generator_comment": "10-1. Geekservo 정지 (속도 0 신호 전송, 연결 유지)"
+  },
+  "geekservo_wheel": {
+    "tooltip": "GeekServo 5KG Motor Mode (DC): Speed 0~100, Direction CW/CCW. Speed 0 = stop. (5KG model only)",
+    "block_label": "Geekservo Wheel Pin Speed Dir",
+    "generator_comment": "Geekservo 바퀴 모드 (무한 회전)"
+  },
+  "go_to_ai_robot_scratch": {
+    "tooltip": "Link to AI Robot Scratch project.",
+    "block_label": "Go to AI Robot Scratch"
+  },
+  "go_to_bowerbird_pro": {
+    "tooltip": "Link to Bowerbird Pro AI image analysis tool.",
+    "block_label": "🐦 Go to Bowerbird Pro"
+  },
+  "go_to_circuit_config": {
+    "tooltip": "Link to Circuit Config tool.",
+    "block_label": "🔌 Go to Circuit Config"
+  },
+  "go_to_k12_projectHub": {
+    "tooltip": "Link to K12 Project Hub.",
+    "block_label": "Go to K12 Project Hub"
+  },
+  "gps_between_calc": {
+    "tooltip": "Calculate distance or course between two GPS coordinates.",
+    "block_label": "GPS Calculate From Lat1 Lng1 To Lat2 Lng2",
+    "generator_comment": "두 좌표 계산 (거리m / 방위deg)  // API: distanceBetween / courseTo"
+  },
+  "gps_cardinal": {
+    "tooltip": "Convert GPS course to cardinal direction.",
+    "block_label": "GPS Course to Cardinal Direction",
+    "generator_comment": "각도 → 방위문자  // API: cardinal(course)"
+  },
+  "gps_has_fix": {
+    "tooltip": "Check if GPS has location fix.",
+    "block_label": "GPS Has Fix",
+    "generator_comment": "고정(FIX) 여부 (1/0)  // API: location.isValid()"
+  },
+  "gps_read_value": {
+    "tooltip": "Read GPS values.",
+    "block_label": "GPS Read",
+    "generator_comment": "값 읽기 (리포터)  // API: location/speed/altitude/course/satellites/hdop/date/time"
+  },
+  "gps_setup_tinygps": {
+    "tooltip": "Setup GPS module with TinyGPS++ library.",
+    "block_label": "Setup GPS Baud",
+    "generator_comment": "설정하기: include는 여기서만!"
+  },
+  "gps_update_from_serial": {
+    "tooltip": "Update GPS data from serial.",
+    "block_label": "GPS Update From Serial",
+    "generator_comment": "시리얼 → 파서 업데이트 (NMEA를 한 글자씩 encode)  // ref: TinyGPSPlus::encode"
+  },
+  "gravity_tds_advanced_config": {
+    "tooltip": "Advanced TDS sensor configuration.",
+    "block_label": "TDS Advanced Config Value"
+  },
+  "gravity_tds_read_value": {
+    "tooltip": "Read TDS sensor values.",
+    "block_label": "TDS Read"
+  },
+  "gravity_tds_set_temp": {
+    "tooltip": "Set temperature for TDS compensation.",
+    "block_label": "TDS Set Temperature °C"
+  },
+  "gravity_tds_setup": {
+    "tooltip": "Setup TDS water quality sensor.",
+    "block_label": "Setup TDS Sensor Pin",
+    "generator_comment": "DFRobot GravityTDS 센서"
+  },
+  "gravity_tds_update": {
+    "tooltip": "Update TDS sensor reading.",
+    "block_label": "TDS Update Reading"
+  },
+  "ht16k33_bicolor_pixel": {
+    "tooltip": "Set bicolor matrix pixel.",
+    "block_label": "Bicolor Matrix Pixel Row(0-7) Col(0-7) Color",
+    "generator_comment": "양색 픽셀"
+  },
+  "ht16k33_circle": {
+    "tooltip": "Draw circle on dot matrix.",
+    "block_label": "Dot Matrix Circle R(0-7) C(0-15) Radius"
+  },
+  "ht16k33_clear": {
+    "tooltip": "Clear dot matrix display.",
+    "block_label": "Dot Matrix Clear"
+  },
+  "ht16k33_line": {
+    "tooltip": "Draw line on dot matrix.",
+    "block_label": "Dot Matrix Line R1(0-7) C1(0-15) R2(0-7) C2(0-15)",
+    "generator_comment": "GFX 도형"
+  },
+  "ht16k33_pattern_8x16": {
+    "tooltip": "Display 8x16 pattern on matrix.",
+    "block_label": "Dot Matrix Pattern 8x16",
+    "generator_comment": "패턴 8×16  (가로 16 × 세로 8 편집값을 그대로 그리기)"
+  },
+  "ht16k33_pattern_8x8": {
+    "tooltip": "Display 8x8 pattern on matrix.",
+    "block_label": "Dot Matrix Pattern 8x8",
+    "generator_comment": "패턴 8×8"
+  },
+  "ht16k33_pixel": {
+    "tooltip": "Set dot matrix pixel.",
+    "block_label": "Dot Matrix Pixel Row(0-7) Col(0-7)",
+    "generator_comment": "단색 픽셀"
+  },
+  "ht16k33_rect": {
+    "tooltip": "Draw rectangle on dot matrix.",
+    "block_label": "Dot Matrix Rect R(0-7) C(0-15) W H"
+  },
+  "ht16k33_scroll_text": {
+    "tooltip": "Scroll text on dot matrix.",
+    "block_label": "Dot Matrix Scroll Text Speed s"
+  },
+  "ht16k33_set_blink": {
+    "tooltip": "Set dot matrix blink rate.",
+    "block_label": "Dot Matrix Blink"
+  },
+  "ht16k33_set_brightness": {
+    "tooltip": "Set dot matrix brightness.",
+    "block_label": "Dot Matrix Brightness",
+    "generator_comment": "공통 제어"
+  },
+  "ht16k33_setup": {
+    "tooltip": "Setup HT16K33 dot matrix display.",
+    "block_label": "Setup Dot Matrix",
+    "generator_comment": "설정: 이 블록에서만 include/객체/초기화"
+  },
+  "ht16k33_show": {
+    "tooltip": "Update dot matrix display.",
+    "block_label": "Dot Matrix Show",
+    "generator_comment": "출력/지우기/스크롤"
+  },
+  "huskylens_arrow_info": {
+    "tooltip": "화면 중앙에서 가장 가까운 화살표의 정보를 반환합니다.",
+    "block_label": "🐶 허스키렌즈 중앙 화살표의",
+    "generator_comment": "HuskyLens 화살표 정보 (화면 중앙에서 가장 가까운)"
+  },
+  "huskylens_arrow_info_by_id": {
+    "tooltip": "특정 ID 화살표의 정보를 반환합니다.",
+    "block_label": "🐶 허스키렌즈 ID 화살표의",
+    "generator_comment": "HuskyLens 특정 ID 화살표 정보"
+  },
+  "huskylens_available": {
+    "tooltip": "허스키렌즈가 객체를 감지했는지 확인합니다.",
+    "block_label": "🐶 허스키렌즈 객체 감지됨?",
+    "generator_comment": "HuskyLens 객체 감지 여부"
+  },
+  "huskylens_block_info": {
+    "tooltip": "화면 중앙에서 가장 가까운 블록의 정보를 반환합니다.",
+    "block_label": "🐶 허스키렌즈 중앙 블록의",
+    "generator_comment": "HuskyLens 블록 정보 (화면 중앙에서 가장 가까운)"
+  },
+  "huskylens_block_info_by_id": {
+    "tooltip": "특정 ID 블록의 정보를 반환합니다.",
+    "block_label": "🐶 허스키렌즈 ID 블록의",
+    "generator_comment": "HuskyLens 특정 ID 블록 정보"
+  },
+  "huskylens_clear_osd": {
+    "tooltip": "허스키렌즈 화면의 모든 텍스트를 지웁니다.",
+    "block_label": "🐶 허스키렌즈 화면 텍스트 지우기",
+    "generator_comment": "HuskyLens 화면 텍스트 지우기"
+  },
+  "huskylens_count_arrows": {
+    "tooltip": "감지된 화살표(선)의 개수를 반환합니다.",
+    "block_label": "🐶 허스키렌즈 화살표(선) 개수",
+    "generator_comment": "HuskyLens 화살표(선) 개수"
+  },
+  "huskylens_count_blocks": {
+    "tooltip": "감지된 블록(사각형)의 개수를 반환합니다.",
+    "block_label": "🐶 허스키렌즈 블록(사각형) 개수",
+    "generator_comment": "HuskyLens 블록(사각형) 개수"
+  },
+  "huskylens_count_learned_ids": {
+    "tooltip": "학습된 ID의 총 개수를 반환합니다.",
+    "block_label": "🐶 허스키렌즈 학습된 ID 개수",
+    "generator_comment": "HuskyLens 학습된 ID 개수"
+  },
+  "huskylens_forget": {
+    "tooltip": "현재 알고리즘의 모든 학습 내용을 삭제합니다.",
+    "block_label": "🐶 허스키렌즈 학습 내용 삭제",
+    "generator_comment": "HuskyLens 학습 삭제"
+  },
+  "huskylens_is_learned": {
+    "tooltip": "특정 ID가 학습되었는지 확인합니다.",
+    "block_label": "🐶 허스키렌즈 ID 학습됨?",
+    "generator_comment": "HuskyLens ID 학습 여부"
+  },
+  "huskylens_learn_once": {
+    "tooltip": "현재 화면의 객체를 지정한 ID로 학습합니다.",
+    "block_label": "🐶 허스키렌즈 ID 로 학습",
+    "generator_comment": "HuskyLens 한번 학습"
+  },
+  "huskylens_load_model": {
+    "tooltip": "SD카드에서 저장된 모델을 불러옵니다.",
+    "block_label": "🐶 허스키렌즈 모델 번 불러오기",
+    "generator_comment": "HuskyLens 모델 로드"
+  },
+  "huskylens_request": {
+    "tooltip": "허스키렌즈에서 현재 인식된 모든 데이터를 요청합니다.",
+    "block_label": "🐶 허스키렌즈 데이터 요청",
+    "generator_comment": "HuskyLens 데이터 요청"
+  },
+  "huskylens_request_by_id": {
+    "tooltip": "허스키렌즈에서 특정 ID의 데이터만 요청합니다.",
+    "block_label": "🐶 허스키렌즈 ID 데이터 요청",
+    "generator_comment": "HuskyLens 특정 ID 데이터 요청"
+  },
+  "huskylens_save_model": {
+    "tooltip": "현재 학습된 모델을 SD카드에 저장합니다.",
+    "block_label": "🐶 허스키렌즈 모델 번에 저장",
+    "generator_comment": "HuskyLens 모델 저장"
+  },
+  "huskylens_screenshot": {
+    "tooltip": "현재 화면을 SD카드에 스크린샷으로 저장합니다.",
+    "block_label": "🐶 허스키렌즈 스크린샷 저장",
+    "generator_comment": "HuskyLens 스크린샷"
+  },
+  "huskylens_set_algorithm": {
+    "tooltip": "허스키렌즈의 인식 알고리즘을 설정합니다.",
+    "block_label": "🐶 허스키렌즈 알고리즘 설정",
+    "generator_comment": "HuskyLens 알고리즘 설정"
+  },
+  "huskylens_setup_i2c": {
+    "tooltip": "허스키렌즈를 I2C로 연결합니다. (SDA, SCL 핀 사용)",
+    "block_label": "🐶 허스키렌즈 I2C 연결 설정",
+    "generator_comment": "HuskyLens I2C 연결 설정"
+  },
+  "huskylens_setup_serial": {
+    "tooltip": "허스키렌즈를 소프트웨어 시리얼로 연결합니다.",
+    "block_label": "🐶 허스키렌즈 시리얼 연결 RX TX",
+    "generator_comment": "HuskyLens 시리얼 연결 설정"
+  },
+  "huskylens_write_osd": {
+    "tooltip": "허스키렌즈 화면에 텍스트를 표시합니다. (X: 0-319, Y: 0-239)",
+    "block_label": "🐶 허스키렌즈 화면에 표시 X Y",
+    "generator_comment": "HuskyLens 화면에 텍스트 표시"
+  },
+  "hx711_get_weight": {
+    "tooltip": "Get weight reading from HX711.",
+    "block_label": "HX711 Get Weight"
+  },
+  "hx711_is_ready": {
+    "tooltip": "Check if HX711 is ready for reading.",
+    "block_label": "HX711 Is Ready"
+  },
+  "hx711_power_control": {
+    "tooltip": "Control HX711 power state.",
+    "block_label": "HX711 Power"
+  },
+  "hx711_read_data": {
+    "tooltip": "Read different types of data from HX711.",
+    "block_label": "HX711 Read"
+  },
+  "hx711_set_scale": {
+    "tooltip": "Set HX711 calibration scale.",
+    "block_label": "HX711 Set Scale"
+  },
+  "hx711_setup": {
+    "tooltip": "Setup HX711 load cell amplifier.",
+    "block_label": "Setup HX711 DOUT Pin CLK Pin Gain",
+    "generator_comment": "HX711 무게센서 라이브러리 코드 생성기 1. 설정 블록 코드 생성기"
+  },
+  "hx711_tare": {
+    "tooltip": "Tare (zero) the HX711 scale.",
+    "block_label": "HX711 Tare times"
+  },
+  "i2c_weight_available": {
+    "tooltip": "Check if I2C weight sensor is connected and responding",
+    "block_label": "I2C weight sensor is available",
+    "generator_comment": "센서 연결 확인 블록 코드 생성기"
+  },
+  "i2c_weight_raw_data": {
+    "tooltip": "Read raw byte data from I2C weight sensor",
+    "block_label": "Read raw data byte from I2C sensor",
+    "generator_comment": "원시 데이터 읽기 블록 코드 생성기"
+  },
+  "i2c_weight_read": {
+    "tooltip": "Read weight value from I2C weight sensor",
+    "block_label": "Read weight from I2C sensor",
+    "generator_comment": "무게 읽기 블록 코드 생성기"
+  },
+  "i2c_weight_setup": {
+    "tooltip": "Initialize I2C weight sensor with slave address",
+    "block_label": "Setup I2C Weight Sensor address",
+    "generator_comment": "I2C 무게센서 코드 생성기 1. 설정 블록 코드 생성기"
+  },
+  "ir_available": {
+    "tooltip": "Check if IR data is available.",
+    "block_label": "IR Data Available",
+    "generator_comment": "IR 신호 수신 확인 (논블로킹 방식)"
+  },
+  "ir_button_is": {
+    "tooltip": "Check if specific IR button was pressed.",
+    "block_label": "IR Button Is",
+    "generator_comment": "IR 특정 버튼 확인"
+  },
+  "ir_read_button": {
+    "tooltip": "Read IR button code.",
+    "block_label": "IR Read Button Code",
+    "generator_comment": "IR 버튼 번호 읽기"
+  },
+  "ir_read_raw": {
+    "tooltip": "Read raw IR data.",
+    "block_label": "IR Read Raw Data",
+    "generator_comment": "IR 원본 코드값 읽기 - 마지막 수신값을 항상 반환"
+  },
+  "ir_setup": {
+    "tooltip": "Setup infrared receiver.",
+    "block_label": "Setup IR Receiver Pin",
+    "generator_comment": "IR 리모컨 수신기 설정 (조건부 컴파일: AVR=구버전 IR, ESP32=IRremote v4.x)"
+  },
+  "is_servo_attached": {
+    "tooltip": "Check if servo is attached to pin",
+    "block_label": "Is Servo Pin Attached?",
+    "generator_comment": "서보 연결 상태 확인"
+  },
+  "lcd_i2c_backlight": {
+    "tooltip": "Control LCD backlight.",
+    "block_label": "LCD Backlight"
+  },
+  "lcd_i2c_clear": {
+    "tooltip": "Clear LCD display.",
+    "block_label": "Clear LCD"
+  },
+  "lcd_i2c_cursor": {
+    "tooltip": "Control LCD cursor display.",
+    "block_label": "LCD Cursor"
+  },
+  "lcd_i2c_display": {
+    "tooltip": "Turn LCD display on/off.",
+    "block_label": "LCD Display"
+  },
+  "lcd_i2c_print": {
+    "tooltip": "Print text on LCD at specified position.",
+    "block_label": "LCD Print at Row Col Text"
+  },
+  "lcd_i2c_scroll": {
+    "tooltip": "Scroll LCD display.",
+    "block_label": "LCD Scroll"
+  },
+  "lcd_i2c_set_cursor": {
+    "tooltip": "Set LCD cursor position.",
+    "block_label": "LCD Set Cursor Row Col"
+  },
+  "lcd_i2c_setup": {
+    "tooltip": "Setup I2C LCD display.",
+    "block_label": "Setup LCD Address Cols Rows",
+    "generator_comment": "LCD I2C 코드 생성 함수들"
+  },
+  "logic_flag": {
+    "tooltip": "Logic category identifier.",
+    "block_label": "Logic Flag"
+  },
+  "main_flag": {
+    "tooltip": "Main category identifier.",
+    "block_label": "Main Category Flag",
+    "generator_comment": "플래그 블럭 모음"
+  },
+  "math_flag": {
+    "tooltip": "Math category identifier.",
+    "block_label": "Math Flag"
+  },
+  "max30105_beat_detected": {
+    "tooltip": "Returns true when a new heartbeat is detected",
+    "block_label": "heartbeat detected",
+    "generator_comment": "심박 비트 감지 블록"
+  },
+  "max30105_finger_detected": {
+    "tooltip": "Check if finger is placed on sensor",
+    "block_label": "finger detected",
+    "generator_comment": "손가락 감지 블록"
+  },
+  "max30105_get_heartrate": {
+    "tooltip": "Get heart rate in beats per minute",
+    "block_label": "get heart rate (BPM)",
+    "generator_comment": "심박수 측정 블록"
+  },
+  "max30105_get_ir_raw": {
+    "tooltip": "Get raw infrared LED sensor value (advanced)",
+    "block_label": "get raw infrared LED value",
+    "generator_comment": "원시 적외선 LED 값 (고급용)"
+  },
+  "max30105_get_red_raw": {
+    "tooltip": "Get raw red LED sensor value (advanced)",
+    "block_label": "get raw red LED value",
+    "generator_comment": "원시 적색 LED 값 (고급용)"
+  },
+  "max30105_get_spo2": {
+    "tooltip": "Get blood oxygen saturation percentage",
+    "block_label": "get blood oxygen (%)",
+    "generator_comment": "혈중산소포화도 측정 블록"
+  },
+  "max30105_get_temperature": {
+    "tooltip": "Get the sensor temperature in Celsius",
+    "block_label": "get sensor temperature (°C)",
+    "generator_comment": "온도 읽기 블록"
+  },
+  "max30105_sensor_ready": {
+    "tooltip": "Check if sensor has enough data for measurement",
+    "block_label": "sensor ready",
+    "generator_comment": "센서 상태 확인 블록"
+  },
+  "max30105_setup_advanced": {
+    "tooltip": "Advanced sensor setup for experienced users",
+    "block_label": "setup sensor (advanced) for with power",
+    "generator_comment": "고급 설정 블록"
+  },
+  "max30105_setup_basic": {
+    "tooltip": "Setup heart rate sensor for measuring heart rate and oxygen",
+    "block_label": "setup heart rate sensor",
+    "generator_comment": "MAX30105 심박센서 코드 생성기 (실용적 버전) 1. 기본 센서 설정 블록"
+  },
+  "mhz19_calibration": {
+    "tooltip": "Perform MHZ19 calibration.",
+    "block_label": "MHZ19 Calibration Period"
+  },
+  "mhz19_filter_mode": {
+    "tooltip": "Control MHZ19 filter settings.",
+    "block_label": "MHZ19 Filter Type"
+  },
+  "mhz19_get_status": {
+    "tooltip": "Get MHZ19 status information.",
+    "block_label": "MHZ19 Get"
+  },
+  "mhz19_read_value": {
+    "tooltip": "Read values from MHZ19 sensor.",
+    "block_label": "MHZ19 Read"
+  },
+  "mhz19_set_range": {
+    "tooltip": "Set MHZ19 measurement range.",
+    "block_label": "MHZ19 Set Range ppm"
+  },
+  "mhz19_setup": {
+    "tooltip": "Setup MHZ19 CO2 sensor.",
+    "block_label": "Setup MHZ19 RX Pin TX Pin Baud",
+    "generator_comment": "MHZ19 CO2 센서"
+  },
+  "mlx90614_read_temp": {
+    "tooltip": "Read object or ambient temperature in Celsius or Fahrenheit",
+    "block_label": "Read temperature in",
+    "generator_comment": "온도 읽기 블록 코드 생성기"
+  },
+  "mlx90614_setup": {
+    "tooltip": "Initialize MLX90614 non-contact temperature sensor with I2C address",
+    "block_label": "Setup MLX90614 Temperature Sensor I2C address",
+    "generator_comment": "DFRobot_MLX90614 코드 생성기 1. 설정 블록 코드 생성기"
+  },
+  "motor_flag": {
+    "tooltip": "Motor category identifier.",
+    "block_label": "Motor Flag"
+  },
+  "mp3_control": {
+    "tooltip": "Control MP3 player playback.",
+    "block_label": "MP3",
+    "generator_comment": "제어(드롭다운)"
+  },
+  "mp3_play_folder": {
+    "tooltip": "Play MP3 file from specific folder.",
+    "block_label": "MP3 Play Folder File",
+    "generator_comment": "폴더/파일 재생"
+  },
+  "mp3_play_index": {
+    "tooltip": "Play MP3 track by index number.",
+    "block_label": "MP3 Play Track",
+    "generator_comment": "트랙 번호 재생"
+  },
+  "mp3_query_status": {
+    "tooltip": "Get MP3 player status.",
+    "block_label": "MP3 Get Status",
+    "generator_comment": "상태값(리포터)"
+  },
+  "mp3_set_volume": {
+    "tooltip": "Set MP3 player volume.",
+    "block_label": "MP3 Set Volume",
+    "generator_comment": "볼륨 설정"
+  },
+  "mp3_setup_kt403a": {
+    "tooltip": "Setup MP3 player module.",
+    "block_label": "Setup MP3 Device RX Pin TX Pin Volume",
+    "generator_comment": "설정하기 (include는 여기서만)"
+  },
+  "neopixel_anim_breathe": {
+    "tooltip": "Breathing animation.",
+    "block_label": "NeoPixel Breathe R G B",
+    "generator_comment": "Breathe (밝기 펄스)"
+  },
+  "neopixel_anim_rainbow": {
+    "tooltip": "Display rainbow animation.",
+    "block_label": "NeoPixel Rainbow Wait ms Loops",
+    "generator_comment": "Rainbow"
+  },
+  "neopixel_anim_shift": {
+    "tooltip": "Shift animation.",
+    "block_label": "NeoPixel Shift Steps Wait ms",
+    "generator_comment": "Shift (좌/우로 한 칸씩 회전)"
+  },
+  "neopixel_brightness": {
+    "tooltip": "Set NeoPixel brightness.",
+    "block_label": "NeoPixel Brightness"
+  },
+  "neopixel_clear": {
+    "tooltip": "Clear NeoPixel display.",
+    "block_label": "NeoPixel Clear"
+  },
+  "neopixel_fill_rgb_all": {
+    "tooltip": "Fill all NeoPixels with color.",
+    "block_label": "NeoPixel Fill All R G B"
+  },
+  "neopixel_set_rgb": {
+    "tooltip": "Set NeoPixel LED color.",
+    "block_label": "NeoPixel LED R G B"
+  },
+  "neopixel_set_rgbw": {
+    "tooltip": "Set NeoPixel LED color with white.",
+    "block_label": "NeoPixel LED R G B W"
+  },
+  "neopixel_setup": {
+    "tooltip": "Setup NeoPixel LED strip.",
+    "block_label": "Setup NeoPixel",
+    "generator_comment": "NeoPixel (WS2812/B) Generators"
+  },
+  "neopixel_show": {
+    "tooltip": "Update NeoPixel display.",
+    "block_label": "NeoPixel Show"
+  },
+  "no_tone": {
+    "tooltip": "Stop tone on pin.",
+    "block_label": "Stop Tone Pin"
+  },
+  "number_variable_get": {
+    "tooltip": "숫자(float) 타입 변수의 값을 가져옵니다.",
+    "block_label": "🔢 숫자 변수"
+  },
+  "number_variable_set": {
+    "tooltip": "숫자(float) 타입 변수에 값을 저장합니다.",
+    "block_label": "🔢 숫자 변수 에 저장하기"
+  },
+  "oled_han_big_digit": {
+    "tooltip": "Display a large digit (0-9) using 7-segment style.",
+    "block_label": "Show big digit at X Y",
+    "generator_comment": "큰 숫자 표시"
+  },
+  "oled_han_clear": {
+    "tooltip": "Clear all content on the OLED display.",
+    "block_label": "Clear OLED Display",
+    "generator_comment": "화면 지우기"
+  },
+  "oled_han_draw_bar": {
+    "tooltip": "Draw a horizontal bar graph with value (0-128).",
+    "block_label": "Draw bar graph at X Y value",
+    "generator_comment": "바 그래프"
+  },
+  "oled_han_print_text": {
+    "tooltip": "Print any text (Korean, English, numbers, mixed) at specified position.",
+    "block_label": "Print text at X Y",
+    "generator_comment": "통합 텍스트 출력 (한글, 영어, 숫자, 혼합 모두 지원)"
+  },
+  "oled_han_setup": {
+    "tooltip": "Initialize OLED display with Korean text support. Must be used first.",
+    "block_label": "Setup OLED Display (Korean Support)",
+    "generator_comment": "OLED 한글 라이브러리 코드 생성기 (통합 버전) 설정 블록"
+  },
+  "output_flag": {
+    "tooltip": "Output device category identifier.",
+    "block_label": "Output Device Flag"
+  },
+  "pca9685_dcmotor_setup": {
+    "tooltip": "Setup PCA9685 DC motor driver. Uses channels 0-2 for wheel A, channels 3-5 for wheel B.",
+    "block_label": "🚗 DC Motor Driver (PCA9685) I2C Address",
+    "generator_comment": "PCA9685 DC Motor Driver Code Generators"
+  },
+  "pca9685_dcmotor_stop": {
+    "tooltip": "Stop motors.",
+    "block_label": "🚗 Motor Driver Stop"
+  },
+  "pca9685_dcmotor_wheel_a": {
+    "tooltip": "Control wheel A. Direction: 0=Forward, 1=Backward. Speed: 0-100%.",
+    "block_label": "🚗 Motor Driver Wheel A Direction Speed %"
+  },
+  "pca9685_dcmotor_wheel_b": {
+    "tooltip": "Control wheel B. Direction: 0=Forward, 1=Backward. Speed: 0-100%.",
+    "block_label": "🚗 Motor Driver Wheel B Direction Speed %"
+  },
+  "pin_flag": {
+    "tooltip": "Pin control category identifier.",
+    "block_label": "Pin Control Flag"
+  },
+  "pin_mode": {
+    "tooltip": "Sets pin mode to INPUT or OUTPUT.",
+    "block_label": "Set Pin to"
+  },
+  "pms_data_available": {
+    "tooltip": "Check if PMS data is available.",
+    "block_label": "PMS Data Available"
+  },
+  "pms_power_control": {
+    "tooltip": "Control PMS power state.",
+    "block_label": "PMS"
+  },
+  "pms_read_data": {
+    "tooltip": "Read particulate matter data from PMS.",
+    "block_label": "PMS Read"
+  },
+  "pms_request_read": {
+    "tooltip": "Request data reading from PMS.",
+    "block_label": "PMS Request Read"
+  },
+  "pms_set_mode": {
+    "tooltip": "Set PMS operating mode.",
+    "block_label": "PMS Set Mode"
+  },
+  "pms_setup": {
+    "tooltip": "Setup PMS particulate matter sensor.",
+    "block_label": "Setup PMS RX Pin TX Pin Baud",
+    "generator_comment": "PMS 미세먼지센서 라이브러리 코드 생성기"
+  },
+  "pulse_in": {
+    "tooltip": "Measure pulse duration on pin.",
+    "block_label": "Measure Pulse Pin State Timeout"
+  },
+  "pwmservo_led_brightness": {
+    "tooltip": "Control LED brightness using PWM (0-100%).",
+    "block_label": "Servo Driver Channel LED Brightness %",
+    "generator_comment": "LED 밝기 제어"
+  },
+  "pwmservo_multi_servo": {
+    "tooltip": "Control multiple servo motors simultaneously.",
+    "block_label": "Servo Driver Set Multiple Servos Ch1 ° Ch2 ° Ch3 ° Ch4 °",
+    "generator_comment": "다중 서보 제어"
+  },
+  "pwmservo_power": {
+    "tooltip": "Control servo driver power management.",
+    "block_label": "Servo Driver",
+    "generator_comment": "전원 관리"
+  },
+  "pwmservo_pwm_advanced": {
+    "tooltip": "Advanced PWM control with on/off timing (0-4095).",
+    "block_label": "Servo Driver Channel PWM On Off",
+    "generator_comment": "PWM 고급 제어"
+  },
+  "pwmservo_pwm_output": {
+    "tooltip": "Set PWM output value for LED or motor control (0-4095).",
+    "block_label": "Servo Driver Channel PWM Value (0-4095)",
+    "generator_comment": "PWM 출력 제어"
+  },
+  "pwmservo_servo_angle": {
+    "tooltip": "Control servo motor angle (0-180 degrees).",
+    "block_label": "Servo Driver Channel Set Angle degrees",
+    "generator_comment": "서보모터 제어 (각도)"
+  },
+  "pwmservo_servo_microseconds": {
+    "tooltip": "Control servo motor with precise pulse width (500-2500 microseconds).",
+    "block_label": "Servo Driver Channel Set Pulse microseconds",
+    "generator_comment": "서보모터 제어 (마이크로초)"
+  },
+  "pwmservo_setup": {
+    "tooltip": "Setup 16-channel PWM servo driver with I2C connection.",
+    "block_label": "Setup PWM Servo Driver I2C Address PWM Frequency Hz",
+    "generator_comment": "설정 블록"
+  },
+  "read_analog_pin": {
+    "tooltip": "Read analog value from pin.",
+    "block_label": "Read Analog Pin"
+  },
+  "read_digital_pin": {
+    "tooltip": "Read digital value from pin.",
+    "block_label": "Read Digital Pin"
+  },
+  "read_servo_angle": {
+    "tooltip": "Read current servo angle (0-180)",
+    "block_label": "Read Servo Pin Angle",
+    "generator_comment": "서보 각도 읽기"
+  },
+  "read_servo_microseconds": {
+    "tooltip": "Read current pulse width in microseconds",
+    "block_label": "Read Servo Pin Microseconds",
+    "generator_comment": "서보 마이크로초 읽기"
+  },
+  "rf433_config": {
+    "tooltip": "Configure RF433 transmitter and send message.",
+    "block_label": "RF433 TX Pin Send Message \"\"",
+    "generator_comment": "RF433MHz 송신 설정 및 전송 (조건부 컴파일)"
+  },
+  "rf433_get_message": {
+    "tooltip": "Process received RF433 message.",
+    "block_label": "RF433 Get Message",
+    "generator_comment": "RF433MHz 메시지 버퍼에 저장 (조건부 컴파일)"
+  },
+  "rf433_have_message": {
+    "tooltip": "Check if RF433 message is available.",
+    "block_label": "RF433 Has Message",
+    "generator_comment": "RF433MHz 메시지 수신 확인 (조건부 컴파일)"
+  },
+  "rf433_read_data": {
+    "tooltip": "Read RF433 message data.",
+    "block_label": "RF433 Read Data",
+    "generator_comment": "RF433MHz 수신 데이터 읽기"
+  },
+  "rf433_rx_setup": {
+    "tooltip": "Setup RF433 receiver.",
+    "block_label": "RF433 RX Setup Pin Speed",
+    "generator_comment": "RF433MHz 수신 설정 (조건부 컴파일)"
+  },
+  "rf433_rx_start": {
+    "tooltip": "Start RF433 receiver.",
+    "block_label": "RF433 Start Receiving",
+    "generator_comment": "RF433MHz 수신 시작 (조건부 컴파일)"
+  },
+  "rf433_setup": {
+    "tooltip": "Setup RF433 wireless communication.",
+    "block_label": "Setup RF433 Module",
+    "generator_comment": "RF433MHz 라이브러리 설정 (조건부 컴파일: AVR=VirtualWire, ESP32/피코=RadioHead)"
+  },
+  "rotary_counter": {
+    "tooltip": "Get rotary encoder step counter.",
+    "block_label": "Rotary Encoder Counter"
+  },
+  "rotary_direction": {
+    "tooltip": "Get rotary encoder rotation direction.",
+    "block_label": "Rotary Encoder Direction"
+  },
+  "rotary_get_value": {
+    "tooltip": "Get rotary encoder current value.",
+    "block_label": "Rotary Encoder Value"
+  },
+  "rotary_reset_counter": {
+    "tooltip": "Reset rotary encoder counter.",
+    "block_label": "Rotary Encoder Reset Counter"
+  },
+  "rotary_setup": {
+    "tooltip": "Setup rotary encoder.",
+    "block_label": "Setup Rotary Encoder DT Pin CLK Pin",
+    "generator_comment": "로터리 엔코더 라이브러리 코드 생성기"
+  },
+  "sd_close_file": {
+    "tooltip": "Close opened file.",
+    "block_label": "Close File",
+    "generator_comment": "파일 닫기"
+  },
+  "sd_file_available": {
+    "tooltip": "Get number of bytes available for reading.",
+    "block_label": "Available Bytes",
+    "generator_comment": "파일 사용 가능한 바이트 수"
+  },
+  "sd_file_exists": {
+    "tooltip": "Check if file exists on SD card.",
+    "block_label": "File Exists Filename",
+    "generator_comment": "파일 존재 확인"
+  },
+  "sd_file_size": {
+    "tooltip": "Get size of opened file in bytes.",
+    "block_label": "File Size",
+    "generator_comment": "파일 크기 확인"
+  },
+  "sd_make_directory": {
+    "tooltip": "Create directory on SD card.",
+    "block_label": "Create Directory Path",
+    "generator_comment": "디렉토리 생성"
+  },
+  "sd_open_file": {
+    "tooltip": "Open file for reading or writing.",
+    "block_label": "Open File Filename Mode",
+    "generator_comment": "파일 열기"
+  },
+  "sd_read_file": {
+    "tooltip": "Read data from opened file.",
+    "block_label": "Read from File",
+    "generator_comment": "파일에서 읽기"
+  },
+  "sd_remove_file": {
+    "tooltip": "Delete file from SD card.",
+    "block_label": "Delete File Filename",
+    "generator_comment": "파일 삭제"
+  },
+  "sd_setup": {
+    "tooltip": "Initialize SD card with specified SPI pins.",
+    "block_label": "Setup SD Card CS Pin MOSI Pin MISO Pin SCK Pin",
+    "generator_comment": "SD 카드 설정"
+  },
+  "sd_write_file": {
+    "tooltip": "Write data to opened file.",
+    "block_label": "Write to File Data",
+    "generator_comment": "파일에 쓰기"
+  },
+  "sensor01_flag": {
+    "tooltip": "Basic sensor category identifier.",
+    "block_label": "Basic Sensor Flag"
+  },
+  "sensor02_flag": {
+    "tooltip": "Advanced sensor category identifier.",
+    "block_label": "Advanced Sensor Flag"
+  },
+  "servo_setup": {
+    "tooltip": "Initialize servo on specified pin.",
+    "block_label": "Setup Servo on Pin"
+  },
+  "set_digital_pin": {
+    "tooltip": "Set digital pin to HIGH or LOW.",
+    "block_label": "Set Digital Pin to"
+  },
+  "set_pwm_pin": {
+    "tooltip": "Set PWM value on pin.",
+    "block_label": "Set PWM Pin to"
+  },
+  "set_servo_angle": {
+    "tooltip": "Set servo to specified angle.",
+    "block_label": "Set Servo Pin to Angle"
+  },
+  "set_servo_angle_alt": {
+    "generator_comment": "서보 각도 설정 - 상단 중복 제거를 위해 주석 처리하거나 상단과 동기화 여기서는 상단(line 120)에 정의되어 있으므로 하단은 삭제 및 통합 관리 권장 하지만 카테고리별 분리를 위해 유지한다면 상단과 동일하게 수정"
+  },
+  "set_servo_microseconds": {
+    "tooltip": "Set servo pulse width (544-2400μs)",
+    "block_label": "Set Servo Pin Microseconds",
+    "generator_comment": "서보 마이크로초 설정"
+  },
+  "sgp30_eeprom_load_baseline": {
+    "tooltip": "Load SGP30 baseline from custom EEPROM addresses.",
+    "block_label": "SGP30 Load Baseline eCO2 Addr TVOC Addr"
+  },
+  "sgp30_eeprom_load_baseline_fixed": {
+    "tooltip": "Load SGP30 baseline from EEPROM.",
+    "block_label": "SGP30 Load Baseline from EEPROM"
+  },
+  "sgp30_eeprom_save_baseline": {
+    "tooltip": "Save SGP30 baseline to custom EEPROM addresses.",
+    "block_label": "SGP30 Save Baseline eCO2 Addr TVOC Addr",
+    "generator_comment": "고급: 주소 입력형"
+  },
+  "sgp30_eeprom_save_baseline_fixed": {
+    "tooltip": "Save SGP30 baseline to EEPROM.",
+    "block_label": "SGP30 Save Baseline to EEPROM",
+    "generator_comment": "고정주소: eCO2 @0, TVOC @2"
+  },
+  "sgp30_get_eco2": {
+    "tooltip": "Get eCO2 value from SGP30.",
+    "block_label": "SGP30 Get eCO2",
+    "generator_comment": "eCO2 읽기 (리포터)"
+  },
+  "sgp30_get_tvoc": {
+    "tooltip": "Get TVOC value from SGP30.",
+    "block_label": "SGP30 Get TVOC",
+    "generator_comment": "TVOC 읽기 (리포터)"
+  },
+  "sgp30_measure": {
+    "tooltip": "Take SGP30 measurement.",
+    "block_label": "SGP30 Measure",
+    "generator_comment": "측정 실행: IAQmeasure()로 eCO2/TVOC 내부값 갱신"
+  },
+  "sgp30_set_baseline": {
+    "tooltip": "Set SGP30 baseline values.",
+    "block_label": "SGP30 Set Baseline eCO2 TVOC",
+    "generator_comment": "베이스라인 설정"
+  },
+  "sgp30_set_humidity": {
+    "tooltip": "Set humidity compensation for SGP30.",
+    "block_label": "SGP30 Set Absolute Humidity",
+    "generator_comment": "습도 보정"
+  },
+  "sgp30_setup": {
+    "tooltip": "Setup SGP30 air quality sensor.",
+    "block_label": "Setup SGP30 eCO2 Baseline TVOC Baseline",
+    "generator_comment": "설정하기: include는 여기서만"
+  },
+  "sh1106_clear": {
+    "tooltip": "Clear all content from OLED display",
+    "block_label": "Clear OLED display",
+    "generator_comment": "화면 지우기 코드 생성기"
+  },
+  "sh1106_draw_bar": {
+    "tooltip": "Draw horizontal bar graph with specified value (0-128)",
+    "block_label": "Draw bar graph at X Y value",
+    "generator_comment": "바 그래프 코드 생성기"
+  },
+  "sh1106_large_number": {
+    "tooltip": "Display large bitmap number (0-9) or colon (:)",
+    "block_label": "Display large number at X Y style",
+    "generator_comment": "큰 숫자 출력 코드 생성기"
+  },
+  "sh1106_print_text": {
+    "tooltip": "Print Korean or English text at specified position",
+    "block_label": "Print text at X Y style",
+    "generator_comment": "텍스트 출력 코드 생성기"
+  },
+  "sh1106_setup": {
+    "tooltip": "Initialize SH1106 OLED display for Korean text output",
+    "block_label": "Setup SH1106 OLED Display",
+    "generator_comment": "SH1106 OLED 한글 라이브러리 코드 생성기 1. 설정 블록 코드 생성기"
+  },
+  "sh110x_bitmap": {
+    "tooltip": "OLED에 128x64 비트맵 이미지를 출력합니다.",
+    "block_label": "OLED 비트맵 출력 X Y 색상",
+    "generator_comment": "비트맵 이미지 출력"
+  },
+  "sh110x_circle": {
+    "tooltip": "Draw a circle on OLED display.",
+    "block_label": "OLED Draw Circle X Y Radius Color",
+    "generator_comment": "원 그리기"
+  },
+  "sh110x_clear": {
+    "tooltip": "Clear OLED display buffer.",
+    "block_label": "OLED Clear",
+    "generator_comment": "화면 지우기"
+  },
+  "sh110x_contrast": {
+    "tooltip": "Set OLED display contrast (0-255).",
+    "block_label": "OLED Set Contrast",
+    "generator_comment": "밝기 조절"
+  },
+  "sh110x_control": {
+    "tooltip": "Control OLED display state.",
+    "block_label": "OLED",
+    "generator_comment": "화면 제어"
+  },
+  "sh110x_display": {
+    "tooltip": "Show current buffer on OLED display.",
+    "block_label": "OLED Display",
+    "generator_comment": "화면 표시"
+  },
+  "sh110x_line": {
+    "tooltip": "Draw a line on OLED display.",
+    "block_label": "OLED Draw Line From X1 Y1 To X2 Y2 Color",
+    "generator_comment": "선 그리기"
+  },
+  "sh110x_pixel": {
+    "tooltip": "Draw a pixel on OLED display.",
+    "block_label": "OLED Draw Pixel X Y Color",
+    "generator_comment": "픽셀 그리기"
+  },
+  "sh110x_rect": {
+    "tooltip": "Draw a rectangle on OLED display.",
+    "block_label": "OLED Draw Rectangle X Y Width Height Color",
+    "generator_comment": "사각형 그리기"
+  },
+  "sh110x_setup_i2c": {
+    "tooltip": "Setup SH110X OLED display with I2C connection.",
+    "block_label": "Setup SH110X OLED Type I2C Address Reset Pin Width Height",
+    "generator_comment": "설정 (I2C 전용)"
+  },
+  "sh110x_text": {
+    "tooltip": "Print text on OLED display.",
+    "block_label": "OLED Print Text X Y Size Color Wrap",
+    "generator_comment": "텍스트 출력"
+  },
+  "shift_out": {
+    "tooltip": "Shift out data to shift register.",
+    "block_label": "Shift Out Data Pin Clock Pin Latch Pin"
+  },
+  "sht31_get_data": {
+    "tooltip": "Get temperature or humidity from SHT31.",
+    "block_label": "SHT31 Get",
+    "generator_comment": "SHT31 데이터 가져오기"
+  },
+  "sht31_get_error": {
+    "tooltip": "Get SHT31 error code.",
+    "block_label": "SHT31 Get Error Code",
+    "generator_comment": "SHT31 에러 코드 가져오기"
+  },
+  "sht31_heater_control": {
+    "tooltip": "Control SHT31 internal heater.",
+    "block_label": "SHT31 Heater",
+    "generator_comment": "SHT31 히터 제어"
+  },
+  "sht31_is_connected": {
+    "tooltip": "Check if SHT31 is connected.",
+    "block_label": "SHT31 Is Connected",
+    "generator_comment": "SHT31 센서 연결 확인"
+  },
+  "sht31_is_heater_on": {
+    "tooltip": "Check if SHT31 heater is on.",
+    "block_label": "SHT31 Heater Status",
+    "generator_comment": "SHT31 히터 상태 확인"
+  },
+  "sht31_read": {
+    "tooltip": "Read data from SHT31 sensor.",
+    "block_label": "SHT31 Read",
+    "generator_comment": "SHT31 센서 읽기"
+  },
+  "sht31_reset": {
+    "tooltip": "Reset SHT31 sensor.",
+    "block_label": "SHT31 Reset",
+    "generator_comment": "SHT31 리셋"
+  },
+  "sht31_setup": {
+    "tooltip": "Setup SHT31 temperature and humidity sensor.",
+    "block_label": "Setup SHT31 Address",
+    "generator_comment": "SHT31 센서 설정"
+  },
+  "si7021_get_serial": {
+    "tooltip": "Get SI7021 serial number.",
+    "block_label": "SI7021 Get Serial"
+  },
+  "si7021_read_value": {
+    "tooltip": "Read temperature or humidity from SI7021.",
+    "block_label": "SI7021 Read"
+  },
+  "si7021_reset": {
+    "tooltip": "Reset SI7021 sensor.",
+    "block_label": "SI7021 Reset"
+  },
+  "si7021_setup": {
+    "tooltip": "Setup SI7021 temperature and humidity sensor.",
+    "block_label": "Setup SI7021",
+    "generator_comment": "Adafruit Si7021 온습도 센서"
+  },
+  "ssd1306_bitmap": {
+    "tooltip": "OLED에 128x64 비트맵 이미지를 출력합니다.",
+    "block_label": "OLED 비트맵 출력 X Y 색상",
+    "generator_comment": "비트맵 이미지 출력 (SSD1306)"
+  },
+  "ssd1306_circle": {
+    "tooltip": "Draw a circle on OLED display.",
+    "block_label": "OLED Draw Circle X Y Radius Color",
+    "generator_comment": "원 그리기"
+  },
+  "ssd1306_control": {
+    "tooltip": "Control OLED display basic functions.",
+    "block_label": "OLED",
+    "generator_comment": "기본 제어"
+  },
+  "ssd1306_dim": {
+    "tooltip": "Set OLED display dim mode.",
+    "block_label": "OLED Dim",
+    "generator_comment": "밝기 조절"
+  },
+  "ssd1306_line": {
+    "tooltip": "Draw a line on OLED display.",
+    "block_label": "OLED Draw Line From X1 Y1 To X2 Y2 Color",
+    "generator_comment": "선 그리기"
+  },
+  "ssd1306_pixel": {
+    "tooltip": "Draw a pixel on OLED display.",
+    "block_label": "OLED Draw Pixel X Y Color",
+    "generator_comment": "픽셀 그리기"
+  },
+  "ssd1306_rect": {
+    "tooltip": "Draw a rectangle on OLED display.",
+    "block_label": "OLED Draw Rectangle X Y Width Height Color",
+    "generator_comment": "사각형 그리기"
+  },
+  "ssd1306_scroll": {
+    "tooltip": "Control OLED display scroll function.",
+    "block_label": "OLED Scroll Start Stop",
+    "generator_comment": "스크롤 기능"
+  },
+  "ssd1306_setup_i2c": {
+    "tooltip": "Setup SSD1306 OLED display with I2C connection.",
+    "block_label": "Setup SSD1306 OLED Width Height I2C Address Reset Pin",
+    "generator_comment": "설정 블록 (I2C)"
+  },
+  "ssd1306_text": {
+    "tooltip": "Print text on OLED display.",
+    "block_label": "OLED Print Text X Y Size Color Wrap",
+    "generator_comment": "텍스트 출력"
+  },
+  "steppermulti_move": {
+    "tooltip": "Move stepper motor by steps or degrees.",
+    "block_label": "Stepper Motor Move",
+    "generator_comment": "StepperMulti 이동 설정"
+  },
+  "steppermulti_run": {
+    "tooltip": "Execute stepper motor movement.",
+    "block_label": "Stepper Motor Run",
+    "generator_comment": "StepperMulti 실행"
+  },
+  "steppermulti_setup": {
+    "tooltip": "Setup multi-configuration stepper motor.",
+    "block_label": "Setup Stepper Motor Type Config",
+    "generator_comment": "StepperMulti 모터 설정"
+  },
+  "steppermulti_speed": {
+    "tooltip": "Set stepper motor speed in RPM.",
+    "block_label": "Stepper Motor Set Speed RPM",
+    "generator_comment": "StepperMulti 속도 설정"
+  },
+  "string_variable_get": {
+    "tooltip": "문자(String) 타입 변수의 값을 가져옵니다.",
+    "block_label": "📝 문자 변수"
+  },
+  "string_variable_set": {
+    "tooltip": "문자(String) 타입 변수에 값을 저장합니다.",
+    "block_label": "📝 문자 변수 에 저장하기"
+  },
+  "sys_parse_count": {
+    "tooltip": "파싱된 데이터 필드의 개수를 반환합니다.",
+    "block_label": "분석된 값의 개수 (문장: )",
+    "generator_comment": "분석된 값의 개수 (문장 직접 입력)"
+  },
+  "sys_parse_csv_get": {
+    "tooltip": "쉼표로 구분된 데이터에서 N번째 값을 추출합니다.",
+    "block_label": "번째 값 가져오기 (문장: )",
+    "generator_comment": "CSV에서 N번째 값 가져오기 (문장 직접 입력)"
+  },
+  "sys_parsed_count": {
+    "tooltip": "마지막으로 분석된 데이터의 필드 개수를 반환합니다.",
+    "block_label": "분석된 값의 개수",
+    "generator_comment": "분석된 값 개수 (저장된 데이터에서 - 스크래치 호환)"
+  },
+  "sys_parsed_value_get": {
+    "tooltip": "마지막으로 분석된 데이터에서 N번째 값을 가져옵니다.",
+    "block_label": "번째 분석된 값",
+    "generator_comment": "분석된 N번째 값 (저장된 데이터에서 - 스크래치 호환)"
+  },
+  "sys_serial_available": {
+    "tooltip": "수신된 메시지가 있는지 확인합니다.",
+    "block_label": "새로운 메시지가 있는가?"
+  },
+  "sys_serial_begin": {
+    "tooltip": "0,1번 핀은 하드웨어 시리얼, 그 외는 소프트웨어 시리얼 자동 설정",
+    "block_label": "통신 시작 (RX: TX: 속도:)",
+    "generator_comment": "[1. 설정 & 공통 유틸]"
+  },
+  "sys_serial_connected": {
+    "tooltip": "시리얼 연결 상태를 확인합니다.",
+    "block_label": "시리얼이 연결되었는가?"
+  },
+  "sys_serial_flush": {
+    "tooltip": "수신 버퍼를 비웁니다.",
+    "block_label": "수신된 데이터 지우기"
+  },
+  "sys_serial_parse_delimiter": {
+    "tooltip": "수신 데이터를 구분자로 파싱하여 내부 저장합니다.",
+    "block_label": "수신된 데이터를 (으)로 분석하기",
+    "generator_comment": "구분자로 분석하기 (상태 저장 방식 - 스크래치 호환)"
+  },
+  "sys_serial_poll": {
+    "tooltip": "Loop 함수 맨 위에 꼭 넣으세요! 논블로킹 수신의 핵심입니다.",
+    "block_label": "🔄 통신 데이터 수신대기 (Poll)",
+    "generator_comment": "폴링 함수 (필수)"
+  },
+  "sys_serial_print": {
+    "tooltip": "데이터를 시리얼로 전송합니다.",
+    "block_label": "보내기 (줄바꿈 )",
+    "generator_comment": "일반 보내기 (줄바꿈 옵션)"
+  },
+  "sys_serial_print_continuous": {
+    "tooltip": "매 루프마다 데이터를 계속 전송합니다.",
+    "block_label": "계속 보내기 (줄바꿈 )",
+    "generator_comment": "계속 보내기 (스크래치 호환)"
+  },
+  "sys_serial_print_multi": {
+    "tooltip": "문자열을 CSV 형태로 전송합니다.",
+    "block_label": "📤CSV 보내기:",
+    "generator_comment": "여러 개 묶어 보내기 (CSV)"
+  },
+  "sys_serial_read_raw": {
+    "tooltip": "수신된 원본 데이터를 반환합니다.",
+    "block_label": "수신된 데이터 (문장)"
+  },
+  "sys_serial_send_change": {
+    "tooltip": "이전 값과 다를 때만 전송합니다 (센서값 전송 최적화)",
+    "block_label": "값이 변했을 때만 보내기 (줄바꿈 포함)",
+    "generator_comment": "값이 변했을 때만 보내기 (중복 전송 방지)"
+  },
+  "sys_serial_send_key_val": {
+    "tooltip": "키:값 형태로 데이터를 전송합니다.",
+    "block_label": "이름: 값: 보내기 (줄바꿈 )",
+    "generator_comment": "Key:Value 보내기"
+  },
+  "sys_util_to_number": {
+    "tooltip": "문자열을 숫자로 변환합니다.",
+    "block_label": "을(를) 숫자로 변환",
+    "generator_comment": "숫자로 변환"
+  },
+  "sys_webble_available": {
+    "tooltip": "Check if data has been received via Web BLE.",
+    "block_label": "Is Web BLE message available?"
+  },
+  "sys_webble_connected": {
+    "tooltip": "Check Web BLE connection status.",
+    "block_label": "Is Web BLE connected?"
+  },
+  "sys_webble_get_value": {
+    "tooltip": "Retrieve the value at the specified index from the parsed data as a string.",
+    "block_label": "-th parsed Web BLE value"
+  },
+  "sys_webble_parse": {
+    "tooltip": "Parse received data with a delimiter (e.g., comma) and store it.",
+    "block_label": "Parse received Web BLE data by"
+  },
+  "sys_webble_read": {
+    "tooltip": "Read data received via Web BLE.",
+    "block_label": "Message received via Web BLE"
+  },
+  "sys_webble_setup": {
+    "tooltip": "Initialize built-in BLE and set name (Scratch compatible).",
+    "block_label": "Web BLE Setup Name",
+    "generator_comment": "[0. 웹 BLE 통신 (Web BLE - Scratch Compatible)]"
+  },
+  "sys_webble_write": {
+    "tooltip": "Transmit data via Web BLE.",
+    "block_label": "Send via Web BLE"
+  },
+  "text_flag": {
+    "tooltip": "Text category identifier.",
+    "block_label": "Text Flag"
+  },
+  "thermistor_get_resistance": {
+    "tooltip": "Get thermistor resistance value.",
+    "block_label": "Thermistor Resistance"
+  },
+  "thermistor_read_raw": {
+    "tooltip": "Read raw ADC value from thermistor.",
+    "block_label": "Thermistor Raw Value"
+  },
+  "thermistor_read_temperature": {
+    "tooltip": "Read temperature from thermistor.",
+    "block_label": "Thermistor Temperature"
+  },
+  "thermistor_setup": {
+    "tooltip": "Setup thermistor temperature sensor.",
+    "block_label": "Setup Thermistor Pin Nominal R Beta Series R",
+    "generator_comment": "서미스터 온도센서 라이브러리 코드 생성기"
+  },
+  "timer_millis": {
+    "tooltip": "Get current time in milliseconds.",
+    "block_label": "Timer (milliseconds)"
+  },
+  "timer_non_blocking_delay": {
+    "tooltip": "Execute code at specified intervals.",
+    "block_label": "Every milliseconds"
+  },
+  "timer_reset": {
+    "tooltip": "Reset specified timer.",
+    "block_label": "Reset Timer"
+  },
+  "tinyml_anomaly_detected": {
+    "tooltip": "이상 감지(anomaly detection) 결과가 비정상인지 확인합니다.",
+    "block_label": "🧠 이상 감지됨?",
+    "generator_comment": "이상 감지"
+  },
+  "tinyml_classification_result": {
+    "tooltip": "가장 높은 신뢰도의 분류 결과 클래스 이름을 반환합니다.",
+    "block_label": "🧠 분류 결과 (클래스 이름)",
+    "generator_comment": "분류 결과 (클래스 이름)"
+  },
+  "tinyml_collect_analog": {
+    "tooltip": "아날로그 센서 데이터를 지정한 샘플레이트로 수집합니다.",
+    "block_label": "🧠 아날로그 데이터 수집 핀 샘플수 샘플레이트(Hz)",
+    "generator_comment": "아날로그 데이터 수집"
+  },
+  "tinyml_collect_imu": {
+    "tooltip": "MPU6050 가속도/자이로 센서 데이터를 수집합니다. Edge Impulse 학습용 CSV 형태로 시리얼 출력합니다.",
+    "block_label": "🧠 IMU 데이터 수집 시간(ms) 라벨",
+    "generator_comment": "IMU 데이터 수집 (MPU6050_tockn 라이브러리 사용)"
+  },
+  "tinyml_collect_sound": {
+    "tooltip": "I2S 마이크에서 오디오 데이터를 수집합니다. INMP441 등 I2S 마이크가 필요합니다.",
+    "block_label": "🧠 사운드 데이터 수집 시간(ms) 라벨",
+    "generator_comment": "사운드 데이터 수집 (ESP32 I2S)"
+  },
+  "tinyml_confidence": {
+    "tooltip": "가장 높은 신뢰도의 점수를 0~100으로 반환합니다.",
+    "block_label": "🧠 신뢰도 점수 (0~100)",
+    "generator_comment": "신뢰도 점수"
+  },
+  "tinyml_inference_start": {
+    "tooltip": "현재 입력 데이터로 TFLite 모델 추론을 실행합니다.",
+    "block_label": "🧠 TinyML 추론 실행",
+    "generator_comment": "추론 실행"
+  },
+  "tinyml_model_info": {
+    "tooltip": "현재 로드된 TFLite 모델의 정보를 반환합니다.",
+    "block_label": "🧠 TinyML 모델 정보",
+    "generator_comment": "TinyML 모델 정보"
+  },
+  "tinyml_model_setup": {
+    "tooltip": "TensorFlow Lite 모델을 초기화합니다. Arena 크기는 모델에 맞게 설정하세요.",
+    "block_label": "🧠 TinyML 모델 초기화 이름 Arena크기",
+    "generator_comment": "TinyML 모델 초기화"
+  },
+  "tinyml_result_is": {
+    "tooltip": "현재 분류 결과가 지정한 클래스 이름과 일치하는지 확인합니다.",
+    "block_label": "🧠 분류 결과가 인가?",
+    "generator_comment": "결과 비교 (조건)"
+  },
+  "tm1637_brightness": {
+    "tooltip": "Set display brightness from 0 (darkest) to 7 (brightest)",
+    "block_label": "Set brightness",
+    "generator_comment": "밝기 설정 블록"
+  },
+  "tm1637_clear": {
+    "tooltip": "Clear all digits on the display",
+    "block_label": "Clear display",
+    "generator_comment": "화면 지우기 블록"
+  },
+  "tm1637_colon": {
+    "tooltip": "Show or hide the colon between digits",
+    "block_label": "Colon",
+    "generator_comment": "콜론 제어 블록"
+  },
+  "tm1637_display_digit": {
+    "tooltip": "Display a single digit or character at specific position",
+    "block_label": "Display at position digit",
+    "generator_comment": "개별 자리 표시 블록"
+  },
+  "tm1637_display_number": {
+    "tooltip": "Display a number with optional decimal places or colon",
+    "block_label": "Display number",
+    "generator_comment": "숫자 표시 블록"
+  },
+  "tm1637_display_text": {
+    "tooltip": "Display text with scrolling if longer than 4 characters",
+    "block_label": "Display text scroll delay ms",
+    "generator_comment": "문자열 표시 블록 (라이브러리 내장 패턴 활용)"
+  },
+  "tm1637_display_time": {
+    "tooltip": "Display time in HH:MM format",
+    "block_label": "Display time :",
+    "generator_comment": "시계 표시 블록"
+  },
+  "tm1637_setup": {
+    "tooltip": "Initialize TM1637Display 4-digit display with CLK and DATA pins",
+    "block_label": "TM1637Display setup CLK pin DATA pin",
+    "generator_comment": "TM1637Display 4-Digit Display 코드 생성기 (v2.0) 1. TM1637Display 설정 블록 (설정 블록에서만 #include 생성)"
+  },
+  "tone_out": {
+    "tooltip": "Play tone on pin with frequency and duration.",
+    "block_label": "Play Tone Pin Frequency Duration"
+  },
+  "turbidity_calibrate": {
+    "tooltip": "Calibrate turbidity sensor.",
+    "block_label": "Turbidity Calibrate"
+  },
+  "turbidity_read_value": {
+    "tooltip": "Read turbidity sensor values.",
+    "block_label": "Turbidity Read"
+  },
+  "turbidity_setup": {
+    "tooltip": "Setup turbidity sensor.",
+    "block_label": "Setup Turbidity Sensor Pin",
+    "generator_comment": "탁도센서"
+  },
+  "turbidity_update": {
+    "tooltip": "Update turbidity sensor reading.",
+    "block_label": "Turbidity Update"
+  },
+  "ultrasonic_distance": {
+    "tooltip": "Get ultrasonic distance measurement.",
+    "block_label": "Ultrasonic Distance",
+    "generator_comment": "초음파 센서 거리값 블록의 코드 생성기 (수정 없음)"
+  },
+  "ultrasonic_setup": {
+    "tooltip": "Setup ultrasonic sensor.",
+    "block_label": "Setup Ultrasonic Trig Pin Echo Pin",
+    "generator_comment": "초음파 센서 설정 블록의 코드 생성기 (오류 수정 버전)"
+  },
+  "util_adc_oversample": {
+    "tooltip": "Reads analog pin N times and returns the average for higher precision.",
+    "block_label": "📏 오버샘플링 핀 샘플",
+    "generator_comment": "오버샘플링 아날로그 읽기"
+  },
+  "util_adc_stable": {
+    "tooltip": "Reads analog pin twice and returns the second value for ADC stability.",
+    "block_label": "📏 안정 아날로그읽기 핀",
+    "generator_comment": "안정 아날로그 읽기 (첫 읽기 버림)"
+  },
+  "util_cal_apply": {
+    "tooltip": "Apply the 2-point calibration to a sensor value.",
+    "block_label": "🎯 교정적용 값",
+    "generator_comment": "2점 교정 적용"
+  },
+  "util_cal_offset": {
+    "tooltip": "Add a simple offset to correct sensor readings.",
+    "block_label": "🎯 오프셋보정 +",
+    "generator_comment": "단순 오프셋 보정"
+  },
+  "util_cal_setup": {
+    "tooltip": "Set up 2-point calibration with raw sensor values and reference values.",
+    "block_label": "🎯 교정설정 기준1: → 기준2: →",
+    "generator_comment": "2점 교정 설정"
+  },
+  "util_constrain": {
+    "tooltip": "Constrain value within range.",
+    "block_label": "Constrain Between and"
+  },
+  "util_convert": {
+    "tooltip": "Convert value to different type.",
+    "block_label": "Convert to"
+  },
+  "util_filter_ema": {
+    "tooltip": "Smooths sensor values using exponential moving average. Lower α = smoother.",
+    "block_label": "📊 지수평활 α",
+    "generator_comment": "지수평활(EMA) 필터"
+  },
+  "util_filter_median": {
+    "tooltip": "Removes spike noise using a median filter.",
+    "block_label": "📊 중앙값필터 윈도우",
+    "generator_comment": "중앙값 필터"
+  },
+  "util_filter_moving_avg": {
+    "tooltip": "Smooths sensor values using a moving average filter.",
+    "block_label": "📊 이동평균 샘플",
+    "generator_comment": "이동평균 필터"
+  },
+  "util_filter_range": {
+    "tooltip": "Rejects outliers outside the valid range and keeps the previous value.",
+    "block_label": "📊 범위제한 최소 최대",
+    "generator_comment": "범위제한 필터"
+  },
+  "util_flag": {
+    "tooltip": "Utility category identifier.",
+    "block_label": "Utility Flag"
+  },
+  "util_i2c_read_address": {
+    "tooltip": "Get found I2C addresses.",
+    "block_label": "I2C Read Found Addresses"
+  },
+  "util_i2c_scanner": {
+    "tooltip": "Scan for I2C devices.",
+    "block_label": "I2C Scanner"
+  },
+  "util_interval": {
+    "tooltip": "내부 블록을 지정한 시간 간격(ms)마다 차단(blocking) 없이 반복 실행합니다.",
+    "block_label": "ms마다 실행",
+    "generator_comment": "N초 마다 실행 (Interval)"
+  },
+  "util_map": {
+    "tooltip": "Map value from one range to another.",
+    "block_label": "Map Value From - To -"
+  },
+  "util_millis": {
+    "tooltip": "Get milliseconds since program started.",
+    "block_label": "Milliseconds Since Start"
+  },
+  "util_record_duration": {
+    "tooltip": "블록 조립에 소요된 총 시간을 반환합니다. 더블클릭하면 IDE 콘솔에 출력됩니다.",
+    "block_label": "📊 총 블록조립 시간",
+    "generator_comment": "총 블록조립 시간(초) (정보 블록 - 더미 값 반환)"
+  },
+  "util_record_end_time": {
+    "tooltip": "블록 조립을 종료한 시간을 반환합니다. 더블클릭하면 IDE 콘솔에 출력됩니다.",
+    "block_label": "📊 블록조립 종료시간",
+    "generator_comment": "블록조립 종료시간 (정보 블록 - 더미 값 반환)"
+  },
+  "util_record_event_count": {
+    "tooltip": "기록된 이벤트 개수를 반환합니다. 더블클릭하면 IDE 콘솔에 출력됩니다.",
+    "block_label": "📊 이벤트 수",
+    "generator_comment": "이벤트 수 (정보 블록 - 더미 값 반환)"
+  },
+  "util_record_play": {
+    "tooltip": "이 블록을 더블클릭하면 기록된 블록 조립 과정을 재생합니다. 재생 배속을 선택할 수 있습니다.",
+    "block_label": "▶️ 블록조립 과정 재생",
+    "generator_comment": "블록조립 과정 재생 (실행 블록)"
+  },
+  "util_record_play_stop": {
+    "tooltip": "이 블록을 더블클릭하면 블록 조립 재생을 중지합니다.",
+    "block_label": "⏹️ 블록조립 재생 중지",
+    "generator_comment": "블록조립 재생 중지 (실행 블록)"
+  },
+  "util_record_reset": {
+    "tooltip": "이 블록을 더블클릭하면 블록 조립 기록을 모두 삭제합니다.",
+    "block_label": "🔄 블록조립 기록 초기화",
+    "generator_comment": "블록조립 기록 초기화 (실행 블록)"
+  },
+  "util_record_start": {
+    "tooltip": "이 블록을 더블클릭하면 블록 조립 과정을 기록하기 시작합니다.",
+    "block_label": "🔴 블록조립 기록 시작",
+    "generator_comment": "블록조립 기록 시작 (실행 블록)"
+  },
+  "util_record_start_time": {
+    "tooltip": "블록 조립을 시작한 시간을 반환합니다. 더블클릭하면 IDE 콘솔에 출력됩니다.",
+    "block_label": "📊 블록조립 시작시간",
+    "generator_comment": "블록조립 시작시간 (정보 블록 - 더미 값 반환)"
+  },
+  "util_record_status": {
+    "tooltip": "현재 기록 상태를 반환합니다 (중지/기록 중/재생 중). 더블클릭하면 IDE 콘솔에 출력됩니다.",
+    "block_label": "📊 기록 상태",
+    "generator_comment": "기록 상태 (정보 블록 - 더미 값 반환)"
+  },
+  "util_record_stop": {
+    "tooltip": "이 블록을 더블클릭하면 블록 조립 기록을 중지합니다.",
+    "block_label": "⏹️ 블록조립 기록 중지",
+    "generator_comment": "블록조립 기록 중지 (실행 블록)"
+  },
+  "util_stopwatch_elapsed": {
+    "tooltip": "마지막 초기화 이후 경과한 시간(밀리초)을 반환합니다.",
+    "block_label": "타이머 경과 시간(ms)",
+    "generator_comment": "타이머 경과 시간 (Stopwatch Elapsed)"
+  },
+  "util_stopwatch_reset": {
+    "tooltip": "지정한 ID의 타이머를 0으로 초기화합니다.",
+    "block_label": "타이머 초기화",
+    "generator_comment": "타이머 초기화 (Stopwatch Reset)"
+  },
+  "util_timeout": {
+    "tooltip": "지정한 시간이 지난 후 내부 블록을 한 번만 실행합니다. (논블로킹)",
+    "block_label": "ms 뒤에 한 번 실행",
+    "generator_comment": "N초 후 한 번만 실행 (Timeout)"
+  },
+  "util_to_ascii": {
+    "tooltip": "Convert character to ASCII value.",
+    "block_label": "Character to ASCII"
+  },
+  "util_to_char": {
+    "tooltip": "Convert number to character.",
+    "block_label": "Number to Character"
+  },
+  "uv_sensor_calibrate": {
+    "tooltip": "Calibrate UV sensor.",
+    "block_label": "UV Sensor Calibrate Voltage"
+  },
+  "uv_sensor_read_value": {
+    "tooltip": "Read UV sensor values.",
+    "block_label": "UV Sensor Read"
+  },
+  "uv_sensor_setup": {
+    "tooltip": "Setup UV sensor.",
+    "block_label": "Setup UV Sensor Pin",
+    "generator_comment": "UV센서"
+  },
+  "var_flag": {
+    "tooltip": "Variable category identifier.",
+    "block_label": "Variable Flag"
+  },
+  "variable_declare": {
+    "tooltip": "C언어 변수형을 선택하여 변수를 선언하고 초기값을 지정합니다.",
+    "block_label": "📋 변수 선언 =",
+    "generator_comment": "변수 선언 블록 코드 생성기 (C언어 변수형 선택)"
+  },
+  "variable_declare_change": {
+    "tooltip": "선언한 변수의 값을 지정한 양만큼 바꿉니다.",
+    "block_label": "📋 을(를) 만큼 바꾸기",
+    "generator_comment": "선언된 변수 만큼 바꾸기 코드 생성기"
+  },
+  "variable_declare_get": {
+    "tooltip": "선언한 변수의 값을 가져옵니다.",
+    "block_label": "📋",
+    "generator_comment": "선언된 변수 값 읽기 코드 생성기"
+  },
+  "variable_declare_novalue": {
+    "tooltip": "C언어 변수형을 선택하여 변수를 선언합니다. (초기값 없음)",
+    "block_label": "📋 변수 선언"
+  },
+  "variable_declare_set": {
+    "tooltip": "선언한 변수에 값을 저장합니다.",
+    "block_label": "📋 에 저장하기",
+    "generator_comment": "선언된 변수에 값 저장 코드 생성기"
+  },
+  "variables_get": {
+    "generator_comment": "기존 변수 블록 호환용"
+  },
+  "variables_get_dynamic": {
+    "generator_comment": "동적 블록 호환성 지원"
+  },
+  "vl53l0x_control": {
+    "tooltip": "Control VL53L0X measurement.",
+    "block_label": "VL53L0X Measurement",
+    "generator_comment": "통합 제어: START/STOP"
+  },
+  "vl53l0x_read_value": {
+    "tooltip": "Read VL53L0X sensor values.",
+    "block_label": "VL53L0X Read",
+    "generator_comment": "통합 읽기: 거리/주변광/신호/상태 (리포터)"
+  },
+  "vl53l0x_set_mode": {
+    "tooltip": "Set VL53L0X measurement mode and precision.",
+    "block_label": "VL53L0X Set Mode Precision",
+    "generator_comment": "모드/정밀도 설정"
+  },
+  "vl53l0x_setup": {
+    "tooltip": "Setup VL53L0X laser distance sensor.",
+    "block_label": "Setup VL53L0X Address",
+    "generator_comment": "설정 블록: include는 여기서만!"
+  },
+  "wait_until": {
+    "tooltip": "Wait until condition becomes true.",
+    "block_label": "Wait Until"
+  },
+  "wifi_is_connected": {
+    "tooltip": "Check if WiFi is connected.",
+    "block_label": "WiFi Connected?"
+  },
+  "wifi_local_ip": {
+    "tooltip": "Returns the local IP address of the board.",
+    "block_label": "WiFi Local IP Address"
+  },
+  "wifi_setup": {
+    "tooltip": "Connect to WiFi network.",
+    "block_label": "Setup WiFi SSID Password",
+    "generator_comment": "[0. WiFi 통신 (WiFi - WebSocket - Scratch Compatible)]"
+  },
+  "wifi_ws_available": {
+    "tooltip": "Check if a new WebSocket message has been received.",
+    "block_label": "WebSocket Message Available?"
+  },
+  "wifi_ws_read": {
+    "tooltip": "Read the latest WebSocket message.",
+    "block_label": "Read WebSocket Message"
+  },
+  "wifi_ws_send": {
+    "tooltip": "Send data via WebSocket followed by a newline.",
+    "block_label": "WebSocket Send (with newline)"
+  },
+  "wifi_ws_send_label_value": {
+    "tooltip": "Send data in 'LABEL:VALUE' format.",
+    "block_label": "WebSocket Send Label Value"
+  },
+  "wifi_ws_send_raw": {
+    "tooltip": "Send raw data via WebSocket without a newline.",
+    "block_label": "WebSocket Send (Raw)"
+  },
+  "wifi_ws_server_setup": {
+    "tooltip": "Start a WebSocket server on the specified port.",
+    "block_label": "Start WebSocket Server Port"
+  }
+}

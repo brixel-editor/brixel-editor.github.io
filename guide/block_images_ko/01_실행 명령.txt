@@ -1,0 +1,25 @@
+블록이미지 저장 실행 명령 - F12 콘솔에 붙여 넣기
+=============================================
+
+[전체] 한번에 전부 저장
+fetch("/guide/block_images_ko/02_save_all_blocks.js").then(r=>r.text()).then(eval)
+
+---------------------------------------------
+
+[Part 1] BASIC - main, pin, control, logic, math, text, color, variables, list, functions, utility
+fetch("/guide/block_images_ko/save_part1_basic.js").then(r=>r.text()).then(eval)
+
+[Part 2] DISPLAY 전체 - display_a + display_b
+fetch("/guide/block_images_ko/save_part2_display.js").then(r=>r.text()).then(eval)
+
+[Part 2-B] DISPLAY_B만 - OLED SSD1306, 한글OLED, 도트매트릭스, SH1106
+fetch("/guide/block_images_ko/save_part2_display_b.js").then(r=>r.text()).then(eval)
+
+[Part 3] SENSORS - sensors_a(초음파, DHT, HX711 등) + sensors_b(RTC, BMP280, MPU6050 등)
+fetch("/guide/block_images_ko/save_part3_sensors.js").then(r=>r.text()).then(eval)
+
+[Part 4] MOTOR + COMM - motor, output, communication, huskylens, webble, wifi, serial, esp32cam
+fetch("/guide/block_images_ko/save_part4_motor_comm.js").then(r=>r.text()).then(eval)
+
+[Part 5] TinyML - 보드를 ESP32로 변경하지 않아도 됨 (스크립트가 자동으로 ESP32 toolbox를 사용)
+fetch("/guide/block_images_ko/save_part5_tinyml.js").then(r=>r.text()).then(eval)

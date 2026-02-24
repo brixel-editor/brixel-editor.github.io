@@ -1,0 +1,3498 @@
+{
+  "version": "2.7.0",
+  "description": "Brixel WebEditor 블록 ID 카탈로그 - AI가 XML 블록 프로그램을 생성할 때 참조용",
+  "usage": "이 파일의 블록 ID를 사용하여 Blockly XML을 생성하면 Brixel 에디터에서 블록으로 표시됨",
+  "categories": {
+    "BASIC_MAIN": {
+      "name": "메인/시작",
+      "color": "#FFAB19",
+      "blocks": [
+        {
+          "id": "main_flag",
+          "description": "메인 플래그 (장식용)"
+        },
+        {
+          "id": "arduino_uno_starts_up",
+          "description": "아두이노 시작 블록"
+        },
+        {
+          "id": "arduino_setup",
+          "description": "setup() 함수 블록"
+        },
+        {
+          "id": "arduino_loop",
+          "description": "loop() 함수 블록"
+        }
+      ]
+    },
+    "PIN_CONTROL": {
+      "name": "핀 제어",
+      "color": "#6190DF",
+      "blocks": [
+        {
+          "id": "pin_flag",
+          "description": "핀 제어 플래그 (장식용)"
+        },
+        {
+          "id": "pin_mode",
+          "description": "핀 모드 설정 (INPUT/OUTPUT)",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "read_digital_pin",
+          "description": "디지털 핀 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "read_analog_pin",
+          "description": "아날로그 핀 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "set_digital_pin",
+          "description": "디지털 핀 출력 (HIGH/LOW)",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "set_pwm_pin",
+          "description": "PWM 출력 (0-255)",
+          "inputs": [
+            "PIN",
+            "VALUE"
+          ]
+        },
+        {
+          "id": "servo_setup",
+          "description": "서보 모터 설정",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "set_servo_angle",
+          "description": "서보 각도 설정",
+          "inputs": [
+            "PIN",
+            "ANGLE"
+          ]
+        },
+        {
+          "id": "tone_out",
+          "description": "톤 출력 (부저)",
+          "inputs": [
+            "PIN",
+            "FREQUENCY",
+            "DURATION"
+          ]
+        },
+        {
+          "id": "no_tone",
+          "description": "톤 중지",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "delay_ms",
+          "description": "지연 (밀리초)",
+          "inputs": [
+            "DELAY_TIME"
+          ]
+        },
+        {
+          "id": "timer_millis",
+          "description": "밀리초 타이머 값",
+          "output": "Number"
+        },
+        {
+          "id": "timer_reset",
+          "description": "타이머 리셋",
+          "inputs": [
+            "TIMER_NUM"
+          ]
+        },
+        {
+          "id": "timer_non_blocking_delay",
+          "description": "논블로킹 지연",
+          "inputs": [
+            "INTERVAL"
+          ]
+        },
+        {
+          "id": "arduino_interrupt",
+          "description": "인터럽트 설정",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "pulse_in",
+          "description": "펄스 입력 측정",
+          "inputs": [
+            "PIN",
+            "TIMEOUT"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "shift_out",
+          "description": "시프트 출력",
+          "inputs": [
+            "DATA_PIN",
+            "CLOCK_PIN",
+            "LATCH_PIN",
+            "VALUE"
+          ]
+        },
+        {
+          "id": "set_servo_angle_alt",
+          "description": "서보 각도 설정 (대체)",
+          "blockly_builtin": true
+        }
+      ]
+    },
+    "CONTROL": {
+      "name": "제어",
+      "color": "#FF9800",
+      "blocks": [
+        {
+          "id": "control_flag",
+          "description": "제어 플래그 (장식용)"
+        },
+        {
+          "id": "delay_ms",
+          "description": "지연 (밀리초)",
+          "inputs": [
+            "DELAY_TIME"
+          ]
+        },
+        {
+          "id": "wait_until",
+          "description": "조건까지 대기",
+          "inputs": [
+            "CONDITION"
+          ]
+        },
+        {
+          "id": "controls_if",
+          "description": "만약-이면 조건문"
+        },
+        {
+          "id": "controls_repeat_ext",
+          "description": "반복 (횟수)",
+          "inputs": [
+            "TIMES"
+          ]
+        },
+        {
+          "id": "controls_whileUntil",
+          "description": "반복 (조건)"
+        },
+        {
+          "id": "controls_flow_statements",
+          "description": "break/continue"
+        },
+        {
+          "id": "controls_for",
+          "description": "Blockly 내장: for 반복 (i=0; i<N; i++)",
+          "blockly_builtin": true
+        }
+      ]
+    },
+    "LOGIC": {
+      "name": "논리",
+      "color": "#5CB1D6",
+      "blocks": [
+        {
+          "id": "logic_flag",
+          "description": "논리 플래그 (장식용)"
+        },
+        {
+          "id": "logic_compare",
+          "description": "비교 연산 (=, ≠, <, >, ≤, ≥)",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Boolean"
+        },
+        {
+          "id": "logic_operation",
+          "description": "논리 연산 (AND, OR)",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Boolean"
+        },
+        {
+          "id": "logic_negate",
+          "description": "NOT 연산",
+          "inputs": [
+            "BOOL"
+          ],
+          "output": "Boolean"
+        },
+        {
+          "id": "logic_boolean",
+          "description": "참/거짓 값",
+          "output": "Boolean"
+        },
+        {
+          "id": "logic_null",
+          "description": "null 값",
+          "output": "null"
+        },
+        {
+          "id": "logic_ternary",
+          "description": "삼항 연산자",
+          "inputs": [
+            "IF",
+            "THEN",
+            "ELSE"
+          ],
+          "output": "Any"
+        }
+      ]
+    },
+    "MATH": {
+      "name": "수학",
+      "color": "#59C059",
+      "blocks": [
+        {
+          "id": "math_flag",
+          "description": "수학 플래그 (장식용)"
+        },
+        {
+          "id": "math_number",
+          "description": "숫자 값",
+          "output": "Number"
+        },
+        {
+          "id": "math_arithmetic",
+          "description": "사칙연산 (+, -, ×, ÷, ^)",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "math_single",
+          "description": "단항 연산 (sqrt, abs, -, ln, log10, e^, 10^)",
+          "inputs": [
+            "NUM"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "math_trig",
+          "description": "삼각함수 (sin, cos, tan, asin, acos, atan)",
+          "inputs": [
+            "NUM"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "math_constant",
+          "description": "수학 상수 (π, e, φ, sqrt(2), sqrt(½), ∞)",
+          "output": "Number"
+        },
+        {
+          "id": "math_number_property",
+          "description": "숫자 속성 검사 (짝수, 홀수, 소수 등)",
+          "inputs": [
+            "NUMBER_TO_CHECK"
+          ],
+          "output": "Boolean"
+        },
+        {
+          "id": "math_round",
+          "description": "반올림/올림/내림",
+          "inputs": [
+            "NUM"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "math_modulo",
+          "description": "나머지 연산",
+          "inputs": [
+            "DIVIDEND",
+            "DIVISOR"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "math_constrain",
+          "description": "범위 제한",
+          "inputs": [
+            "VALUE",
+            "LOW",
+            "HIGH"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "math_random_int",
+          "description": "랜덤 정수",
+          "inputs": [
+            "FROM",
+            "TO"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "math_random_float",
+          "description": "랜덤 소수 (0~1)",
+          "output": "Number"
+        },
+        {
+          "id": "math_atan2",
+          "description": "atan2 함수",
+          "inputs": [
+            "X",
+            "Y"
+          ],
+          "output": "Number"
+        }
+      ]
+    },
+    "TEXT": {
+      "name": "문자열",
+      "color": "#82a52d",
+      "blocks": [
+        {
+          "id": "text_flag",
+          "description": "문자열 플래그 (장식용)"
+        },
+        {
+          "id": "text",
+          "description": "문자열 값",
+          "output": "String"
+        },
+        {
+          "id": "custom_text_join",
+          "description": "문자열 연결",
+          "inputs": [
+            "TEXT1",
+            "TEXT2"
+          ],
+          "output": "String"
+        },
+        {
+          "id": "custom_text_char_at",
+          "description": "N번째 문자 가져오기",
+          "inputs": [
+            "TEXT",
+            "INDEX"
+          ],
+          "output": "String"
+        },
+        {
+          "id": "custom_text_length",
+          "description": "문자열 길이",
+          "inputs": [
+            "TEXT"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "custom_text_contains",
+          "description": "문자열 포함 여부",
+          "inputs": [
+            "TEXT",
+            "SUBSTRING"
+          ],
+          "output": "Boolean"
+        },
+        {
+          "id": "text_append",
+          "description": "문자열 추가"
+        },
+        {
+          "id": "text_changeCase",
+          "description": "대소문자 변환"
+        },
+        {
+          "id": "text_trim",
+          "description": "공백 제거"
+        },
+        {
+          "id": "text_isEmpty",
+          "description": "빈 문자열 여부",
+          "output": "Boolean"
+        },
+        {
+          "id": "custom_text_compare",
+          "description": "문자열 비교",
+          "output": "Boolean"
+        },
+        {
+          "id": "text_getSubstring",
+          "description": "Blockly 내장: 부분 문자열 추출",
+          "output": "String",
+          "blockly_builtin": true
+        }
+      ]
+    },
+    "COLOR": {
+      "name": "색상",
+      "color": "#A855F7",
+      "blocks": [
+        {
+          "id": "colour_flag",
+          "description": "색상 플래그 (장식용)"
+        },
+        {
+          "id": "colour_picker_custom",
+          "description": "색상 선택기",
+          "output": "Color"
+        },
+        {
+          "id": "colour_random_custom",
+          "description": "랜덤 색상",
+          "output": "Color"
+        },
+        {
+          "id": "colour_rgb_custom",
+          "description": "RGB 색상 생성",
+          "inputs": [
+            "RED",
+            "GREEN",
+            "BLUE"
+          ],
+          "output": "Color"
+        },
+        {
+          "id": "colour_blend_custom",
+          "description": "색상 혼합",
+          "inputs": [
+            "COLOUR1",
+            "COLOUR2",
+            "RATIO"
+          ],
+          "output": "Color"
+        },
+        {
+          "id": "colour_to_hex",
+          "description": "색상 → HEX 문자열",
+          "inputs": [
+            "COLOUR"
+          ],
+          "output": "String"
+        },
+        {
+          "id": "colour_to_rgb_values",
+          "description": "색상 → RGB 값",
+          "inputs": [
+            "COLOUR"
+          ],
+          "output": "Array"
+        }
+      ]
+    },
+    "VARIABLES": {
+      "name": "변수",
+      "color": "#98607F",
+      "blocks": [
+        {
+          "id": "var_flag",
+          "description": "변수 플래그 (장식용)"
+        },
+        {
+          "id": "number_variable_set",
+          "description": "숫자 변수 설정",
+          "inputs": [
+            "VALUE"
+          ]
+        },
+        {
+          "id": "number_variable_get",
+          "description": "숫자 변수 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "math_change",
+          "description": "변수 값 변경",
+          "inputs": [
+            "DELTA"
+          ]
+        },
+        {
+          "id": "string_variable_set",
+          "description": "문자열 변수 설정",
+          "inputs": [
+            "VALUE"
+          ]
+        },
+        {
+          "id": "string_variable_get",
+          "description": "문자열 변수 읽기",
+          "output": "String"
+        },
+        {
+          "id": "variable_declare",
+          "description": "C언어 변수형 선언 (초기값)",
+          "inputs": [
+            "TYPE",
+            "VAR_NAME",
+            "VALUE"
+          ]
+        },
+        {
+          "id": "variable_declare_novalue",
+          "description": "C언어 변수형 선언 (초기값 없음)",
+          "inputs": [
+            "TYPE",
+            "VAR_NAME"
+          ]
+        },
+        {
+          "id": "variable_declare_set",
+          "description": "선언된 변수에 값 저장",
+          "inputs": [
+            "VAR_NAME",
+            "VALUE"
+          ]
+        },
+        {
+          "id": "variable_declare_get",
+          "description": "선언된 변수 값 읽기",
+          "output": "Any",
+          "inputs": [
+            "VAR_NAME"
+          ]
+        },
+        {
+          "id": "variable_declare_change",
+          "description": "선언된 변수 값 변경",
+          "inputs": [
+            "VAR_NAME",
+            "DELTA"
+          ]
+        },
+        {
+          "id": "variables_get",
+          "description": "Blockly 내장: 변수 값 읽기",
+          "output": "Any",
+          "blockly_builtin": true
+        },
+        {
+          "id": "variables_set",
+          "description": "Blockly 내장: 변수에 값 저장",
+          "blockly_builtin": true
+        },
+        {
+          "id": "variables_get_dynamic",
+          "description": "Blockly 내장: 동적 변수 값 읽기",
+          "output": "Any",
+          "blockly_builtin": true
+        },
+        {
+          "id": "variables_set_dynamic",
+          "description": "Blockly 내장: 동적 변수에 값 저장",
+          "blockly_builtin": true
+        }
+      ]
+    },
+    "LIST": {
+      "name": "리스트/배열",
+      "color": "#59ACF7",
+      "blocks": [
+        {
+          "id": "array_create",
+          "description": "배열 생성 (값 지정)",
+          "inputs": [
+            "VALUES"
+          ]
+        },
+        {
+          "id": "array_create_empty",
+          "description": "빈 배열 생성",
+          "inputs": [
+            "SIZE"
+          ]
+        },
+        {
+          "id": "array_get",
+          "description": "배열 요소 읽기",
+          "inputs": [
+            "INDEX"
+          ],
+          "output": "Any"
+        },
+        {
+          "id": "array_set",
+          "description": "배열 요소 설정",
+          "inputs": [
+            "INDEX",
+            "VALUE"
+          ]
+        },
+        {
+          "id": "array_append",
+          "description": "배열에 요소 추가",
+          "inputs": [
+            "VALUE"
+          ]
+        },
+        {
+          "id": "array_remove",
+          "description": "배열 요소 삭제",
+          "inputs": [
+            "INDEX"
+          ]
+        },
+        {
+          "id": "array_find",
+          "description": "배열에서 값 찾기",
+          "inputs": [
+            "VALUE"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "array_length",
+          "description": "배열 길이",
+          "output": "Number"
+        },
+        {
+          "id": "array_clear",
+          "description": "배열 초기화",
+          "inputs": [
+            "VALUE"
+          ]
+        },
+        {
+          "id": "array_copy",
+          "description": "배열 복사"
+        },
+        {
+          "id": "array_strlen",
+          "description": "문자열 배열 길이",
+          "output": "Number"
+        },
+        {
+          "id": "array_contains",
+          "description": "배열 포함 여부",
+          "inputs": [
+            "VALUE"
+          ],
+          "output": "Boolean"
+        },
+        {
+          "id": "array_clear_at",
+          "description": "배열 특정 인덱스 값 초기화",
+          "inputs": [
+            "VAR_NAME",
+            "INDEX",
+            "VALUE"
+          ]
+        }
+      ]
+    },
+    "FUNCTIONS": {
+      "name": "함수",
+      "color": "#8E61A3",
+      "blocks": [
+        {
+          "id": "func_flag",
+          "description": "함수 플래그 (장식용)"
+        },
+        {
+          "id": "procedures_ifreturn",
+          "description": "조건부 반환 (값)",
+          "inputs": [
+            "CONDITION",
+            "VALUE"
+          ]
+        },
+        {
+          "id": "procedures_ifreturn_void",
+          "description": "조건부 반환 (void)",
+          "inputs": [
+            "CONDITION"
+          ]
+        },
+        {
+          "id": "procedures_defnoreturn",
+          "description": "Blockly 내장: 반환값 없는 함수 정의",
+          "blockly_builtin": true
+        },
+        {
+          "id": "procedures_defreturn",
+          "description": "Blockly 내장: 반환값 있는 함수 정의",
+          "blockly_builtin": true
+        },
+        {
+          "id": "procedures_callnoreturn",
+          "description": "Blockly 내장: 반환값 없는 함수 호출",
+          "blockly_builtin": true
+        },
+        {
+          "id": "procedures_callreturn",
+          "description": "Blockly 내장: 반환값 있는 함수 호출",
+          "output": "Any",
+          "blockly_builtin": true
+        },
+        {
+          "id": "procedures_defnoreturn_dynamic",
+          "description": "Blockly 내장: 동적 함수 정의 (반환 없음)",
+          "blockly_builtin": true
+        },
+        {
+          "id": "procedures_defreturn_dynamic",
+          "description": "Blockly 내장: 동적 함수 정의 (반환 있음)",
+          "blockly_builtin": true
+        },
+        {
+          "id": "procedures_callnoreturn_dynamic",
+          "description": "Blockly 내장: 동적 함수 호출 (반환 없음)",
+          "blockly_builtin": true
+        },
+        {
+          "id": "procedures_callreturn_dynamic",
+          "description": "Blockly 내장: 동적 함수 호출 (반환 있음)",
+          "output": "Any",
+          "blockly_builtin": true
+        }
+      ]
+    },
+    "UTILITY": {
+      "name": "유틸리티",
+      "color": "#08B89F",
+      "blocks": [
+        {
+          "id": "util_flag",
+          "description": "유틸리티 플래그 (장식용)"
+        },
+        {
+          "id": "util_millis",
+          "description": "millis() 값",
+          "output": "Number"
+        },
+        {
+          "id": "util_map",
+          "description": "값 매핑",
+          "inputs": [
+            "VALUE",
+            "FROMLOW",
+            "FROMHIGH",
+            "TOLOW",
+            "TOHIGH"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_constrain",
+          "description": "값 제한",
+          "inputs": [
+            "VALUE",
+            "LOW",
+            "HIGH"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_convert",
+          "description": "형변환",
+          "inputs": [
+            "VALUE"
+          ],
+          "output": "Any"
+        },
+        {
+          "id": "util_to_char",
+          "description": "ASCII → 문자",
+          "inputs": [
+            "VALUE"
+          ],
+          "output": "String"
+        },
+        {
+          "id": "util_to_ascii",
+          "description": "문자 → ASCII",
+          "inputs": [
+            "VALUE"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_i2c_scanner",
+          "description": "I2C 스캐너"
+        },
+        {
+          "id": "util_i2c_read_address",
+          "description": "I2C 주소 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "util_record_start",
+          "description": "블록 조립 기록 시작"
+        },
+        {
+          "id": "util_record_stop",
+          "description": "블록 조립 기록 중지"
+        },
+        {
+          "id": "util_record_play",
+          "description": "블록 조립 재생"
+        },
+        {
+          "id": "util_record_play_stop",
+          "description": "블록 조립 재생 중지"
+        },
+        {
+          "id": "util_record_reset",
+          "description": "블록 조립 기록 초기화"
+        },
+        {
+          "id": "util_record_status",
+          "description": "기록 상태",
+          "output": "String"
+        },
+        {
+          "id": "util_record_event_count",
+          "description": "기록된 이벤트 수",
+          "output": "Number"
+        },
+        {
+          "id": "util_record_duration",
+          "description": "기록 시간",
+          "output": "Number"
+        },
+        {
+          "id": "util_record_start_time",
+          "description": "기록 시작 시간",
+          "output": "Number"
+        },
+        {
+          "id": "util_record_end_time",
+          "description": "기록 종료 시간",
+          "output": "Number"
+        },
+        {
+          "id": "util_filter_moving_avg",
+          "description": "이동평균 필터",
+          "inputs": [
+            "VALUE",
+            "SAMPLES"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_filter_ema",
+          "description": "지수평활(EMA) 필터",
+          "inputs": [
+            "VALUE",
+            "ALPHA"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_filter_median",
+          "description": "중앙값 필터",
+          "inputs": [
+            "VALUE",
+            "WINDOW"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_filter_range",
+          "description": "범위제한 필터",
+          "inputs": [
+            "VALUE",
+            "MIN",
+            "MAX"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_cal_setup",
+          "description": "2점 교정 설정",
+          "inputs": [
+            "NAME",
+            "RAW1",
+            "REF1",
+            "RAW2",
+            "REF2"
+          ]
+        },
+        {
+          "id": "util_cal_apply",
+          "description": "교정 적용",
+          "inputs": [
+            "NAME",
+            "VALUE"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_cal_offset",
+          "description": "오프셋 보정",
+          "inputs": [
+            "VALUE",
+            "OFFSET"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_adc_stable",
+          "description": "안정 아날로그 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_adc_oversample",
+          "description": "오버샘플링 아날로그 읽기",
+          "inputs": [
+            "PIN",
+            "SAMPLES"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "util_interval",
+          "description": "N ms마다 반복 실행 (논블로킹)",
+          "inputs": [
+            "INTERVAL"
+          ]
+        },
+        {
+          "id": "util_timeout",
+          "description": "N ms 뒤 한 번 실행 (논블로킹)",
+          "inputs": [
+            "DELAY"
+          ]
+        },
+        {
+          "id": "util_stopwatch_reset",
+          "description": "타이머 초기화",
+          "inputs": [
+            "TIMER"
+          ]
+        },
+        {
+          "id": "util_stopwatch_elapsed",
+          "description": "타이머 경과 시간",
+          "inputs": [
+            "TIMER"
+          ],
+          "output": "Number"
+        }
+      ]
+    },
+    "DISPLAY_A": {
+      "name": "디스플레이 A (LCD, TM1637, NeoPixel)",
+      "color": "#FAC907",
+      "blocks": [
+        {
+          "id": "dis01_flag",
+          "description": "디스플레이A 플래그 (장식용)"
+        },
+        {
+          "id": "lcd_i2c_setup",
+          "description": "I2C LCD 초기화",
+          "inputs": [
+            "LCD_NUM"
+          ]
+        },
+        {
+          "id": "lcd_i2c_print",
+          "description": "LCD 텍스트 출력",
+          "inputs": [
+            "LCD_NUM",
+            "ROW",
+            "COL",
+            "TEXT"
+          ]
+        },
+        {
+          "id": "lcd_i2c_clear",
+          "description": "LCD 화면 지우기",
+          "inputs": [
+            "LCD_NUM"
+          ]
+        },
+        {
+          "id": "lcd_i2c_set_cursor",
+          "description": "LCD 커서 이동",
+          "inputs": [
+            "LCD_NUM",
+            "ROW",
+            "COL"
+          ]
+        },
+        {
+          "id": "lcd_i2c_cursor",
+          "description": "LCD 커서 표시/숨김",
+          "inputs": [
+            "LCD_NUM"
+          ]
+        },
+        {
+          "id": "lcd_i2c_backlight",
+          "description": "LCD 백라이트 제어",
+          "inputs": [
+            "LCD_NUM"
+          ]
+        },
+        {
+          "id": "lcd_i2c_display",
+          "description": "LCD 디스플레이 켜기/끄기",
+          "inputs": [
+            "LCD_NUM"
+          ]
+        },
+        {
+          "id": "lcd_i2c_scroll",
+          "description": "LCD 스크롤",
+          "inputs": [
+            "LCD_NUM"
+          ]
+        },
+        {
+          "id": "tm1637_setup",
+          "description": "TM1637 초기화",
+          "inputs": [
+            "CLK_PIN",
+            "DATA_PIN"
+          ]
+        },
+        {
+          "id": "tm1637_display_number",
+          "description": "TM1637 숫자 표시",
+          "inputs": [
+            "NUMBER"
+          ]
+        },
+        {
+          "id": "tm1637_display_time",
+          "description": "TM1637 시간 표시",
+          "inputs": [
+            "HOUR",
+            "MINUTE"
+          ]
+        },
+        {
+          "id": "tm1637_display_text",
+          "description": "TM1637 텍스트 스크롤",
+          "inputs": [
+            "TEXT",
+            "DELAY"
+          ]
+        },
+        {
+          "id": "tm1637_display_digit",
+          "description": "TM1637 자릿수 표시",
+          "inputs": [
+            "DIGIT"
+          ]
+        },
+        {
+          "id": "tm1637_clear",
+          "description": "TM1637 화면 지우기"
+        },
+        {
+          "id": "tm1637_brightness",
+          "description": "TM1637 밝기 설정"
+        },
+        {
+          "id": "tm1637_colon",
+          "description": "TM1637 콜론 표시"
+        },
+        {
+          "id": "neopixel_setup",
+          "description": "NeoPixel 초기화",
+          "inputs": [
+            "PIN",
+            "LED_COUNT"
+          ]
+        },
+        {
+          "id": "neopixel_set_rgb",
+          "description": "NeoPixel RGB 색상 설정",
+          "inputs": [
+            "STRIP_NUM",
+            "LED_INDEX",
+            "R",
+            "G",
+            "B"
+          ]
+        },
+        {
+          "id": "neopixel_set_rgbw",
+          "description": "NeoPixel RGBW 색상 설정",
+          "inputs": [
+            "STRIP_NUM",
+            "LED_INDEX",
+            "R",
+            "G",
+            "B",
+            "W"
+          ]
+        },
+        {
+          "id": "neopixel_show",
+          "description": "NeoPixel 업데이트",
+          "inputs": [
+            "STRIP_NUM"
+          ]
+        },
+        {
+          "id": "neopixel_brightness",
+          "description": "NeoPixel 밝기 설정",
+          "inputs": [
+            "STRIP_NUM",
+            "BRI"
+          ]
+        },
+        {
+          "id": "neopixel_clear",
+          "description": "NeoPixel 끄기",
+          "inputs": [
+            "STRIP_NUM"
+          ]
+        },
+        {
+          "id": "neopixel_fill_rgb_all",
+          "description": "NeoPixel 전체 색상 채우기",
+          "inputs": [
+            "STRIP_NUM",
+            "R",
+            "G",
+            "B"
+          ]
+        },
+        {
+          "id": "neopixel_anim_rainbow",
+          "description": "NeoPixel 무지개 애니메이션",
+          "inputs": [
+            "STRIP_NUM",
+            "WAIT",
+            "LOOPS"
+          ]
+        },
+        {
+          "id": "neopixel_anim_shift",
+          "description": "NeoPixel 시프트 애니메이션",
+          "inputs": [
+            "STRIP_NUM",
+            "STEPS",
+            "WAIT"
+          ]
+        },
+        {
+          "id": "neopixel_anim_breathe",
+          "description": "NeoPixel 호흡 애니메이션",
+          "inputs": [
+            "STRIP_NUM",
+            "R",
+            "G",
+            "B",
+            "MIN_BRI",
+            "MAX_BRI",
+            "STEP",
+            "WAIT"
+          ]
+        }
+      ]
+    },
+    "DISPLAY_B": {
+      "name": "디스플레이 B (OLED, LED 매트릭스)",
+      "color": "#FAC907",
+      "blocks": [
+        {
+          "id": "dis02_flag",
+          "description": "디스플레이B 플래그 (장식용)"
+        },
+        {
+          "id": "ssd1306_setup_i2c",
+          "description": "SSD1306 OLED 초기화",
+          "inputs": [
+            "NUM",
+            "RST"
+          ]
+        },
+        {
+          "id": "ssd1306_text",
+          "description": "SSD1306 텍스트 출력",
+          "inputs": [
+            "NUM",
+            "TEXT",
+            "X",
+            "Y",
+            "SIZE"
+          ]
+        },
+        {
+          "id": "ssd1306_control",
+          "description": "SSD1306 제어 (display/clear)",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ssd1306_dim",
+          "description": "SSD1306 밝기 조절",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ssd1306_pixel",
+          "description": "SSD1306 픽셀 그리기",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y"
+          ]
+        },
+        {
+          "id": "ssd1306_line",
+          "description": "SSD1306 선 그리기",
+          "inputs": [
+            "NUM",
+            "X1",
+            "Y1",
+            "X2",
+            "Y2"
+          ]
+        },
+        {
+          "id": "ssd1306_rect",
+          "description": "SSD1306 사각형 그리기",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y",
+            "W",
+            "H"
+          ]
+        },
+        {
+          "id": "ssd1306_circle",
+          "description": "SSD1306 원 그리기",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y",
+            "R"
+          ]
+        },
+        {
+          "id": "ssd1306_scroll",
+          "description": "SSD1306 스크롤",
+          "inputs": [
+            "NUM",
+            "START",
+            "STOP"
+          ]
+        },
+        {
+          "id": "oled_han_setup",
+          "description": "한글 OLED 초기화"
+        },
+        {
+          "id": "oled_han_clear",
+          "description": "한글 OLED 지우기"
+        },
+        {
+          "id": "oled_han_print_text",
+          "description": "한글 OLED 텍스트",
+          "inputs": [
+            "TEXT",
+            "X",
+            "Y"
+          ]
+        },
+        {
+          "id": "oled_han_big_digit",
+          "description": "한글 OLED 큰 숫자",
+          "inputs": [
+            "DIGIT",
+            "X",
+            "Y"
+          ]
+        },
+        {
+          "id": "oled_han_draw_bar",
+          "description": "한글 OLED 막대 그래프",
+          "inputs": [
+            "X",
+            "Y",
+            "VALUE"
+          ]
+        },
+        {
+          "id": "ht16k33_setup",
+          "description": "HT16K33 LED 매트릭스 초기화",
+          "inputs": [
+            "BRI"
+          ]
+        },
+        {
+          "id": "ht16k33_scroll_text",
+          "description": "HT16K33 텍스트 스크롤",
+          "inputs": [
+            "NUM",
+            "TEXT",
+            "SEC"
+          ]
+        },
+        {
+          "id": "ht16k33_show",
+          "description": "HT16K33 표시",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ht16k33_clear",
+          "description": "HT16K33 지우기",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ht16k33_set_brightness",
+          "description": "HT16K33 밝기 설정",
+          "inputs": [
+            "NUM",
+            "BRI"
+          ]
+        },
+        {
+          "id": "ht16k33_set_blink",
+          "description": "HT16K33 깜빡임 설정",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ht16k33_pixel",
+          "description": "HT16K33 픽셀",
+          "inputs": [
+            "NUM",
+            "ROW",
+            "COL"
+          ]
+        },
+        {
+          "id": "ht16k33_bicolor_pixel",
+          "description": "HT16K33 이색 픽셀",
+          "inputs": [
+            "NUM",
+            "ROW",
+            "COL"
+          ]
+        },
+        {
+          "id": "ht16k33_pattern_8x8",
+          "description": "HT16K33 8x8 패턴",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ht16k33_pattern_8x16",
+          "description": "HT16K33 8x16 패턴",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ht16k33_line",
+          "description": "HT16K33 선",
+          "inputs": [
+            "NUM",
+            "R1",
+            "C1",
+            "R2",
+            "C2"
+          ]
+        },
+        {
+          "id": "ht16k33_circle",
+          "description": "HT16K33 원",
+          "inputs": [
+            "NUM",
+            "R",
+            "C",
+            "RAD"
+          ]
+        },
+        {
+          "id": "ht16k33_rect",
+          "description": "HT16K33 사각형",
+          "inputs": [
+            "NUM",
+            "R",
+            "C",
+            "W",
+            "H"
+          ]
+        },
+        {
+          "id": "sh110x_setup_i2c",
+          "description": "SH110X OLED 초기화",
+          "inputs": [
+            "NUM",
+            "RST",
+            "WIDTH",
+            "HEIGHT"
+          ]
+        },
+        {
+          "id": "sh110x_text",
+          "description": "SH110X 텍스트",
+          "inputs": [
+            "NUM",
+            "TXT",
+            "X",
+            "Y",
+            "SIZE"
+          ]
+        },
+        {
+          "id": "sh110x_display",
+          "description": "SH110X 표시",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "sh110x_clear",
+          "description": "SH110X 지우기",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "sh110x_control",
+          "description": "SH110X 제어",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "sh110x_pixel",
+          "description": "SH110X 픽셀",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y"
+          ]
+        },
+        {
+          "id": "sh110x_line",
+          "description": "SH110X 선",
+          "inputs": [
+            "NUM",
+            "X1",
+            "Y1",
+            "X2",
+            "Y2"
+          ]
+        },
+        {
+          "id": "sh110x_rect",
+          "description": "SH110X 사각형",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y",
+            "W",
+            "H"
+          ]
+        },
+        {
+          "id": "sh110x_circle",
+          "description": "SH110X 원",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y",
+            "R"
+          ]
+        },
+        {
+          "id": "sh110x_contrast",
+          "description": "SH110X 대비",
+          "inputs": [
+            "NUM",
+            "CONTRAST"
+          ]
+        },
+        {
+          "id": "sh1106_setup",
+          "description": "SH1106 한글 OLED 초기화"
+        },
+        {
+          "id": "sh1106_clear",
+          "description": "SH1106 지우기"
+        },
+        {
+          "id": "sh1106_print_text",
+          "description": "SH1106 한글 텍스트",
+          "inputs": [
+            "TEXT",
+            "X",
+            "Y"
+          ]
+        },
+        {
+          "id": "sh1106_large_number",
+          "description": "SH1106 큰 숫자",
+          "inputs": [
+            "NUMBER",
+            "X",
+            "Y"
+          ]
+        },
+        {
+          "id": "sh1106_draw_bar",
+          "description": "SH1106 막대 그래프",
+          "inputs": [
+            "X",
+            "Y",
+            "VALUE"
+          ]
+        },
+        {
+          "id": "ssd1306_bitmap",
+          "description": "SSD1306 OLED 비트맵 출력",
+          "inputs": [
+            "NUM",
+            "BITMAP",
+            "X",
+            "Y"
+          ]
+        },
+        {
+          "id": "sh110x_bitmap",
+          "description": "SH110X OLED 비트맵 출력",
+          "inputs": [
+            "NUM",
+            "BITMAP",
+            "X",
+            "Y"
+          ]
+        }
+      ]
+    },
+    "SENSORS_A": {
+      "name": "센서 A (거리, 온습도, 무게, 로터리, 수질 등)",
+      "color": "#FF6F00",
+      "blocks": [
+        {
+          "id": "sensor01_flag",
+          "description": "센서A 플래그 (장식용)"
+        },
+        {
+          "id": "ultrasonic_setup",
+          "description": "초음파 센서 초기화"
+        },
+        {
+          "id": "ultrasonic_distance",
+          "description": "초음파 거리 측정",
+          "output": "Number"
+        },
+        {
+          "id": "dht_setup",
+          "description": "DHT 온습도 센서 초기화",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "dht_read_temperature",
+          "description": "DHT 온도 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "dht_read_humidity",
+          "description": "DHT 습도 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "dht_convert_temperature",
+          "description": "섭씨/화씨 변환",
+          "inputs": [
+            "TEMPERATURE"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "dht_heat_index",
+          "description": "체감온도 계산",
+          "inputs": [
+            "TEMPERATURE",
+            "HUMIDITY"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "dallas_temp_setup",
+          "description": "Dallas 온도 센서 초기화"
+        },
+        {
+          "id": "dallas_temp_request",
+          "description": "Dallas 온도 요청"
+        },
+        {
+          "id": "dallas_temp_read",
+          "description": "Dallas 온도 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "dallas_temp_count",
+          "description": "Dallas 센서 개수",
+          "output": "Number"
+        },
+        {
+          "id": "hx711_setup",
+          "description": "HX711 로드셀 초기화",
+          "inputs": [
+            "DOUT_PIN",
+            "CLK_PIN"
+          ]
+        },
+        {
+          "id": "hx711_get_weight",
+          "description": "HX711 무게 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "hx711_tare",
+          "description": "HX711 영점 조정",
+          "inputs": [
+            "TIMES"
+          ]
+        },
+        {
+          "id": "hx711_set_scale",
+          "description": "HX711 스케일 설정",
+          "inputs": [
+            "SCALE"
+          ]
+        },
+        {
+          "id": "hx711_is_ready",
+          "description": "HX711 준비 상태",
+          "output": "Boolean"
+        },
+        {
+          "id": "hx711_power_control",
+          "description": "HX711 전원 제어"
+        },
+        {
+          "id": "hx711_read_data",
+          "description": "HX711 원시 데이터",
+          "output": "Number"
+        },
+        {
+          "id": "i2c_weight_setup",
+          "description": "I2C 무게 센서 초기화",
+          "inputs": [
+            "ADDRESS"
+          ]
+        },
+        {
+          "id": "i2c_weight_read",
+          "description": "I2C 무게 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "i2c_weight_available",
+          "description": "I2C 무게 센서 연결 상태",
+          "output": "Boolean"
+        },
+        {
+          "id": "i2c_weight_raw_data",
+          "description": "I2C 무게 원시 데이터",
+          "output": "Number"
+        },
+        {
+          "id": "rotary_setup",
+          "description": "로터리 엔코더 초기화",
+          "inputs": [
+            "DT_PIN",
+            "CLK_PIN"
+          ]
+        },
+        {
+          "id": "rotary_get_value",
+          "description": "로터리 값 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "rotary_direction",
+          "description": "로터리 방향",
+          "output": "Number"
+        },
+        {
+          "id": "rotary_counter",
+          "description": "로터리 카운터",
+          "output": "Number"
+        },
+        {
+          "id": "rotary_reset_counter",
+          "description": "로터리 카운터 초기화"
+        },
+        {
+          "id": "thermistor_setup",
+          "description": "서미스터 초기화",
+          "inputs": [
+            "ANALOG_PIN",
+            "NOMINAL_RES",
+            "BETA_COEF",
+            "SERIAL_RES"
+          ]
+        },
+        {
+          "id": "thermistor_read_temperature",
+          "description": "서미스터 온도 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "thermistor_read_raw",
+          "description": "서미스터 원시값",
+          "output": "Number"
+        },
+        {
+          "id": "thermistor_get_resistance",
+          "description": "서미스터 저항값",
+          "output": "Number"
+        },
+        {
+          "id": "pms_setup",
+          "description": "미세먼지 센서 초기화",
+          "inputs": [
+            "RX_PIN",
+            "TX_PIN",
+            "BAUD_RATE"
+          ]
+        },
+        {
+          "id": "pms_power_control",
+          "description": "미세먼지 센서 전원"
+        },
+        {
+          "id": "pms_set_mode",
+          "description": "미세먼지 센서 모드"
+        },
+        {
+          "id": "pms_read_data",
+          "description": "미세먼지 데이터 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "pms_request_read",
+          "description": "미세먼지 데이터 요청"
+        },
+        {
+          "id": "pms_data_available",
+          "description": "미세먼지 데이터 가용",
+          "output": "Boolean"
+        },
+        {
+          "id": "mhz19_setup",
+          "description": "MH-Z19 CO2 센서 초기화",
+          "inputs": [
+            "RX_PIN",
+            "TX_PIN",
+            "BAUD"
+          ]
+        },
+        {
+          "id": "mhz19_set_range",
+          "description": "MH-Z19 범위 설정",
+          "inputs": [
+            "RANGE"
+          ]
+        },
+        {
+          "id": "mhz19_filter_mode",
+          "description": "MH-Z19 필터 모드"
+        },
+        {
+          "id": "mhz19_read_value",
+          "description": "MH-Z19 CO2 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "mhz19_calibration",
+          "description": "MH-Z19 캘리브레이션",
+          "inputs": [
+            "PERIOD"
+          ]
+        },
+        {
+          "id": "mhz19_get_status",
+          "description": "MH-Z19 상태",
+          "output": "String"
+        },
+        {
+          "id": "gravity_tds_setup",
+          "description": "TDS 수질 센서 초기화",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "gravity_tds_set_temp",
+          "description": "TDS 온도 설정",
+          "inputs": [
+            "TEMP"
+          ]
+        },
+        {
+          "id": "gravity_tds_update",
+          "description": "TDS 업데이트"
+        },
+        {
+          "id": "gravity_tds_read_value",
+          "description": "TDS 값 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "gravity_tds_advanced_config",
+          "description": "TDS 고급 설정",
+          "inputs": [
+            "VALUE"
+          ]
+        },
+        {
+          "id": "dfrobot_ph_setup",
+          "description": "pH 센서 초기화",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "dfrobot_ph_read",
+          "description": "pH 값 읽기",
+          "inputs": [
+            "TEMPERATURE"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "dfrobot_ph_voltage",
+          "description": "pH 전압 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "dfrobot_ph_calibration",
+          "description": "pH 캘리브레이션"
+        },
+        {
+          "id": "fingerprint_setup",
+          "description": "지문 센서 초기화",
+          "inputs": [
+            "RX_PIN",
+            "TX_PIN",
+            "BAUD"
+          ]
+        },
+        {
+          "id": "fingerprint_enroll_process",
+          "description": "지문 등록",
+          "inputs": [
+            "ID"
+          ]
+        },
+        {
+          "id": "fingerprint_search",
+          "description": "지문 검색"
+        },
+        {
+          "id": "fingerprint_get_result",
+          "description": "지문 결과",
+          "output": "Number"
+        },
+        {
+          "id": "fingerprint_database",
+          "description": "지문 데이터베이스",
+          "inputs": [
+            "ID"
+          ]
+        },
+        {
+          "id": "fingerprint_led_control",
+          "description": "지문 센서 LED"
+        },
+        {
+          "id": "turbidity_setup",
+          "description": "탁도 센서 초기화",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "turbidity_calibrate",
+          "description": "탁도 캘리브레이션"
+        },
+        {
+          "id": "turbidity_update",
+          "description": "탁도 업데이트"
+        },
+        {
+          "id": "turbidity_read_value",
+          "description": "탁도 값 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "uv_sensor_setup",
+          "description": "UV 센서 초기화",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "uv_sensor_calibrate",
+          "description": "UV 센서 캘리브레이션",
+          "inputs": [
+            "VOLTAGE"
+          ]
+        },
+        {
+          "id": "uv_sensor_read_value",
+          "description": "UV 지수 읽기",
+          "output": "Number"
+        }
+      ]
+    },
+    "SENSORS_B": {
+      "name": "센서 B (RTC, 기압, 자이로, 가스, 색상 등)",
+      "color": "#4D68EC",
+      "blocks": [
+        {
+          "id": "sensor02_flag",
+          "description": "센서B 플래그 (장식용)"
+        },
+        {
+          "id": "ds1307_setup",
+          "description": "DS1307 RTC 초기화",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ds1307_set_time",
+          "description": "DS1307 시간 설정",
+          "inputs": [
+            "NUM",
+            "YEAR",
+            "MONTH",
+            "DATE",
+            "HOUR",
+            "MINUTE",
+            "SECOND"
+          ]
+        },
+        {
+          "id": "ds1307_get_time",
+          "description": "DS1307 시간 읽기",
+          "inputs": [
+            "NUM"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "ds1307_clock_control",
+          "description": "DS1307 시계 제어",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ds1307_sqw_output",
+          "description": "DS1307 SQW 출력",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ds1307_get_time_string",
+          "description": "DS1307 시간 문자열",
+          "inputs": [
+            "NUM"
+          ],
+          "output": "String"
+        },
+        {
+          "id": "bmp280_setup",
+          "description": "BMP280 기압 센서 초기화"
+        },
+        {
+          "id": "bmp280_set_sea_pressure",
+          "description": "BMP280 해수면 기압",
+          "inputs": [
+            "PRESSURE"
+          ]
+        },
+        {
+          "id": "bmp280_set_reference",
+          "description": "BMP280 기준 고도",
+          "inputs": [
+            "ALTITUDE"
+          ]
+        },
+        {
+          "id": "bmp280_read_value",
+          "description": "BMP280 값 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "bx_mpu_setup",
+          "description": "MPU6050 자이로 초기화"
+        },
+        {
+          "id": "bx_mpu_update",
+          "description": "MPU6050 업데이트"
+        },
+        {
+          "id": "bx_mpu_read_value",
+          "description": "MPU6050 값 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "bx_mpu_set_offsets",
+          "description": "MPU6050 오프셋 설정",
+          "inputs": [
+            "X",
+            "Y",
+            "Z"
+          ]
+        },
+        {
+          "id": "bx_mpu_calc_offsets",
+          "description": "MPU6050 오프셋 계산",
+          "inputs": [
+            "DELAY_B",
+            "DELAY_A"
+          ]
+        },
+        {
+          "id": "sgp30_setup",
+          "description": "SGP30 가스 센서 초기화",
+          "inputs": [
+            "EBASE",
+            "TBASE"
+          ]
+        },
+        {
+          "id": "sgp30_measure",
+          "description": "SGP30 측정"
+        },
+        {
+          "id": "sgp30_get_eco2",
+          "description": "SGP30 eCO2 값",
+          "output": "Number"
+        },
+        {
+          "id": "sgp30_get_tvoc",
+          "description": "SGP30 TVOC 값",
+          "output": "Number"
+        },
+        {
+          "id": "sgp30_set_humidity",
+          "description": "SGP30 습도 설정",
+          "inputs": [
+            "AH"
+          ]
+        },
+        {
+          "id": "sgp30_set_baseline",
+          "description": "SGP30 베이스라인 설정",
+          "inputs": [
+            "EBASE",
+            "TBASE"
+          ]
+        },
+        {
+          "id": "sgp30_eeprom_save_baseline_fixed",
+          "description": "SGP30 베이스라인 저장 (고정)"
+        },
+        {
+          "id": "sgp30_eeprom_load_baseline_fixed",
+          "description": "SGP30 베이스라인 로드 (고정)"
+        },
+        {
+          "id": "sgp30_eeprom_save_baseline",
+          "description": "SGP30 베이스라인 저장",
+          "inputs": [
+            "ADDR_E",
+            "ADDR_T"
+          ]
+        },
+        {
+          "id": "sgp30_eeprom_load_baseline",
+          "description": "SGP30 베이스라인 로드",
+          "inputs": [
+            "ADDR_E",
+            "ADDR_T"
+          ]
+        },
+        {
+          "id": "vl53l0x_setup",
+          "description": "VL53L0X 거리 센서 초기화",
+          "inputs": [
+            "ADDR"
+          ]
+        },
+        {
+          "id": "vl53l0x_set_mode",
+          "description": "VL53L0X 모드 설정"
+        },
+        {
+          "id": "vl53l0x_control",
+          "description": "VL53L0X 제어"
+        },
+        {
+          "id": "vl53l0x_read_value",
+          "description": "VL53L0X 값 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "sht31_setup",
+          "description": "SHT31 온습도 센서 초기화",
+          "inputs": [
+            "ADDRESS"
+          ]
+        },
+        {
+          "id": "sht31_read",
+          "description": "SHT31 데이터 읽기"
+        },
+        {
+          "id": "sht31_is_connected",
+          "description": "SHT31 연결 상태",
+          "output": "Boolean"
+        },
+        {
+          "id": "sht31_get_data",
+          "description": "SHT31 값 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "sht31_heater_control",
+          "description": "SHT31 히터 제어"
+        },
+        {
+          "id": "sht31_is_heater_on",
+          "description": "SHT31 히터 상태",
+          "output": "Boolean"
+        },
+        {
+          "id": "sht31_reset",
+          "description": "SHT31 리셋"
+        },
+        {
+          "id": "sht31_get_error",
+          "description": "SHT31 오류 코드",
+          "output": "Number"
+        },
+        {
+          "id": "color_sensor_setup",
+          "description": "색상 센서 초기화"
+        },
+        {
+          "id": "color_sensor_init",
+          "description": "색상 센서 init"
+        },
+        {
+          "id": "color_sensor_trigger",
+          "description": "색상 센서 트리거"
+        },
+        {
+          "id": "color_sensor_get_data",
+          "description": "색상 센서 데이터",
+          "output": "Number"
+        },
+        {
+          "id": "color_sensor_is_color",
+          "description": "색상 판별",
+          "output": "Boolean"
+        },
+        {
+          "id": "mlx90614_setup",
+          "description": "MLX90614 적외선 온도 초기화",
+          "inputs": [
+            "ADDRESS"
+          ]
+        },
+        {
+          "id": "mlx90614_read_temp",
+          "description": "MLX90614 온도 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "apds9960_setup",
+          "description": "APDS9960 센서 초기화"
+        },
+        {
+          "id": "apds9960_sensor_control",
+          "description": "APDS9960 센서 제어"
+        },
+        {
+          "id": "apds9960_read_light",
+          "description": "APDS9960 조도 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "apds9960_read_proximity",
+          "description": "APDS9960 근접 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "apds9960_gesture_available",
+          "description": "APDS9960 제스처 가용",
+          "output": "Boolean"
+        },
+        {
+          "id": "apds9960_gesture_control",
+          "description": "APDS9960 제스처 제어"
+        },
+        {
+          "id": "max30105_setup_basic",
+          "description": "MAX30105 심박 센서 초기화"
+        },
+        {
+          "id": "max30105_finger_detected",
+          "description": "MAX30105 손가락 감지",
+          "output": "Boolean"
+        },
+        {
+          "id": "max30105_get_heartrate",
+          "description": "MAX30105 심박수",
+          "output": "Number"
+        },
+        {
+          "id": "max30105_get_spo2",
+          "description": "MAX30105 SpO2",
+          "output": "Number"
+        },
+        {
+          "id": "max30105_beat_detected",
+          "description": "MAX30105 비트 감지",
+          "output": "Boolean"
+        },
+        {
+          "id": "max30105_sensor_ready",
+          "description": "MAX30105 준비 상태",
+          "output": "Boolean"
+        },
+        {
+          "id": "max30105_get_temperature",
+          "description": "MAX30105 온도",
+          "output": "Number"
+        },
+        {
+          "id": "max30105_setup_advanced",
+          "description": "MAX30105 고급 초기화"
+        },
+        {
+          "id": "max30105_get_red_raw",
+          "description": "MAX30105 Red 원시값",
+          "output": "Number"
+        },
+        {
+          "id": "max30105_get_ir_raw",
+          "description": "MAX30105 IR 원시값",
+          "output": "Number"
+        },
+        {
+          "id": "si7021_setup",
+          "description": "SI7021 온습도 초기화"
+        },
+        {
+          "id": "si7021_read_value",
+          "description": "SI7021 값 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "si7021_reset",
+          "description": "SI7021 리셋"
+        },
+        {
+          "id": "si7021_get_serial",
+          "description": "SI7021 시리얼",
+          "output": "String"
+        }
+      ]
+    },
+    "MOTOR": {
+      "name": "모터 제어",
+      "color": "#50B91A",
+      "blocks": [
+        {
+          "id": "motor_flag",
+          "description": "모터 플래그 (장식용)"
+        },
+        {
+          "id": "attach_servo",
+          "description": "서보 연결",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "attach_servo_minmax",
+          "description": "서보 연결 (min/max)",
+          "inputs": [
+            "PIN",
+            "MIN",
+            "MAX"
+          ]
+        },
+        {
+          "id": "detach_servo",
+          "description": "서보 분리",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "set_servo_angle",
+          "description": "서보 각도 설정",
+          "inputs": [
+            "PIN",
+            "ANGLE"
+          ]
+        },
+        {
+          "id": "set_servo_microseconds",
+          "description": "서보 마이크로초",
+          "inputs": [
+            "PIN",
+            "MICROSECONDS"
+          ]
+        },
+        {
+          "id": "read_servo_angle",
+          "description": "서보 각도 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "read_servo_microseconds",
+          "description": "서보 마이크로초 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "is_servo_attached",
+          "description": "서보 연결 상태",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Boolean"
+        },
+        {
+          "id": "geekservo_angle_360",
+          "description": "GeekServo 360도 각도",
+          "inputs": [
+            "PIN",
+            "ANGLE"
+          ]
+        },
+        {
+          "id": "geekservo_wheel",
+          "description": "GeekServo 휠 모드",
+          "inputs": [
+            "PIN",
+            "SPEED"
+          ]
+        },
+        {
+          "id": "dcmotor_setup",
+          "description": "DC 모터 초기화",
+          "inputs": [
+            "PIN_A",
+            "PIN_B"
+          ]
+        },
+        {
+          "id": "dcmotor_run",
+          "description": "DC 모터 구동",
+          "inputs": [
+            "SPEED"
+          ]
+        },
+        {
+          "id": "dcmotor_stop",
+          "description": "DC 모터 정지"
+        },
+        {
+          "id": "accelstepper_setup",
+          "description": "AccelStepper 초기화",
+          "inputs": [
+            "MOTOR_NUM",
+            "PIN1",
+            "PIN2"
+          ]
+        },
+        {
+          "id": "accelstepper_settings",
+          "description": "AccelStepper 설정",
+          "inputs": [
+            "MOTOR_NUM",
+            "MAX_SPEED",
+            "ACCELERATION",
+            "SPEED",
+            "STEPS"
+          ]
+        },
+        {
+          "id": "accelstepper_move",
+          "description": "AccelStepper 이동",
+          "inputs": [
+            "MOTOR_NUM",
+            "POSITION"
+          ]
+        },
+        {
+          "id": "accelstepper_control",
+          "description": "AccelStepper 제어",
+          "inputs": [
+            "MOTOR_NUM"
+          ]
+        },
+        {
+          "id": "accelstepper_status",
+          "description": "AccelStepper 상태",
+          "inputs": [
+            "MOTOR_NUM"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "steppermulti_setup",
+          "description": "멀티 스테퍼 초기화",
+          "inputs": [
+            "MOTOR_NUM",
+            "PIN1",
+            "PIN2",
+            "PIN3",
+            "PIN4"
+          ]
+        },
+        {
+          "id": "steppermulti_speed",
+          "description": "멀티 스테퍼 속도",
+          "inputs": [
+            "MOTOR_NUM",
+            "SPEED"
+          ]
+        },
+        {
+          "id": "steppermulti_move",
+          "description": "멀티 스테퍼 이동",
+          "inputs": [
+            "MOTOR_NUM",
+            "VALUE"
+          ]
+        },
+        {
+          "id": "steppermulti_run",
+          "description": "멀티 스테퍼 실행",
+          "inputs": [
+            "MOTOR_NUM"
+          ]
+        },
+        {
+          "id": "pwmservo_setup",
+          "description": "PCA9685 PWM 서보 초기화",
+          "inputs": [
+            "NUM",
+            "FREQ"
+          ]
+        },
+        {
+          "id": "pwmservo_servo_angle",
+          "description": "PCA9685 서보 각도",
+          "inputs": [
+            "NUM",
+            "CHANNEL",
+            "ANGLE"
+          ]
+        },
+        {
+          "id": "pwmservo_servo_microseconds",
+          "description": "PCA9685 서보 마이크로초",
+          "inputs": [
+            "NUM",
+            "CHANNEL",
+            "MICROSECONDS"
+          ]
+        },
+        {
+          "id": "pwmservo_pwm_output",
+          "description": "PCA9685 PWM 출력",
+          "inputs": [
+            "NUM",
+            "CHANNEL",
+            "VALUE"
+          ]
+        },
+        {
+          "id": "pwmservo_pwm_advanced",
+          "description": "PCA9685 PWM 고급",
+          "inputs": [
+            "NUM",
+            "CHANNEL",
+            "ON",
+            "OFF"
+          ]
+        },
+        {
+          "id": "pwmservo_power",
+          "description": "PCA9685 전원 제어",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "pwmservo_multi_servo",
+          "description": "PCA9685 다중 서보",
+          "inputs": [
+            "NUM",
+            "ANGLE1",
+            "ANGLE2",
+            "ANGLE3",
+            "ANGLE4"
+          ]
+        },
+        {
+          "id": "pwmservo_led_brightness",
+          "description": "PCA9685 LED 밝기",
+          "inputs": [
+            "NUM",
+            "CHANNEL",
+            "BRIGHTNESS"
+          ]
+        },
+        {
+          "id": "geekservo_setup",
+          "description": "GeekServo 서보 초기화",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "geekservo_stop",
+          "description": "GeekServo 모터 정지",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "pca9685_dcmotor_setup",
+          "description": "PCA9685 DC모터 드라이버 설정",
+          "inputs": [
+            "NUM",
+            "ADDRESS"
+          ]
+        },
+        {
+          "id": "pca9685_dcmotor_wheel_a",
+          "description": "PCA9685 A바퀴 제어",
+          "inputs": [
+            "NUM",
+            "DIRECTION",
+            "SPEED"
+          ]
+        },
+        {
+          "id": "pca9685_dcmotor_wheel_b",
+          "description": "PCA9685 B바퀴 제어",
+          "inputs": [
+            "NUM",
+            "DIRECTION",
+            "SPEED"
+          ]
+        },
+        {
+          "id": "pca9685_dcmotor_stop",
+          "description": "PCA9685 모터 정지",
+          "inputs": [
+            "NUM"
+          ]
+        }
+      ]
+    },
+    "OUTPUT": {
+      "name": "출력 장치 (부저, MP3, SD카드)",
+      "color": "#70D650",
+      "blocks": [
+        {
+          "id": "output_flag",
+          "description": "출력 플래그 (장식용)"
+        },
+        {
+          "id": "buzzer_tone_setup",
+          "description": "부저 톤 초기화"
+        },
+        {
+          "id": "buzzer_set_tempo",
+          "description": "부저 템포 설정",
+          "inputs": [
+            "BPM"
+          ]
+        },
+        {
+          "id": "buzzer_play_note",
+          "description": "부저 음 재생",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "buzzer_stop",
+          "description": "부저 정지",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "mp3_setup_kt403a",
+          "description": "KT403A MP3 초기화",
+          "inputs": [
+            "RX",
+            "TX",
+            "VOL"
+          ]
+        },
+        {
+          "id": "mp3_play_index",
+          "description": "MP3 인덱스 재생",
+          "inputs": [
+            "INDEX"
+          ]
+        },
+        {
+          "id": "mp3_play_folder",
+          "description": "MP3 폴더/파일 재생",
+          "inputs": [
+            "FOLDER",
+            "FILE"
+          ]
+        },
+        {
+          "id": "mp3_set_volume",
+          "description": "MP3 볼륨 설정",
+          "inputs": [
+            "VOL"
+          ]
+        },
+        {
+          "id": "mp3_control",
+          "description": "MP3 제어 (재생/정지/다음/이전)"
+        },
+        {
+          "id": "mp3_query_status",
+          "description": "MP3 상태 조회",
+          "output": "Number"
+        },
+        {
+          "id": "sd_setup",
+          "description": "SD 카드 초기화",
+          "inputs": [
+            "NUM",
+            "CS",
+            "MOSI",
+            "MISO",
+            "SCK"
+          ]
+        },
+        {
+          "id": "sd_open_file",
+          "description": "SD 파일 열기",
+          "inputs": [
+            "FILE_VAR",
+            "FILENAME"
+          ]
+        },
+        {
+          "id": "sd_write_file",
+          "description": "SD 파일 쓰기",
+          "inputs": [
+            "FILE_VAR",
+            "DATA"
+          ]
+        },
+        {
+          "id": "sd_read_file",
+          "description": "SD 파일 읽기",
+          "inputs": [
+            "FILE_VAR"
+          ],
+          "output": "String"
+        },
+        {
+          "id": "sd_file_exists",
+          "description": "SD 파일 존재 여부",
+          "inputs": [
+            "NUM",
+            "FILENAME"
+          ],
+          "output": "Boolean"
+        },
+        {
+          "id": "sd_file_size",
+          "description": "SD 파일 크기",
+          "inputs": [
+            "FILE_VAR"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "sd_close_file",
+          "description": "SD 파일 닫기",
+          "inputs": [
+            "FILE_VAR"
+          ]
+        },
+        {
+          "id": "sd_remove_file",
+          "description": "SD 파일 삭제",
+          "inputs": [
+            "NUM",
+            "FILENAME"
+          ]
+        },
+        {
+          "id": "sd_make_directory",
+          "description": "SD 폴더 생성",
+          "inputs": [
+            "NUM",
+            "PATH"
+          ]
+        },
+        {
+          "id": "sd_file_available",
+          "description": "SD 파일 가용 데이터",
+          "inputs": [
+            "FILE_VAR"
+          ],
+          "output": "Boolean"
+        }
+      ]
+    },
+    "COMMUNICATION": {
+      "name": "통신 (IR, RF, GPS)",
+      "color": "#F75ACF",
+      "blocks": [
+        {
+          "id": "comm_flag",
+          "description": "통신 플래그 (장식용)"
+        },
+        {
+          "id": "ir_setup",
+          "description": "IR 수신기 초기화",
+          "inputs": [
+            "PIN"
+          ]
+        },
+        {
+          "id": "ir_available",
+          "description": "IR 신호 수신 여부",
+          "output": "Boolean"
+        },
+        {
+          "id": "ir_read_button",
+          "description": "IR 버튼 읽기",
+          "output": "String"
+        },
+        {
+          "id": "ir_read_raw",
+          "description": "IR 원시값 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "ir_button_is",
+          "description": "IR 버튼 비교",
+          "output": "Boolean"
+        },
+        {
+          "id": "rf433_setup",
+          "description": "RF433 송신기 초기화"
+        },
+        {
+          "id": "rf433_config",
+          "description": "RF433 설정",
+          "inputs": [
+            "TX_PIN",
+            "MESSAGE"
+          ]
+        },
+        {
+          "id": "rf433_rx_setup",
+          "description": "RF433 수신기 초기화",
+          "inputs": [
+            "RX_PIN",
+            "SPEED"
+          ]
+        },
+        {
+          "id": "rf433_rx_start",
+          "description": "RF433 수신 시작"
+        },
+        {
+          "id": "rf433_have_message",
+          "description": "RF433 메시지 수신 여부",
+          "output": "Boolean"
+        },
+        {
+          "id": "rf433_get_message",
+          "description": "RF433 메시지 읽기",
+          "output": "String"
+        },
+        {
+          "id": "rf433_read_data",
+          "description": "RF433 데이터 읽기",
+          "output": "String"
+        },
+        {
+          "id": "gps_setup_tinygps",
+          "description": "TinyGPS 초기화",
+          "inputs": [
+            "BAUD",
+            "RX",
+            "TX"
+          ]
+        },
+        {
+          "id": "gps_update_from_serial",
+          "description": "GPS 데이터 업데이트"
+        },
+        {
+          "id": "gps_read_value",
+          "description": "GPS 값 읽기",
+          "output": "Number"
+        },
+        {
+          "id": "gps_has_fix",
+          "description": "GPS Fix 상태",
+          "output": "Boolean"
+        },
+        {
+          "id": "gps_between_calc",
+          "description": "GPS 거리/방향 계산",
+          "inputs": [
+            "LAT1",
+            "LNG1",
+            "LAT2",
+            "LNG2"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "gps_cardinal",
+          "description": "GPS 방위 문자열",
+          "inputs": [
+            "COURSE"
+          ],
+          "output": "String"
+        }
+      ]
+    },
+    "BLUETOOTH": {
+      "name": "블루투스",
+      "color": "#2196F3",
+      "blocks": [
+        {
+          "id": "arduino_bt_setup",
+          "description": "아두이노 BT(JDY-33) 설정",
+          "inputs": [
+            "RX",
+            "TX",
+            "NAME",
+            "BAUD"
+          ]
+        },
+        {
+          "id": "arduino_bt_read",
+          "description": "BT 수신 메시지",
+          "output": "String"
+        },
+        {
+          "id": "arduino_bt_read_raw",
+          "description": "BT 수신 바이트 값",
+          "output": "Number"
+        },
+        {
+          "id": "arduino_bt_read_auto",
+          "description": "BT 수신 데이터 (자동 변환)",
+          "output": "String"
+        },
+        {
+          "id": "arduino_bt_read_hex",
+          "description": "BT 수신 데이터 (HEX)",
+          "output": "String"
+        },
+        {
+          "id": "arduino_bt_write",
+          "description": "BT 데이터 전송",
+          "inputs": [
+            "CONTENT"
+          ]
+        },
+        {
+          "id": "arduino_bt_available",
+          "description": "BT 데이터 수신 여부",
+          "output": "Boolean"
+        },
+        {
+          "id": "arduino_bt_msg_ready",
+          "description": "BT 메시지 완성 여부",
+          "output": "Boolean"
+        },
+        {
+          "id": "arduino_bt_parse",
+          "description": "BT 데이터 구분자 파싱",
+          "inputs": [
+            "DELIMITER"
+          ]
+        },
+        {
+          "id": "arduino_bt_get_value",
+          "description": "BT 파싱 값 가져오기",
+          "inputs": [
+            "INDEX"
+          ],
+          "output": "String"
+        },
+        {
+          "id": "arduino_bt_raw_available",
+          "description": "BT 원시 데이터 수신 여부",
+          "output": "Boolean"
+        },
+        {
+          "id": "esp32_bt_setup",
+          "description": "ESP32 블루투스 설정",
+          "inputs": [
+            "NAME"
+          ],
+          "esp32_only": true
+        }
+      ]
+    },
+    "HUSKYLENS": {
+      "name": "허스키렌즈 (AI 카메라)",
+      "color": "#00BFA5",
+      "blocks": [
+        {
+          "id": "huskylens_setup_i2c",
+          "description": "허스키렌즈 I2C 연결 설정"
+        },
+        {
+          "id": "huskylens_setup_serial",
+          "description": "허스키렌즈 시리얼 연결",
+          "inputs": [
+            "RX",
+            "TX"
+          ]
+        },
+        {
+          "id": "huskylens_set_algorithm",
+          "description": "허스키렌즈 알고리즘 설정"
+        },
+        {
+          "id": "huskylens_request",
+          "description": "허스키렌즈 데이터 요청"
+        },
+        {
+          "id": "huskylens_request_by_id",
+          "description": "허스키렌즈 ID별 데이터 요청",
+          "inputs": [
+            "ID"
+          ]
+        },
+        {
+          "id": "huskylens_available",
+          "description": "허스키렌즈 객체 감지 여부",
+          "output": "Boolean"
+        },
+        {
+          "id": "huskylens_block_info",
+          "description": "허스키렌즈 중앙 블록 정보",
+          "output": "Number"
+        },
+        {
+          "id": "huskylens_block_info_by_id",
+          "description": "허스키렌즈 ID별 블록 정보",
+          "inputs": [
+            "ID"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "huskylens_arrow_info",
+          "description": "허스키렌즈 중앙 화살표 정보",
+          "output": "Number"
+        },
+        {
+          "id": "huskylens_arrow_info_by_id",
+          "description": "허스키렌즈 ID별 화살표 정보",
+          "inputs": [
+            "ID"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "huskylens_count_blocks",
+          "description": "허스키렌즈 블록(사각형) 개수",
+          "output": "Number"
+        },
+        {
+          "id": "huskylens_count_arrows",
+          "description": "허스키렌즈 화살표(선) 개수",
+          "output": "Number"
+        },
+        {
+          "id": "huskylens_count_learned_ids",
+          "description": "허스키렌즈 학습 ID 개수",
+          "output": "Number"
+        },
+        {
+          "id": "huskylens_is_learned",
+          "description": "허스키렌즈 ID 학습 여부",
+          "inputs": [
+            "ID"
+          ],
+          "output": "Boolean"
+        },
+        {
+          "id": "huskylens_learn_once",
+          "description": "허스키렌즈 학습 실행",
+          "inputs": [
+            "ID"
+          ]
+        },
+        {
+          "id": "huskylens_forget",
+          "description": "허스키렌즈 학습 내용 삭제"
+        },
+        {
+          "id": "huskylens_save_model",
+          "description": "허스키렌즈 모델 저장",
+          "inputs": [
+            "SLOT"
+          ]
+        },
+        {
+          "id": "huskylens_load_model",
+          "description": "허스키렌즈 모델 불러오기",
+          "inputs": [
+            "SLOT"
+          ]
+        },
+        {
+          "id": "huskylens_screenshot",
+          "description": "허스키렌즈 스크린샷 저장"
+        },
+        {
+          "id": "huskylens_write_osd",
+          "description": "허스키렌즈 OSD 텍스트 표시",
+          "inputs": [
+            "TEXT",
+            "X",
+            "Y"
+          ]
+        },
+        {
+          "id": "huskylens_clear_osd",
+          "description": "허스키렌즈 OSD 텍스트 지우기"
+        }
+      ]
+    },
+    "WEB_BLE": {
+      "name": "웹 BLE 통신 (ESP32 전용)",
+      "color": "#4285F4",
+      "esp32_only": true,
+      "blocks": [
+        {
+          "id": "sys_webble_setup",
+          "description": "웹 BLE 초기화",
+          "inputs": [
+            "NAME"
+          ]
+        },
+        {
+          "id": "sys_webble_connected",
+          "description": "BLE 연결 상태",
+          "output": "Boolean"
+        },
+        {
+          "id": "sys_webble_available",
+          "description": "BLE 수신 데이터 여부",
+          "output": "Boolean"
+        },
+        {
+          "id": "sys_webble_read",
+          "description": "BLE 데이터 읽기",
+          "output": "String"
+        },
+        {
+          "id": "sys_webble_write",
+          "description": "BLE 데이터 전송",
+          "inputs": [
+            "CONTENT"
+          ]
+        },
+        {
+          "id": "sys_webble_parse",
+          "description": "BLE 데이터 파싱",
+          "inputs": [
+            "DELIMITER"
+          ]
+        },
+        {
+          "id": "sys_webble_get_value",
+          "description": "BLE 파싱 값 가져오기",
+          "inputs": [
+            "N"
+          ],
+          "output": "String"
+        }
+      ]
+    },
+    "WIFI": {
+      "name": "WiFi 통신 (ESP32 전용)",
+      "color": "#4285F4",
+      "esp32_only": true,
+      "blocks": [
+        {
+          "id": "wifi_setup",
+          "description": "WiFi 연결",
+          "inputs": [
+            "SSID",
+            "PASS"
+          ]
+        },
+        {
+          "id": "wifi_ws_server_setup",
+          "description": "WebSocket 서버 초기화",
+          "inputs": [
+            "PORT"
+          ]
+        },
+        {
+          "id": "wifi_is_connected",
+          "description": "WiFi 연결 상태",
+          "output": "Boolean"
+        },
+        {
+          "id": "wifi_local_ip",
+          "description": "로컬 IP 주소",
+          "output": "String"
+        },
+        {
+          "id": "wifi_ws_available",
+          "description": "WebSocket 데이터 여부",
+          "output": "Boolean"
+        },
+        {
+          "id": "wifi_ws_read",
+          "description": "WebSocket 데이터 읽기",
+          "output": "String"
+        },
+        {
+          "id": "wifi_ws_send",
+          "description": "WebSocket 데이터 전송",
+          "inputs": [
+            "DATA"
+          ]
+        },
+        {
+          "id": "wifi_ws_send_raw",
+          "description": "WebSocket 원시 전송",
+          "inputs": [
+            "DATA"
+          ]
+        },
+        {
+          "id": "wifi_ws_send_label_value",
+          "description": "WebSocket 라벨:값 전송",
+          "inputs": [
+            "LABEL",
+            "VALUE"
+          ]
+        }
+      ]
+    },
+    "SERIAL": {
+      "name": "시리얼 통신",
+      "color": "#367E7F",
+      "blocks": [
+        {
+          "id": "sys_serial_begin",
+          "description": "시리얼 초기화",
+          "inputs": [
+            "RX",
+            "TX",
+            "BAUD"
+          ]
+        },
+        {
+          "id": "sys_serial_connected",
+          "description": "시리얼 연결 상태",
+          "output": "Boolean"
+        },
+        {
+          "id": "sys_serial_print",
+          "description": "시리얼 출력",
+          "inputs": [
+            "CONTENT"
+          ]
+        },
+        {
+          "id": "sys_serial_send_change",
+          "description": "시리얼 변경 시 전송",
+          "inputs": [
+            "CONTENT"
+          ]
+        },
+        {
+          "id": "sys_serial_print_continuous",
+          "description": "시리얼 연속 출력",
+          "inputs": [
+            "CONTENT"
+          ]
+        },
+        {
+          "id": "sys_serial_print_multi",
+          "description": "시리얼 다중 출력",
+          "inputs": [
+            "CONTENT"
+          ]
+        },
+        {
+          "id": "sys_serial_send_key_val",
+          "description": "시리얼 키:값 전송",
+          "inputs": [
+            "KEY",
+            "VAL"
+          ]
+        },
+        {
+          "id": "sys_serial_poll",
+          "description": "시리얼 폴링"
+        },
+        {
+          "id": "sys_serial_available",
+          "description": "시리얼 수신 여부",
+          "output": "Boolean"
+        },
+        {
+          "id": "sys_serial_read_raw",
+          "description": "시리얼 원시 읽기",
+          "output": "String"
+        },
+        {
+          "id": "sys_serial_flush",
+          "description": "시리얼 버퍼 비우기"
+        },
+        {
+          "id": "sys_serial_parse_delimiter",
+          "description": "시리얼 구분자 파싱",
+          "inputs": [
+            "DELIMITER"
+          ]
+        },
+        {
+          "id": "sys_parsed_value_get",
+          "description": "파싱된 값 가져오기",
+          "inputs": [
+            "INDEX"
+          ],
+          "output": "String"
+        },
+        {
+          "id": "sys_parsed_count",
+          "description": "파싱된 값 개수",
+          "output": "Number"
+        },
+        {
+          "id": "sys_parse_csv_get",
+          "description": "CSV 파싱",
+          "inputs": [
+            "INDEX",
+            "STRING"
+          ],
+          "output": "String"
+        },
+        {
+          "id": "sys_parse_count",
+          "description": "CSV 항목 개수",
+          "inputs": [
+            "STRING"
+          ],
+          "output": "Number"
+        },
+        {
+          "id": "sys_util_to_number",
+          "description": "문자열 → 숫자",
+          "inputs": [
+            "STRING"
+          ],
+          "output": "Number"
+        }
+      ]
+    },
+    "ESP32CAM": {
+      "name": "ESP32-CAM",
+      "color": "#367E7F",
+      "esp32_only": true,
+      "blocks": [
+        {
+          "id": "esp32cam_declare",
+          "description": "ESP32-CAM 선언"
+        },
+        {
+          "id": "esp32cam_wifi_config",
+          "description": "ESP32-CAM WiFi 설정",
+          "inputs": [
+            "SSID",
+            "PASSWORD"
+          ]
+        },
+        {
+          "id": "esp32cam_receiver_config",
+          "description": "ESP32-CAM 수신자 설정",
+          "inputs": [
+            "IP",
+            "PORT",
+            "CHUNK_SIZE"
+          ]
+        },
+        {
+          "id": "esp32cam_setup",
+          "description": "ESP32-CAM 초기화",
+          "inputs": [
+            "JPEG_QUALITY",
+            "BRIGHTNESS",
+            "CONTRAST",
+            "SATURATION"
+          ]
+        },
+        {
+          "id": "esp32cam_loop",
+          "description": "ESP32-CAM 루프"
+        },
+        {
+          "id": "esp32cam_led_control",
+          "description": "ESP32-CAM LED 제어"
+        },
+        {
+          "id": "esp32s3cam_declare",
+          "description": "ESP32-S3 CAM 선언"
+        },
+        {
+          "id": "esp32s3cam_setup",
+          "description": "ESP32-S3 CAM 초기화",
+          "inputs": [
+            "JPEG_QUALITY",
+            "BRIGHTNESS",
+            "CONTRAST",
+            "SATURATION"
+          ]
+        },
+        {
+          "id": "esp32cam_flip",
+          "description": "ESP32-CAM 화면 뒤집기/미러"
+        }
+      ]
+    },
+    "GUIDE": {
+      "name": "가이드/정보",
+      "color": "#FFAB19",
+      "blocks": [
+        {
+          "id": "developer_info_block",
+          "description": "개발자 정보 블록"
+        },
+        {
+          "id": "custom_ad_block",
+          "description": "광고 블록"
+        },
+        {
+          "id": "go_to_ai_robot_scratch",
+          "description": "AI 로봇 스크래치 링크"
+        },
+        {
+          "id": "go_to_bowerbird_pro",
+          "description": "Bowerbird Pro 링크"
+        },
+        {
+          "id": "go_to_k12_projectHub",
+          "description": "K12 프로젝트 허브 링크"
+        },
+        {
+          "id": "go_to_circuit_config",
+          "description": "Circuit Config 도구 링크"
+        }
+      ]
+    }
+  },
+  "xml_example": {
+    "description": "Blockly XML 생성 예시 - LED 깜빡이기",
+    "xml": "<xml xmlns=\"https://developers.google.com/blockly/xml\">\n  <block type=\"arduino_setup\" x=\"50\" y=\"50\">\n    <statement name=\"SETUP\">\n      <block type=\"pin_mode\">\n        <field name=\"MODE\">OUTPUT</field>\n        <value name=\"PIN\">\n          <shadow type=\"math_number\">\n            <field name=\"NUM\">13</field>\n          </shadow>\n        </value>\n      </block>\n    </statement>\n  </block>\n  <block type=\"arduino_loop\" x=\"50\" y=\"150\">\n    <statement name=\"LOOP\">\n      <block type=\"set_digital_pin\">\n        <field name=\"STATE\">HIGH</field>\n        <value name=\"PIN\">\n          <shadow type=\"math_number\">\n            <field name=\"NUM\">13</field>\n          </shadow>\n        </value>\n        <next>\n          <block type=\"delay_ms\">\n            <value name=\"DELAY_TIME\">\n              <shadow type=\"math_number\">\n                <field name=\"NUM\">1000</field>\n              </shadow>\n            </value>\n            <next>\n              <block type=\"set_digital_pin\">\n                <field name=\"STATE\">LOW</field>\n                <value name=\"PIN\">\n                  <shadow type=\"math_number\">\n                    <field name=\"NUM\">13</field>\n                  </shadow>\n                </value>\n                <next>\n                  <block type=\"delay_ms\">\n                    <value name=\"DELAY_TIME\">\n                      <shadow type=\"math_number\">\n                        <field name=\"NUM\">1000</field>\n                      </shadow>\n                    </value>\n                  </block>\n                </next>\n              </block>\n            </next>\n          </block>\n        </next>\n      </block>\n    </statement>\n  </block>\n</xml>"
+  },
+  "block_count_summary": {
+    "BASIC_MAIN": 4,
+    "PIN_CONTROL": 18,
+    "CONTROL": 8,
+    "LOGIC": 7,
+    "MATH": 13,
+    "TEXT": 12,
+    "COLOR": 7,
+    "VARIABLES": 15,
+    "LIST": 13,
+    "FUNCTIONS": 11,
+    "UTILITY": 32,
+    "DISPLAY_A": 27,
+    "DISPLAY_B": 45,
+    "SENSORS_A": 66,
+    "SENSORS_B": 65,
+    "MOTOR": 37,
+    "OUTPUT": 21,
+    "COMMUNICATION": 19,
+    "BLUETOOTH": 12,
+    "HUSKYLENS": 21,
+    "WEB_BLE": 7,
+    "WIFI": 9,
+    "SERIAL": 17,
+    "ESP32CAM": 9,
+    "GUIDE": 6,
+    "total": 501
+  }
+}

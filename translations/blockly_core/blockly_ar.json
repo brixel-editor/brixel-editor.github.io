@@ -1,0 +1,357 @@
+{
+  "ADD_COMMENT": "أضف تعليقًا",
+  "CANNOT_DELETE_VARIABLE_PROCEDURE": "لا يمكن حذف المتغير '%1' لأنه جزء من تعريف الدالة '%2'",
+  "CHANGE_VALUE_TITLE": "تغيير القيمة:",
+  "CLEAN_UP": "تنظيف اللبنات",
+  "COLLAPSE_ALL": "طي اللبنات",
+  "COLLAPSE_BLOCK": "طي اللبنة",
+  "COLOUR_BLEND_COLOUR1": "اللون 1",
+  "COLOUR_BLEND_COLOUR2": "اللون 2",
+  "COLOUR_BLEND_RATIO": "النسبة",
+  "COLOUR_BLEND_TITLE": "دمج",
+  "COLOUR_BLEND_TOOLTIP": "يدمج لونين معًا بنسبة معينة (0.0 - 1.0).",
+  "COLOUR_PICKER_TOOLTIP": "اختر لونًا من لوحة الألوان.",
+  "COLOUR_RANDOM_TITLE": "لون عشوائي",
+  "COLOUR_RANDOM_TOOLTIP": "اختر لونًا بشكل عشوائي.",
+  "COLOUR_RGB_BLUE": "أزرق",
+  "COLOUR_RGB_GREEN": "أخضر",
+  "COLOUR_RGB_RED": "أحمر",
+  "COLOUR_RGB_TITLE": "لون مع",
+  "COLOUR_RGB_TOOLTIP": "أنشئ لونًا بكمية محددة من الأحمر والأخضر والأزرق. يجب أن تكون جميع القيم بين 0 و 100.",
+  "CONTROLS_FLOW_STATEMENTS_OPERATOR_BREAK": "الخروج من الحلقة",
+  "CONTROLS_FLOW_STATEMENTS_OPERATOR_CONTINUE": "الاستمرار مع التكرار التالي للحلقة",
+  "CONTROLS_FLOW_STATEMENTS_TOOLTIP_BREAK": "اخرج من الحلقة الحالية.",
+  "CONTROLS_FLOW_STATEMENTS_TOOLTIP_CONTINUE": "تخطَّ بقية هذه الحلقة، واستمر مع التكرار التالي.",
+  "CONTROLS_FLOW_STATEMENTS_WARNING": "تحذير: لا يمكن استخدام هذه اللبنة إلا داخل حلقة.",
+  "CONTROLS_FOR_TITLE": "عد بالمتغير %1 من %2 إلى %3 بمقدار %4",
+  "CONTROLS_FOR_TOOLTIP": "اجعل المتغير '%1' يأخذ القيم من رقم البداية إلى رقم النهاية، مع العد بالفاصل الزمني المحدد، ونفّذ اللبنات المحددة.",
+  "CONTROLS_FOREACH_TITLE": "لكل عنصر %1 في قائمة %2",
+  "CONTROLS_FOREACH_TOOLTIP": "لكل عنصر في قائمة، اضبط المتغير '%1' على العنصر، ثم نفّذ بعض الأوامر.",
+  "CONTROLS_IF_ELSEIF_TOOLTIP": "أضف شرطًا إلى لبنة 'إذا'.",
+  "CONTROLS_IF_ELSE_TOOLTIP": "أضف شرطًا نهائيًا وشاملاً إلى لبنة 'إذا'.",
+  "CONTROLS_IF_MSG_ELSE": "وإلا",
+  "CONTROLS_IF_MSG_ELSEIF": "وإلا إذا",
+  "CONTROLS_IF_MSG_IF": "إذا",
+  "CONTROLS_IF_MSG_THEN": "نفّذ",
+  "CONTROLS_IF_TOOLTIP_1": "إذا كانت القيمة صحيحة، فنفّذ بعض الأوامر.",
+  "CONTROLS_IF_TOOLTIP_2": "إذا كانت القيمة صحيحة، فنفّذ المجموعة الأولى من الأوامر. وإلا، فنفّذ المجموعة الثانية من الأوامر.",
+  "CONTROLS_IF_TOOLTIP_3": "إذا كانت القيمة الأولى صحيحة، فنفّذ المجموعة الأولى من الأوامر. وإلا، فإذا كانت القيمة الثانية صحيحة، فنفّذ المجموعة الثانية من الأوامر.",
+  "CONTROLS_IF_TOOLTIP_4": "إذا كانت القيمة الأولى صحيحة، فنفّذ المجموعة الأولى من الأوامر. وإلا، فإذا كانت القيمة الثانية صحيحة، فنفّذ المجموعة الثانية من الأوامر. إذا لم تكن أي من القيمتين صحيحة، فنفّذ المجموعة الأخيرة من الأوامر.",
+  "CONTROLS_REPEAT_INPUT_DO": "نفّذ",
+  "CONTROLS_REPEAT_TITLE": "كرّر %1 مرات",
+  "CONTROLS_REPEAT_TOOLTIP": "نفّذ بعض الأوامر عدة مرات.",
+  "CONTROLS_WHILEUNTIL_OPERATOR_UNTIL": "كرّر حتى",
+  "CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "كرّر طالما",
+  "CONTROLS_WHILEUNTIL_TOOLTIP_UNTIL": "طالما أن القيمة خاطئة، فنفّذ بعض الأوامر.",
+  "CONTROLS_WHILEUNTIL_TOOLTIP_WHILE": "طالما أن القيمة صحيحة، فنفّذ بعض الأوامر.",
+  "DELETE_ALL_BLOCKS": "هل تريد حذف كل %1 من اللبنات؟",
+  "DELETE_BLOCK": "حذف اللبنة",
+  "DELETE_VARIABLE": "حذف المتغير '%1'",
+  "DELETE_VARIABLE_CONFIRMATION": "هل تريد حذف %1 استخدام للمتغير '%2'؟",
+  "DELETE_X_BLOCKS": "حذف %1 لبنة",
+  "DISABLE_BLOCK": "تعطيل اللبنة",
+  "DUPLICATE_BLOCK": "تكرار",
+  "DUPLICATE_COMMENT": "تكرار التعليق",
+  "ENABLE_BLOCK": "تمكين اللبنة",
+  "EXPAND_ALL": "توسيع اللبنات",
+  "EXPAND_BLOCK": "توسيع اللبنة",
+  "EXTERNAL_INPUTS": "مدخلات خارجية",
+  "HELP": "مساعدة",
+  "INLINE_INPUTS": "مدخلات مضمّنة",
+  "LISTS_CREATE_EMPTY_TITLE": "إنشاء قائمة فارغة",
+  "LISTS_CREATE_EMPTY_TOOLTIP": "يُرجع قائمة طولها 0، لا تحتوي على أي سجلات بيانات",
+  "LISTS_CREATE_WITH_CONTAINER_TITLE_ADD": "قائمة",
+  "LISTS_CREATE_WITH_CONTAINER_TOOLTIP": "أضف أو أزل أو أعد ترتيب الأقسام لإعادة تشكيل لبنة القائمة هذه.",
+  "LISTS_CREATE_WITH_INPUT_WITH": "إنشاء قائمة مع",
+  "LISTS_CREATE_WITH_ITEM_TOOLTIP": "أضف عنصرًا إلى القائمة.",
+  "LISTS_CREATE_WITH_TOOLTIP": "أنشئ قائمة بأي عدد من العناصر.",
+  "LISTS_GET_INDEX_FIRST": "الأول",
+  "LISTS_GET_INDEX_FROM_END": "احصل على العنصر رقم # من النهاية",
+  "LISTS_GET_INDEX_FROM_START": "احصل على العنصر رقم #",
+  "LISTS_GET_INDEX_GET": "احصل على",
+  "LISTS_GET_INDEX_GET_REMOVE": "احصل على وأزل",
+  "LISTS_GET_INDEX_LAST": "الأخير",
+  "LISTS_GET_INDEX_RANDOM": "عشوائي",
+  "LISTS_GET_INDEX_REMOVE": "أزل",
+  "LISTS_GET_INDEX_TOOLTIP_GET_FIRST": "يُرجع العنصر الأول في القائمة.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_FROM_END": "يُرجع العنصر في الموضع المحدد في القائمة. #1 هو العنصر الأخير.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_FROM_START": "يُرجع العنصر في الموضع المحدد في القائمة. #1 هو العنصر الأول.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_LAST": "يُرجع العنصر الأخير في القائمة.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_RANDOM": "يُرجع عنصرًا عشوائيًا في القائمة.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_FIRST": "يزيل ويُرجع العنصر الأول في القائمة.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_FROM_END": "يزيل ويُرجع العنصر في الموضع المحدد في القائمة. #1 هو العنصر الأخير.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_FROM_START": "يزيل ويُرجع العنصر في الموضع المحدد في القائمة. #1 هو العنصر الأول.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_LAST": "يزيل ويُرجع العنصر الأخير في القائمة.",
+  "LISTS_GET_INDEX_TOOLTIP_GET_REMOVE_RANDOM": "يزيل ويُرجع عنصرًا عشوائيًا في القائمة.",
+  "LISTS_GET_INDEX_TOOLTIP_REMOVE_FIRST": "يزيل العنصر الأول في القائمة.",
+  "LISTS_GET_INDEX_TOOLTIP_REMOVE_FROM_END": "يزيل العنصر في الموضع المحدد في القائمة. #1 هو العنصر الأخير.",
+  "LISTS_GET_INDEX_TOOLTIP_REMOVE_FROM_START": "يزيل العنصر في الموضع المحدد في القائمة. #1 هو العنصر الأول.",
+  "LISTS_GET_INDEX_TOOLTIP_REMOVE_LAST": "يزيل العنصر الأخير في القائمة.",
+  "LISTS_GET_INDEX_TOOLTIP_REMOVE_RANDOM": "يزيل عنصرًا عشوائيًا في القائمة.",
+  "LISTS_GET_SUBLIST_END_FROM_END": "إلى رقم # من النهاية",
+  "LISTS_GET_SUBLIST_END_FROM_START": "إلى رقم #",
+  "LISTS_GET_SUBLIST_END_LAST": "إلى الأخير",
+  "LISTS_GET_SUBLIST_START_FIRST": "احصل على قائمة فرعية من الأول",
+  "LISTS_GET_SUBLIST_START_FROM_END": "احصل على قائمة فرعية من رقم # من النهاية",
+  "LISTS_GET_SUBLIST_START_FROM_START": "احصل على قائمة فرعية من رقم #",
+  "LISTS_INDEX_OF_FIRST": "ابحث عن أول ظهور للعنصر",
+  "LISTS_INDEX_OF_LAST": "ابحث عن آخر ظهور للعنصر",
+  "LISTS_INDEX_OF_TOOLTIP": "يُرجع فهرس أول/آخر ظهور للعنصر في القائمة. يُرجع %1 إذا لم يتم العثور على العنصر.",
+  "LISTS_ISEMPTY_TITLE": "%1 فارغة",
+  "LISTS_ISEMPTY_TOOLTIP": "يُرجع 'صحيح' إذا كانت القائمة فارغة.",
+  "LISTS_LENGTH_TITLE": "طول %1",
+  "LISTS_LENGTH_TOOLTIP": "يُرجع طول القائمة.",
+  "LISTS_REPEAT_TITLE": "أنشئ قائمة بالعنصر %1 مكررًا %2 مرة",
+  "LISTS_REPEAT_TOOLTIP": "ينشئ قائمة تتكون من القيمة المعطاة مكررة بالعدد المحدد من المرات.",
+  "LISTS_SET_INDEX_INSERT": "أدرج في",
+  "LISTS_SET_INDEX_SET": "اضبط",
+  "LISTS_SET_INDEX_TOOLTIP_INSERT_FIRST": "يدرج العنصر في بداية القائمة.",
+  "LISTS_SET_INDEX_TOOLTIP_INSERT_FROM_END": "يدرج العنصر في الموضع المحدد في القائمة. #1 هو العنصر الأخير.",
+  "LISTS_SET_INDEX_TOOLTIP_INSERT_FROM_START": "يدرج العنصر في الموضع المحدد في القائمة. #1 هو العنصر الأول.",
+  "LISTS_SET_INDEX_TOOLTIP_INSERT_LAST": "ألحق العنصر بنهاية القائمة.",
+  "LISTS_SET_INDEX_TOOLTIP_INSERT_RANDOM": "يدرج العنصر بشكل عشوائي في القائمة.",
+  "LISTS_SET_INDEX_TOOLTIP_SET_FIRST": "يضبط العنصر الأول في القائمة.",
+  "LISTS_SET_INDEX_TOOLTIP_SET_FROM_END": "يضبط العنصر في الموضع المحدد في القائمة. #1 هو العنصر الأخير.",
+  "LISTS_SET_INDEX_TOOLTIP_SET_FROM_START": "يضبط العنصر في الموضع المحدد في القائمة. #1 هو العنصر الأول.",
+  "LISTS_SET_INDEX_TOOLTIP_SET_LAST": "يضبط العنصر الأخير في القائمة.",
+  "LISTS_SET_INDEX_TOOLTIP_SET_RANDOM": "يضبط عنصرًا عشوائيًا في القائمة.",
+  "LOGIC_BOOLEAN_FALSE": "خطأ",
+  "LOGIC_BOOLEAN_TRUE": "صحيح",
+  "LOGIC_BOOLEAN_TOOLTIP": "يُرجع إما 'صحيح' أو 'خطأ'.",
+  "LOGIC_COMPARE_TOOLTIP_EQ": "يُرجع 'صحيح' إذا كان كلا المدخلين متساويين.",
+  "LOGIC_COMPARE_TOOLTIP_GT": "يُرجع 'صحيح' إذا كان المدخل الأول أكبر من المدخل الثاني.",
+  "LOGIC_COMPARE_TOOLTIP_GTE": "يُرجع 'صحيح' إذا كان المدخل الأول أكبر من أو يساوي المدخل الثاني.",
+  "LOGIC_COMPARE_TOOLTIP_LT": "يُرجع 'صحيح' إذا كان المدخل الأول أصغر من المدخل الثاني.",
+  "LOGIC_COMPARE_TOOLTIP_LTE": "يُرجع 'صحيح' إذا كان المدخل الأول أصغر من أو يساوي المدخل الثاني.",
+  "LOGIC_COMPARE_TOOLTIP_NEQ": "يُرجع 'صحيح' إذا كان كلا المدخلين غير متساويين.",
+  "LOGIC_NEGATE_TITLE": "ليس %1",
+  "LOGIC_NEGATE_TOOLTIP": "يُرجع 'صحيح' إذا كان المدخل خاطئًا. يُرجع 'خطأ' إذا كان المدخل صحيحًا.",
+  "LOGIC_NULL": "فارغ",
+  "LOGIC_NULL_TOOLTIP": "يُرجع قيمة فارغة.",
+  "LOGIC_OPERATION_AND": "و",
+  "LOGIC_OPERATION_OR": "أو",
+  "LOGIC_OPERATION_TOOLTIP_AND": "يُرجع 'صحيح' إذا كان كلا المدخلين صحيحين.",
+  "LOGIC_OPERATION_TOOLTIP_OR": "يُرجع 'صحيح' إذا كان أحد المدخلين على الأقل صحيحًا.",
+  "LOGIC_TERNARY_CONDITION": "اختبار",
+  "LOGIC_TERNARY_IF_FALSE": "إذا كان خطأ",
+  "LOGIC_TERNARY_IF_TRUE": "إذا كان صحيحًا",
+  "LOGIC_TERNARY_TOOLTIP": "تحقق من الشرط في 'اختبار'. إذا كان الشرط صحيحًا، يُرجع قيمة 'إذا كان صحيحًا'؛ وإلا يُرجع قيمة 'إذا كان خطأ'.",
+  "MATH_ADDITION_SYMBOL": "+",
+  "MATH_ARITHMETIC_HELPURL": "https://ar.wikipedia.org/wiki/حساب",
+  "MATH_ARITHMETIC_TOOLTIP_ADD": "يُرجع مجموع الرقمين.",
+  "MATH_ARITHMETIC_TOOLTIP_DIVIDE": "يُرجع حاصل قسمة الرقمين.",
+  "MATH_ARITHMETIC_TOOLTIP_MINUS": "يُرجع الفرق بين الرقمين.",
+  "MATH_ARITHMETIC_TOOLTIP_MULTIPLY": "يُرجع حاصل ضرب الرقمين.",
+  "MATH_ARITHMETIC_TOOLTIP_POWER": "يُرجع الرقم الأول مرفوعًا إلى قوة الرقم الثاني.",
+  "MATH_ATAN2_HELPURL": "https://en.wikipedia.org/wiki/Atan2",
+  "MATH_ATAN2_TITLE": "atan2 لـ X:%1 Y:%2",
+  "MATH_ATAN2_TOOLTIP": "يُرجع قوس الظل للنقطة (X, Y) بالدرجات من -180 إلى 180.",
+  "MATH_CHANGE_HELPURL": "https://en.wikipedia.org/wiki/Programming_idiom#Incrementing_a_counter",
+  "MATH_CHANGE_TITLE": "غيّر %1 بمقدار %2",
+  "MATH_CHANGE_TITLE_ITEM": "العنصر",
+  "MATH_CHANGE_TOOLTIP": "أضف رقمًا إلى المتغير '%1'.",
+  "MATH_CONSTANT_E": "e",
+  "MATH_CONSTANT_GOLDEN_RATIO": "النسبة الذهبية",
+  "MATH_CONSTANT_HELPURL": "https://ar.wikipedia.org/wiki/ثابت_رياضي",
+  "MATH_CONSTANT_INFINITY": "لانهاية",
+  "MATH_CONSTANT_PI": "π",
+  "MATH_CONSTANT_SQRT1_2": "sqrt(½)",
+  "MATH_CONSTANT_SQRT2": "sqrt(2)",
+  "MATH_CONSTANT_TOOLTIP": "يُرجع أحد الثوابت الشائعة: π (3.141…), e (2.718…), φ (1.618…), sqrt(2) (1.414…), sqrt(½) (0.707…), أو ∞ (لانهاية).",
+  "MATH_CONSTRAIN_HELPURL": "https://en.wikipedia.org/wiki/Clamping_(graphics)",
+  "MATH_CONSTRAIN_TITLE": "قيّد %1 بين الأدنى %2 والأعلى %3",
+  "MATH_CONSTRAIN_TOOLTIP": "قيّد رقمًا ليكون بين الحدود المحددة (شاملة).",
+  "MATH_DIVISION_SYMBOL": "÷",
+  "MATH_IS_DIVISIBLE_BY": "يقبل القسمة على",
+  "MATH_IS_EVEN": "هو زوجي",
+  "MATH_IS_NEGATIVE": "هو سالب",
+  "MATH_IS_ODD": "هو فردي",
+  "MATH_IS_POSITIVE": "هو موجب",
+  "MATH_IS_PRIME": "هو أولي",
+  "MATH_IS_TOOLTIP": "تحقق مما إذا كان الرقم زوجيًا، فرديًا، أوليًا، صحيحًا، موجبًا، سالبًا، أو إذا كان يقبل القسمة على رقم معين. يُرجع 'صحيح' أو 'خطأ'.",
+  "MATH_IS_WHOLE": "هو صحيح",
+  "MATH_MODULO_HELPURL": "https://ar.wikipedia.org/wiki/حساب_باقي_القسمة",
+  "MATH_MODULO_TITLE": "باقي قسمة %1 ÷ %2",
+  "MATH_MODULO_TOOLTIP": "يُرجع الباقي من قسمة الرقمين.",
+  "MATH_MULTIPLICATION_SYMBOL": "×",
+  "MATH_NUMBER_HELPURL": "https://ar.wikipedia.org/wiki/رقم",
+  "MATH_NUMBER_TOOLTIP": "رقم.",
+  "MATH_ONLIST_HELPURL": "",
+  "MATH_ONLIST_OPERATOR_AVERAGE": "متوسط القائمة",
+  "MATH_ONLIST_OPERATOR_MAX": "أكبر قيمة في القائمة",
+  "MATH_ONLIST_OPERATOR_MEDIAN": "وسيط القائمة",
+  "MATH_ONLIST_OPERATOR_MIN": "أصغر قيمة في القائمة",
+  "MATH_ONLIST_OPERATOR_MODE": "منوال القائمة",
+  "MATH_ONLIST_OPERATOR_RANDOM": "عنصر عشوائي من القائمة",
+  "MATH_ONLIST_OPERATOR_STD_DEV": "الانحراف المعياري للقائمة",
+  "MATH_ONLIST_OPERATOR_SUM": "مجموع القائمة",
+  "MATH_ONLIST_TOOLTIP_AVERAGE": "يُرجع المتوسط (الحسابي) للقيم الرقمية في القائمة.",
+  "MATH_ONLIST_TOOLTIP_MAX": "يُرجع أكبر رقم في القائمة.",
+  "MATH_ONLIST_TOOLTIP_MEDIAN": "يُرجع الرقم الوسيط في القائمة.",
+  "MATH_ONLIST_TOOLTIP_MIN": "يُرجع أصغر رقم في القائمة.",
+  "MATH_ONLIST_TOOLTIP_MODE": "يُرجع قائمة بالعناصر الأكثر شيوعًا في القائمة.",
+  "MATH_ONLIST_TOOLTIP_RANDOM": "يُرجع عنصرًا عشوائيًا من القائمة.",
+  "MATH_ONLIST_TOOLTIP_STD_DEV": "يُرجع الانحراف المعياري للقائمة.",
+  "MATH_ONLIST_TOOLTIP_SUM": "يُرجع مجموع كل الأرقام في القائمة.",
+  "MATH_POWER_SYMBOL": "^",
+  "MATH_RANDOM_FLOAT_HELPURL": "https://ar.wikipedia.org/wiki/توليد_أعداد_عشوائية",
+  "MATH_RANDOM_FLOAT_TITLE_RANDOM": "كسر عشوائي",
+  "MATH_RANDOM_FLOAT_TOOLTIP": "يُرجع كسرًا عشوائيًا بين 0.0 (شامل) و 1.0 (غير شامل).",
+  "MATH_RANDOM_INT_HELPURL": "https://ar.wikipedia.org/wiki/توليد_أعداد_عشوائية",
+  "MATH_RANDOM_INT_TITLE": "عدد صحيح عشوائي من %1 إلى %2",
+  "MATH_RANDOM_INT_TOOLTIP": "يُرجع عددًا صحيحًا عشوائيًا بين الحدين المحددين، شاملين.",
+  "MATH_ROUND_HELPURL": "https://ar.wikipedia.org/wiki/تقريب_(رياضيات)",
+  "MATH_ROUND_OPERATOR_ROUND": "تقريب",
+  "MATH_ROUND_OPERATOR_ROUNDDOWN": "تقريب للأسفل",
+  "MATH_ROUND_OPERATOR_ROUNDUP": "تقريب للأعلى",
+  "MATH_ROUND_TOOLTIP": "قرّب رقمًا للأعلى أو للأسفل.",
+  "MATH_SINGLE_HELPURL": "https://ar.wikipedia.org/wiki/جذر_تربيعي",
+  "MATH_SINGLE_OP_ABSOLUTE": "القيمة المطلقة",
+  "MATH_SINGLE_OP_EXP": "e^",
+  "MATH_SINGLE_OP_LN": "ln",
+  "MATH_SINGLE_OP_LOG10": "log10",
+  "MATH_SINGLE_OP_NEG": "سالب",
+  "MATH_SINGLE_OP_POW10": "10^",
+  "MATH_SINGLE_OP_ROOT": "الجذر التربيعي",
+  "MATH_SINGLE_TOOLTIP_ABS": "يُرجع القيمة المطلقة للرقم.",
+  "MATH_SINGLE_TOOLTIP_EXP": "يُرجع e مرفوعًا إلى قوة الرقم.",
+  "MATH_SINGLE_TOOLTIP_LN": "يُرجع اللوغاريتم الطبيعي للرقم.",
+  "MATH_SINGLE_TOOLTIP_LOG10": "يُرجع لوغاريتم الأساس 10 للرقم.",
+  "MATH_SINGLE_TOOLTIP_NEG": "يُرجع معكوس الرقم.",
+  "MATH_SINGLE_TOOLTIP_POW10": "يُرجع 10 مرفوعًا إلى قوة الرقم.",
+  "MATH_SINGLE_TOOLTIP_ROOT": "يُرجع الجذر التربيعي للرقم.",
+  "MATH_SUBTRACTION_SYMBOL": "-",
+  "MATH_TRIG_ACOS": "acos",
+  "MATH_TRIG_ASIN": "asin",
+  "MATH_TRIG_ATAN": "atan",
+  "MATH_TRIG_COS": "cos",
+  "MATH_TRIG_HELPURL": "https://ar.wikipedia.org/wiki/دالة_مثلثية",
+  "MATH_TRIG_SIN": "sin",
+  "MATH_TRIG_TAN": "tan",
+  "MATH_TRIG_TOOLTIP_ACOS": "يُرجع قوس جيب التمام للرقم.",
+  "MATH_TRIG_TOOLTIP_ASIN": "يُرجع قوس الجيب للرقم.",
+  "MATH_TRIG_TOOLTIP_ATAN": "يُرجع قوس الظل للرقم.",
+  "MATH_TRIG_TOOLTIP_COS": "يُرجع جيب تمام الزاوية بالدرجات (وليس بالراديان).",
+  "MATH_TRIG_TOOLTIP_SIN": "يُرجع جيب الزاوية بالدرجات (وليس بالراديان).",
+  "MATH_TRIG_TOOLTIP_TAN": "يُرجع ظل الزاوية بالدرجات (وليس بالراديان).",
+  "NEW_COLOUR_VARIABLE": "إنشاء متغير لون...",
+  "NEW_COLOUR_VARIABLE_TITLE": "اسم متغير اللون الجديد:",
+  "NEW_NUMBER_VARIABLE": "إنشاء متغير رقمي...",
+  "NEW_NUMBER_VARIABLE_TITLE": "اسم المتغير الرقمي الجديد:",
+  "NEW_STRING_VARIABLE": "إنشاء متغير نصي...",
+  "NEW_STRING_VARIABLE_TITLE": "اسم المتغير النصي الجديد:",
+  "NEW_VARIABLE": "إنشاء متغير...",
+  "NEW_VARIABLE_NAME": "اسم المتغير",
+  "NEW_VARIABLE_TITLE": "اسم المتغير الجديد:",
+  "PROCEDURES_ALLOW_STATEMENTS": "السماح بالأوامر",
+  "PROCEDURES_BEFORE_PARAMS": "مع:",
+  "PROCEDURES_CALL_BEFORE_PARAMS": "مع:",
+  "PROCEDURES_CALLNORETURN_CALL": "",
+  "PROCEDURES_CALLNORETURN_HELPURL": "https://ar.wikipedia.org/wiki/روتين_فرعي",
+  "PROCEDURES_CALLNORETURN_TOOLTIP": "شغّل الدالة المعرّفة من قبل المستخدم '%1'.",
+  "PROCEDURES_CALLRETURN_CALL": "",
+  "PROCEDURES_CALLRETURN_HELPURL": "https://ar.wikipedia.org/wiki/روتين_فرعي",
+  "PROCEDURES_CALLRETURN_TOOLTIP": "شغّل الدالة المعرّفة من قبل المستخدم '%1' واستخدم ناتجها.",
+  "PROCEDURES_CREATE_DO": "إنشاء '%1'",
+  "PROCEDURES_DEF_DUPLICATE_WARNING": "تحذير: هذه الدالة تحتوي على معاملات مكررة.",
+  "PROCEDURES_DEFNORETURN_COMMENT": "صف هذه الدالة...",
+  "PROCEDURES_DEFNORETURN_DO": "",
+  "PROCEDURES_DEFNORETURN_HELPURL": "https://ar.wikipedia.org/wiki/روتين_فرعي",
+  "PROCEDURES_DEFNORETURN_PROCEDURE": "افعل شيئًا",
+  "PROCEDURES_DEFNORETURN_TITLE": "إلى",
+  "PROCEDURES_DEFNORETURN_TOOLTIP": "ينشئ دالة بدون ناتج.",
+  "PROCEDURES_DEFRETURN_DO": "",
+  "PROCEDURES_DEFRETURN_HELPURL": "https://ar.wikipedia.org/wiki/روتين_فرعي",
+  "PROCEDURES_DEFRETURN_PROCEDURE": "افعل شيئًا",
+  "PROCEDURES_DEFRETURN_RETURN": "إرجاع",
+  "PROCEDURES_DEFRETURN_TITLE": "إلى",
+  "PROCEDURES_DEFRETURN_TOOLTIP": "ينشئ دالة مع ناتج.",
+  "PROCEDURES_HIGHLIGHT_DEF": "تسليط الضوء على تعريف الدالة",
+  "PROCEDURES_IFRETURN_HELPURL": "http://c2.com/cgi/wiki?GuardClause",
+  "PROCEDURES_IFRETURN_TOOLTIP": "إذا كانت القيمة صحيحة، فقم بإرجاع قيمة ثانية.",
+  "PROCEDURES_IFRETURN_WARNING": "تحذير: لا يمكن استخدام هذه اللبنة إلا داخل تعريف دالة.",
+  "PROCEDURES_MUTATORARG_TITLE": "اسم المدخل:",
+  "PROCEDURES_MUTATORARG_TOOLTIP": "أضف مدخلاً إلى الدالة.",
+  "PROCEDURES_MUTATORCONTAINER_TITLE": "المدخلات",
+  "PROCEDURES_MUTATORCONTAINER_TOOLTIP": "أضف أو أزل أو أعد ترتيب المدخلات لهذه الدالة.",
+  "REDO": "إعادة",
+  "REMOVE_COMMENT": "إزالة التعليق",
+  "RENAME_VARIABLE": "إعادة تسمية المتغير...",
+  "RENAME_VARIABLE_MODAL_TITLE": "إعادة تسمية المتغير",
+  "RENAME_VARIABLE_TITLE": "إعادة تسمية كل متغيرات '%1' إلى:",
+  "TEXT_APPEND_TITLE": "إلى %1 ألحق النص %2",
+  "TEXT_APPEND_TOOLTIP": "ألحق بعض النص بالمتغير '%1'.",
+  "TEXT_APPEND_VARIABLE": "العنصر",
+  "TEXT_CHANGECASE_OPERATOR_LOWERCASE": "إلى أحرف صغيرة",
+  "TEXT_CHANGECASE_OPERATOR_TITLECASE": "إلى حالة العنوان",
+  "TEXT_CHANGECASE_OPERATOR_UPPERCASE": "إلى أحرف كبيرة",
+  "TEXT_CREATE_JOIN_ITEM_TOOLTIP": "أضف عنصرًا إلى النص.",
+  "TEXT_CREATE_JOIN_TITLE_JOIN": "ضم",
+  "TEXT_CREATE_JOIN_TOOLTIP": "أضف أو أزل أو أعد ترتيب الأقسام لإعادة تشكيل لبنة النص هذه.",
+  "TEXT_GET_INDEX_FIRST": "الأول",
+  "TEXT_GET_INDEX_FROM_END": "الحرف رقم # من النهاية",
+  "TEXT_GET_INDEX_FROM_START": "الحرف رقم #",
+  "TEXT_GET_INDEX_LAST": "الأخير",
+  "TEXT_GET_INDEX_RANDOM": "عشوائي",
+  "TEXT_INDEXOF_OPERATOR_FIRST": "ابحث عن أول ظهور للنص",
+  "TEXT_INDEXOF_OPERATOR_LAST": "ابحث عن آخر ظهور للنص",
+  "TEXT_INDEXOF_TITLE": "في النص %1 %2 %3",
+  "TEXT_INDEXOF_TOOLTIP": "يُرجع فهرس أول/آخر ظهور للنص الأول في النص الثاني. يُرجع %1 إذا لم يتم العثور على النص.",
+  "TEXT_ISEMPTY_TITLE": "%1 فارغ",
+  "TEXT_ISEMPTY_TOOLTIP": "يُرجع 'صحيح' إذا كان النص المقدم فارغًا.",
+  "TEXT_JOIN_TITLE_CREATEWITH": "أنشئ نصًا مع",
+  "TEXT_JOIN_TOOLTIP": "أنشئ قطعة من النص بضم أي عدد من العناصر معًا.",
+  "TEXT_LENGTH_TITLE": "طول %1",
+  "TEXT_LENGTH_TOOLTIP": "يُرجع عدد الحروف (بما في ذلك المسافات) في النص المقدم.",
+  "TEXT_TEXT_TOOLTIP": "حرف أو كلمة أو سطر من النص.",
+  "TEXT_TRIM_OPERATOR_BOTH": "إزالة المسافات من كلا الجانبين لـ",
+  "TEXT_TRIM_OPERATOR_LEFT": "إزالة المسافات من الجانب الأيسر لـ",
+  "TEXT_TRIM_OPERATOR_RIGHT": "إزالة المسافات من الجانب الأيمن لـ",
+  "UNDO": "تراجع",
+  "VARIABLE_ALREADY_EXISTS": "متغير باسم '%1' موجود بالفعل.",
+  "VARIABLES_DEFAULT_NAME": "عنصر",
+  "VARIABLES_GET_CREATE_SET": "إنشاء 'اضبط %1'",
+  "VARIABLES_GET_HELPURL": "https://github.com/google/blockly/wiki/Variables#get",
+  "VARIABLES_GET_TOOLTIP": "يُرجع قيمة هذا المتغير.",
+  "VARIABLES_SET": "اضبط %1 على %2",
+  "VARIABLES_SET_CREATE_GET": "إنشاء 'احصل على %1'",
+  "VARIABLES_SET_HELPURL": "https://github.com/google/blockly/wiki/Variables#set",
+  "VARIABLES_SET_TOOLTIP": "يضبط هذا المتغير ليكون مساويًا للمدخل.",
+  "BKY_ESP32CAM_FLIP": "📷 إعداد شاشة الكاميرا النوع %1 التفعيل %2",
+  "BKY_ESP32CAM_FLIP_TOOLTIP": "قلب أو عينة صورة الكاميرا.",
+  "BKY_ESP32CAM_FLIP_TYPE_VFLIP": "قلب عمودي",
+  "BKY_ESP32CAM_FLIP_TYPE_HMIRROR": "مرآة أفقية",
+  "BKY_ESP32CAM_FLIP_ENABLE_ON": "تشغيل",
+  "BKY_ESP32CAM_FLIP_ENABLE_OFF": "إيقاف",
+  "BKY_UTIL_RECORD_PLAY_LABEL": "تسجيل/تشغيل تجميع الكتل",
+  "BKY_UTIL_RECORD_LABEL": "حالة مسجل الكتل",
+  "BKY_UTIL_NONBLOCK_LABEL": "مؤقتات غير محجوبة",
+  "BKY_UTIL_RECORD_START": "🔴 بدء تسجيل تجميع الكتل",
+  "BKY_UTIL_RECORD_START_TOOLTIP": "انقر نقرًا مزدوجًا على هذه الكتلة لبدء تسجيل عملية تجميع الكتل.",
+  "BKY_UTIL_RECORD_STOP": "⏹️ إيقاف تسجيل تجميع الكتل",
+  "BKY_UTIL_RECORD_STOP_TOOLTIP": "انقر نقرًا مزدوجًا على هذه الكتلة لإيقاف تسجيل تجميع الكتل.",
+  "BKY_UTIL_RECORD_PLAY": "▶️ تشغيل تجميع الكتل %1",
+  "BKY_UTIL_RECORD_PLAY_TOOLTIP": "انقر نقرًا مزدوجًا على هذه الكتلة لتشغيل تجميع الكتل المسجل. يمكنك اختيار سرعة التشغيل.",
+  "BKY_UTIL_RECORD_PLAY_STOP": "⏹️ إيقاف تشغيل تجميع الكتل",
+  "BKY_UTIL_RECORD_PLAY_STOP_TOOLTIP": "انقر نقرًا مزدوجًا على هذه الكتلة لإيقاف تشغيل تجميع الكتل.",
+  "BKY_UTIL_RECORD_RESET": "🔄 إعادة تعيين تسجيل تجميع الكتل",
+  "BKY_UTIL_RECORD_RESET_TOOLTIP": "انقر نقرًا مزدوجًا على هذه الكتلة لحذف جميع تسجيلات تجميع الكتل.",
+  "BKY_UTIL_RECORD_STATUS": "📊 حالة التسجيل",
+  "BKY_UTIL_RECORD_STATUS_TOOLTIP": "ترجع حالة التسجيل الحالية (متوقف/تسجيل/تشغيل). انقر نقرًا مزدوجًا للإخراج إلى وحدة تحكم IDE.",
+  "BKY_UTIL_RECORD_EVENT_COUNT": "📊 عدد الأحداث",
+  "BKY_UTIL_RECORD_EVENT_COUNT_TOOLTIP": "ترجع عدد الأحداث المسجلة. انقر نقرًا مزدوجًا للإخراج إلى وحدة تحكم IDE.",
+  "BKY_UTIL_RECORD_DURATION": "📊 إجمالي وقت التجميع",
+  "BKY_UTIL_RECORD_DURATION_TOOLTIP": "ترجع إجمالي الوقت المستغرق في تجميع الكتل. انقر نقرًا مزدوجًا للإخراج إلى وحدة تحكم IDE.",
+  "BKY_UTIL_RECORD_START_TIME": "📊 وقت بدء التجميع",
+  "BKY_UTIL_RECORD_START_TIME_TOOLTIP": "ترجع الوقت الذي بدأ فيه تجميع الكتل. انقر نقرًا مزدوجًا للإخراج إلى وحدة تحكم IDE.",
+  "BKY_UTIL_RECORD_END_TIME": "📊 وقت انتهاء التجميع",
+  "BKY_UTIL_RECORD_END_TIME_TOOLTIP": "ترجع الوقت الذي انتهى فيه تجميع الكتل. انقر نقرًا مزدوجًا للإخراج إلى وحدة تحكم IDE.",
+  "BKY_UTIL_INTERVAL": "كل %1 مللي ثانية نفّذ",
+  "BKY_UTIL_INTERVAL_TOOLTIP": "ينفذ الكتل الداخلية بشكل متكرر في فترة زمنية محددة (مللي ثانية) بدون حجب.",
+  "BKY_UTIL_STOPWATCH_RESET": "إعادة تعيين المؤقت %1",
+  "BKY_UTIL_STOPWATCH_RESET_TOOLTIP": "يعيد تعيين المؤقت بالمعرف المحدد إلى 0.",
+  "BKY_UTIL_STOPWATCH_ELAPSED": "المؤقت %1 الوقت المنقضي (مللي ثانية)",
+  "BKY_UTIL_STOPWATCH_ELAPSED_TOOLTIP": "ترجع الوقت المنقضي (مللي ثانية) منذ آخر إعادة تعيين.",
+  "BKY_UTIL_TIMEOUT": "بعد %1 مللي ثانية نفّذ مرة واحدة",
+  "BKY_UTIL_TIMEOUT_TOOLTIP": "ينفذ الكتل الداخلية مرة واحدة بعد وقت محدد. (غير محجوب)"
+}

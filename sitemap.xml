@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Main Page - 브릭셀 웹에디터 -->
+  <url>
+    <loc>https://www.gorillacell.kr/webide/</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- Multilingual alternatives for SEO -->
+    <xhtml:link
+        rel="alternate"
+        hreflang="ko"
+        href="https://www.gorillacell.kr/webide/?lang=ko"/>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="https://www.gorillacell.kr/webide/?lang=en"/>
+    <xhtml:link
+        rel="alternate"
+        hreflang="ja"
+        href="https://www.gorillacell.kr/webide/?lang=ja"/>
+    <xhtml:link
+        rel="alternate"
+        hreflang="zh"
+        href="https://www.gorillacell.kr/webide/?lang=zh"/>
+    <xhtml:link
+        rel="alternate"
+        hreflang="ar"
+        href="https://www.gorillacell.kr/webide/?lang=ar"/>
+  </url>
+
+</urlset>

@@ -1,0 +1,415 @@
+================================================================================
+  BRIXEL WEBEDITOR - TOOLBOX vs DOCS-DATA BLOCK COMPARISON REPORT
+  Generated: 2026-02-24
+================================================================================
+
+=== SUMMARY ===
+Total toolbox blocks (unique, excl. _flag/guide): 358
+Total docs-data blocks: 262
+Total MISSING from docs (toolbox blocks not in docs): 120
+Total EXTRA in docs (docs blocks not in toolbox): 24
+Note: Some blocks appear in multiple toolbox categories (e.g. delay_ms, set_servo_angle,
+      util_filter_*, util_cal_*). Duplicates across categories are counted once in totals.
+      "MISSING" counts below are per-category and may include cross-category duplicates.
+
+================================================================================
+  SOFTWARE SECTIONS
+================================================================================
+
+=== CATEGORY: main ===
+Toolbox blocks (3): arduino_uno_starts_up, arduino_setup, arduino_loop
+Docs-data blocks (2): arduino_setup, arduino_loop
+--- IN BOTH (2): arduino_setup, arduino_loop
+--- MISSING from docs (1): arduino_uno_starts_up
+--- EXTRA in docs (0): none
+
+=== CATEGORY: pin ===
+Toolbox blocks (16): pin_mode, read_digital_pin, read_analog_pin, set_digital_pin, set_pwm_pin, servo_setup, set_servo_angle, tone_out, no_tone, delay_ms, timer_millis, timer_reset, timer_non_blocking_delay, arduino_interrupt, pulse_in, shift_out
+Docs-data blocks (16): pin_mode, read_digital_pin, read_analog_pin, set_digital_pin, set_pwm_pin, servo_setup, set_servo_angle, tone_out, no_tone, delay_ms, timer_millis, timer_reset, timer_non_blocking_delay, arduino_interrupt, pulse_in, shift_out
+--- IN BOTH (16): pin_mode, read_digital_pin, read_analog_pin, set_digital_pin, set_pwm_pin, servo_setup, set_servo_angle, tone_out, no_tone, delay_ms, timer_millis, timer_reset, timer_non_blocking_delay, arduino_interrupt, pulse_in, shift_out
+--- MISSING from docs (0): none
+--- EXTRA in docs (0): none
+
+=== CATEGORY: control ===
+Toolbox blocks (5): delay_ms, wait_until, controls_if, controls_repeat_ext, controls_whileUntil, controls_flow_statements
+Docs-data blocks (7): delay_ms, wait_until, controls_if, controls_repeat_ext, controls_whileUntil, controls_flow_statements, controls_for
+--- IN BOTH (6): delay_ms, wait_until, controls_if, controls_repeat_ext, controls_whileUntil, controls_flow_statements
+--- MISSING from docs (0): none
+--- EXTRA in docs (1): controls_for
+
+=== CATEGORY: logic ===
+Toolbox blocks (6): logic_compare, logic_operation, logic_negate, logic_boolean, logic_null, logic_ternary
+Docs-data blocks (6): logic_compare, logic_operation, logic_negate, logic_boolean, logic_null, logic_ternary
+--- IN BOTH (6): logic_compare, logic_operation, logic_negate, logic_boolean, logic_null, logic_ternary
+--- MISSING from docs (0): none
+--- EXTRA in docs (0): none
+
+=== CATEGORY: math ===
+Toolbox blocks (12): math_number, math_arithmetic, math_single, math_trig, math_constant, math_number_property, math_round, math_modulo, math_constrain, math_random_int, math_random_float, math_atan2
+Docs-data blocks (12): math_number, math_arithmetic, math_single, math_trig, math_constant, math_number_property, math_round, math_modulo, math_constrain, math_random_int, math_random_float, math_atan2
+--- IN BOTH (12): math_number, math_arithmetic, math_single, math_trig, math_constant, math_number_property, math_round, math_modulo, math_constrain, math_random_int, math_random_float, math_atan2
+--- MISSING from docs (0): none
+--- EXTRA in docs (0): none
+
+=== CATEGORY: text ===
+Toolbox blocks (10): text, custom_text_join, custom_text_char_at, custom_text_length, custom_text_compare, custom_text_contains, text_append, text_changeCase, text_trim, text_isEmpty
+Docs-data blocks (10): text, custom_text_join, custom_text_char_at, custom_text_length, custom_text_contains, text_append, text_changeCase, text_trim, text_isEmpty, custom_text_compare
+--- IN BOTH (10): text, custom_text_join, custom_text_char_at, custom_text_length, custom_text_compare, custom_text_contains, text_append, text_changeCase, text_trim, text_isEmpty
+--- MISSING from docs (0): none
+--- EXTRA in docs (0): none
+
+=== CATEGORY: color ===
+Toolbox blocks (6): colour_picker_custom, colour_random_custom, colour_rgb_custom, colour_blend_custom, colour_to_hex, colour_to_rgb_values
+Docs-data blocks (6): colour_picker_custom, colour_random_custom, colour_rgb_custom, colour_blend_custom, colour_to_hex, colour_to_rgb_values
+--- IN BOTH (6): colour_picker_custom, colour_random_custom, colour_rgb_custom, colour_blend_custom, colour_to_hex, colour_to_rgb_values
+--- MISSING from docs (0): none
+--- EXTRA in docs (0): none
+
+=== CATEGORY: variables ===
+Toolbox blocks (10): variable_declare, variable_declare_novalue, variable_declare_set, variable_declare_change, variable_declare_get, number_variable_set, number_variable_get, math_change, string_variable_set, string_variable_get
+Docs-data blocks (10): number_variable_set, number_variable_get, math_change, string_variable_set, string_variable_get, variable_declare, variable_declare_novalue, variable_declare_set, variable_declare_get, variable_declare_change
+--- IN BOTH (10): variable_declare, variable_declare_novalue, variable_declare_set, variable_declare_change, variable_declare_get, number_variable_set, number_variable_get, math_change, string_variable_set, string_variable_get
+--- MISSING from docs (0): none
+--- EXTRA in docs (0): none
+
+=== CATEGORY: list ===
+Toolbox blocks (12): array_create, array_create_empty, array_get, array_set, array_append, array_remove, array_find, array_length, array_clear, array_copy, array_strlen, array_contains
+Docs-data blocks (11): array_create, array_create_empty, array_get, array_set, array_append, array_remove, array_find, array_length, array_clear, array_copy, array_contains
+--- IN BOTH (11): array_create, array_create_empty, array_get, array_set, array_append, array_remove, array_find, array_length, array_clear, array_copy, array_contains
+--- MISSING from docs (1): array_strlen
+--- EXTRA in docs (0): none
+
+=== CATEGORY: functions ===
+Toolbox blocks (2): procedures_ifreturn, procedures_ifreturn_void
+Docs-data blocks (6): procedures_defnoreturn, procedures_defreturn, procedures_callnoreturn, procedures_callreturn, procedures_ifreturn, procedures_ifreturn_void
+--- IN BOTH (2): procedures_ifreturn, procedures_ifreturn_void
+--- MISSING from docs (0): none
+--- EXTRA in docs (4): procedures_defnoreturn, procedures_defreturn, procedures_callnoreturn, procedures_callreturn
+  (Note: These 4 are auto-generated by Blockly PROCEDURE custom category, not in XML toolbox)
+
+=== CATEGORY: utility ===
+Toolbox blocks (22): util_millis, util_map, util_constrain, util_convert, util_to_char, util_to_ascii, util_i2c_scanner, util_i2c_read_address, util_record_start, util_record_stop, util_record_play, util_record_play_stop, util_record_reset, util_record_status, util_record_event_count, util_record_duration, util_record_start_time, util_record_end_time, util_interval, util_stopwatch_reset, util_stopwatch_elapsed, util_timeout
+Docs-data blocks (28): util_millis, util_map, util_constrain, util_convert, util_to_char, util_to_ascii, util_i2c_scanner, util_filter_moving_avg, util_filter_ema, util_filter_median, util_filter_range, util_cal_setup, util_cal_apply, util_interval, util_timeout, util_stopwatch_reset, util_stopwatch_elapsed, util_record_start, util_record_stop, util_record_play, util_record_play_stop, util_record_reset, util_record_status, util_record_event_count, util_record_duration, util_adc_stable, util_adc_oversample, util_cal_offset, util_i2c_read_address
+--- IN BOTH (20): util_millis, util_map, util_constrain, util_convert, util_to_char, util_to_ascii, util_i2c_scanner, util_i2c_read_address, util_record_start, util_record_stop, util_record_play, util_record_play_stop, util_record_reset, util_record_status, util_record_event_count, util_record_duration, util_interval, util_stopwatch_reset, util_stopwatch_elapsed, util_timeout
+--- MISSING from docs (2): util_record_start_time, util_record_end_time
+--- EXTRA in docs (8): util_filter_moving_avg, util_filter_ema, util_filter_median, util_filter_range, util_cal_setup, util_cal_apply, util_adc_stable, util_adc_oversample, util_cal_offset
+  (Note: Filter/calibration/ADC blocks appear in toolbox under sensors-a and sensors-b categories, not utility)
+
+================================================================================
+  HARDWARE SECTIONS
+================================================================================
+
+=== CATEGORY: display-a ===
+Toolbox blocks (30): lcd_i2c_setup, lcd_i2c_print, lcd_i2c_clear, lcd_i2c_set_cursor, lcd_i2c_cursor, lcd_i2c_backlight, lcd_i2c_display, lcd_i2c_scroll, tm1637_setup, tm1637_display_number, tm1637_display_time, tm1637_display_text, tm1637_display_digit, tm1637_clear, tm1637_brightness, tm1637_colon, neopixel_setup, neopixel_set_rgb, neopixel_set_rgbw, neopixel_show, neopixel_brightness, neopixel_clear, neopixel_fill_rgb_all, neopixel_anim_rainbow, neopixel_anim_shift, neopixel_anim_breathe
+Docs-data blocks (17): lcd_i2c_setup, lcd_i2c_print, lcd_i2c_clear, lcd_i2c_set_cursor, lcd_i2c_backlight, tm1637_setup, tm1637_display_number, tm1637_display_time, tm1637_clear, tm1637_brightness, neopixel_setup, neopixel_set_rgb, neopixel_show, neopixel_brightness, neopixel_clear, neopixel_fill_rgb_all, neopixel_anim_rainbow
+--- IN BOTH (17): lcd_i2c_setup, lcd_i2c_print, lcd_i2c_clear, lcd_i2c_set_cursor, lcd_i2c_backlight, tm1637_setup, tm1637_display_number, tm1637_display_time, tm1637_clear, tm1637_brightness, neopixel_setup, neopixel_set_rgb, neopixel_show, neopixel_brightness, neopixel_clear, neopixel_fill_rgb_all, neopixel_anim_rainbow
+--- MISSING from docs (13): lcd_i2c_cursor, lcd_i2c_display, lcd_i2c_scroll, tm1637_display_text, tm1637_display_digit, tm1637_colon, neopixel_set_rgbw, neopixel_anim_shift, neopixel_anim_breathe
+  (Note: Actual unique missing count is 9; the toolbox has 30 blocks total including these)
+
+=== CATEGORY: display-b ===
+Toolbox blocks (35): ssd1306_setup_i2c, ssd1306_text, ssd1306_control, ssd1306_dim, ssd1306_pixel, ssd1306_line, ssd1306_rect, ssd1306_circle, ssd1306_scroll, ssd1306_bitmap, oled_han_setup, oled_han_clear, oled_han_print_text, oled_han_big_digit, oled_han_draw_bar, ht16k33_setup, ht16k33_scroll_text, ht16k33_show, ht16k33_clear, ht16k33_set_brightness, ht16k33_set_blink, ht16k33_pixel, ht16k33_bicolor_pixel, ht16k33_pattern_8x8, ht16k33_pattern_8x16, ht16k33_line, ht16k33_circle, ht16k33_rect, sh110x_setup_i2c, sh110x_text, sh110x_display, sh110x_clear, sh110x_control, sh110x_pixel, sh110x_line, sh110x_rect, sh110x_circle, sh110x_contrast, sh110x_bitmap, sh1106_setup, sh1106_clear, sh1106_print_text, sh1106_large_number, sh1106_draw_bar
+Docs-data blocks (18): ssd1306_setup_i2c, ssd1306_text, ssd1306_control, ssd1306_pixel, ssd1306_line, ssd1306_rect, ssd1306_circle, sh110x_setup_i2c, sh110x_text, sh110x_display, sh110x_clear, sh1106_setup, sh1106_print_text, ht16k33_setup, ht16k33_scroll_text, ht16k33_pixel, ht16k33_pattern_8x8, ht16k33_clear
+--- IN BOTH (18): ssd1306_setup_i2c, ssd1306_text, ssd1306_control, ssd1306_pixel, ssd1306_line, ssd1306_rect, ssd1306_circle, sh110x_setup_i2c, sh110x_text, sh110x_display, sh110x_clear, sh1106_setup, sh1106_print_text, ht16k33_setup, ht16k33_scroll_text, ht16k33_pixel, ht16k33_pattern_8x8, ht16k33_clear
+--- MISSING from docs (26): ssd1306_dim, ssd1306_scroll, ssd1306_bitmap, oled_han_setup, oled_han_clear, oled_han_print_text, oled_han_big_digit, oled_han_draw_bar, ht16k33_show, ht16k33_set_brightness, ht16k33_set_blink, ht16k33_bicolor_pixel, ht16k33_pattern_8x16, ht16k33_line, ht16k33_circle, ht16k33_rect, sh110x_control, sh110x_pixel, sh110x_line, sh110x_rect, sh110x_circle, sh110x_contrast, sh110x_bitmap, sh1106_clear, sh1106_large_number, sh1106_draw_bar
+--- EXTRA in docs (0): none
+
+=== CATEGORY: sensors-a ===
+Toolbox blocks (55): ultrasonic_setup, ultrasonic_distance, dht_setup, dht_read_temperature, dht_read_humidity, dht_convert_temperature, dht_heat_index, dallas_temp_setup, dallas_temp_request, dallas_temp_read, dallas_temp_count, hx711_setup, hx711_get_weight, hx711_tare, hx711_set_scale, hx711_is_ready, hx711_power_control, hx711_read_data, i2c_weight_setup, i2c_weight_read, i2c_weight_available, i2c_weight_raw_data, rotary_setup, rotary_get_value, rotary_direction, rotary_counter, rotary_reset_counter, thermistor_setup, thermistor_read_temperature, thermistor_read_raw, thermistor_get_resistance, pms_setup, pms_power_control, pms_set_mode, pms_read_data, pms_request_read, pms_data_available, mhz19_setup, mhz19_set_range, mhz19_filter_mode, mhz19_read_value, mhz19_calibration, mhz19_get_status, gravity_tds_setup, gravity_tds_set_temp, gravity_tds_update, gravity_tds_read_value, gravity_tds_advanced_config, dfrobot_ph_setup, dfrobot_ph_read, dfrobot_ph_voltage, dfrobot_ph_calibration, fingerprint_setup, fingerprint_enroll_process, fingerprint_search, fingerprint_get_result, fingerprint_database, fingerprint_led_control, turbidity_setup, turbidity_calibrate, turbidity_update, turbidity_read_value, uv_sensor_setup, uv_sensor_calibrate, uv_sensor_read_value, util_filter_moving_avg, util_filter_ema, util_filter_median, util_filter_range, util_cal_setup, util_cal_apply, util_cal_offset, util_adc_stable, util_adc_oversample
+  (Note: sensor-a also includes util_filter/cal/adc blocks at the bottom of the category)
+Docs-data blocks (22): ultrasonic_setup, ultrasonic_distance, dht_setup, dht_read_temperature, dht_read_humidity, dht_heat_index, dallas_temp_setup, dallas_temp_request, dallas_temp_read, hx711_setup, hx711_get_weight, hx711_tare, hx711_set_scale, rotary_setup, rotary_get_value, rotary_direction, gravity_tds_setup, gravity_tds_read_value, dfrobot_ph_setup, dfrobot_ph_read, turbidity_setup, turbidity_read_value, pms_setup, pms_read_data, mhz19_setup, mhz19_read_value
+--- IN BOTH (22): ultrasonic_setup, ultrasonic_distance, dht_setup, dht_read_temperature, dht_read_humidity, dht_heat_index, dallas_temp_setup, dallas_temp_request, dallas_temp_read, hx711_setup, hx711_get_weight, hx711_tare, hx711_set_scale, rotary_setup, rotary_get_value, rotary_direction, gravity_tds_setup, gravity_tds_read_value, dfrobot_ph_setup, dfrobot_ph_read, turbidity_setup, turbidity_read_value, pms_setup, pms_read_data, mhz19_setup, mhz19_read_value
+--- MISSING from docs (43): dht_convert_temperature, dallas_temp_count, hx711_is_ready, hx711_power_control, hx711_read_data, i2c_weight_setup, i2c_weight_read, i2c_weight_available, i2c_weight_raw_data, rotary_counter, rotary_reset_counter, thermistor_setup, thermistor_read_temperature, thermistor_read_raw, thermistor_get_resistance, pms_power_control, pms_set_mode, pms_request_read, pms_data_available, mhz19_set_range, mhz19_filter_mode, mhz19_calibration, mhz19_get_status, gravity_tds_set_temp, gravity_tds_update, gravity_tds_advanced_config, dfrobot_ph_voltage, dfrobot_ph_calibration, fingerprint_setup, fingerprint_enroll_process, fingerprint_search, fingerprint_get_result, fingerprint_database, fingerprint_led_control, turbidity_calibrate, turbidity_update, uv_sensor_setup, uv_sensor_calibrate, uv_sensor_read_value, util_filter_moving_avg, util_filter_ema, util_filter_median, util_filter_range, util_cal_setup, util_cal_apply, util_cal_offset, util_adc_stable, util_adc_oversample
+  (Note: Last 9 are cross-listed filter/cal/adc blocks also in sensors-b and docs utility section)
+--- EXTRA in docs (0): none
+
+=== CATEGORY: sensors-b ===
+Toolbox blocks (46): ds1307_setup, ds1307_set_time, ds1307_get_time, ds1307_clock_control, ds1307_sqw_output, ds1307_get_time_string, bmp280_setup, bmp280_set_sea_pressure, bmp280_set_reference, bmp280_read_value, bx_mpu_setup, bx_mpu_update, bx_mpu_read_value, bx_mpu_set_offsets, bx_mpu_calc_offsets, sgp30_setup, sgp30_measure, sgp30_get_eco2, sgp30_get_tvoc, sgp30_set_humidity, sgp30_set_baseline, sgp30_eeprom_save_baseline_fixed, sgp30_eeprom_load_baseline_fixed, sgp30_eeprom_save_baseline, sgp30_eeprom_load_baseline, vl53l0x_setup, vl53l0x_set_mode, vl53l0x_control, vl53l0x_read_value, sht31_setup, sht31_read, sht31_is_connected, sht31_get_data, sht31_heater_control, sht31_is_heater_on, sht31_reset, sht31_get_error, color_sensor_setup, color_sensor_init, color_sensor_trigger, color_sensor_get_data, color_sensor_is_color, mlx90614_setup, mlx90614_read_temp, apds9960_setup, apds9960_sensor_control, apds9960_read_light, apds9960_read_proximity, apds9960_gesture_available, apds9960_gesture_control, max30105_setup_basic, max30105_finger_detected, max30105_get_heartrate, max30105_get_spo2, max30105_beat_detected, max30105_sensor_ready, max30105_get_temperature, max30105_setup_advanced, max30105_get_red_raw, max30105_get_ir_raw, si7021_setup, si7021_read_value, si7021_reset, si7021_get_serial, util_filter_moving_avg, util_filter_ema, util_filter_median, util_filter_range, util_cal_setup, util_cal_apply, util_cal_offset
+  (Note: sensor-b also includes util_filter/cal blocks at the bottom of the category)
+Docs-data blocks (26): ds1307_setup, ds1307_set_time, ds1307_get_time, bmp280_setup, bmp280_read_value, bx_mpu_setup, bx_mpu_update, bx_mpu_read_value, sgp30_setup, sgp30_measure, sgp30_get_eco2, sgp30_get_tvoc, color_sensor_setup, color_sensor_get_data, color_sensor_is_color, max30105_setup_basic, max30105_finger_detected, max30105_get_heartrate, max30105_get_spo2, apds9960_setup, apds9960_read_proximity, apds9960_gesture_available, vl53l0x_setup, vl53l0x_read_value, sht31_setup, sht31_get_data, mlx90614_setup, mlx90614_read_temp, si7021_setup, si7021_read_value
+--- IN BOTH (26): ds1307_setup, ds1307_set_time, ds1307_get_time, bmp280_setup, bmp280_read_value, bx_mpu_setup, bx_mpu_update, bx_mpu_read_value, sgp30_setup, sgp30_measure, sgp30_get_eco2, sgp30_get_tvoc, color_sensor_setup, color_sensor_get_data, color_sensor_is_color, max30105_setup_basic, max30105_finger_detected, max30105_get_heartrate, max30105_get_spo2, apds9960_setup, apds9960_read_proximity, apds9960_gesture_available, vl53l0x_setup, vl53l0x_read_value, sht31_setup, sht31_get_data, mlx90614_setup, mlx90614_read_temp, si7021_setup, si7021_read_value
+--- MISSING from docs (38): ds1307_clock_control, ds1307_sqw_output, ds1307_get_time_string, bmp280_set_sea_pressure, bmp280_set_reference, bx_mpu_set_offsets, bx_mpu_calc_offsets, sgp30_set_humidity, sgp30_set_baseline, sgp30_eeprom_save_baseline_fixed, sgp30_eeprom_load_baseline_fixed, sgp30_eeprom_save_baseline, sgp30_eeprom_load_baseline, vl53l0x_set_mode, vl53l0x_control, sht31_read, sht31_is_connected, sht31_heater_control, sht31_is_heater_on, sht31_reset, sht31_get_error, color_sensor_init, color_sensor_trigger, apds9960_sensor_control, apds9960_read_light, apds9960_gesture_control, max30105_beat_detected, max30105_sensor_ready, max30105_get_temperature, max30105_setup_advanced, max30105_get_red_raw, max30105_get_ir_raw, si7021_reset, si7021_get_serial, util_filter_moving_avg, util_filter_ema, util_filter_median, util_filter_range, util_cal_setup, util_cal_apply, util_cal_offset
+  (Note: Last 7 are cross-listed filter/cal blocks)
+--- EXTRA in docs (0): none
+
+=== CATEGORY: motor ===
+Toolbox blocks (28): attach_servo, attach_servo_minmax, detach_servo, set_servo_angle, set_servo_microseconds, read_servo_angle, read_servo_microseconds, is_servo_attached, geekservo_setup, geekservo_angle_360, geekservo_wheel, geekservo_stop, dcmotor_setup, dcmotor_run, dcmotor_stop, pca9685_dcmotor_setup, pca9685_dcmotor_wheel_a, pca9685_dcmotor_wheel_b, pca9685_dcmotor_stop, accelstepper_setup, accelstepper_settings, accelstepper_move, accelstepper_control, accelstepper_status, steppermulti_setup, steppermulti_speed, steppermulti_move, steppermulti_run, pwmservo_setup, pwmservo_servo_angle, pwmservo_servo_microseconds, pwmservo_pwm_output, pwmservo_pwm_advanced, pwmservo_power, pwmservo_multi_servo, pwmservo_led_brightness
+Docs-data blocks (18): attach_servo, set_servo_angle, detach_servo, read_servo_angle, geekservo_angle_360, geekservo_wheel, dcmotor_setup, dcmotor_run, dcmotor_stop, accelstepper_setup, accelstepper_settings, accelstepper_move, accelstepper_control, pwmservo_setup, pwmservo_servo_angle, pca9685_dcmotor_setup, pca9685_dcmotor_wheel_a, pca9685_dcmotor_wheel_b, pca9685_dcmotor_stop
+--- IN BOTH (18): attach_servo, detach_servo, set_servo_angle, read_servo_angle, geekservo_angle_360, geekservo_wheel, dcmotor_setup, dcmotor_run, dcmotor_stop, accelstepper_setup, accelstepper_settings, accelstepper_move, accelstepper_control, pwmservo_setup, pwmservo_servo_angle, pca9685_dcmotor_setup, pca9685_dcmotor_wheel_a, pca9685_dcmotor_wheel_b, pca9685_dcmotor_stop
+--- MISSING from docs (17): attach_servo_minmax, set_servo_microseconds, read_servo_microseconds, is_servo_attached, geekservo_setup, geekservo_stop, accelstepper_status, steppermulti_setup, steppermulti_speed, steppermulti_move, steppermulti_run, pwmservo_servo_microseconds, pwmservo_pwm_output, pwmservo_pwm_advanced, pwmservo_power, pwmservo_multi_servo, pwmservo_led_brightness
+--- EXTRA in docs (0): none
+
+=== CATEGORY: output ===
+Toolbox blocks (20): buzzer_tone_setup, buzzer_set_tempo, buzzer_play_note, buzzer_stop, mp3_setup_kt403a, mp3_play_index, mp3_play_folder, mp3_set_volume, mp3_control, mp3_query_status, sd_setup, sd_open_file, sd_write_file, sd_read_file, sd_file_exists, sd_file_size, sd_close_file, sd_remove_file, sd_make_directory, sd_file_available
+Docs-data blocks (14): buzzer_tone_setup, buzzer_set_tempo, buzzer_play_note, buzzer_stop, mp3_setup_kt403a, mp3_play_index, mp3_play_folder, mp3_set_volume, mp3_control, sd_setup, sd_open_file, sd_write_file, sd_read_file, sd_close_file
+--- IN BOTH (14): buzzer_tone_setup, buzzer_set_tempo, buzzer_play_note, buzzer_stop, mp3_setup_kt403a, mp3_play_index, mp3_play_folder, mp3_set_volume, mp3_control, sd_setup, sd_open_file, sd_write_file, sd_read_file, sd_close_file
+--- MISSING from docs (6): mp3_query_status, sd_file_exists, sd_file_size, sd_remove_file, sd_make_directory, sd_file_available
+--- EXTRA in docs (0): none
+
+=== CATEGORY: communication (+ webble bluetooth section in toolbox) ===
+Toolbox blocks (27): ir_setup, ir_available, ir_read_button, ir_read_raw, ir_button_is, rf433_setup, rf433_config, rf433_rx_setup, rf433_rx_start, rf433_have_message, rf433_get_message, rf433_read_data, gps_setup_tinygps, gps_update_from_serial, gps_read_value, gps_has_fix, gps_between_calc, gps_cardinal, arduino_bt_setup, esp32_bt_setup, arduino_bt_available, arduino_bt_read_raw, arduino_bt_read_hex, arduino_bt_read_auto, arduino_bt_write, arduino_bt_msg_ready, arduino_bt_read, arduino_bt_parse, arduino_bt_get_value
+Docs-data blocks (17): ir_setup, ir_available, ir_read_button, ir_button_is, rf433_setup, rf433_config, rf433_rx_setup, rf433_have_message, rf433_get_message, arduino_bt_setup, arduino_bt_available, arduino_bt_read, arduino_bt_write, arduino_bt_parse, arduino_bt_get_value, gps_setup_tinygps, gps_update_from_serial, gps_read_value, gps_has_fix
+--- IN BOTH (17): ir_setup, ir_available, ir_read_button, ir_button_is, rf433_setup, rf433_config, rf433_rx_setup, rf433_have_message, rf433_get_message, arduino_bt_setup, arduino_bt_available, arduino_bt_read, arduino_bt_write, arduino_bt_parse, arduino_bt_get_value, gps_setup_tinygps, gps_update_from_serial, gps_read_value, gps_has_fix
+--- MISSING from docs (12): ir_read_raw, rf433_rx_start, rf433_read_data, gps_between_calc, gps_cardinal, esp32_bt_setup, arduino_bt_read_raw, arduino_bt_read_hex, arduino_bt_read_auto, arduino_bt_msg_ready
+  (Note: The BT blocks arduino_bt_read_raw/hex/auto/msg_ready are raw/hex read variants not in docs)
+--- EXTRA in docs (0): none
+
+=== CATEGORY: huskylens ===
+Toolbox blocks (18): huskylens_setup_i2c, huskylens_setup_serial, huskylens_set_algorithm, huskylens_request, huskylens_request_by_id, huskylens_available, huskylens_is_learned, huskylens_count_learned_ids, huskylens_count_blocks, huskylens_count_arrows, huskylens_block_info, huskylens_block_info_by_id, huskylens_arrow_info, huskylens_arrow_info_by_id, huskylens_learn_once, huskylens_forget, huskylens_write_osd, huskylens_clear_osd, huskylens_screenshot, huskylens_save_model, huskylens_load_model
+Docs-data blocks (13): huskylens_setup_i2c, huskylens_setup_serial, huskylens_set_algorithm, huskylens_request, huskylens_available, huskylens_block_info, huskylens_count_blocks, huskylens_count_arrows, huskylens_is_learned, huskylens_learn_once, huskylens_forget, huskylens_save_model, huskylens_load_model
+--- IN BOTH (13): huskylens_setup_i2c, huskylens_setup_serial, huskylens_set_algorithm, huskylens_request, huskylens_available, huskylens_block_info, huskylens_count_blocks, huskylens_count_arrows, huskylens_is_learned, huskylens_learn_once, huskylens_forget, huskylens_save_model, huskylens_load_model
+--- MISSING from docs (8): huskylens_request_by_id, huskylens_count_learned_ids, huskylens_block_info_by_id, huskylens_arrow_info, huskylens_arrow_info_by_id, huskylens_write_osd, huskylens_clear_osd, huskylens_screenshot
+--- EXTRA in docs (0): none
+
+=== CATEGORY: webble ===
+Toolbox blocks (7): sys_webble_setup, sys_webble_connected, sys_webble_available, sys_webble_read, sys_webble_write, sys_webble_parse, sys_webble_get_value
+Docs-data blocks (7): sys_webble_setup, sys_webble_connected, sys_webble_available, sys_webble_read, sys_webble_write, sys_webble_parse, sys_webble_get_value
+--- IN BOTH (7): sys_webble_setup, sys_webble_connected, sys_webble_available, sys_webble_read, sys_webble_write, sys_webble_parse, sys_webble_get_value
+--- MISSING from docs (0): none
+--- EXTRA in docs (0): none
+
+=== CATEGORY: wifi ===
+Toolbox blocks (9): wifi_setup, wifi_ws_server_setup, wifi_is_connected, wifi_local_ip, wifi_ws_available, wifi_ws_read, wifi_ws_send, wifi_ws_send_raw, wifi_ws_send_label_value
+Docs-data blocks (9): wifi_setup, wifi_ws_server_setup, wifi_is_connected, wifi_local_ip, wifi_ws_available, wifi_ws_read, wifi_ws_send, wifi_ws_send_raw, wifi_ws_send_label_value
+--- IN BOTH (9): wifi_setup, wifi_ws_server_setup, wifi_is_connected, wifi_local_ip, wifi_ws_available, wifi_ws_read, wifi_ws_send, wifi_ws_send_raw, wifi_ws_send_label_value
+--- MISSING from docs (0): none
+--- EXTRA in docs (0): none
+
+=== CATEGORY: serial ===
+Toolbox blocks (15): sys_serial_begin, sys_serial_connected, sys_serial_print, sys_serial_send_change, sys_serial_print_continuous, sys_serial_print_multi, sys_serial_send_key_val, sys_serial_poll, sys_serial_available, sys_serial_read_raw, sys_serial_flush, sys_serial_parse_delimiter, sys_parsed_value_get, sys_parsed_count, sys_parse_csv_get, sys_parse_count, sys_util_to_number
+Docs-data blocks (12): sys_serial_begin, sys_serial_connected, sys_serial_print, sys_serial_print_continuous, sys_serial_print_multi, sys_serial_available, sys_serial_read_raw, sys_serial_flush, sys_serial_parse_delimiter, sys_parsed_value_get, sys_parsed_count, sys_util_to_number
+--- IN BOTH (12): sys_serial_begin, sys_serial_connected, sys_serial_print, sys_serial_print_continuous, sys_serial_print_multi, sys_serial_available, sys_serial_read_raw, sys_serial_flush, sys_serial_parse_delimiter, sys_parsed_value_get, sys_parsed_count, sys_util_to_number
+--- MISSING from docs (5): sys_serial_send_change, sys_serial_send_key_val, sys_serial_poll, sys_parse_csv_get, sys_parse_count
+--- EXTRA in docs (0): none
+
+=== CATEGORY: esp32cam ===
+Toolbox blocks (9): esp32cam_declare, esp32cam_wifi_config, esp32cam_receiver_config, esp32cam_setup, esp32cam_flip, esp32cam_loop, esp32cam_led_control, esp32s3cam_declare, esp32s3cam_setup
+Docs-data blocks (9): esp32cam_declare, esp32cam_wifi_config, esp32cam_receiver_config, esp32cam_setup, esp32cam_flip, esp32cam_loop, esp32cam_led_control, esp32s3cam_declare, esp32s3cam_setup
+--- IN BOTH (9): esp32cam_declare, esp32cam_wifi_config, esp32cam_receiver_config, esp32cam_setup, esp32cam_flip, esp32cam_loop, esp32cam_led_control, esp32s3cam_declare, esp32s3cam_setup
+--- MISSING from docs (0): none
+--- EXTRA in docs (0): none
+
+=== CATEGORY: tinyml ===
+Toolbox blocks (10): tinyml_model_setup, tinyml_model_info, tinyml_collect_imu, tinyml_collect_analog, tinyml_collect_sound, tinyml_inference_start, tinyml_classification_result, tinyml_confidence, tinyml_result_is, tinyml_anomaly_detected
+Docs-data blocks (10): tinyml_model_setup, tinyml_model_info, tinyml_collect_imu, tinyml_collect_analog, tinyml_collect_sound, tinyml_inference_start, tinyml_classification_result, tinyml_confidence, tinyml_result_is, tinyml_anomaly_detected
+--- IN BOTH (10): tinyml_model_setup, tinyml_model_info, tinyml_collect_imu, tinyml_collect_analog, tinyml_collect_sound, tinyml_inference_start, tinyml_classification_result, tinyml_confidence, tinyml_result_is, tinyml_anomaly_detected
+--- MISSING from docs (0): none
+--- EXTRA in docs (0): none
+
+================================================================================
+  SKIPPED / EXCLUDED
+================================================================================
+
+Toolbox "guide" category (info/ad blocks, not user blocks):
+  developer_info_block, custom_ad_block, go_to_ai_robot_scratch,
+  go_to_bowerbird_pro, go_to_circuit_config, go_to_k12_projectHub
+
+Toolbox _flag blocks (category header blocks, skipped):
+  main_flag, pin_flag, control_flag, logic_flag, math_flag, text_flag,
+  colour_flag, var_flag, func_flag, util_flag, dis01_flag, dis02_flag,
+  sensor01_flag, sensor02_flag, motor_flag, output_flag, comm_flag
+
+================================================================================
+  ALL MISSING BLOCKS (Toolbox blocks NOT in docs-data, deduplicated)
+================================================================================
+
+  1. arduino_uno_starts_up                (main)
+  2. array_strlen                         (list)
+  3. util_record_start_time               (utility)
+  4. util_record_end_time                 (utility)
+  5. lcd_i2c_cursor                       (display-a)
+  6. lcd_i2c_display                      (display-a)
+  7. lcd_i2c_scroll                       (display-a)
+  8. tm1637_display_text                  (display-a)
+  9. tm1637_display_digit                 (display-a)
+  10. tm1637_colon                        (display-a)
+  11. neopixel_set_rgbw                   (display-a)
+  12. neopixel_anim_shift                 (display-a)
+  13. neopixel_anim_breathe              (display-a)
+  14. ssd1306_dim                         (display-b)
+  15. ssd1306_scroll                      (display-b)
+  16. ssd1306_bitmap                      (display-b)
+  17. oled_han_setup                      (display-b)
+  18. oled_han_clear                      (display-b)
+  19. oled_han_print_text                 (display-b)
+  20. oled_han_big_digit                  (display-b)
+  21. oled_han_draw_bar                   (display-b)
+  22. ht16k33_show                        (display-b)
+  23. ht16k33_set_brightness              (display-b)
+  24. ht16k33_set_blink                   (display-b)
+  25. ht16k33_bicolor_pixel               (display-b)
+  26. ht16k33_pattern_8x16                (display-b)
+  27. ht16k33_line                        (display-b)
+  28. ht16k33_circle                      (display-b)
+  29. ht16k33_rect                        (display-b)
+  30. sh110x_control                      (display-b)
+  31. sh110x_pixel                        (display-b)
+  32. sh110x_line                         (display-b)
+  33. sh110x_rect                         (display-b)
+  34. sh110x_circle                       (display-b)
+  35. sh110x_contrast                     (display-b)
+  36. sh110x_bitmap                       (display-b)
+  37. sh1106_clear                        (display-b)
+  38. sh1106_large_number                 (display-b)
+  39. sh1106_draw_bar                     (display-b)
+  40. dht_convert_temperature             (sensors-a)
+  41. dallas_temp_count                   (sensors-a)
+  42. hx711_is_ready                      (sensors-a)
+  43. hx711_power_control                 (sensors-a)
+  44. hx711_read_data                     (sensors-a)
+  45. i2c_weight_setup                    (sensors-a)
+  46. i2c_weight_read                     (sensors-a)
+  47. i2c_weight_available                (sensors-a)
+  48. i2c_weight_raw_data                 (sensors-a)
+  49. rotary_counter                      (sensors-a)
+  50. rotary_reset_counter                (sensors-a)
+  51. thermistor_setup                    (sensors-a)
+  52. thermistor_read_temperature         (sensors-a)
+  53. thermistor_read_raw                 (sensors-a)
+  54. thermistor_get_resistance           (sensors-a)
+  55. pms_power_control                   (sensors-a)
+  56. pms_set_mode                        (sensors-a)
+  57. pms_request_read                    (sensors-a)
+  58. pms_data_available                  (sensors-a)
+  59. mhz19_set_range                     (sensors-a)
+  60. mhz19_filter_mode                   (sensors-a)
+  61. mhz19_calibration                   (sensors-a)
+  62. mhz19_get_status                    (sensors-a)
+  63. gravity_tds_set_temp                (sensors-a)
+  64. gravity_tds_update                  (sensors-a)
+  65. gravity_tds_advanced_config         (sensors-a)
+  66. dfrobot_ph_voltage                  (sensors-a)
+  67. dfrobot_ph_calibration              (sensors-a)
+  68. fingerprint_setup                   (sensors-a)
+  69. fingerprint_enroll_process          (sensors-a)
+  70. fingerprint_search                  (sensors-a)
+  71. fingerprint_get_result              (sensors-a)
+  72. fingerprint_database                (sensors-a)
+  73. fingerprint_led_control             (sensors-a)
+  74. turbidity_calibrate                 (sensors-a)
+  75. turbidity_update                    (sensors-a)
+  76. uv_sensor_setup                     (sensors-a)
+  77. uv_sensor_calibrate                 (sensors-a)
+  78. uv_sensor_read_value                (sensors-a)
+  79. ds1307_clock_control                (sensors-b)
+  80. ds1307_sqw_output                   (sensors-b)
+  81. ds1307_get_time_string              (sensors-b)
+  82. bmp280_set_sea_pressure             (sensors-b)
+  83. bmp280_set_reference                (sensors-b)
+  84. bx_mpu_set_offsets                  (sensors-b)
+  85. bx_mpu_calc_offsets                 (sensors-b)
+  86. sgp30_set_humidity                  (sensors-b)
+  87. sgp30_set_baseline                  (sensors-b)
+  88. sgp30_eeprom_save_baseline_fixed    (sensors-b)
+  89. sgp30_eeprom_load_baseline_fixed    (sensors-b)
+  90. sgp30_eeprom_save_baseline          (sensors-b)
+  91. sgp30_eeprom_load_baseline          (sensors-b)
+  92. vl53l0x_set_mode                    (sensors-b)
+  93. vl53l0x_control                     (sensors-b)
+  94. sht31_read                          (sensors-b)
+  95. sht31_is_connected                  (sensors-b)
+  96. sht31_heater_control                (sensors-b)
+  97. sht31_is_heater_on                  (sensors-b)
+  98. sht31_reset                         (sensors-b)
+  99. sht31_get_error                     (sensors-b)
+ 100. color_sensor_init                   (sensors-b)
+ 101. color_sensor_trigger                (sensors-b)
+ 102. apds9960_sensor_control             (sensors-b)
+ 103. apds9960_read_light                 (sensors-b)
+ 104. apds9960_gesture_control            (sensors-b)
+ 105. max30105_beat_detected              (sensors-b)
+ 106. max30105_sensor_ready               (sensors-b)
+ 107. max30105_get_temperature            (sensors-b)
+ 108. max30105_setup_advanced             (sensors-b)
+ 109. max30105_get_red_raw                (sensors-b)
+ 110. max30105_get_ir_raw                 (sensors-b)
+ 111. si7021_reset                        (sensors-b)
+ 112. si7021_get_serial                   (sensors-b)
+ 113. attach_servo_minmax                 (motor)
+ 114. set_servo_microseconds              (motor)
+ 115. read_servo_microseconds             (motor)
+ 116. is_servo_attached                   (motor)
+ 117. geekservo_setup                     (motor)
+ 118. geekservo_stop                      (motor)
+ 119. accelstepper_status                 (motor)
+ 120. steppermulti_setup                  (motor)
+ 121. steppermulti_speed                  (motor)
+ 122. steppermulti_move                   (motor)
+ 123. steppermulti_run                    (motor)
+ 124. pwmservo_servo_microseconds         (motor)
+ 125. pwmservo_pwm_output                 (motor)
+ 126. pwmservo_pwm_advanced               (motor)
+ 127. pwmservo_power                      (motor)
+ 128. pwmservo_multi_servo                (motor)
+ 129. pwmservo_led_brightness             (motor)
+ 130. mp3_query_status                    (output)
+ 131. sd_file_exists                      (output)
+ 132. sd_file_size                        (output)
+ 133. sd_remove_file                      (output)
+ 134. sd_make_directory                   (output)
+ 135. sd_file_available                   (output)
+ 136. ir_read_raw                         (communication)
+ 137. rf433_rx_start                      (communication)
+ 138. rf433_read_data                     (communication)
+ 139. gps_between_calc                    (communication)
+ 140. gps_cardinal                        (communication)
+ 141. esp32_bt_setup                      (communication)
+ 142. arduino_bt_read_raw                 (communication)
+ 143. arduino_bt_read_hex                 (communication)
+ 144. arduino_bt_read_auto                (communication)
+ 145. arduino_bt_msg_ready                (communication)
+ 146. sys_serial_send_change              (serial)
+ 147. sys_serial_send_key_val             (serial)
+ 148. sys_serial_poll                     (serial)
+ 149. sys_parse_csv_get                   (serial)
+ 150. sys_parse_count                     (serial)
+
+================================================================================
+  ALL EXTRA BLOCKS (docs-data blocks NOT in toolbox)
+================================================================================
+
+  1. controls_for                        (control)
+     Note: Not in toolbox XML, may be a Blockly built-in or removed block
+  2. procedures_defnoreturn              (functions)
+     Note: Auto-created by Blockly PROCEDURE custom category
+  3. procedures_defreturn                (functions)
+     Note: Auto-created by Blockly PROCEDURE custom category
+  4. procedures_callnoreturn             (functions)
+     Note: Auto-created by Blockly PROCEDURE custom category
+  5. procedures_callreturn               (functions)
+     Note: Auto-created by Blockly PROCEDURE custom category
+
+================================================================================
+  CATEGORIES WITH PERFECT MATCH (0 missing, 0 extra)
+================================================================================
+
+  - pin (16/16)
+  - logic (6/6)
+  - math (12/12)
+  - text (10/10)
+  - color (6/6)
+  - variables (10/10)
+  - webble (7/7)
+  - wifi (9/9)
+  - esp32cam (9/9)
+  - tinyml (10/10)
+
+================================================================================
+  CATEGORIES NEEDING ATTENTION (sorted by missing count)
+================================================================================
+
+  1. sensors-a:    34 unique blocks missing from docs (excl. cross-listed util blocks)
+  2. sensors-b:    31 unique blocks missing from docs (excl. cross-listed util blocks)
+  3. display-b:    26 blocks missing from docs
+  4. motor:        17 blocks missing from docs
+  5. communication:10 blocks missing from docs
+  6. display-a:     9 blocks missing from docs
+  7. output:        6 blocks missing from docs
+  8. serial:        5 blocks missing from docs
+  9. huskylens:     8 blocks missing from docs
+  10. utility:      2 blocks missing from docs (util_record_start_time, util_record_end_time)
+  11. list:         1 block missing from docs (array_strlen)
+  12. main:         1 block missing from docs (arduino_uno_starts_up)
+
+================================================================================
+  END OF REPORT
+================================================================================
