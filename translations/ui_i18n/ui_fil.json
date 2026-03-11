@@ -396,8 +396,8 @@
   "BKY_DISPLAY_LABEL_HT16K33": "🔲 Dot Matrix (HT16K33)",
   "BKY_DISPLAY_LABEL_LCD": "📺 LCD Display",
   "BKY_DISPLAY_LABEL_NEOPIXEL": "💡 NeoPixel (WS2812)",
-  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3 (SH1106)",
-  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96 (SSD1306)",
+  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3\" (SH1106)",
+  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96\" (SSD1306)",
   "BKY_FLOAT": "Float",
   "BKY_INT": "Integer",
   "BKY_NUMBER_VARIABLE_GET": "🔢 Numerong Variable %1",
@@ -1761,5 +1761,9 @@
   "BKY_GO_TO_K12_PROJECTHUB_TOOLTIP": "Mag-right-click sa block at piliin ang 'Tulong' upang tuklasin ang iba't ibang halimbawa sa k12-projecthub.",
   "BKY_GAIN_128_A": "128 (Channel A)",
   "BKY_GAIN_32_B": "32 (Channel B)",
-  "BKY_GAIN_64_A": "64 (Channel A)"
+  "BKY_GAIN_64_A": "64 (Channel A)",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED": "🚗 Motor Driver %1 Gulong A Direksyon %2 Bilis %3 % Tagal %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED_TIP": "Kontrolin ang gulong A sa tinukoy na tagal at itigil. Direksyon: 0=Pasulong, 1=Paatras. Bilis: 0-100%. Tagal sa ms.",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED": "🚗 Motor Driver %1 Gulong B Direksyon %2 Bilis %3 % Tagal %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED_TIP": "Kontrolin ang gulong B sa tinukoy na tagal at itigil. Direksyon: 0=Pasulong, 1=Paatras. Bilis: 0-100%. Tagal sa ms."
 }

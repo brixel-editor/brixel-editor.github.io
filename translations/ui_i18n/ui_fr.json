@@ -396,8 +396,8 @@
   "BKY_DISPLAY_LABEL_HT16K33": "🔲 Matrice de Points (HT16K33)",
   "BKY_DISPLAY_LABEL_LCD": "📺 Écran LCD",
   "BKY_DISPLAY_LABEL_NEOPIXEL": "💡 NeoPixel (WS2812)",
-  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3 (SH1106)",
-  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96 (SSD1306)",
+  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3\" (SH1106)",
+  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96\" (SSD1306)",
   "BKY_FLOAT": "Flottant",
   "BKY_INT": "Entier",
   "BKY_NUMBER_VARIABLE_GET": "🔢 Variable numérique %1",
@@ -1761,5 +1761,9 @@
   "BKY_GO_TO_K12_PROJECTHUB_TOOLTIP": "Faites un clic droit sur le bloc et sélectionnez 'Aide' pour explorer divers exemples dans k12-projecthub.",
   "BKY_GAIN_128_A": "128 (Canal A)",
   "BKY_GAIN_32_B": "32 (Canal B)",
-  "BKY_GAIN_64_A": "64 (Canal A)"
+  "BKY_GAIN_64_A": "64 (Canal A)",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED": "🚗 Moteur %1 Roue A Direction %2 Vitesse %3 % Durée %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED_TIP": "Contrôler la roue A pendant la durée spécifiée puis arrêter. Direction : 0=Avant, 1=Arrière. Vitesse : 0-100%. Durée en ms.",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED": "🚗 Moteur %1 Roue B Direction %2 Vitesse %3 % Durée %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED_TIP": "Contrôler la roue B pendant la durée spécifiée puis arrêter. Direction : 0=Avant, 1=Arrière. Vitesse : 0-100%. Durée en ms."
 }

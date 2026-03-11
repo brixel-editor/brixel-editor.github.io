@@ -396,8 +396,8 @@
   "BKY_DISPLAY_LABEL_HT16K33": "🔲 Dot Matrix (HT16K33)",
   "BKY_DISPLAY_LABEL_LCD": "📺 LCD Display",
   "BKY_DISPLAY_LABEL_NEOPIXEL": "💡 NeoPixel (WS2812)",
-  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3 (SH1106)",
-  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96 (SSD1306)",
+  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3\" (SH1106)",
+  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96\" (SSD1306)",
   "BKY_FLOAT": "Float",
   "BKY_INT": "Integer",
   "BKY_NUMBER_VARIABLE_GET": "🔢 Number Variable %1",
@@ -1761,5 +1761,9 @@
   "BKY_GO_TO_K12_PROJECTHUB_TOOLTIP": "Right-click block and select 'Help' to explore various examples in k12-projecthub.",
   "BKY_GAIN_128_A": "128 (Channel A)",
   "BKY_GAIN_32_B": "32 (Channel B)",
-  "BKY_GAIN_64_A": "64 (Channel A)"
+  "BKY_GAIN_64_A": "64 (Channel A)",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED": "🚗 Motor Driver %1 Wheel A Direction %2 Speed %3 % Duration %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED_TIP": "Control wheel A for specified duration then stop. Direction: 0=Forward, 1=Backward. Speed: 0-100%. Duration in ms.",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED": "🚗 Motor Driver %1 Wheel B Direction %2 Speed %3 % Duration %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED_TIP": "Control wheel B for specified duration then stop. Direction: 0=Forward, 1=Backward. Speed: 0-100%. Duration in ms."
 }

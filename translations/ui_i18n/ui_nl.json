@@ -396,8 +396,8 @@
   "BKY_DISPLAY_LABEL_HT16K33": "🔲 Puntmatrix (HT16K33)",
   "BKY_DISPLAY_LABEL_LCD": "📺 LCD-scherm",
   "BKY_DISPLAY_LABEL_NEOPIXEL": "💡 NeoPixel (WS2812)",
-  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3 (SH1106)",
-  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96 (SSD1306)",
+  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3\" (SH1106)",
+  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96\" (SSD1306)",
   "BKY_FLOAT": "Float",
   "BKY_INT": "Integer",
   "BKY_NUMBER_VARIABLE_GET": "🔢 Getalvariabele %1",
@@ -1761,5 +1761,9 @@
   "BKY_GO_TO_K12_PROJECTHUB_TOOLTIP": "Klik met de rechtermuisknop op het blok en selecteer 'Help' om verschillende voorbeelden te verkennen in k12-projecthub.",
   "BKY_GAIN_128_A": "128 (Kanaal A)",
   "BKY_GAIN_32_B": "32 (Kanaal B)",
-  "BKY_GAIN_64_A": "64 (Kanaal A)"
+  "BKY_GAIN_64_A": "64 (Kanaal A)",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED": "🚗 Motordriver %1 Wiel A Richting %2 Snelheid %3 % Duur %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED_TIP": "Bestuur wiel A voor de opgegeven duur en stop dan. Richting: 0=Vooruit, 1=Achteruit. Snelheid: 0-100%. Duur in ms.",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED": "🚗 Motordriver %1 Wiel B Richting %2 Snelheid %3 % Duur %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED_TIP": "Bestuur wiel B voor de opgegeven duur en stop dan. Richting: 0=Vooruit, 1=Achteruit. Snelheid: 0-100%. Duur in ms."
 }

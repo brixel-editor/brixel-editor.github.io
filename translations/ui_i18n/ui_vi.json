@@ -396,8 +396,8 @@
   "BKY_DISPLAY_LABEL_HT16K33": "🔲 Ma Trận Điểm (HT16K33)",
   "BKY_DISPLAY_LABEL_LCD": "📺 Màn Hình LCD",
   "BKY_DISPLAY_LABEL_NEOPIXEL": "💡 NeoPixel (WS2812)",
-  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3 (SH1106)",
-  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96 (SSD1306)",
+  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3\" (SH1106)",
+  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96\" (SSD1306)",
   "BKY_FLOAT": "Số thực",
   "BKY_INT": "Số nguyên",
   "BKY_NUMBER_VARIABLE_GET": "🔢 Biến số %1",
@@ -1761,5 +1761,9 @@
   "BKY_GO_TO_K12_PROJECTHUB_TOOLTIP": "Nhấp chuột phải vào khối và chọn 'Trợ giúp' để khám phá các ví dụ khác nhau trong k12-projecthub.",
   "BKY_GAIN_128_A": "128 (Kênh A)",
   "BKY_GAIN_32_B": "32 (Kênh B)",
-  "BKY_GAIN_64_A": "64 (Kênh A)"
+  "BKY_GAIN_64_A": "64 (Kênh A)",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED": "🚗 Trình điều khiển %1 Bánh A Hướng %2 Tốc độ %3 % Thời gian %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED_TIP": "Điều khiển bánh A trong thời gian chỉ định rồi dừng. Hướng: 0=Tiến, 1=Lùi. Tốc độ: 0-100%. Thời gian tính bằng ms.",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED": "🚗 Trình điều khiển %1 Bánh B Hướng %2 Tốc độ %3 % Thời gian %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED_TIP": "Điều khiển bánh B trong thời gian chỉ định rồi dừng. Hướng: 0=Tiến, 1=Lùi. Tốc độ: 0-100%. Thời gian tính bằng ms."
 }

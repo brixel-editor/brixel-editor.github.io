@@ -396,8 +396,8 @@
   "BKY_DISPLAY_LABEL_HT16K33": "🔲 Punktmatrix (HT16K33)",
   "BKY_DISPLAY_LABEL_LCD": "📺 LCD-Display",
   "BKY_DISPLAY_LABEL_NEOPIXEL": "💡 NeoPixel (WS2812)",
-  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3 (SH1106)",
-  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96 (SSD1306)",
+  "BKY_DISPLAY_LABEL_SH1106": "📺 OLED 1.3\" (SH1106)",
+  "BKY_DISPLAY_LABEL_SSD1306": "📺 OLED 0.96\" (SSD1306)",
   "BKY_FLOAT": "Gleitkommazahl",
   "BKY_INT": "Ganzzahl",
   "BKY_NUMBER_VARIABLE_GET": "🔢 Zahlenvariable %1",
@@ -1761,5 +1761,9 @@
   "BKY_GO_TO_K12_PROJECTHUB_TOOLTIP": "Rechtsklick auf Block und 'Hilfe' auswählen, um verschiedene Beispiele in k12-projecthub zu erkunden.",
   "BKY_GAIN_128_A": "128 (Kanal A)",
   "BKY_GAIN_32_B": "32 (Kanal B)",
-  "BKY_GAIN_64_A": "64 (Kanal A)"
+  "BKY_GAIN_64_A": "64 (Kanal A)",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED": "🚗 Motortreiber %1 Rad A Richtung %2 Geschwindigkeit %3 % Dauer %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED_TIP": "Rad A für die angegebene Dauer steuern und dann stoppen. Richtung: 0=Vorwärts, 1=Rückwärts. Geschwindigkeit: 0-100%. Dauer in ms.",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED": "🚗 Motortreiber %1 Rad B Richtung %2 Geschwindigkeit %3 % Dauer %4 ms",
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED_TIP": "Rad B für die angegebene Dauer steuern und dann stoppen. Richtung: 0=Vorwärts, 1=Rückwärts. Geschwindigkeit: 0-100%. Dauer in ms."
 }
