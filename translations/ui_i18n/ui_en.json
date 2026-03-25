@@ -1776,5 +1776,18 @@
   "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED": "🚗 Motor Driver %1 Wheel A Direction %2 Speed %3 % Duration %4 ms",
   "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED_TIP": "Control wheel A for specified duration then stop. Direction: 0=Forward, 1=Backward. Speed: 0-100%. Duration in ms.",
   "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED": "🚗 Motor Driver %1 Wheel B Direction %2 Speed %3 % Duration %4 ms",
-  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED_TIP": "Control wheel B for specified duration then stop. Direction: 0=Forward, 1=Backward. Speed: 0-100%. Duration in ms."
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED_TIP": "Control wheel B for specified duration then stop. Direction: 0=Forward, 1=Backward. Speed: 0-100%. Duration in ms.",
+
+  "panelTabSettings": "Settings",
+  "panelTabAI": "AI Assistant",
+  "aiSectionConnection": "API Connection",
+  "aiGetApiKey": "Get Key",
+  "aiConnect": "Connect",
+  "aiDisconnect": "Disconnect",
+  "aiModelLabel": "Model:",
+  "aiModelNone": "Connect API first",
+  "aiStatusDisconnected": "Disconnected",
+  "aiWelcomeMsg": "Hello! I'm the Brixel Editor AI coding assistant. Ask me anything about blocks, code, or circuits.",
+  "aiChatPlaceholder": "Type your question...",
+  "aiSend": "Send"
 }

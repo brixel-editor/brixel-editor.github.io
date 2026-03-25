@@ -1776,5 +1776,18 @@
   "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED": "🚗 모터 드라이버 %1 A바퀴 방향 %2 속도 %3 % 지속시간 %4 ms",
   "BKY_PCA9685_DCMOTOR_WHEEL_A_TIMED_TIP": "A바퀴를 지정된 시간 동안 제어한 후 정지합니다. 방향: 0=전진, 1=후진. 속도: 0-100%. 시간: ms 단위.",
   "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED": "🚗 모터 드라이버 %1 B바퀴 방향 %2 속도 %3 % 지속시간 %4 ms",
-  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED_TIP": "B바퀴를 지정된 시간 동안 제어한 후 정지합니다. 방향: 0=전진, 1=후진. 속도: 0-100%. 시간: ms 단위."
+  "BKY_PCA9685_DCMOTOR_WHEEL_B_TIMED_TIP": "B바퀴를 지정된 시간 동안 제어한 후 정지합니다. 방향: 0=전진, 1=후진. 속도: 0-100%. 시간: ms 단위.",
+
+  "panelTabSettings": "설정",
+  "panelTabAI": "AI 도우미",
+  "aiSectionConnection": "API 연결 설정",
+  "aiGetApiKey": "발급받기",
+  "aiConnect": "연결",
+  "aiDisconnect": "해제",
+  "aiModelLabel": "모델:",
+  "aiModelNone": "API를 먼저 연결하세요",
+  "aiStatusDisconnected": "미연결",
+  "aiWelcomeMsg": "안녕하세요! 브릭셀 에디터 AI 코딩 도우미입니다. 블록, 코드, 회로에 대해 무엇이든 질문하세요.",
+  "aiChatPlaceholder": "질문을 입력하세요...",
+  "aiSend": "전송"
 }

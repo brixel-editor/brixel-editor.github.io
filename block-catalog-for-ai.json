@@ -1,0 +1,4435 @@
+{
+  "version": "2.7.0-AI",
+  "description": "Brixel Editor AI 코딩 도우미용 통합 블록 카탈로그",
+  "generated_at": "2026-03-25",
+  "nav_structure": [
+    {
+      "group": "software",
+      "title": "📦 소프트웨어 (블록 코딩)",
+      "items": [
+        {
+          "id": "main",
+          "name": "메인",
+          "color": "#FFAB19",
+          "icon": "🚀"
+        },
+        {
+          "id": "pin",
+          "name": "핀 제어",
+          "color": "#6190DF",
+          "icon": "📌"
+        },
+        {
+          "id": "control",
+          "name": "제어",
+          "color": "#FF9800",
+          "icon": "🔄"
+        },
+        {
+          "id": "logic",
+          "name": "논리",
+          "color": "#5CB1D6",
+          "icon": "🧠"
+        },
+        {
+          "id": "math",
+          "name": "수학",
+          "color": "#59C059",
+          "icon": "🔢"
+        },
+        {
+          "id": "text",
+          "name": "텍스트",
+          "color": "#82a52d",
+          "icon": "📝"
+        },
+        {
+          "id": "color",
+          "name": "색상",
+          "color": "#A855F7",
+          "icon": "🎨"
+        },
+        {
+          "id": "variables",
+          "name": "변수",
+          "color": "#98607F",
+          "icon": "📦"
+        },
+        {
+          "id": "list",
+          "name": "리스트",
+          "color": "#59ACF7",
+          "icon": "📋"
+        },
+        {
+          "id": "functions",
+          "name": "함수",
+          "color": "#8E61A3",
+          "icon": "⚙️"
+        },
+        {
+          "id": "utility",
+          "name": "유틸리티",
+          "color": "#08B89F",
+          "icon": "🛠️"
+        }
+      ]
+    },
+    {
+      "group": "hardware",
+      "title": "🔌 하드웨어 (입출력 장치)",
+      "items": [
+        {
+          "id": "display-a",
+          "name": "디스플레이 A",
+          "color": "#FAC907",
+          "icon": "📺"
+        },
+        {
+          "id": "display-b",
+          "name": "디스플레이 B",
+          "color": "#FAC907",
+          "icon": "🖥️"
+        },
+        {
+          "id": "sensors-a",
+          "name": "센서 A",
+          "color": "#FF6F00",
+          "icon": "🌡️"
+        },
+        {
+          "id": "sensors-b",
+          "name": "센서 B",
+          "color": "#4D68EC",
+          "icon": "🔬"
+        },
+        {
+          "id": "motor",
+          "name": "모터",
+          "color": "#50B91A",
+          "icon": "⚡"
+        },
+        {
+          "id": "output",
+          "name": "출력",
+          "color": "#70D650",
+          "icon": "🔔"
+        },
+        {
+          "id": "communication",
+          "name": "통신",
+          "color": "#F75ACF",
+          "icon": "📡"
+        },
+        {
+          "id": "huskylens",
+          "name": "허스키렌즈",
+          "color": "#00BFA5",
+          "icon": "🐶"
+        },
+        {
+          "id": "webble",
+          "name": "웹 블루투스",
+          "color": "#4285F4",
+          "icon": "🌐"
+        },
+        {
+          "id": "wifi",
+          "name": "WiFi 통신",
+          "color": "#4285F4",
+          "icon": "📶"
+        },
+        {
+          "id": "serial",
+          "name": "시리얼 통신",
+          "color": "#367E7F",
+          "icon": "🔌"
+        },
+        {
+          "id": "esp32cam",
+          "name": "ESP32-CAM",
+          "color": "#367E7F",
+          "icon": "📷"
+        },
+        {
+          "id": "tinyml",
+          "name": "TinyML",
+          "color": "#9C27B0",
+          "icon": "🧠"
+        }
+      ]
+    }
+  ],
+  "categories": {
+    "BASIC_MAIN": {
+      "name": "메인/시작",
+      "blocks": [
+        {
+          "id": "main_flag",
+          "description": "메인 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "arduino_uno_starts_up",
+          "description": "아두이노 시작 블록",
+          "codePattern": "var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.selectedBoard && (Arduino.selectedBoard.startsWith('pico') || Arduino.selectedBoard.startsWith..."
+        },
+        {
+          "id": "arduino_setup",
+          "description": "setup() 함수 블록",
+          "codePattern": "void setup() {\\n"
+        },
+        {
+          "id": "arduino_loop",
+          "description": "loop() 함수 블록",
+          "codePattern": "void loop() {\\n"
+        }
+      ]
+    },
+    "PIN_CONTROL": {
+      "name": "핀 제어",
+      "blocks": [
+        {
+          "id": "pin_flag",
+          "description": "핀 제어 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "pin_mode",
+          "description": "핀 모드 설정 (INPUT/OUTPUT)",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "pinMode("
+        },
+        {
+          "id": "read_digital_pin",
+          "description": "디지털 핀 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number",
+          "codePattern": "var pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  // Pin setup is automatic on Arduino for read, but good practice to enforce.\r\n  generator.setups_['setup_pin_in_' + pin] ..."
+        },
+        {
+          "id": "read_analog_pin",
+          "description": "아날로그 핀 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number",
+          "codePattern": "var pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '0';\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.selectedBoard &..."
+        },
+        {
+          "id": "set_digital_pin",
+          "description": "디지털 핀 출력 (HIGH/LOW)",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "digitalWrite("
+        },
+        {
+          "id": "set_pwm_pin",
+          "description": "PWM 출력 (0-255)",
+          "inputs": [
+            "PIN",
+            "VALUE"
+          ],
+          "codePattern": "analogWrite("
+        },
+        {
+          "id": "servo_setup",
+          "description": "서보 모터 설정",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "var pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '9';\r\n  var pinVar = pin.replace('A', '');\r\n\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');..."
+        },
+        {
+          "id": "set_servo_angle",
+          "description": "서보 각도 설정",
+          "inputs": [
+            "PIN",
+            "ANGLE"
+          ],
+          "codePattern": "servo_"
+        },
+        {
+          "id": "tone_out",
+          "description": "톤 출력 (부저)",
+          "inputs": [
+            "PIN",
+            "FREQUENCY",
+            "DURATION"
+          ],
+          "codePattern": "tone("
+        },
+        {
+          "id": "no_tone",
+          "description": "톤 중지",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "noTone("
+        },
+        {
+          "id": "delay_ms",
+          "description": "지연 (밀리초)",
+          "inputs": [
+            "DELAY_TIME"
+          ],
+          "codePattern": "delay(("
+        },
+        {
+          "id": "timer_millis",
+          "description": "밀리초 타이머 값",
+          "output": "Number",
+          "codePattern": "return ['millis()', Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "timer_reset",
+          "description": "타이머 리셋",
+          "inputs": [
+            "TIMER_NUM"
+          ],
+          "codePattern": "let timerNum = generator.valueToCode(block, 'TIMER_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  let timerVar = 'timer' + timerNum;\r\n  return timerVar + ' = millis();\\n';"
+        },
+        {
+          "id": "timer_non_blocking_delay",
+          "description": "논블로킹 지연",
+          "inputs": [
+            "INTERVAL"
+          ],
+          "codePattern": "let interval = generator.valueToCode(block, 'INTERVAL', Arduino.ORDER_ATOMIC) || '1000';\r\n  let branch = generator.statementToCode(block, 'DO') || '';\r\n\r\n  // 간단한 카운터 사용\r\n  if (!generator.timerCount_)..."
+        },
+        {
+          "id": "arduino_interrupt",
+          "description": "인터럽트 설정",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "let pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  let mode = block.getFieldValue('MODE');\r\n  let branch = generator.statementToCode(block, 'DO') || '';\r\n  let funcName = '..."
+        },
+        {
+          "id": "pulse_in",
+          "description": "펄스 입력 측정",
+          "inputs": [
+            "PIN",
+            "TIMEOUT"
+          ],
+          "output": "Number",
+          "codePattern": "let pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '7';\r\n  let state = block.getFieldValue('STATE');\r\n  let timeout = generator.valueToCode(block, 'TIMEOUT', Arduino.ORDER_ATOMIC) ..."
+        },
+        {
+          "id": "shift_out",
+          "description": "시프트 출력",
+          "inputs": [
+            "DATA_PIN",
+            "CLOCK_PIN",
+            "LATCH_PIN",
+            "VALUE"
+          ],
+          "codePattern": "let dataPin = generator.valueToCode(block, 'DATA_PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  let clockPin = generator.valueToCode(block, 'CLOCK_PIN', Arduino.ORDER_ATOMIC) || '3';\r\n  let latchPin = generat..."
+        },
+        {
+          "id": "set_servo_angle_alt",
+          "description": "서보 각도 설정 (대체)",
+          "codePattern": "return Arduino.forBlock['set_servo_angle'](block, generator);"
+        }
+      ]
+    },
+    "CONTROL": {
+      "name": "제어",
+      "blocks": [
+        {
+          "id": "control_flag",
+          "description": "제어 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "delay_ms",
+          "description": "지연 (밀리초)",
+          "inputs": [
+            "DELAY_TIME"
+          ],
+          "codePattern": "delay(("
+        },
+        {
+          "id": "wait_until",
+          "description": "조건까지 대기",
+          "inputs": [
+            "CONDITION"
+          ],
+          "codePattern": "while (!("
+        },
+        {
+          "id": "controls_if",
+          "description": "만약-이면 조건문",
+          "codePattern": "var n = 0;\r\n  var code = '', branchCode, conditionCode;\r\n  do {\r\n    conditionCode = generator.valueToCode(block, 'IF' + n, Arduino.ORDER_NONE) || 'false';\r\n    branchCode = generator.statementToCode(..."
+        },
+        {
+          "id": "controls_repeat_ext",
+          "description": "반복 (횟수)",
+          "inputs": [
+            "TIMES"
+          ],
+          "codePattern": "for (int count = 0; count < "
+        },
+        {
+          "id": "controls_whileUntil",
+          "description": "반복 (조건)",
+          "codePattern": "while ("
+        },
+        {
+          "id": "controls_flow_statements",
+          "description": "break/continue",
+          "codePattern": "break;\\n"
+        },
+        {
+          "id": "controls_for",
+          "description": "Blockly 내장: for 반복 (i=0; i<N; i++)",
+          "codePattern": "for ("
+        }
+      ]
+    },
+    "LOGIC": {
+      "name": "논리",
+      "blocks": [
+        {
+          "id": "logic_flag",
+          "description": "논리 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "logic_compare",
+          "description": "비교 연산 (=, ≠, <, >, ≤, ≥)",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Boolean",
+          "codePattern": "var OPERATORS = { 'EQ': '==', 'NEQ': '!=', 'LT': '<', 'LTE': '<=', 'GT': '>', 'GTE': '>=' };\r\n  var operator = OPERATORS[block.getFieldValue('OP')];\r\n  var argument0 = generator.valueToCode(block, 'A'..."
+        },
+        {
+          "id": "logic_operation",
+          "description": "논리 연산 (AND, OR)",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Boolean",
+          "codePattern": "var operator = (block.getFieldValue('OP') == 'AND') ? '&&' : '||';\r\n  var order = (operator == '&&') ? Arduino.ORDER_LOGICAL_AND : Arduino.ORDER_LOGICAL_OR;\r\n  var argument0 = generator.valueToCode(bl..."
+        },
+        {
+          "id": "logic_negate",
+          "description": "NOT 연산",
+          "inputs": [
+            "BOOL"
+          ],
+          "output": "Boolean",
+          "codePattern": "var argument0 = generator.valueToCode(block, 'BOOL', Arduino.ORDER_LOGICAL_NOT) || 'true';\r\n  return ['!(' + argument0 + ')', Arduino.ORDER_LOGICAL_NOT];"
+        },
+        {
+          "id": "logic_boolean",
+          "description": "참/거짓 값",
+          "output": "Boolean",
+          "codePattern": "return [(block.getFieldValue('BOOL') == 'TRUE') ? 'true' : 'false', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "logic_null",
+          "description": "null 값",
+          "output": "null",
+          "codePattern": "return ['NULL', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "logic_ternary",
+          "description": "삼항 연산자",
+          "inputs": [
+            "IF",
+            "THEN",
+            "ELSE"
+          ],
+          "output": "Any",
+          "codePattern": "var value_if = generator.valueToCode(block, 'IF', Arduino.ORDER_CONDITIONAL) || 'false';\r\n  var value_then = generator.valueToCode(block, 'THEN', Arduino.ORDER_CONDITIONAL) || 'null';\r\n  var value_els..."
+        }
+      ]
+    },
+    "MATH": {
+      "name": "수학",
+      "blocks": [
+        {
+          "id": "math_flag",
+          "description": "수학 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "math_number",
+          "description": "숫자 값",
+          "output": "Number",
+          "codePattern": "var code = Number(block.getFieldValue('NUM'));\r\n  return [code, code < 0 ? Arduino.ORDER_UNARY_MINUS : Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "math_arithmetic",
+          "description": "사칙연산 (+, -, ×, ÷, ^)",
+          "inputs": [
+            "A",
+            "B"
+          ],
+          "output": "Number",
+          "codePattern": "var OPERATORS = {\r\n    'ADD': [' + ', Arduino.ORDER_ADDITION], 'MINUS': [' - ', Arduino.ORDER_SUBTRACTION],\r\n    'MULTIPLY': [' * ', Arduino.ORDER_MULTIPLICATION], 'DIVIDE': [' / ', Arduino.ORDER_DIVI..."
+        },
+        {
+          "id": "math_single",
+          "description": "단항 연산 (sqrt, abs, -, ln, log10, e^, 10^)",
+          "inputs": [
+            "NUM"
+          ],
+          "output": "Number",
+          "codePattern": "var op = block.getFieldValue('OP');\r\n  var arg = generator.valueToCode(block, 'NUM', Arduino.ORDER_UNARY_MINUS) || '0';\r\n  var code;\r\n  switch (op) {\r\n    case 'ROOT': code = 'sqrt(' + arg + ')'; brea..."
+        },
+        {
+          "id": "math_trig",
+          "description": "삼각함수 (sin, cos, tan, asin, acos, atan)",
+          "inputs": [
+            "NUM"
+          ],
+          "output": "Number",
+          "codePattern": "var op = block.getFieldValue('OP');\r\n  var arg = generator.valueToCode(block, 'NUM', Arduino.ORDER_NONE) || '0';\r\n  var code;\r\n  switch (op) {\r\n    case 'SIN': code = 'sin(' + arg + ')'; break;\r\n    c..."
+        },
+        {
+          "id": "math_constant",
+          "description": "수학 상수 (π, e, φ, sqrt(2), sqrt(½), ∞)",
+          "output": "Number",
+          "codePattern": "var CONSTANTS = {\r\n    'PI': ['M_PI', Arduino.ORDER_ATOMIC], 'E': ['M_E', Arduino.ORDER_ATOMIC],\r\n    'GOLDEN_RATIO': ['1.61803398875', Arduino.ORDER_ATOMIC], 'SQRT2': ['M_SQRT2', Arduino.ORDER_ATOMIC..."
+        },
+        {
+          "id": "math_number_property",
+          "description": "숫자 속성 검사 (짝수, 홀수, 소수 등)",
+          "inputs": [
+            "NUMBER_TO_CHECK"
+          ],
+          "output": "Boolean",
+          "codePattern": "var number_to_check = generator.valueToCode(block, 'NUMBER_TO_CHECK', Arduino.ORDER_MODULUS) || '0';\r\n  var property = block.getFieldValue('PROPERTY');\r\n  var code;\r\n  switch (property) {\r\n    case 'E..."
+        },
+        {
+          "id": "math_round",
+          "description": "반올림/올림/내림",
+          "inputs": [
+            "NUM"
+          ],
+          "output": "Number",
+          "codePattern": "var op = block.getFieldValue('OP');\r\n  var arg = generator.valueToCode(block, 'NUM', Arduino.ORDER_NONE) || '0';\r\n  var code;\r\n  switch (op) {\r\n    case 'ROUND': code = 'round(' + arg + ')'; break;\r\n ..."
+        },
+        {
+          "id": "math_modulo",
+          "description": "나머지 연산",
+          "inputs": [
+            "DIVIDEND",
+            "DIVISOR"
+          ],
+          "output": "Number",
+          "codePattern": "var arg0 = generator.valueToCode(block, 'DIVIDEND', Arduino.ORDER_MODULUS) || '0';\r\n  var arg1 = generator.valueToCode(block, 'DIVISOR', Arduino.ORDER_MODULUS) || '1';\r\n  return [arg0 + ' % ' + arg1, ..."
+        },
+        {
+          "id": "math_constrain",
+          "description": "범위 제한",
+          "inputs": [
+            "VALUE",
+            "LOW",
+            "HIGH"
+          ],
+          "output": "Number",
+          "codePattern": "var val = generator.valueToCode(block, 'VALUE', Arduino.ORDER_COMMA) || '0';\r\n  var low = generator.valueToCode(block, 'LOW', Arduino.ORDER_COMMA) || '0';\r\n  var high = generator.valueToCode(block, 'H..."
+        },
+        {
+          "id": "math_random_int",
+          "description": "랜덤 정수",
+          "inputs": [
+            "FROM",
+            "TO"
+          ],
+          "output": "Number",
+          "codePattern": "var from = generator.valueToCode(block, 'FROM', Arduino.ORDER_COMMA) || '0';\r\n  var to = generator.valueToCode(block, 'TO', Arduino.ORDER_COMMA) || '100';\r\n  return ['random(' + from + ', ' + to + ' +..."
+        },
+        {
+          "id": "math_random_float",
+          "description": "랜덤 소수 (0~1)",
+          "output": "Number",
+          "codePattern": "return ['(random(0, 10000) / 10000.0)', Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "math_atan2",
+          "description": "atan2 함수",
+          "inputs": [
+            "X",
+            "Y"
+          ],
+          "output": "Number",
+          "codePattern": "var y = generator.valueToCode(block, 'Y', Arduino.ORDER_COMMA) || '0';\r\n  var x = generator.valueToCode(block, 'X', Arduino.ORDER_COMMA) || '0';\r\n  return ['atan2(' + y + ', ' + x + ') * 180 / M_PI', ..."
+        }
+      ]
+    },
+    "TEXT": {
+      "name": "문자열",
+      "blocks": [
+        {
+          "id": "text_flag",
+          "description": "문자열 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "text",
+          "description": "문자열 값",
+          "output": "String",
+          "codePattern": "const text = block.getFieldValue('TEXT');\r\n  const quotedText = '\"' + text.replace(/\\\\/g, '\\\\\\\\').replace(/\"/g, '\\\\\"') + '\"';\r\n  return [quotedText, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "custom_text_join",
+          "description": "문자열 연결",
+          "inputs": [
+            "TEXT1",
+            "TEXT2"
+          ],
+          "output": "String",
+          "codePattern": "const text1 = generator.valueToCode(block, 'TEXT1', Arduino.ORDER_ADDITION) || '\"\"';\r\n  const text2 = generator.valueToCode(block, 'TEXT2', Arduino.ORDER_ADDITION) || '\"\"';\r\n  const code = 'String(' +..."
+        },
+        {
+          "id": "custom_text_char_at",
+          "description": "N번째 문자 가져오기",
+          "inputs": [
+            "TEXT",
+            "INDEX"
+          ],
+          "output": "String",
+          "codePattern": "const text = generator.valueToCode(block, 'TEXT', Arduino.ORDER_MEMBER) || '\"\"';\r\n  const index = generator.valueToCode(block, 'INDEX', Arduino.ORDER_SUBTRACTION) || '1';\r\n  const code = 'String(' + t..."
+        },
+        {
+          "id": "custom_text_length",
+          "description": "문자열 길이",
+          "inputs": [
+            "TEXT"
+          ],
+          "output": "Number",
+          "codePattern": "const text = generator.valueToCode(block, 'TEXT', Arduino.ORDER_FUNCTION_CALL) || '\"\"';\r\n  return ['String(' + text + ').length()', Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "custom_text_contains",
+          "description": "문자열 포함 여부",
+          "inputs": [
+            "TEXT",
+            "SUBSTRING"
+          ],
+          "output": "Boolean",
+          "codePattern": "const text = generator.valueToCode(block, 'TEXT', Arduino.ORDER_MEMBER) || '\"\"';\r\n  const substring = generator.valueToCode(block, 'SUBSTRING', Arduino.ORDER_NONE) || '\"\"';\r\n  const code = '(String(' ..."
+        },
+        {
+          "id": "text_append",
+          "description": "문자열 추가",
+          "codePattern": "let varName = block.getFieldValue('VAR');  // getVariableName 제거\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName..."
+        },
+        {
+          "id": "text_changeCase",
+          "description": "대소문자 변환",
+          "codePattern": "const text = generator.valueToCode(block, 'TEXT', Arduino.ORDER_MEMBER) || '\"\"';\r\n  const caseType = block.getFieldValue('CASE');\r\n\r\n  let code;\r\n  if (caseType === 'UPPERCASE') {\r\n    code = '(String..."
+        },
+        {
+          "id": "text_trim",
+          "description": "공백 제거",
+          "codePattern": "const text = generator.valueToCode(block, 'TEXT', Arduino.ORDER_MEMBER) || '\"\"';\r\n  const mode = block.getFieldValue('MODE');\r\n\r\n  let code;\r\n  if (mode === 'BOTH') {\r\n    code = '(String(' + text + '..."
+        },
+        {
+          "id": "text_isEmpty",
+          "description": "빈 문자열 여부",
+          "output": "Boolean",
+          "codePattern": "const text = generator.valueToCode(block, 'VALUE', Arduino.ORDER_MEMBER) || '\"\"';\r\n  const code = '(' + text + '.length() == 0)';\r\n  return [code, Arduino.ORDER_EQUALITY];"
+        },
+        {
+          "id": "custom_text_compare",
+          "description": "문자열 비교",
+          "output": "Boolean",
+          "codePattern": "(String("
+        },
+        {
+          "id": "text_getSubstring",
+          "description": "Blockly 내장: 부분 문자열 추출",
+          "output": "String",
+          "codePattern": "const text = generator.valueToCode(block, 'STRING', Arduino.ORDER_MEMBER) || '\"\"';\r\n  const where1 = block.getFieldValue('WHERE1');\r\n  const where2 = block.getFieldValue('WHERE2');\r\n  const at1 = gene..."
+        }
+      ]
+    },
+    "COLOR": {
+      "name": "색상",
+      "blocks": [
+        {
+          "id": "colour_flag",
+          "description": "색상 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "colour_picker_custom",
+          "description": "색상 선택기",
+          "output": "Color",
+          "codePattern": "const colour = block.getFieldValue('COLOUR');\r\n  return [`\"${colour}\"`, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "colour_random_custom",
+          "description": "랜덤 색상",
+          "output": "Color",
+          "codePattern": "const funcName = 'getRandomColour';\r\n  const functionCode = `\r\nString ${funcName}() {\r\n  int r = random(0, 256);\r\n  int g = random(0, 256);  \r\n  int b = random(0, 256);\r\n  char colourHex[8];\r\n  sprint..."
+        },
+        {
+          "id": "colour_rgb_custom",
+          "description": "RGB 색상 생성",
+          "inputs": [
+            "RED",
+            "GREEN",
+            "BLUE"
+          ],
+          "output": "Color",
+          "codePattern": "const red = generator.valueToCode(block, 'RED', Arduino.ORDER_COMMA) || '0';\r\n  const green = generator.valueToCode(block, 'GREEN', Arduino.ORDER_COMMA) || '0';\r\n  const blue = generator.valueToCode(b..."
+        },
+        {
+          "id": "colour_blend_custom",
+          "description": "색상 혼합",
+          "inputs": [
+            "COLOUR1",
+            "COLOUR2",
+            "RATIO"
+          ],
+          "output": "Color",
+          "codePattern": "const colour1 = generator.valueToCode(block, 'COLOUR1', Arduino.ORDER_COMMA) || '\"#FF0000\"';\r\n  const colour2 = generator.valueToCode(block, 'COLOUR2', Arduino.ORDER_COMMA) || '\"#0000FF\"';\r\n  const ra..."
+        },
+        {
+          "id": "colour_to_hex",
+          "description": "색상 → HEX 문자열",
+          "inputs": [
+            "COLOUR"
+          ],
+          "output": "String",
+          "codePattern": "const colour = generator.valueToCode(block, 'COLOUR', Arduino.ORDER_NONE) || '\"#FF0000\"';\r\n  return [`String(${colour})`, Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "colour_to_rgb_values",
+          "description": "색상 → RGB 값",
+          "inputs": [
+            "COLOUR"
+          ],
+          "output": "Array",
+          "codePattern": "const colour = generator.valueToCode(block, 'COLOUR', Arduino.ORDER_COMMA) || '\"#FF0000\"';\r\n  const component = block.getFieldValue('COMPONENT');\r\n\r\n  const funcName = 'extractColourComponent';\r\n  con..."
+        }
+      ]
+    },
+    "VARIABLES": {
+      "name": "변수",
+      "blocks": [
+        {
+          "id": "var_flag",
+          "description": "변수 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "number_variable_set",
+          "description": "숫자 변수 설정",
+          "inputs": [
+            "VALUE"
+          ],
+          "codePattern": "const varId = block.getFieldValue('VAR');\r\n  let varName = block.workspace.getVariableById(varId).name;\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName =..."
+        },
+        {
+          "id": "number_variable_get",
+          "description": "숫자 변수 읽기",
+          "output": "Number",
+          "codePattern": "const varId = block.getFieldValue('VAR');\r\n  let varName = block.workspace.getVariableById(varId).name;\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName =..."
+        },
+        {
+          "id": "math_change",
+          "description": "변수 값 변경",
+          "inputs": [
+            "DELTA"
+          ],
+          "codePattern": "const varId = block.getFieldValue('VAR');\r\n  let varName = block.workspace.getVariableById(varId).name;\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName =..."
+        },
+        {
+          "id": "string_variable_set",
+          "description": "문자열 변수 설정",
+          "inputs": [
+            "VALUE"
+          ],
+          "codePattern": "const varId = block.getFieldValue('VAR');\r\n  let varName = block.workspace.getVariableById(varId).name;\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName =..."
+        },
+        {
+          "id": "string_variable_get",
+          "description": "문자열 변수 읽기",
+          "output": "String",
+          "codePattern": "const varId = block.getFieldValue('VAR');\r\n  let varName = block.workspace.getVariableById(varId).name;\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName =..."
+        },
+        {
+          "id": "variable_declare",
+          "description": "C언어 변수형 선언 (초기값)",
+          "inputs": [
+            "TYPE",
+            "VAR_NAME",
+            "VALUE"
+          ],
+          "codePattern": "const varType = block.getFieldValue('TYPE');\r\n  let varName = block.getFieldValue('VAR_NAME') || 'myVar';\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName..."
+        },
+        {
+          "id": "variable_declare_novalue",
+          "description": "C언어 변수형 선언 (초기값 없음)",
+          "inputs": [
+            "TYPE",
+            "VAR_NAME"
+          ],
+          "codePattern": "const varType = block.getFieldValue('TYPE');\r\n  let varName = block.getFieldValue('VAR_NAME') || 'myVar';\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName..."
+        },
+        {
+          "id": "variable_declare_set",
+          "description": "선언된 변수에 값 저장",
+          "inputs": [
+            "VAR_NAME",
+            "VALUE"
+          ],
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myVar';\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "variable_declare_get",
+          "description": "선언된 변수 값 읽기",
+          "inputs": [
+            "VAR_NAME"
+          ],
+          "output": "Any",
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myVar';\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "variable_declare_change",
+          "description": "선언된 변수 값 변경",
+          "inputs": [
+            "VAR_NAME",
+            "DELTA"
+          ],
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myVar';\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "variables_get",
+          "description": "Blockly 내장: 변수 값 읽기",
+          "output": "Any",
+          "codePattern": "const varId = block.getFieldValue('VAR');\r\n  let varName = block.workspace.getVariableById(varId).name;\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName =..."
+        },
+        {
+          "id": "variables_set",
+          "description": "Blockly 내장: 변수에 값 저장",
+          "codePattern": "const varId = block.getFieldValue('VAR');\r\n  let varName = block.workspace.getVariableById(varId).name;\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName =..."
+        },
+        {
+          "id": "variables_get_dynamic",
+          "description": "Blockly 내장: 동적 변수 값 읽기",
+          "output": "Any"
+        },
+        {
+          "id": "variables_set_dynamic",
+          "description": "Blockly 내장: 동적 변수에 값 저장"
+        }
+      ]
+    },
+    "LIST": {
+      "name": "리스트/배열",
+      "blocks": [
+        {
+          "id": "array_create",
+          "description": "배열 생성 (값 지정)",
+          "inputs": [
+            "VALUES"
+          ],
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_create_empty",
+          "description": "빈 배열 생성",
+          "inputs": [
+            "SIZE"
+          ],
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_get",
+          "description": "배열 요소 읽기",
+          "inputs": [
+            "INDEX"
+          ],
+          "output": "Any",
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_set",
+          "description": "배열 요소 설정",
+          "inputs": [
+            "INDEX",
+            "VALUE"
+          ],
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_append",
+          "description": "배열에 요소 추가",
+          "inputs": [
+            "VALUE"
+          ],
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_remove",
+          "description": "배열 요소 삭제",
+          "inputs": [
+            "INDEX"
+          ],
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_find",
+          "description": "배열에서 값 찾기",
+          "inputs": [
+            "VALUE"
+          ],
+          "output": "Number",
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_length",
+          "description": "배열 길이",
+          "output": "Number",
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_clear",
+          "description": "배열 초기화",
+          "inputs": [
+            "VALUE"
+          ],
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_copy",
+          "description": "배열 복사",
+          "codePattern": "let source = block.getFieldValue('SOURCE') || 'sourceArray';\r\n  let dest = block.getFieldValue('DEST') || 'destArray';\r\n\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {..."
+        },
+        {
+          "id": "array_strlen",
+          "description": "문자열 배열 길이",
+          "output": "Number",
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_contains",
+          "description": "배열 포함 여부",
+          "inputs": [
+            "VALUE"
+          ],
+          "output": "Boolean",
+          "codePattern": "let varName = block.getFieldValue('VAR_NAME') || 'myArray';\r\n  // 한글 변수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    varName = window.IDEUtils.romanizeKorean(varName);\r\n  }..."
+        },
+        {
+          "id": "array_clear_at",
+          "description": "배열 특정 인덱스 값 초기화",
+          "inputs": [
+            "VAR_NAME",
+            "INDEX",
+            "VALUE"
+          ]
+        }
+      ]
+    },
+    "FUNCTIONS": {
+      "name": "함수",
+      "blocks": [
+        {
+          "id": "func_flag",
+          "description": "함수 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "procedures_ifreturn",
+          "description": "조건부 반환 (값)",
+          "inputs": [
+            "CONDITION",
+            "VALUE"
+          ],
+          "codePattern": " + value + "
+        },
+        {
+          "id": "procedures_ifreturn_void",
+          "description": "조건부 반환 (void)",
+          "inputs": [
+            "CONDITION"
+          ],
+          "codePattern": "const condition = generator.valueToCode(block, 'CONDITION', Arduino.ORDER_NONE) || 'false';\r\n  return 'if (' + condition + ') {\\n  return;\\n}\\n';"
+        },
+        {
+          "id": "procedures_defnoreturn",
+          "description": "Blockly 내장: 반환값 없는 함수 정의",
+          "codePattern": "let funcName = block.getFieldValue('NAME');\r\n  // 한글 함수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    funcName = window.IDEUtils.romanizeKorean(funcName);\r\n  }\r\n  let branch..."
+        },
+        {
+          "id": "procedures_defreturn",
+          "description": "Blockly 내장: 반환값 있는 함수 정의",
+          "codePattern": " + returnValue + "
+        },
+        {
+          "id": "procedures_callnoreturn",
+          "description": "Blockly 내장: 반환값 없는 함수 호출",
+          "codePattern": "let funcName = block.getFieldValue('NAME');\r\n  // 한글 함수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    funcName = window.IDEUtils.romanizeKorean(funcName);\r\n  }\r\n  const args..."
+        },
+        {
+          "id": "procedures_callreturn",
+          "description": "Blockly 내장: 반환값 있는 함수 호출",
+          "output": "Any",
+          "codePattern": "let funcName = block.getFieldValue('NAME');\r\n  // 한글 함수명 로마자 변환\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    funcName = window.IDEUtils.romanizeKorean(funcName);\r\n  }\r\n  const args..."
+        },
+        {
+          "id": "procedures_defnoreturn_dynamic",
+          "description": "Blockly 내장: 동적 함수 정의 (반환 없음)"
+        },
+        {
+          "id": "procedures_defreturn_dynamic",
+          "description": "Blockly 내장: 동적 함수 정의 (반환 있음)"
+        },
+        {
+          "id": "procedures_callnoreturn_dynamic",
+          "description": "Blockly 내장: 동적 함수 호출 (반환 없음)"
+        },
+        {
+          "id": "procedures_callreturn_dynamic",
+          "description": "Blockly 내장: 동적 함수 호출 (반환 있음)",
+          "output": "Any"
+        }
+      ]
+    },
+    "UTILITY": {
+      "name": "유틸리티",
+      "blocks": [
+        {
+          "id": "util_flag",
+          "description": "유틸리티 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "util_millis",
+          "description": "millis() 값",
+          "output": "Number",
+          "codePattern": "return ['millis()', Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "util_map",
+          "description": "값 매핑",
+          "inputs": [
+            "VALUE",
+            "FROMLOW",
+            "FROMHIGH",
+            "TOLOW",
+            "TOHIGH"
+          ],
+          "output": "Number",
+          "codePattern": "const value = generator.valueToCode(block, 'VALUE', Arduino.ORDER_COMMA) || '0';\r\n  const fromLow = generator.valueToCode(block, 'FROMLOW', Arduino.ORDER_COMMA) || '0';\r\n  const fromHigh = generator.v..."
+        },
+        {
+          "id": "util_constrain",
+          "description": "값 제한",
+          "inputs": [
+            "VALUE",
+            "LOW",
+            "HIGH"
+          ],
+          "output": "Number",
+          "codePattern": "const value = generator.valueToCode(block, 'VALUE', Arduino.ORDER_COMMA) || '0';\r\n  const low = generator.valueToCode(block, 'LOW', Arduino.ORDER_COMMA) || '0';\r\n  const high = generator.valueToCode(b..."
+        },
+        {
+          "id": "util_convert",
+          "description": "형변환",
+          "inputs": [
+            "VALUE"
+          ],
+          "output": "Any",
+          "codePattern": "const value = generator.valueToCode(block, 'VALUE', Arduino.ORDER_NONE) || '0';\r\n  const type = block.getFieldValue('TYPE');\r\n  let code;\r\n  switch (type) {\r\n    case 'INT':\r\n      code = 'String(' + ..."
+        },
+        {
+          "id": "util_to_char",
+          "description": "ASCII → 문자",
+          "inputs": [
+            "VALUE"
+          ],
+          "output": "String",
+          "codePattern": "const value = generator.valueToCode(block, 'VALUE', Arduino.ORDER_NONE) || '65';\r\n  return ['char(' + value + ')', Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "util_to_ascii",
+          "description": "문자 → ASCII",
+          "inputs": [
+            "VALUE"
+          ],
+          "output": "Number",
+          "codePattern": "const value = generator.valueToCode(block, 'VALUE', Arduino.ORDER_NONE) || '\"A\"';\r\n  return ['int(String(' + value + ')[0])', Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "util_i2c_scanner",
+          "description": "I2C 스캐너",
+          "codePattern": "generator.definitions_['include_wire'] = '#include <Wire.h>';\r\n  generator.setups_['wire_begin'] = 'Wire.begin();';\r\n  generator.setups_['serial_begin_i2c'] = 'Serial.begin(9600);';\r\n  const funcName ..."
+        },
+        {
+          "id": "util_i2c_read_address",
+          "description": "I2C 주소 읽기",
+          "output": "Number",
+          "codePattern": "return ['\"Check Serial Monitor for I2C addresses\"', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "util_record_start",
+          "description": "블록 조립 기록 시작",
+          "codePattern": "// IDE 내부 기능이므로 Arduino 코드를 생성하지 않습니다.\r\n  return '';"
+        },
+        {
+          "id": "util_record_stop",
+          "description": "블록 조립 기록 중지",
+          "codePattern": "return '';"
+        },
+        {
+          "id": "util_record_play",
+          "description": "블록 조립 재생",
+          "codePattern": "return '';"
+        },
+        {
+          "id": "util_record_play_stop",
+          "description": "블록 조립 재생 중지",
+          "codePattern": "return '';"
+        },
+        {
+          "id": "util_record_reset",
+          "description": "블록 조립 기록 초기화",
+          "codePattern": "return '';"
+        },
+        {
+          "id": "util_record_status",
+          "description": "기록 상태",
+          "output": "String",
+          "codePattern": "// IDE 전용 정보 블록\r\n  // 실제 값은 BlockAssemblyRecorder에서 가져오지만\r\n  // Arduino 코드에서는 더미 값 반환\r\n  return ['\"\"', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "util_record_event_count",
+          "description": "기록된 이벤트 수",
+          "output": "Number",
+          "codePattern": "return ['0', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "util_record_duration",
+          "description": "기록 시간",
+          "output": "Number",
+          "codePattern": "return ['0', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "util_record_start_time",
+          "description": "기록 시작 시간",
+          "output": "Number",
+          "codePattern": "return ['\"\"', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "util_record_end_time",
+          "description": "기록 종료 시간",
+          "output": "Number",
+          "codePattern": "return ['\"\"', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "util_filter_moving_avg",
+          "description": "이동평균 필터",
+          "inputs": [
+            "VALUE",
+            "SAMPLES"
+          ],
+          "output": "Number",
+          "codePattern": "const gen = generator || Arduino;\r\n  ensureMovingAvgClass(gen);\r\n  const value = generator.valueToCode(block, 'VALUE', Arduino.ORDER_COMMA) || '0';\r\n  const samples = block.getFieldValue('SAMPLES') ||..."
+        },
+        {
+          "id": "util_filter_ema",
+          "description": "지수평활(EMA) 필터",
+          "inputs": [
+            "VALUE",
+            "ALPHA"
+          ],
+          "output": "Number",
+          "codePattern": "const gen = generator || Arduino;\r\n  ensureEMAFilterClass(gen);\r\n  const value = generator.valueToCode(block, 'VALUE', Arduino.ORDER_COMMA) || '0';\r\n  const alpha = block.getFieldValue('ALPHA') || '0...."
+        },
+        {
+          "id": "util_filter_median",
+          "description": "중앙값 필터",
+          "inputs": [
+            "VALUE",
+            "WINDOW"
+          ],
+          "output": "Number",
+          "codePattern": "const gen = generator || Arduino;\r\n  ensureMedianFilterClass(gen);\r\n  gen.definitions_['include_string_h'] = '#include <string.h>';\r\n  const value = generator.valueToCode(block, 'VALUE', Arduino.ORDER..."
+        },
+        {
+          "id": "util_filter_range",
+          "description": "범위제한 필터",
+          "inputs": [
+            "VALUE",
+            "MIN",
+            "MAX"
+          ],
+          "output": "Number",
+          "codePattern": "const gen = generator || Arduino;\r\n  ensureRangeFilterClass(gen);\r\n  const value = generator.valueToCode(block, 'VALUE', Arduino.ORDER_COMMA) || '0';\r\n  const minVal = generator.valueToCode(block, 'MI..."
+        },
+        {
+          "id": "util_cal_setup",
+          "description": "2점 교정 설정",
+          "inputs": [
+            "NAME",
+            "RAW1",
+            "REF1",
+            "RAW2",
+            "REF2"
+          ],
+          "codePattern": "let calName = block.getFieldValue('CAL_NAME') || 'temp';\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    calName = window.IDEUtils.romanizeKorean(calName);\r\n  }\r\n  const rawLow = gene..."
+        },
+        {
+          "id": "util_cal_apply",
+          "description": "교정 적용",
+          "inputs": [
+            "NAME",
+            "VALUE"
+          ],
+          "output": "Number",
+          "codePattern": "let calName = block.getFieldValue('CAL_NAME') || 'temp';\r\n  if (window.IDEUtils && window.IDEUtils.romanizeKorean) {\r\n    calName = window.IDEUtils.romanizeKorean(calName);\r\n  }\r\n  const value = gener..."
+        },
+        {
+          "id": "util_cal_offset",
+          "description": "오프셋 보정",
+          "inputs": [
+            "VALUE",
+            "OFFSET"
+          ],
+          "output": "Number",
+          "codePattern": "const value = generator.valueToCode(block, 'VALUE', Arduino.ORDER_ADDITION) || '0';\r\n  const offset = generator.valueToCode(block, 'OFFSET', Arduino.ORDER_ADDITION) || '0';\r\n  return ['((' + value + '..."
+        },
+        {
+          "id": "util_adc_stable",
+          "description": "안정 아날로그 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number",
+          "codePattern": "const pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || 'A0';\r\n  const funcName = '_stableAnalogRead';\r\n  generator.definitions_['func_' + funcName] =\r\n    'int ' + funcName + '(int p..."
+        },
+        {
+          "id": "util_adc_oversample",
+          "description": "오버샘플링 아날로그 읽기",
+          "inputs": [
+            "PIN",
+            "SAMPLES"
+          ],
+          "output": "Number",
+          "codePattern": "const pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || 'A0';\r\n  const samples = block.getFieldValue('SAMPLES') || '64';\r\n  const funcName = '_oversampleAnalogRead';\r\n  generator.defi..."
+        },
+        {
+          "id": "util_interval",
+          "description": "N ms마다 반복 실행 (논블로킹)",
+          "inputs": [
+            "INTERVAL"
+          ],
+          "codePattern": "const gen = generator || Arduino;\r\n  ensureNonBlockTimerClass(gen);\r\n  const interval = block.getFieldValue('INTERVAL') || '1000';\r\n  const statements = gen.statementToCode(block, 'DO');\r\n\r\n  // 블록 ID..."
+        },
+        {
+          "id": "util_timeout",
+          "description": "N ms 뒤 한 번 실행 (논블로킹)",
+          "inputs": [
+            "DELAY"
+          ],
+          "codePattern": "const gen = generator || Arduino;\r\n  ensureNonBlockTimerClass(gen);\r\n  const delayMs = block.getFieldValue('DELAY') || '1000';\r\n  const statements = gen.statementToCode(block, 'DO');\r\n\r\n  const safeId..."
+        },
+        {
+          "id": "util_stopwatch_reset",
+          "description": "타이머 초기화",
+          "inputs": [
+            "TIMER"
+          ],
+          "codePattern": "const gen = generator || Arduino;\r\n  ensureNonBlockTimerClass(gen);\r\n  const id = block.getFieldValue('ID');\r\n  const varName = `__stopwatch_timer_${id}`;\r\n\r\n  // 전역 변수로 선언하여 어디서든 접근 가능하게 함 (값 반환 블록과 ..."
+        },
+        {
+          "id": "util_stopwatch_elapsed",
+          "description": "타이머 경과 시간",
+          "inputs": [
+            "TIMER"
+          ],
+          "output": "Number",
+          "codePattern": "const gen = generator || Arduino;\r\n  ensureNonBlockTimerClass(gen);\r\n  const id = block.getFieldValue('ID');\r\n  const varName = `__stopwatch_timer_${id}`;\r\n\r\n  // 전역 변수 선언 (혹시 리셋 블록 없이 쓰일 경우를 대비해 초기화)..."
+        }
+      ]
+    },
+    "DISPLAY_A": {
+      "name": "디스플레이 A (LCD, TM1637, NeoPixel)",
+      "blocks": [
+        {
+          "id": "dis01_flag",
+          "description": "디스플레이A 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "lcd_i2c_setup",
+          "description": "I2C LCD 초기화",
+          "inputs": [
+            "LCD_NUM"
+          ],
+          "codePattern": "const lcdNum = generator.valueToCode(block, 'LCD_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const address = block.getFieldValue('ADDRESS');\r\n  const cols = block.getFieldValue('COLS');\r\n  const rows = blo..."
+        },
+        {
+          "id": "lcd_i2c_print",
+          "description": "LCD 텍스트 출력",
+          "inputs": [
+            "LCD_NUM",
+            "ROW",
+            "COL",
+            "TEXT"
+          ],
+          "codePattern": "const lcdNum = generator.valueToCode(block, 'LCD_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const row = generator.valueToCode(block, 'ROW', Arduino.ORDER_ATOMIC) || '0';\r\n  const col = generator.valueToCo..."
+        },
+        {
+          "id": "lcd_i2c_clear",
+          "description": "LCD 화면 지우기",
+          "inputs": [
+            "LCD_NUM"
+          ],
+          "codePattern": "const lcdNum = generator.valueToCode(block, 'LCD_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  return 'lcd' + lcdNum + '.clear();\\n';"
+        },
+        {
+          "id": "lcd_i2c_set_cursor",
+          "description": "LCD 커서 이동",
+          "inputs": [
+            "LCD_NUM",
+            "ROW",
+            "COL"
+          ],
+          "codePattern": "const lcdNum = generator.valueToCode(block, 'LCD_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const row = generator.valueToCode(block, 'ROW', Arduino.ORDER_ATOMIC) || '0';\r\n  const col = generator.valueToCo..."
+        },
+        {
+          "id": "lcd_i2c_cursor",
+          "description": "LCD 커서 표시/숨김",
+          "inputs": [
+            "LCD_NUM"
+          ],
+          "codePattern": "const lcdNum = generator.valueToCode(block, 'LCD_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const mode = block.getFieldValue('CURSOR_MODE');\r\n\r\n  switch (mode) {\r\n    case 'ON': return 'lcd' + lcdNum + '...."
+        },
+        {
+          "id": "lcd_i2c_backlight",
+          "description": "LCD 백라이트 제어",
+          "inputs": [
+            "LCD_NUM"
+          ],
+          "codePattern": "const lcdNum = generator.valueToCode(block, 'LCD_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const backlight = block.getFieldValue('BACKLIGHT');\r\n\r\n  if (backlight === 'ON') {\r\n    return 'lcd' + lcdNum + ..."
+        },
+        {
+          "id": "lcd_i2c_display",
+          "description": "LCD 디스플레이 켜기/끄기",
+          "inputs": [
+            "LCD_NUM"
+          ],
+          "codePattern": "const lcdNum = generator.valueToCode(block, 'LCD_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const display = block.getFieldValue('DISPLAY');\r\n\r\n  if (display === 'ON') {\r\n    return 'lcd' + lcdNum + '.disp..."
+        },
+        {
+          "id": "lcd_i2c_scroll",
+          "description": "LCD 스크롤",
+          "inputs": [
+            "LCD_NUM"
+          ],
+          "codePattern": "const lcdNum = generator.valueToCode(block, 'LCD_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const direction = block.getFieldValue('DIRECTION');\r\n\r\n  if (direction === 'LEFT') {\r\n    return 'lcd' + lcdNum ..."
+        },
+        {
+          "id": "tm1637_setup",
+          "description": "TM1637 초기화",
+          "inputs": [
+            "CLK_PIN",
+            "DATA_PIN"
+          ],
+          "codePattern": "const clkPin = generator.valueToCode(block, 'CLK_PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  const dataPin = generator.valueToCode(block, 'DATA_PIN', Arduino.ORDER_ATOMIC) || '3';\r\n\r\n  // 라이브러리 포함 및 객체 생성 ..."
+        },
+        {
+          "id": "tm1637_display_number",
+          "description": "TM1637 숫자 표시",
+          "inputs": [
+            "NUMBER"
+          ],
+          "codePattern": "display.showNumberDecEx(${number}, 0x40, true);\\n"
+        },
+        {
+          "id": "tm1637_display_time",
+          "description": "TM1637 시간 표시",
+          "inputs": [
+            "HOUR",
+            "MINUTE"
+          ],
+          "codePattern": "const hour = generator.valueToCode(block, 'HOUR', Arduino.ORDER_ATOMIC) || '12';\r\n  const minute = generator.valueToCode(block, 'MINUTE', Arduino.ORDER_ATOMIC) || '0';\r\n  const showColon = block.getFi..."
+        },
+        {
+          "id": "tm1637_display_text",
+          "description": "TM1637 텍스트 스크롤",
+          "inputs": [
+            "TEXT",
+            "DELAY"
+          ],
+          "codePattern": "const text = generator.valueToCode(block, 'TEXT', Arduino.ORDER_ATOMIC) || '\"Hello\"';\r\n  const delay = generator.valueToCode(block, 'DELAY', Arduino.ORDER_ATOMIC) || '500';\r\n\r\n  let code = '';\r\n  // 확..."
+        },
+        {
+          "id": "tm1637_display_digit",
+          "description": "TM1637 자릿수 표시",
+          "inputs": [
+            "DIGIT"
+          ],
+          "codePattern": "const position = block.getFieldValue('POSITION') || '0';\r\n  const digit = generator.valueToCode(block, 'DIGIT', Arduino.ORDER_ATOMIC) || '0';\r\n\r\n  let code = '';\r\n  code += `uint8_t segmentData = disp..."
+        },
+        {
+          "id": "tm1637_clear",
+          "description": "TM1637 화면 지우기",
+          "codePattern": "display.clear();\\n"
+        },
+        {
+          "id": "tm1637_brightness",
+          "description": "TM1637 밝기 설정",
+          "codePattern": "display.setBrightness(${brightness});\\n"
+        },
+        {
+          "id": "tm1637_colon",
+          "description": "TM1637 콜론 표시",
+          "codePattern": "const state = block.getFieldValue('STATE') || 'true';\r\n\r\n  // 현재 시간 값을 유지하면서 콜론만 제어\r\n  let code = '';\r\n  if (state === 'true') {\r\n    code += `display.showNumberDecEx(1234, 0x40, true);  // 콜론 표시 (예시:..."
+        },
+        {
+          "id": "neopixel_setup",
+          "description": "NeoPixel 초기화",
+          "inputs": [
+            "PIN",
+            "LED_COUNT"
+          ],
+          "codePattern": "const stripNum = block.getFieldValue('STRIP_NUM') || 1;\r\n  const pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '6';\r\n  const count = generator.valueToCode(block, 'LED_COUNT', Ardu..."
+        },
+        {
+          "id": "neopixel_set_rgb",
+          "description": "NeoPixel RGB 색상 설정",
+          "inputs": [
+            "STRIP_NUM",
+            "LED_INDEX",
+            "R",
+            "G",
+            "B"
+          ],
+          "codePattern": "const stripNum = generator.valueToCode(block, 'STRIP_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const ledIndex = generator.valueToCode(block, 'LED_INDEX', Arduino.ORDER_ATOMIC) || '1';\r\n  const r = genera..."
+        },
+        {
+          "id": "neopixel_set_rgbw",
+          "description": "NeoPixel RGBW 색상 설정",
+          "inputs": [
+            "STRIP_NUM",
+            "LED_INDEX",
+            "R",
+            "G",
+            "B",
+            "W"
+          ],
+          "codePattern": "const stripNum = generator.valueToCode(block, 'STRIP_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const ledIndex = generator.valueToCode(block, 'LED_INDEX', Arduino.ORDER_ATOMIC) || '1';\r\n  const r = genera..."
+        },
+        {
+          "id": "neopixel_show",
+          "description": "NeoPixel 업데이트",
+          "inputs": [
+            "STRIP_NUM"
+          ],
+          "codePattern": "const stripNum = generator.valueToCode(block, 'STRIP_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  return 'neo' + stripNum + '.show();\\n';"
+        },
+        {
+          "id": "neopixel_brightness",
+          "description": "NeoPixel 밝기 설정",
+          "inputs": [
+            "STRIP_NUM",
+            "BRI"
+          ],
+          "codePattern": "const stripNum = generator.valueToCode(block, 'STRIP_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const bri = generator.valueToCode(block, 'BRI', Arduino.ORDER_ATOMIC) || '50';\r\n  return 'neo' + stripNum + ..."
+        },
+        {
+          "id": "neopixel_clear",
+          "description": "NeoPixel 끄기",
+          "inputs": [
+            "STRIP_NUM"
+          ],
+          "codePattern": "const stripNum = generator.valueToCode(block, 'STRIP_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  return 'neo' + stripNum + '.clear();\\n';"
+        },
+        {
+          "id": "neopixel_fill_rgb_all",
+          "description": "NeoPixel 전체 색상 채우기",
+          "inputs": [
+            "STRIP_NUM",
+            "R",
+            "G",
+            "B"
+          ],
+          "codePattern": "const stripNum = generator.valueToCode(block, 'STRIP_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const r = generator.valueToCode(block, 'R', Arduino.ORDER_ATOMIC) || '0';\r\n  const g = generator.valueToCode..."
+        },
+        {
+          "id": "neopixel_anim_rainbow",
+          "description": "NeoPixel 무지개 애니메이션",
+          "inputs": [
+            "STRIP_NUM",
+            "WAIT",
+            "LOOPS"
+          ],
+          "codePattern": "const stripNum = generator.valueToCode(block, 'STRIP_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const wait = generator.valueToCode(block, 'WAIT', Arduino.ORDER_ATOMIC) || '20';\r\n  const loops = generator...."
+        },
+        {
+          "id": "neopixel_anim_shift",
+          "description": "NeoPixel 시프트 애니메이션",
+          "inputs": [
+            "STRIP_NUM",
+            "STEPS",
+            "WAIT"
+          ],
+          "codePattern": "const stripNum = generator.valueToCode(block, 'STRIP_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const dir = block.getFieldValue('DIR') || 'LEFT';\r\n  const steps = generator.valueToCode(block, 'STEPS', Ard..."
+        },
+        {
+          "id": "neopixel_anim_breathe",
+          "description": "NeoPixel 호흡 애니메이션",
+          "inputs": [
+            "STRIP_NUM",
+            "R",
+            "G",
+            "B",
+            "MIN_BRI",
+            "MAX_BRI",
+            "STEP",
+            "WAIT"
+          ],
+          "codePattern": "const stripNum = generator.valueToCode(block, 'STRIP_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const r = generator.valueToCode(block, 'R', Arduino.ORDER_ATOMIC) || '0';\r\n  const g = generator.valueToCode..."
+        }
+      ]
+    },
+    "DISPLAY_B": {
+      "name": "디스플레이 B (OLED, LED 매트릭스)",
+      "blocks": [
+        {
+          "id": "dis02_flag",
+          "description": "디스플레이B 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "ssd1306_setup_i2c",
+          "description": "SSD1306 OLED 초기화",
+          "inputs": [
+            "NUM",
+            "RST"
+          ],
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const width = block.getFieldValue('WIDTH') || '128';\r\n  const height = block.getFieldValue('HEIGHT') || '64';\r\n  const ..."
+        },
+        {
+          "id": "ssd1306_text",
+          "description": "SSD1306 텍스트 출력",
+          "inputs": [
+            "NUM",
+            "TEXT",
+            "X",
+            "Y",
+            "SIZE"
+          ],
+          "codePattern": "oled${n}.setTextSize(${size});\r\noled${n}.setTextColor(${color});\r\noled${n}.setTextWrap(${wrap});\r\noled${n}.setCursor(${x}, ${y});\r\noled${n}.print(${text});\r\n"
+        },
+        {
+          "id": "ssd1306_control",
+          "description": "SSD1306 제어 (display/clear)",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const action = block.getFieldValue('ACTION') || 'DISPLAY';\r\n  let code = '';\r\n\r\n  switch (action) {\r\n    case 'DISPLAY':\r..."
+        },
+        {
+          "id": "ssd1306_dim",
+          "description": "SSD1306 밝기 조절",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "oled${n}.dim(${state});\\n"
+        },
+        {
+          "id": "ssd1306_pixel",
+          "description": "SSD1306 픽셀 그리기",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y"
+          ],
+          "codePattern": "oled${n}.drawPixel(${x}, ${y}, ${color});\\n"
+        },
+        {
+          "id": "ssd1306_line",
+          "description": "SSD1306 선 그리기",
+          "inputs": [
+            "NUM",
+            "X1",
+            "Y1",
+            "X2",
+            "Y2"
+          ],
+          "codePattern": "oled${n}.drawLine(${x1}, ${y1}, ${x2}, ${y2}, ${color});\\n"
+        },
+        {
+          "id": "ssd1306_rect",
+          "description": "SSD1306 사각형 그리기",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y",
+            "W",
+            "H"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const x = generator.valueToCode(block, 'X', Arduino.ORDER_ATOMIC) || '0';\r\n  const y = generator.valueToCode(block, 'Y', ..."
+        },
+        {
+          "id": "ssd1306_circle",
+          "description": "SSD1306 원 그리기",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y",
+            "R"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const x = generator.valueToCode(block, 'X', Arduino.ORDER_ATOMIC) || '64';\r\n  const y = generator.valueToCode(block, 'Y',..."
+        },
+        {
+          "id": "ssd1306_scroll",
+          "description": "SSD1306 스크롤",
+          "inputs": [
+            "NUM",
+            "START",
+            "STOP"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const direction = block.getFieldValue('DIRECTION') || 'RIGHT';\r\n  const start = generator.valueToCode(block, 'START', Ard..."
+        },
+        {
+          "id": "oled_han_setup",
+          "description": "한글 OLED 초기화",
+          "codePattern": "// 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.selectedBoard && (Arduino.selectedBoard.startsWith('pico') || Arduino...."
+        },
+        {
+          "id": "oled_han_clear",
+          "description": "한글 OLED 지우기",
+          "codePattern": "oledDisplay.clearDisplay();\\n"
+        },
+        {
+          "id": "oled_han_print_text",
+          "description": "한글 OLED 텍스트",
+          "inputs": [
+            "TEXT",
+            "X",
+            "Y"
+          ],
+          "codePattern": "const text = generator.valueToCode(block, 'TEXT', Arduino.ORDER_ATOMIC) || '\"Hello 안녕\"';\r\n  const x = generator.valueToCode(block, 'X', Arduino.ORDER_ATOMIC) || '0';\r\n  const y = generator.valueToCode..."
+        },
+        {
+          "id": "oled_han_big_digit",
+          "description": "한글 OLED 큰 숫자",
+          "inputs": [
+            "DIGIT",
+            "X",
+            "Y"
+          ],
+          "codePattern": "const digit = generator.valueToCode(block, 'DIGIT', Arduino.ORDER_ATOMIC) || '0';\r\n  const x = generator.valueToCode(block, 'X', Arduino.ORDER_ATOMIC) || '0';\r\n  const y = generator.valueToCode(block,..."
+        },
+        {
+          "id": "oled_han_draw_bar",
+          "description": "한글 OLED 막대 그래프",
+          "inputs": [
+            "X",
+            "Y",
+            "VALUE"
+          ],
+          "codePattern": "oledDisplay.drawBar(${x}, ${y}, ${value});\\n"
+        },
+        {
+          "id": "ht16k33_setup",
+          "description": "HT16K33 LED 매트릭스 초기화",
+          "inputs": [
+            "BRI"
+          ],
+          "codePattern": "const num = block.getFieldValue('NUM') || 1;\r\n  const dev = block.getFieldValue('DEV') || 'M8x8';\r\n  const addr = block.getFieldValue('ADDR') || '0x70';\r\n  const bri = generator.valueToCode(block, 'BR..."
+        },
+        {
+          "id": "ht16k33_scroll_text",
+          "description": "HT16K33 텍스트 스크롤",
+          "inputs": [
+            "NUM",
+            "TEXT",
+            "SEC"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const s = generator.valueToCode(block, 'TEXT', Arduino.ORDER_ATOMIC) || '\"Hello\"';  // 변경된 부분\r\n  const dir = block.getFie..."
+        },
+        {
+          "id": "ht16k33_show",
+          "description": "HT16K33 표시",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ht16k33_clear",
+          "description": "HT16K33 지우기",
+          "inputs": [
+            "NUM"
+          ]
+        },
+        {
+          "id": "ht16k33_set_brightness",
+          "description": "HT16K33 밝기 설정",
+          "inputs": [
+            "NUM",
+            "BRI"
+          ],
+          "codePattern": "ht16_${n}.setBrightness(${b});\\n"
+        },
+        {
+          "id": "ht16k33_set_blink",
+          "description": "HT16K33 깜빡임 설정",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "ht16_${n}.blinkRate(${br});\\n"
+        },
+        {
+          "id": "ht16k33_pixel",
+          "description": "HT16K33 픽셀",
+          "inputs": [
+            "NUM",
+            "ROW",
+            "COL"
+          ],
+          "codePattern": "ht16_${n}.drawPixel(${c},${r},${on});\\n"
+        },
+        {
+          "id": "ht16k33_bicolor_pixel",
+          "description": "HT16K33 이색 픽셀",
+          "inputs": [
+            "NUM",
+            "ROW",
+            "COL"
+          ],
+          "codePattern": "ht16_${n}.drawPixel(${c},${r},${col});\\n"
+        },
+        {
+          "id": "ht16k33_pattern_8x8",
+          "description": "HT16K33 8x8 패턴",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const bits = block.getFieldValue('MAT') || ''.padStart(64, '0');\r\n  const code =\r\n    `{\r\n  const char* __b = \"${bits}\";\r..."
+        },
+        {
+          "id": "ht16k33_pattern_8x16",
+          "description": "HT16K33 8x16 패턴",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "const isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const bits = block.getFieldValue('..."
+        },
+        {
+          "id": "ht16k33_line",
+          "description": "HT16K33 선",
+          "inputs": [
+            "NUM",
+            "R1",
+            "C1",
+            "R2",
+            "C2"
+          ],
+          "codePattern": "ht16_${n}.drawLine(${c1},${r1},${c2},${r2},1);\\n"
+        },
+        {
+          "id": "ht16k33_circle",
+          "description": "HT16K33 원",
+          "inputs": [
+            "NUM",
+            "R",
+            "C",
+            "RAD"
+          ],
+          "codePattern": "ht16_${n}.drawCircle(${c},${r},${rad},1);\\n"
+        },
+        {
+          "id": "ht16k33_rect",
+          "description": "HT16K33 사각형",
+          "inputs": [
+            "NUM",
+            "R",
+            "C",
+            "W",
+            "H"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const r = generator.valueToCode(block, 'R', Arduino.ORDER_ATOMIC) || '0';\r\n  const c = generator.valueToCode(block, 'C', ..."
+        },
+        {
+          "id": "sh110x_setup_i2c",
+          "description": "SH110X OLED 초기화",
+          "inputs": [
+            "NUM",
+            "RST",
+            "WIDTH",
+            "HEIGHT"
+          ],
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const type = block.getFieldValue('TYPE') || 'SH1106G';\r\n  const addr = block.getFieldValue('ADDR') || '0x3C';\r\n  const ..."
+        },
+        {
+          "id": "sh110x_text",
+          "description": "SH110X 텍스트",
+          "inputs": [
+            "NUM",
+            "TXT",
+            "X",
+            "Y",
+            "SIZE"
+          ],
+          "codePattern": "oled${n}.setTextSize(${sz});\r\noled${n}.setTextColor(${col});\r\noled${n}.setTextWrap(${wrap});\r\noled${n}.setCursor(${x}, ${y});\r\noled${n}.print(${txt});\r\n"
+        },
+        {
+          "id": "sh110x_display",
+          "description": "SH110X 표시",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "oled${n}.display();\\n"
+        },
+        {
+          "id": "sh110x_clear",
+          "description": "SH110X 지우기",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "oled${n}.clearDisplay();\\n"
+        },
+        {
+          "id": "sh110x_control",
+          "description": "SH110X 제어",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const action = block.getFieldValue('ACTION') || 'NORMAL';\r\n  let code = '';\r\n\r\n  switch (action) {\r\n    case 'INVERT':\r\n ..."
+        },
+        {
+          "id": "sh110x_pixel",
+          "description": "SH110X 픽셀",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y"
+          ],
+          "codePattern": "oled${n}.drawPixel(${x}, ${y}, ${c});\\n"
+        },
+        {
+          "id": "sh110x_line",
+          "description": "SH110X 선",
+          "inputs": [
+            "NUM",
+            "X1",
+            "Y1",
+            "X2",
+            "Y2"
+          ],
+          "codePattern": "oled${n}.drawLine(${x1}, ${y1}, ${x2}, ${y2}, ${c});\\n"
+        },
+        {
+          "id": "sh110x_rect",
+          "description": "SH110X 사각형",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y",
+            "W",
+            "H"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const x = generator.valueToCode(block, 'X', Arduino.ORDER_ATOMIC) || '0';\r\n  const y = generator.valueToCode(block, 'Y', ..."
+        },
+        {
+          "id": "sh110x_circle",
+          "description": "SH110X 원",
+          "inputs": [
+            "NUM",
+            "X",
+            "Y",
+            "R"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const x = generator.valueToCode(block, 'X', Arduino.ORDER_ATOMIC) || '64';\r\n  const y = generator.valueToCode(block, 'Y',..."
+        },
+        {
+          "id": "sh110x_contrast",
+          "description": "SH110X 대비",
+          "inputs": [
+            "NUM",
+            "CONTRAST"
+          ],
+          "codePattern": "oled${n}.setContrast(${contrast});\\n"
+        },
+        {
+          "id": "sh1106_setup",
+          "description": "SH1106 한글 OLED 초기화",
+          "codePattern": "// 필요한 헤더 파일들 포함\r\n  // 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.selectedBoard && (Arduino.selectedBoard.startsWith..."
+        },
+        {
+          "id": "sh1106_clear",
+          "description": "SH1106 지우기",
+          "codePattern": "oled.clearDisplay();\\n"
+        },
+        {
+          "id": "sh1106_print_text",
+          "description": "SH1106 한글 텍스트",
+          "inputs": [
+            "TEXT",
+            "X",
+            "Y"
+          ],
+          "codePattern": "oled.puts(${x}, ${y}, (unsigned char*)String(${text}).c_str(), ${normalInverse});\\n"
+        },
+        {
+          "id": "sh1106_large_number",
+          "description": "SH1106 큰 숫자",
+          "inputs": [
+            "NUMBER",
+            "X",
+            "Y"
+          ],
+          "codePattern": "const number = generator.valueToCode(block, 'NUMBER', Arduino.ORDER_ATOMIC) || '0';\r\n  const x = generator.valueToCode(block, 'X', Arduino.ORDER_ATOMIC) || '0';\r\n  const y = generator.valueToCode(bloc..."
+        },
+        {
+          "id": "sh1106_draw_bar",
+          "description": "SH1106 막대 그래프",
+          "inputs": [
+            "X",
+            "Y",
+            "VALUE"
+          ],
+          "codePattern": "oled.drawBar(${x}, ${y}, ${value});\\n"
+        },
+        {
+          "id": "ssd1306_bitmap",
+          "description": "SSD1306 OLED 비트맵 출력",
+          "inputs": [
+            "NUM",
+            "BITMAP",
+            "X",
+            "Y"
+          ],
+          "codePattern": "oled${n}.drawBitmap(${x}, ${y}, ${bitmap}, 128, 64, ${col});\\n"
+        },
+        {
+          "id": "sh110x_bitmap",
+          "description": "SH110X OLED 비트맵 출력",
+          "inputs": [
+            "NUM",
+            "BITMAP",
+            "X",
+            "Y"
+          ],
+          "codePattern": "oled${n}.drawBitmap(${x}, ${y}, ${bitmap}, 128, 64, ${col});\\n"
+        }
+      ]
+    },
+    "SENSORS_A": {
+      "name": "센서 A (거리, 온습도, 무게, 로터리, 수질 등)",
+      "blocks": [
+        {
+          "id": "sensor01_flag",
+          "description": "센서A 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "ultrasonic_setup",
+          "description": "초음파 센서 초기화",
+          "codePattern": "const trigPin = block.getFieldValue('TRIG_PIN');\r\n  const echoPin = block.getFieldValue('ECHO_PIN');\r\n\r\n  // 전역 변수 및 함수를 definitions 객체에 직접 추가\r\n  Arduino.definitions_['define_ultrasonic_trig'] = `int ..."
+        },
+        {
+          "id": "ultrasonic_distance",
+          "description": "초음파 거리 측정",
+          "output": "Number",
+          "codePattern": "const unit = block.getFieldValue('UNIT');\r\n  let conversionFactor;\r\n\r\n  if (unit === 'CM') {\r\n    conversionFactor = '0.0343 / 2.0';\r\n  } else if (unit === 'MM') {\r\n    conversionFactor = '0.343 / 2.0..."
+        },
+        {
+          "id": "dht_setup",
+          "description": "DHT 온습도 센서 초기화",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "let pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  let type = block.getFieldValue('TYPE');\r\n\r\n  // definitions_를 사용해서 #include 처리 (includes_ 대신)\r\n  generator.definitions_ =..."
+        },
+        {
+          "id": "dht_read_temperature",
+          "description": "DHT 온도 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number",
+          "codePattern": "let pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  let scale = block.getFieldValue('SCALE');\r\n  let dhtObjectName = 'dht_pin' + pin;\r\n\r\n  let code = `${dhtObjectName}.readT..."
+        },
+        {
+          "id": "dht_read_humidity",
+          "description": "DHT 습도 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number",
+          "codePattern": "let pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  let dhtObjectName = 'dht_pin' + pin;\r\n\r\n  let code = `${dhtObjectName}.readHumidity()`;\r\n  return [code, Arduino.ORDER_FU..."
+        },
+        {
+          "id": "dht_convert_temperature",
+          "description": "섭씨/화씨 변환",
+          "inputs": [
+            "TEMPERATURE"
+          ],
+          "output": "Number",
+          "codePattern": "let temperature = generator.valueToCode(block, 'TEMPERATURE', Arduino.ORDER_ATOMIC) || '0';\r\n  let from = block.getFieldValue('FROM');\r\n  let to = block.getFieldValue('TO');\r\n\r\n  // definitions 초기화\r\n ..."
+        },
+        {
+          "id": "dht_heat_index",
+          "description": "체감온도 계산",
+          "inputs": [
+            "TEMPERATURE",
+            "HUMIDITY"
+          ],
+          "output": "Number",
+          "codePattern": "let temperature = generator.valueToCode(block, 'TEMPERATURE', Arduino.ORDER_ATOMIC) || '25';\r\n  let humidity = generator.valueToCode(block, 'HUMIDITY', Arduino.ORDER_ATOMIC) || '50';\r\n  let unit = blo..."
+        },
+        {
+          "id": "dallas_temp_setup",
+          "description": "Dallas 온도 센서 초기화",
+          "codePattern": "var pin = block.getFieldValue('PIN');\r\n\r\n  // 속성 초기화 확인\r\n  if (!generator.definitions_) generator.definitions_ = {};\r\n  if (!generator.setups_) generator.setups_ = {};\r\n\r\n  // 라이브러리 추가 (includes_ 대신 d..."
+        },
+        {
+          "id": "dallas_temp_request",
+          "description": "Dallas 온도 요청",
+          "codePattern": "sensors.requestTemperatures();\\n"
+        },
+        {
+          "id": "dallas_temp_read",
+          "description": "Dallas 온도 읽기",
+          "output": "Number",
+          "codePattern": "var index = block.getFieldValue('INDEX');\r\n  var unit = block.getFieldValue('UNIT');\r\n\r\n  var code;\r\n  if (unit === 'C') {\r\n    code = 'sensors.getTempCByIndex(' + index + ')';\r\n  } else {\r\n    code =..."
+        },
+        {
+          "id": "dallas_temp_count",
+          "description": "Dallas 센서 개수",
+          "output": "Number",
+          "codePattern": "sensors.getDeviceCount()"
+        },
+        {
+          "id": "hx711_setup",
+          "description": "HX711 로드셀 초기화",
+          "inputs": [
+            "DOUT_PIN",
+            "CLK_PIN"
+          ],
+          "codePattern": "const doutPin = generator.valueToCode(block, 'DOUT_PIN', Arduino.ORDER_ATOMIC) || '3';\r\n  const clkPin = generator.valueToCode(block, 'CLK_PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  const gain = block.get..."
+        },
+        {
+          "id": "hx711_get_weight",
+          "description": "HX711 무게 읽기",
+          "output": "Number",
+          "codePattern": "let code = `hx711Scale.get_units()`;\r\n  return [code, Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "hx711_tare",
+          "description": "HX711 영점 조정",
+          "inputs": [
+            "TIMES"
+          ],
+          "codePattern": "let times = generator.valueToCode(block, 'TIMES', Arduino.ORDER_ATOMIC) || '10';\r\n\r\n  let code = `hx711Scale.tare(${times});\\\\n`;\r\n  return code;"
+        },
+        {
+          "id": "hx711_set_scale",
+          "description": "HX711 스케일 설정",
+          "inputs": [
+            "SCALE"
+          ],
+          "codePattern": "let scale = generator.valueToCode(block, 'SCALE', Arduino.ORDER_ATOMIC) || '1';\r\n\r\n  let code = `hx711Scale.set_scale(${scale});\\\\n`;\r\n  return code;"
+        },
+        {
+          "id": "hx711_is_ready",
+          "description": "HX711 준비 상태",
+          "output": "Boolean",
+          "codePattern": "let code = `hx711Scale.is_ready()`;\r\n  return [code, Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "hx711_power_control",
+          "description": "HX711 전원 제어",
+          "codePattern": "let power = block.getFieldValue('POWER');\r\n\r\n  let code;\r\n  if (power === 'UP') {\r\n    code = `hx711Scale.power_up();\\\\n`;\r\n  } else {\r\n    code = `hx711Scale.power_down();\\\\n`;\r\n  }\r\n  return code;"
+        },
+        {
+          "id": "hx711_read_data",
+          "description": "HX711 원시 데이터",
+          "output": "Number",
+          "codePattern": "let readType = block.getFieldValue('READ_TYPE');\r\n\r\n  let code;\r\n  switch (readType) {\r\n    case 'RAW':\r\n      code = `hx711Scale.read()`;\r\n      break;\r\n    case 'AVERAGE':\r\n      code = `hx711Scale...."
+        },
+        {
+          "id": "i2c_weight_setup",
+          "description": "I2C 무게 센서 초기화",
+          "inputs": [
+            "ADDRESS"
+          ],
+          "codePattern": "const address = generator.valueToCode(block, 'ADDRESS', Arduino.ORDER_ATOMIC) || '0x63';\r\n\r\n  // 설정 블록에서만 include와 전역 변수, 함수 정의 생성\r\n  generator.definitions_['i2c_weight_address'] = `byte i2cWeightAddr..."
+        },
+        {
+          "id": "i2c_weight_read",
+          "description": "I2C 무게 읽기",
+          "output": "Number",
+          "codePattern": "const code = 'readI2CWeight()';\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "i2c_weight_available",
+          "description": "I2C 무게 센서 연결 상태",
+          "output": "Boolean",
+          "codePattern": "const code = 'isI2CWeightAvailable()';\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "i2c_weight_raw_data",
+          "description": "I2C 무게 원시 데이터",
+          "output": "Number",
+          "codePattern": "const byteIndex = block.getFieldValue('BYTE_INDEX') || '0';\r\n\r\n  const code = `readI2CWeightRawByte(${byteIndex})`;\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "rotary_setup",
+          "description": "로터리 엔코더 초기화",
+          "inputs": [
+            "DT_PIN",
+            "CLK_PIN"
+          ],
+          "codePattern": "let dtPin = generator.valueToCode(block, 'DT_PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  let clkPin = generator.valueToCode(block, 'CLK_PIN', Arduino.ORDER_ATOMIC) || '3';\r\n\r\n  // 설정 블록에서만 include와 객체 정의 생..."
+        },
+        {
+          "id": "rotary_get_value",
+          "description": "로터리 값 읽기",
+          "output": "Number",
+          "codePattern": "let code = `rotaryEncoder.getValue()`;\r\n  return [code, Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "rotary_direction",
+          "description": "로터리 방향",
+          "output": "Number",
+          "codePattern": "반시계방향"
+        },
+        {
+          "id": "rotary_counter",
+          "description": "로터리 카운터",
+          "output": "Number",
+          "codePattern": "// 함수 정의\r\n  generator.definitions_ = generator.definitions_ || {};\r\n  let funcName = 'getRotaryCounter';\r\n  let functionCode = `int ${funcName}() {\r\n  int val = rotaryEncoder.getValue();\r\n  rotaryCoun..."
+        },
+        {
+          "id": "rotary_reset_counter",
+          "description": "로터리 카운터 초기화",
+          "codePattern": "let code = `rotaryCounter = 0;\\\\n`;\r\n  return code;"
+        },
+        {
+          "id": "thermistor_setup",
+          "description": "서미스터 초기화",
+          "inputs": [
+            "ANALOG_PIN",
+            "NOMINAL_RES",
+            "BETA_COEF",
+            "SERIAL_RES"
+          ],
+          "codePattern": "let analogPin = generator.valueToCode(block, 'ANALOG_PIN', Arduino.ORDER_ATOMIC) || 'A0';\r\n  let nominalRes = generator.valueToCode(block, 'NOMINAL_RES', Arduino.ORDER_ATOMIC) || '10000';\r\n  let betaC..."
+        },
+        {
+          "id": "thermistor_read_temperature",
+          "description": "서미스터 온도 읽기",
+          "output": "Number",
+          "codePattern": "let unit = block.getFieldValue('UNIT');\r\n\r\n  if (unit === 'CELSIUS') {\r\n    let code = `(thermistorSensor.read() / 10.0)`;\r\n    return [code, Arduino.ORDER_FUNCTION_CALL];\r\n  } else {\r\n    // 화씨 변환: (..."
+        },
+        {
+          "id": "thermistor_read_raw",
+          "description": "서미스터 원시값",
+          "output": "Number",
+          "codePattern": "let code = `thermistorSensor.read()`;\r\n  return [code, Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "thermistor_get_resistance",
+          "description": "서미스터 저항값",
+          "output": "Number",
+          "codePattern": "// 저항값 계산 함수 정의\r\n  generator.definitions_ = generator.definitions_ || {};\r\n  let funcName = 'getThermistorResistance';\r\n  let functionCode = `float ${funcName}() {\r\n  int adcValue = analogRead(thermis..."
+        },
+        {
+          "id": "pms_setup",
+          "description": "미세먼지 센서 초기화",
+          "inputs": [
+            "RX_PIN",
+            "TX_PIN",
+            "BAUD_RATE"
+          ],
+          "codePattern": "let serialPort = block.getFieldValue('SERIAL_PORT');\r\n  let rxPin = generator.valueToCode(block, 'RX_PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  let txPin = generator.valueToCode(block, 'TX_PIN', Arduino.O..."
+        },
+        {
+          "id": "pms_power_control",
+          "description": "미세먼지 센서 전원",
+          "codePattern": "let powerState = block.getFieldValue('POWER_STATE');\r\n\r\n  let code;\r\n  if (powerState === 'WAKEUP') {\r\n    code = `pmsSensor.wakeUp();\\n`;\r\n  } else {\r\n    code = `pmsSensor.sleep();\\n`;\r\n  }\r\n  retur..."
+        },
+        {
+          "id": "pms_set_mode",
+          "description": "미세먼지 센서 모드",
+          "codePattern": "let mode = block.getFieldValue('MODE');\r\n\r\n  let code;\r\n  if (mode === 'ACTIVE') {\r\n    code = `pmsSensor.activeMode();\\n`;\r\n  } else {\r\n    code = `pmsSensor.passiveMode();\\n`;\r\n  }\r\n  return code;"
+        },
+        {
+          "id": "pms_read_data",
+          "description": "미세먼지 데이터 읽기",
+          "output": "Number",
+          "codePattern": "let dataType = block.getFieldValue('DATA_TYPE');\r\n\r\n  // 데이터 읽기 및 파싱 함수 정의\r\n  generator.definitions_ = generator.definitions_ || {};\r\n  let funcName = 'getPmsData';\r\n  let functionCode = `int ${funcNa..."
+        },
+        {
+          "id": "pms_request_read",
+          "description": "미세먼지 데이터 요청",
+          "codePattern": "let code = `pmsSensor.requestRead();\\\\n`;\r\n  return code;"
+        },
+        {
+          "id": "pms_data_available",
+          "description": "미세먼지 데이터 가용",
+          "output": "Boolean",
+          "codePattern": "let code = `pmsSensor.read(pmsData)`;\r\n  return [code, Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "mhz19_setup",
+          "description": "MH-Z19 CO2 센서 초기화",
+          "inputs": [
+            "RX_PIN",
+            "TX_PIN",
+            "BAUD"
+          ],
+          "codePattern": "const serialType = block.getFieldValue('SERIAL_TYPE');\r\n  const rxPin = generator.valueToCode(block, 'RX_PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  const txPin = generator.valueToCode(block, 'TX_PIN', Ard..."
+        },
+        {
+          "id": "mhz19_set_range",
+          "description": "MH-Z19 범위 설정",
+          "inputs": [
+            "RANGE"
+          ],
+          "codePattern": "mhz19.setRange(${range});\\n"
+        },
+        {
+          "id": "mhz19_filter_mode",
+          "description": "MH-Z19 필터 모드",
+          "codePattern": "mhz19.setFilter(${isOn}, ${isCleared});\\n"
+        },
+        {
+          "id": "mhz19_read_value",
+          "description": "MH-Z19 CO2 읽기",
+          "output": "Number",
+          "codePattern": "const valueType = block.getFieldValue('VALUE_TYPE');\r\n\r\n  switch (valueType) {\r\n    case 'CO2':\r\n      return ['mhz19.getCO2(false)', Arduino.ORDER_ATOMIC];\r\n    case 'CO2_UNLIM':\r\n      return ['mhz1..."
+        },
+        {
+          "id": "mhz19_calibration",
+          "description": "MH-Z19 캘리브레이션",
+          "inputs": [
+            "PERIOD"
+          ],
+          "codePattern": "mhz19.autoCalibration(true, ${period});\\n"
+        },
+        {
+          "id": "mhz19_get_status",
+          "description": "MH-Z19 상태",
+          "output": "String",
+          "codePattern": "const statusType = block.getFieldValue('STATUS_TYPE');\r\n\r\n  switch (statusType) {\r\n    case 'RANGE':\r\n      return ['mhz19.getRange()', Arduino.ORDER_ATOMIC];\r\n    case 'ABC':\r\n      return ['mhz19.ge..."
+        },
+        {
+          "id": "gravity_tds_setup",
+          "description": "TDS 수질 센서 초기화",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "const pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || 'A1';\r\n\r\n  generator.definitions_['include_gravity_tds'] = '#include \"DFRobot_GravityTDS.h\"';\r\n  generator.definitions_['gravit..."
+        },
+        {
+          "id": "gravity_tds_set_temp",
+          "description": "TDS 온도 설정",
+          "inputs": [
+            "TEMP"
+          ],
+          "codePattern": "gravityTds.setTemperature(${temp});\\n"
+        },
+        {
+          "id": "gravity_tds_update",
+          "description": "TDS 업데이트",
+          "codePattern": "gravityTds.update();\\n"
+        },
+        {
+          "id": "gravity_tds_read_value",
+          "description": "TDS 값 읽기",
+          "output": "Number",
+          "codePattern": "const valueType = block.getFieldValue('VALUE_TYPE');\r\n\r\n  switch (valueType) {\r\n    case 'TDS':\r\n      return ['gravityTds.getTdsValue()', Arduino.ORDER_ATOMIC];\r\n    case 'EC':\r\n      return ['gravit..."
+        },
+        {
+          "id": "gravity_tds_advanced_config",
+          "description": "TDS 고급 설정",
+          "inputs": [
+            "VALUE"
+          ],
+          "codePattern": "gravityTds.setAref(${value});\\n"
+        },
+        {
+          "id": "dfrobot_ph_setup",
+          "description": "pH 센서 초기화",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "const pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || 'A0';\r\n\r\n  // 설정 블록에서만 include와 객체 정의 생성\r\n  generator.definitions_['include_dfrobot_ph'] = '#include \"DFRobot_PH.h\"';\r\n  genera..."
+        },
+        {
+          "id": "dfrobot_ph_read",
+          "description": "pH 값 읽기",
+          "inputs": [
+            "TEMPERATURE"
+          ],
+          "output": "Number",
+          "codePattern": "const temperature = generator.valueToCode(block, 'TEMPERATURE', Arduino.ORDER_ATOMIC) || '25.0';\r\n\r\n  const code = `readPhValue(${temperature})`;\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "dfrobot_ph_voltage",
+          "description": "pH 전압 읽기",
+          "output": "Number",
+          "codePattern": "const code = 'readPhVoltage()';\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "dfrobot_ph_calibration",
+          "description": "pH 캘리브레이션",
+          "codePattern": "sendPhCommand("
+        },
+        {
+          "id": "fingerprint_setup",
+          "description": "지문 센서 초기화",
+          "inputs": [
+            "RX_PIN",
+            "TX_PIN",
+            "BAUD"
+          ],
+          "codePattern": "const serialType = block.getFieldValue('SERIAL_TYPE');\r\n  const rxPin = generator.valueToCode(block, 'RX_PIN', Arduino.ORDER_ATOMIC) || '2';\r\n  const txPin = generator.valueToCode(block, 'TX_PIN', Ard..."
+        },
+        {
+          "id": "fingerprint_enroll_process",
+          "description": "지문 등록",
+          "inputs": [
+            "ID"
+          ],
+          "codePattern": "const processType = block.getFieldValue('PROCESS_TYPE');\r\n  const id = generator.valueToCode(block, 'ID', Arduino.ORDER_ATOMIC) || '1';\r\n\r\n  switch (processType) {\r\n    case 'GET_IMAGE':\r\n      return..."
+        },
+        {
+          "id": "fingerprint_search",
+          "description": "지문 검색",
+          "codePattern": "const searchMode = block.getFieldValue('SEARCH_MODE');\r\n\r\n  // 먼저 이미지를 캡처하고 변환하는 코드 추가\r\n  generator.definitions_['fingerprint_search_func'] = `uint8_t getFingerprintID() {\r\n  uint8_t p = finger.getIma..."
+        },
+        {
+          "id": "fingerprint_get_result",
+          "description": "지문 결과",
+          "output": "Number",
+          "codePattern": "const resultType = block.getFieldValue('RESULT_TYPE');\r\n\r\n  switch (resultType) {\r\n    case 'FINGER_ID':\r\n      return ['finger.fingerID', Arduino.ORDER_ATOMIC];\r\n    case 'CONFIDENCE':\r\n      return ..."
+        },
+        {
+          "id": "fingerprint_database",
+          "description": "지문 데이터베이스",
+          "inputs": [
+            "ID"
+          ],
+          "codePattern": "const dbAction = block.getFieldValue('DB_ACTION');\r\n  const id = generator.valueToCode(block, 'ID', Arduino.ORDER_ATOMIC) || '1';\r\n\r\n  switch (dbAction) {\r\n    case 'DELETE':\r\n      return [`finger.de..."
+        },
+        {
+          "id": "fingerprint_led_control",
+          "description": "지문 센서 LED",
+          "codePattern": "finger.LEDcontrol(true);\\n"
+        },
+        {
+          "id": "turbidity_setup",
+          "description": "탁도 센서 초기화",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "const pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || 'A0';\r\n\r\n  generator.definitions_['turbidity_pin'] = `#define TURBIDITY_PIN ${pin}`;\r\n  generator.definitions_['turbidity_scoun..."
+        },
+        {
+          "id": "turbidity_calibrate",
+          "description": "탁도 캘리브레이션",
+          "codePattern": "return `// 탁도센서 0점 조정 - 맑은 물에서 실행하세요\r\nfloat calibSum = 0;\r\nfor(int i = 0; i < 50; i++) {\r\n  calibSum += analogRead(TURBIDITY_PIN);\r\n  delay(20);\r\n}\r\nturbidity_cal_voltage = (calibSum / 50.0) * 5.0 / 1..."
+        },
+        {
+          "id": "turbidity_update",
+          "description": "탁도 업데이트",
+          "codePattern": "return `// 탁도센서 샘플링 업데이트 (30ms 간격)\r\nif (millis() - lastTurbiditySampleTime > 30) {\r\n  turbidityBuffer[turbidityBufferIndex] = analogRead(TURBIDITY_PIN);\r\n  turbidityBufferIndex++;\r\n  if (turbidityBuff..."
+        },
+        {
+          "id": "turbidity_read_value",
+          "description": "탁도 값 읽기",
+          "output": "Number",
+          "codePattern": "const valueType = block.getFieldValue('VALUE_TYPE');\r\n\r\n  switch (valueType) {\r\n    case 'VOLTAGE':\r\n      return ['(getTurbidityMedian(turbidityBuffer, SCOUNT) * 5.0 / 1024.0)', Arduino.ORDER_ATOMIC]..."
+        },
+        {
+          "id": "uv_sensor_setup",
+          "description": "UV 센서 초기화",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "const pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || 'A0';\r\n\r\n  generator.definitions_['uv_pin'] = `#define UV_SENSOR_PIN ${pin}`;\r\n  generator.definitions_['uv_variables'] = `floa..."
+        },
+        {
+          "id": "uv_sensor_calibrate",
+          "description": "UV 센서 캘리브레이션",
+          "inputs": [
+            "VOLTAGE"
+          ],
+          "codePattern": "// UV센서 실내 0점 조정\r\nfloat avgValue = getUVAverage();\r\nuv_min_voltage = avgValue * (5000.0 / 1024.0);\r\nSerial.print("
+        },
+        {
+          "id": "uv_sensor_read_value",
+          "description": "UV 지수 읽기",
+          "output": "Number",
+          "codePattern": "const valueType = block.getFieldValue('VALUE_TYPE');\r\n\r\n  switch (valueType) {\r\n    case 'VOLTAGE':\r\n      return ['(getUVAverage() * 5.0 / 1024.0)', Arduino.ORDER_ATOMIC];\r\n\r\n    case 'VOLTAGE_MV':\r\n..."
+        }
+      ]
+    },
+    "SENSORS_B": {
+      "name": "센서 B (RTC, 기압, 자이로, 가스, 색상 등)",
+      "blocks": [
+        {
+          "id": "sensor02_flag",
+          "description": "센서B 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "ds1307_setup",
+          "description": "DS1307 RTC 초기화",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n\r\n  // 라이브러리 포함 및 객체 생성 (설정 블록에서만)\r\n  // 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoar..."
+        },
+        {
+          "id": "ds1307_set_time",
+          "description": "DS1307 시간 설정",
+          "inputs": [
+            "NUM",
+            "YEAR",
+            "MONTH",
+            "DATE",
+            "HOUR",
+            "MINUTE",
+            "SECOND"
+          ],
+          "codePattern": "rtc${num}.setTime(${year}, ${month}, ${date}, ${hour}, ${minute}, ${second});\\n"
+        },
+        {
+          "id": "ds1307_get_time",
+          "description": "DS1307 시간 읽기",
+          "inputs": [
+            "NUM"
+          ],
+          "output": "Number",
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const timeType = block.getFieldValue('TIME_TYPE') || 'DS1307_YR';\r\n\r\n  const code = `rtc${num}.getTime(DFRobot_DS1307::..."
+        },
+        {
+          "id": "ds1307_clock_control",
+          "description": "DS1307 시계 제어",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "rtc${num}.start();\\n"
+        },
+        {
+          "id": "ds1307_sqw_output",
+          "description": "DS1307 SQW 출력",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "rtc${num}.SetOutput(${outputType});\\n"
+        },
+        {
+          "id": "ds1307_get_time_string",
+          "description": "DS1307 시간 문자열",
+          "inputs": [
+            "NUM"
+          ],
+          "output": "String",
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const format = block.getFieldValue('FORMAT') || 'DATETIME';\r\n\r\n  let code = '';\r\n\r\n  if (format === 'DATETIME') {\r\n    ..."
+        },
+        {
+          "id": "bmp280_setup",
+          "description": "BMP280 기압 센서 초기화",
+          "codePattern": "// 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.selectedBoard && (Arduino.selectedBoard.startsWith('pico') || Arduino...."
+        },
+        {
+          "id": "bmp280_set_sea_pressure",
+          "description": "BMP280 해수면 기압",
+          "inputs": [
+            "PRESSURE"
+          ],
+          "codePattern": "// 기상청 해수면 기압 설정 (${pressure} hPa)\r\nbmp280_seaLevelPressure = ${pressure} * 100.0; // hPa를 Pa로 변환\r\nSerial.print("
+        },
+        {
+          "id": "bmp280_set_reference",
+          "description": "BMP280 기준 고도",
+          "inputs": [
+            "ALTITUDE"
+          ],
+          "codePattern": "// 기준점 설정 (${altitude}m)\r\nbmp280_referencePressure = bmp280.getPressure();\r\nbmp280_referenceAltitude = ${altitude};\r\nSerial.print("
+        },
+        {
+          "id": "bmp280_read_value",
+          "description": "BMP280 값 읽기",
+          "output": "Number",
+          "codePattern": "const field = block.getFieldValue('FIELD');\r\n\r\n  switch (field) {\r\n    case 'TEMP':\r\n      return [`bmp280.getTemperature()`, Arduino.ORDER_ATOMIC];\r\n\r\n    case 'PRES':\r\n      return [`bmp280.getPress..."
+        },
+        {
+          "id": "bx_mpu_setup",
+          "description": "MPU6050 자이로 초기화",
+          "codePattern": "generator.definitions_ = generator.definitions_ || {};\r\n  generator.setups_ = generator.setups_ || {};\r\n\r\n  // 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsW..."
+        },
+        {
+          "id": "bx_mpu_update",
+          "description": "MPU6050 업데이트",
+          "codePattern": "mpu6050.update();\\n"
+        },
+        {
+          "id": "bx_mpu_read_value",
+          "description": "MPU6050 값 읽기",
+          "output": "Number",
+          "codePattern": "var f = block.getFieldValue('FIELD');\r\n  var code = '0';\r\n  switch (f) {\r\n    case 'TEMP': code = 'mpu6050.getTemp()'; break;\r\n    case 'ANGLEX': code = 'mpu6050.getAngleX()'; break;\r\n    case 'ANGLEY..."
+        },
+        {
+          "id": "bx_mpu_set_offsets",
+          "description": "MPU6050 오프셋 설정",
+          "inputs": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "codePattern": "mpu6050.setGyroOffsets("
+        },
+        {
+          "id": "bx_mpu_calc_offsets",
+          "description": "MPU6050 오프셋 계산",
+          "inputs": [
+            "DELAY_B",
+            "DELAY_A"
+          ],
+          "codePattern": "mpu6050.calcGyroOffsets(false, "
+        },
+        {
+          "id": "sgp30_setup",
+          "description": "SGP30 가스 센서 초기화",
+          "inputs": [
+            "EBASE",
+            "TBASE"
+          ],
+          "codePattern": "const ebase = generator.valueToCode(block, 'EBASE', Arduino.ORDER_ATOMIC) || '0';\r\n  const tbase = generator.valueToCode(block, 'TBASE', Arduino.ORDER_ATOMIC) || '0';\r\n\r\n  // includes \r\n  // 🔥 [NEW] ..."
+        },
+        {
+          "id": "sgp30_measure",
+          "description": "SGP30 측정",
+          "codePattern": "sgp.IAQmeasure();\\n"
+        },
+        {
+          "id": "sgp30_get_eco2",
+          "description": "SGP30 eCO2 값",
+          "output": "Number",
+          "codePattern": "return ['sgp.eCO2', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sgp30_get_tvoc",
+          "description": "SGP30 TVOC 값",
+          "output": "Number",
+          "codePattern": "return ['sgp.TVOC', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sgp30_set_humidity",
+          "description": "SGP30 습도 설정",
+          "inputs": [
+            "AH"
+          ],
+          "codePattern": "sgp.setHumidity((uint32_t)("
+        },
+        {
+          "id": "sgp30_set_baseline",
+          "description": "SGP30 베이스라인 설정",
+          "inputs": [
+            "EBASE",
+            "TBASE"
+          ],
+          "codePattern": "sgp.setIAQBaseline((uint16_t)("
+        },
+        {
+          "id": "sgp30_eeprom_save_baseline_fixed",
+          "description": "SGP30 베이스라인 저장 (고정)",
+          "codePattern": "let code = 'uint16_t __eco2=0, __tvoc=0;\\n';\r\n  code += 'sgp.getIAQBaseline(&__eco2, &__tvoc);\\n';\r\n  code += 'EEPROM.put(0, __eco2);\\n';\r\n  code += 'EEPROM.put(2, __tvoc);\\n';\r\n  return code;"
+        },
+        {
+          "id": "sgp30_eeprom_load_baseline_fixed",
+          "description": "SGP30 베이스라인 로드 (고정)",
+          "codePattern": "let code = 'uint16_t __eco2=0, __tvoc=0;\\n';\r\n  code += 'EEPROM.get(0, __eco2);\\n';\r\n  code += 'EEPROM.get(2, __tvoc);\\n';\r\n  code += 'if (__eco2>0 || __tvoc>0) { sgp.setIAQBaseline(__eco2, __tvoc); }..."
+        },
+        {
+          "id": "sgp30_eeprom_save_baseline",
+          "description": "SGP30 베이스라인 저장",
+          "inputs": [
+            "ADDR_E",
+            "ADDR_T"
+          ],
+          "codePattern": "const aE = generator.valueToCode(block, 'ADDR_E', Arduino.ORDER_ATOMIC) || '0';\r\n  const aT = generator.valueToCode(block, 'ADDR_T', Arduino.ORDER_ATOMIC) || '2';\r\n  let code = 'uint16_t __eco2=0, __t..."
+        },
+        {
+          "id": "sgp30_eeprom_load_baseline",
+          "description": "SGP30 베이스라인 로드",
+          "inputs": [
+            "ADDR_E",
+            "ADDR_T"
+          ],
+          "codePattern": "const aE = generator.valueToCode(block, 'ADDR_E', Arduino.ORDER_ATOMIC) || '0';\r\n  const aT = generator.valueToCode(block, 'ADDR_T', Arduino.ORDER_ATOMIC) || '2';\r\n  let code = 'uint16_t __eco2=0, __t..."
+        },
+        {
+          "id": "vl53l0x_setup",
+          "description": "VL53L0X 거리 센서 초기화",
+          "inputs": [
+            "ADDR"
+          ],
+          "codePattern": "const addr = generator.valueToCode(block, 'ADDR', Arduino.ORDER_ATOMIC) || '0x29';\r\n\r\n  // includes \r\n  // 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith(..."
+        },
+        {
+          "id": "vl53l0x_set_mode",
+          "description": "VL53L0X 모드 설정",
+          "codePattern": "vl53.setMode(DFRobot_VL53L0X::"
+        },
+        {
+          "id": "vl53l0x_control",
+          "description": "VL53L0X 제어",
+          "codePattern": "vl53.start();\\n"
+        },
+        {
+          "id": "vl53l0x_read_value",
+          "description": "VL53L0X 값 읽기",
+          "output": "Number",
+          "codePattern": "const what = block.getFieldValue('WHAT');\r\n  switch (what) {\r\n    case 'DIST': return ['vl53.getDistance()', Arduino.ORDER_ATOMIC];\r\n    case 'AMBIENT': return ['vl53.getAmbientCount()', Arduino.ORDER..."
+        },
+        {
+          "id": "sht31_setup",
+          "description": "SHT31 온습도 센서 초기화",
+          "inputs": [
+            "ADDRESS"
+          ],
+          "codePattern": "const address = generator.valueToCode(block, 'ADDRESS', Arduino.ORDER_ATOMIC) || '0x44';\r\n\r\n  // 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r..."
+        },
+        {
+          "id": "sht31_read",
+          "description": "SHT31 데이터 읽기",
+          "codePattern": "const fast = block.getFieldValue('FAST');\r\n  const code = 'sht31.read(' + fast + ')';\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sht31_is_connected",
+          "description": "SHT31 연결 상태",
+          "output": "Boolean",
+          "codePattern": "const code = 'sht31.isConnected()';\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sht31_get_data",
+          "description": "SHT31 값 읽기",
+          "output": "Number",
+          "codePattern": "const dataType = block.getFieldValue('DATA_TYPE');\r\n  let code = '';\r\n\r\n  switch (dataType) {\r\n    case 'TEMP_C':\r\n      code = 'sht31.getTemperature()';\r\n      break;\r\n    case 'TEMP_F':\r\n      code ..."
+        },
+        {
+          "id": "sht31_heater_control",
+          "description": "SHT31 히터 제어",
+          "codePattern": "const action = block.getFieldValue('ACTION');\r\n  let code = '';\r\n\r\n  if (action === 'ON') {\r\n    code = 'sht31.heatOn();\\n';\r\n  } else if (action === 'OFF') {\r\n    code = 'sht31.heatOff();\\n';\r\n  }\r\n\r..."
+        },
+        {
+          "id": "sht31_is_heater_on",
+          "description": "SHT31 히터 상태",
+          "output": "Boolean",
+          "codePattern": "const code = 'sht31.isHeaterOn()';\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sht31_reset",
+          "description": "SHT31 리셋",
+          "codePattern": "const hard = block.getFieldValue('HARD');\r\n  const code = 'sht31.reset(' + hard + ');\\n';\r\n  return code;"
+        },
+        {
+          "id": "sht31_get_error",
+          "description": "SHT31 오류 코드",
+          "output": "Number",
+          "codePattern": "const code = 'sht31.getError()';\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "color_sensor_setup",
+          "description": "색상 센서 초기화",
+          "codePattern": "// 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.selectedBoard && (Arduino.selectedBoard.startsWith('pico') || Arduino...."
+        },
+        {
+          "id": "color_sensor_init",
+          "description": "색상 센서 init",
+          "codePattern": "const code = 'colorSensor.init();\\n';\r\n  return code;"
+        },
+        {
+          "id": "color_sensor_trigger",
+          "description": "색상 센서 트리거",
+          "codePattern": "const adjust = block.getFieldValue('ADJUST');\r\n  const code = 'colorSensor.triggerColorSensor(' + adjust + ');\\n';\r\n  return code;"
+        },
+        {
+          "id": "color_sensor_get_data",
+          "description": "색상 센서 데이터",
+          "output": "Number",
+          "codePattern": "const dataType = block.getFieldValue('DATA_TYPE');\r\n  let code = '';\r\n\r\n  switch (dataType) {\r\n    case 'RED':\r\n      code = 'colorSensor.getRGBcomponent(COMPONENT_RED)';\r\n      break;\r\n    case 'GREE..."
+        },
+        {
+          "id": "color_sensor_is_color",
+          "description": "색상 판별",
+          "output": "Boolean",
+          "codePattern": "const colorId = block.getFieldValue('COLOR_ID');\r\n  let code = '';\r\n\r\n  switch (colorId) {\r\n    case 'RED':\r\n      code = 'colorSensor.isColor(COLOR_ID_RED)';\r\n      break;\r\n    case 'GREEN':\r\n      c..."
+        },
+        {
+          "id": "mlx90614_setup",
+          "description": "MLX90614 적외선 온도 초기화",
+          "inputs": [
+            "ADDRESS"
+          ],
+          "codePattern": "const address = generator.valueToCode(block, 'ADDRESS', Arduino.ORDER_ATOMIC) || '0x5A';\r\n\r\n  // 설정 블록에서만 include와 객체 정의 생성\r\n  // 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.se..."
+        },
+        {
+          "id": "mlx90614_read_temp",
+          "description": "MLX90614 온도 읽기",
+          "output": "Number",
+          "codePattern": "const tempType = block.getFieldValue('TEMP_TYPE') || 'OBJECT';\r\n  const unit = block.getFieldValue('UNIT') || 'C';\r\n\r\n  let code;\r\n\r\n  if (tempType === 'OBJECT') {\r\n    if (unit === 'C') {\r\n      code..."
+        },
+        {
+          "id": "apds9960_setup",
+          "description": "APDS9960 센서 초기화",
+          "codePattern": "// 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.selectedBoard && (Arduino.selectedBoard.startsWith('pico') || Arduino...."
+        },
+        {
+          "id": "apds9960_sensor_control",
+          "description": "APDS9960 센서 제어",
+          "codePattern": "const sensorType = block.getFieldValue('SENSOR_TYPE');\r\n  const action = block.getFieldValue('ACTION');\r\n  const interrupt = block.getFieldValue('INTERRUPT');\r\n  let code = '';\r\n\r\n  if (action === 'EN..."
+        },
+        {
+          "id": "apds9960_read_light",
+          "description": "APDS9960 조도 읽기",
+          "output": "Number",
+          "codePattern": "const lightType = block.getFieldValue('LIGHT_TYPE');\r\n  let code = '';\r\n\r\n  switch (lightType) {\r\n    case 'AMBIENT':\r\n      generator.definitions_['var_ambient_light'] = 'uint16_t ambient_light;';\r\n ..."
+        },
+        {
+          "id": "apds9960_read_proximity",
+          "description": "APDS9960 근접 읽기",
+          "output": "Number",
+          "codePattern": "generator.definitions_['var_proximity'] = 'uint8_t proximity_val;';\r\n  const code = '(apds.readProximity(proximity_val) ? proximity_val : 0)';\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "apds9960_gesture_available",
+          "description": "APDS9960 제스처 가용",
+          "output": "Boolean",
+          "codePattern": "const code = 'apds.isGestureAvailable()';\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "apds9960_gesture_control",
+          "description": "APDS9960 제스처 제어",
+          "codePattern": "const action = block.getFieldValue('ACTION');\r\n  const gestureType = block.getFieldValue('GESTURE_TYPE');\r\n  let code = '';\r\n\r\n  if (action === 'READ') {\r\n    code = 'apds.readGesture()';\r\n  } else if..."
+        },
+        {
+          "id": "max30105_setup_basic",
+          "description": "MAX30105 심박 센서 초기화",
+          "codePattern": "// 필요한 라이브러리들 포함\r\n  // 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.selectedBoard && (Arduino.selectedBoard.startsWith..."
+        },
+        {
+          "id": "max30105_finger_detected",
+          "description": "MAX30105 손가락 감지",
+          "output": "Boolean",
+          "codePattern": "return ['(heartSensor.getIR() > 50000)', Arduino.ORDER_RELATIONAL];"
+        },
+        {
+          "id": "max30105_get_heartrate",
+          "description": "MAX30105 심박수",
+          "output": "Number",
+          "codePattern": "// 심박수 계산 함수 추가\r\n  generator.definitions_['heartrate_function'] = `int calculateHeartRate() {\r\n  long irValue = heartSensor.getIR();\r\n  \r\n  if (checkForBeat(irValue)) {\r\n    long delta = millis() - la..."
+        },
+        {
+          "id": "max30105_get_spo2",
+          "description": "MAX30105 SpO2",
+          "output": "Number",
+          "codePattern": "// SpO2 계산 함수 추가\r\n  generator.definitions_['spo2_function'] = `int calculateSpO2() {\r\n  static int bufferIndex = 0;\r\n  \r\n  redBuffer[bufferIndex] = heartSensor.getRed();\r\n  irBuffer[bufferIndex] = hea..."
+        },
+        {
+          "id": "max30105_beat_detected",
+          "description": "MAX30105 비트 감지",
+          "output": "Boolean",
+          "codePattern": "return ['checkForBeat(heartSensor.getIR())', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "max30105_sensor_ready",
+          "description": "MAX30105 준비 상태",
+          "output": "Boolean",
+          "codePattern": "return ['(heartSensor.getIR() > 50000 && millis() > 5000)', Arduino.ORDER_LOGICAL_AND];"
+        },
+        {
+          "id": "max30105_get_temperature",
+          "description": "MAX30105 온도",
+          "output": "Number",
+          "codePattern": "return ['heartSensor.readTemperature()', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "max30105_setup_advanced",
+          "description": "MAX30105 고급 초기화",
+          "codePattern": "const mode = block.getFieldValue('MODE') || 'HEARTRATE';\r\n  const power = block.getFieldValue('POWER') || 'MEDIUM';\r\n\r\n  // 라이브러리 포함\r\n  // 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && A..."
+        },
+        {
+          "id": "max30105_get_red_raw",
+          "description": "MAX30105 Red 원시값",
+          "output": "Number",
+          "codePattern": "return ['heartSensor.getRed()', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "max30105_get_ir_raw",
+          "description": "MAX30105 IR 원시값",
+          "output": "Number",
+          "codePattern": "return ['heartSensor.getIR()', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "si7021_setup",
+          "description": "SI7021 온습도 초기화",
+          "codePattern": "// 🔥 [NEW] 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.selectedBoard && (Arduino.selectedBoard.startsWith('pico') || Arduino...."
+        },
+        {
+          "id": "si7021_read_value",
+          "description": "SI7021 값 읽기",
+          "output": "Number",
+          "codePattern": "const valueType = block.getFieldValue('VALUE_TYPE');\r\n\r\n  switch (valueType) {\r\n    case 'TEMP':\r\n      return ['si7021.readTemperature()', Arduino.ORDER_ATOMIC];\r\n    case 'HUMIDITY':\r\n    default:\r\n..."
+        },
+        {
+          "id": "si7021_reset",
+          "description": "SI7021 리셋",
+          "codePattern": "si7021.reset();\\n"
+        },
+        {
+          "id": "si7021_get_serial",
+          "description": "SI7021 시리얼",
+          "output": "String",
+          "codePattern": "const serialPart = block.getFieldValue('SERIAL_PART');\r\n\r\n  // 시리얼 번호를 읽기 위해 먼저 readSerialNumber() 호출 필요\r\n  generator.setups_['si7021_read_serial'] = 'si7021.readSerialNumber();';\r\n\r\n  switch (serialP..."
+        }
+      ]
+    },
+    "MOTOR": {
+      "name": "모터 제어",
+      "blocks": [
+        {
+          "id": "motor_flag",
+          "description": "모터 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "attach_servo",
+          "description": "서보 연결",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "servo_"
+        },
+        {
+          "id": "attach_servo_minmax",
+          "description": "서보 연결 (min/max)",
+          "inputs": [
+            "PIN",
+            "MIN",
+            "MAX"
+          ],
+          "codePattern": "servo_"
+        },
+        {
+          "id": "detach_servo",
+          "description": "서보 분리",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "servo_"
+        },
+        {
+          "id": "set_servo_angle",
+          "description": "서보 각도 설정",
+          "inputs": [
+            "PIN",
+            "ANGLE"
+          ],
+          "codePattern": "servo_"
+        },
+        {
+          "id": "set_servo_microseconds",
+          "description": "서보 마이크로초",
+          "inputs": [
+            "PIN",
+            "MICROSECONDS"
+          ],
+          "codePattern": "servo_"
+        },
+        {
+          "id": "read_servo_angle",
+          "description": "서보 각도 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number",
+          "codePattern": "servo_"
+        },
+        {
+          "id": "read_servo_microseconds",
+          "description": "서보 마이크로초 읽기",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Number",
+          "codePattern": "servo_"
+        },
+        {
+          "id": "is_servo_attached",
+          "description": "서보 연결 상태",
+          "inputs": [
+            "PIN"
+          ],
+          "output": "Boolean",
+          "codePattern": "servo_"
+        },
+        {
+          "id": "geekservo_angle_360",
+          "description": "GeekServo 360도 각도",
+          "inputs": [
+            "PIN",
+            "ANGLE"
+          ],
+          "codePattern": "servo_"
+        },
+        {
+          "id": "geekservo_wheel",
+          "description": "GeekServo 휠 모드",
+          "inputs": [
+            "PIN",
+            "SPEED"
+          ],
+          "codePattern": "servo_"
+        },
+        {
+          "id": "dcmotor_setup",
+          "description": "DC 모터 초기화",
+          "inputs": [
+            "PIN_A",
+            "PIN_B"
+          ],
+          "codePattern": "const motorNum = block.getFieldValue('MOTOR_NUM');\r\n  const pinA = generator.valueToCode(block, 'PIN_A', Arduino.ORDER_ATOMIC) || '5';\r\n  const pinB = generator.valueToCode(block, 'PIN_B', Arduino.ORD..."
+        },
+        {
+          "id": "dcmotor_run",
+          "description": "DC 모터 구동",
+          "inputs": [
+            "SPEED"
+          ],
+          "codePattern": "const motorNum = block.getFieldValue('MOTOR_NUM');\r\n  const speed = generator.valueToCode(block, 'SPEED', Arduino.ORDER_ATOMIC) || '150';\r\n  const direction = block.getFieldValue('DIRECTION');\r\n\r\n  co..."
+        },
+        {
+          "id": "dcmotor_stop",
+          "description": "DC 모터 정지",
+          "codePattern": "const motorNum = block.getFieldValue('MOTOR_NUM');\r\n  const code = `motor${motorNum}.stopMotor();\\n`;\r\n  return code;"
+        },
+        {
+          "id": "accelstepper_setup",
+          "description": "AccelStepper 초기화",
+          "inputs": [
+            "MOTOR_NUM",
+            "PIN1",
+            "PIN2"
+          ],
+          "codePattern": "const motorNum = generator.valueToCode(block, 'MOTOR_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const interface = block.getFieldValue('INTERFACE');\r\n  const pin1 = generator.valueToCode(block, 'PIN1', Ard..."
+        },
+        {
+          "id": "accelstepper_settings",
+          "description": "AccelStepper 설정",
+          "inputs": [
+            "MOTOR_NUM",
+            "MAX_SPEED",
+            "ACCELERATION",
+            "SPEED",
+            "STEPS"
+          ],
+          "codePattern": "const motorNum = generator.valueToCode(block, 'MOTOR_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const maxSpeed = generator.valueToCode(block, 'MAX_SPEED', Arduino.ORDER_ATOMIC) || '1000';\r\n  const acceler..."
+        },
+        {
+          "id": "accelstepper_move",
+          "description": "AccelStepper 이동",
+          "inputs": [
+            "MOTOR_NUM",
+            "POSITION"
+          ],
+          "codePattern": "const motorNum = generator.valueToCode(block, 'MOTOR_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const moveType = block.getFieldValue('MOVE_TYPE');\r\n  const position = generator.valueToCode(block, 'POSITIO..."
+        },
+        {
+          "id": "accelstepper_control",
+          "description": "AccelStepper 제어",
+          "inputs": [
+            "MOTOR_NUM"
+          ],
+          "codePattern": "const motorNum = generator.valueToCode(block, 'MOTOR_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const controlType = block.getFieldValue('CONTROL_TYPE');\r\n\r\n  let code = '';\r\n\r\n  switch (controlType) {\r\n  ..."
+        },
+        {
+          "id": "accelstepper_status",
+          "description": "AccelStepper 상태",
+          "inputs": [
+            "MOTOR_NUM"
+          ],
+          "output": "Number",
+          "codePattern": "const motorNum = generator.valueToCode(block, 'MOTOR_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const statusType = block.getFieldValue('STATUS_TYPE');\r\n\r\n  let code = '';\r\n\r\n  switch (statusType) {\r\n    c..."
+        },
+        {
+          "id": "steppermulti_setup",
+          "description": "멀티 스테퍼 초기화",
+          "inputs": [
+            "MOTOR_NUM",
+            "PIN1",
+            "PIN2",
+            "PIN3",
+            "PIN4"
+          ],
+          "codePattern": "const motorType = block.getFieldValue('MOTOR_TYPE');\r\n  const motorNum = generator.valueToCode(block, 'MOTOR_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const pinConfig = block.getFieldValue('PIN_CONFIG');..."
+        },
+        {
+          "id": "steppermulti_speed",
+          "description": "멀티 스테퍼 속도",
+          "inputs": [
+            "MOTOR_NUM",
+            "SPEED"
+          ],
+          "codePattern": "const motorNum = generator.valueToCode(block, 'MOTOR_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const speed = generator.valueToCode(block, 'SPEED', Arduino.ORDER_ATOMIC) || '10';\r\n\r\n  const code = 'steppe..."
+        },
+        {
+          "id": "steppermulti_move",
+          "description": "멀티 스테퍼 이동",
+          "inputs": [
+            "MOTOR_NUM",
+            "VALUE"
+          ],
+          "codePattern": "const motorNum = generator.valueToCode(block, 'MOTOR_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const moveType = block.getFieldValue('MOVE_TYPE');\r\n  const value = generator.valueToCode(block, 'VALUE', Ar..."
+        },
+        {
+          "id": "steppermulti_run",
+          "description": "멀티 스테퍼 실행",
+          "inputs": [
+            "MOTOR_NUM"
+          ],
+          "codePattern": "const motorNum = generator.valueToCode(block, 'MOTOR_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n\r\n  const code = 'stepper' + motorNum + '.moveStep();\\n';\r\n  return code;"
+        },
+        {
+          "id": "pwmservo_setup",
+          "description": "PCA9685 PWM 서보 초기화",
+          "inputs": [
+            "NUM",
+            "FREQ"
+          ],
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const addr = block.getFieldValue('ADDR') || '0x40';\r\n  const freq = generator.valueToCode(block, 'FREQ', Arduino.ORDER_..."
+        },
+        {
+          "id": "pwmservo_servo_angle",
+          "description": "PCA9685 서보 각도",
+          "inputs": [
+            "NUM",
+            "CHANNEL",
+            "ANGLE"
+          ],
+          "codePattern": "{\r\n  int pulseWidth = map(${angle}, 0, 180, 500, 2500);\r\n  servo${n}.writeMicroseconds(${channel}, pulseWidth);\r\n}\r\n"
+        },
+        {
+          "id": "pwmservo_servo_microseconds",
+          "description": "PCA9685 서보 마이크로초",
+          "inputs": [
+            "NUM",
+            "CHANNEL",
+            "MICROSECONDS"
+          ],
+          "codePattern": "servo${n}.writeMicroseconds(${channel}, ${microseconds});\\n"
+        },
+        {
+          "id": "pwmservo_pwm_output",
+          "description": "PCA9685 PWM 출력",
+          "inputs": [
+            "NUM",
+            "CHANNEL",
+            "VALUE"
+          ],
+          "codePattern": "servo${n}.setPin(${channel}, ${value});\\n"
+        },
+        {
+          "id": "pwmservo_pwm_advanced",
+          "description": "PCA9685 PWM 고급",
+          "inputs": [
+            "NUM",
+            "CHANNEL",
+            "ON",
+            "OFF"
+          ],
+          "codePattern": "servo${n}.setPWM(${channel}, ${on}, ${off});\\n"
+        },
+        {
+          "id": "pwmservo_power",
+          "description": "PCA9685 전원 제어",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const action = block.getFieldValue('ACTION') || 'WAKEUP';\r\n  let code = '';\r\n\r\n  switch (action) {\r\n    case 'WAKEUP':\r\n ..."
+        },
+        {
+          "id": "pwmservo_multi_servo",
+          "description": "PCA9685 다중 서보",
+          "inputs": [
+            "NUM",
+            "ANGLE1",
+            "ANGLE2",
+            "ANGLE3",
+            "ANGLE4"
+          ],
+          "codePattern": "const n = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const angle1 = generator.valueToCode(block, 'ANGLE1', Arduino.ORDER_ATOMIC) || '90';\r\n  const angle2 = generator.valueToC..."
+        },
+        {
+          "id": "pwmservo_led_brightness",
+          "description": "PCA9685 LED 밝기",
+          "inputs": [
+            "NUM",
+            "CHANNEL",
+            "BRIGHTNESS"
+          ],
+          "codePattern": "{\r\n  int pwmValue = map(${brightness}, 0, 100, 0, 4095);\r\n  servo${n}.setPin(${channel}, pwmValue);\r\n}\r\n"
+        },
+        {
+          "id": "geekservo_setup",
+          "description": "GeekServo 서보 초기화",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "var pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '9';\r\n  var pinVar = pin.replace('A', '');\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n..."
+        },
+        {
+          "id": "geekservo_stop",
+          "description": "GeekServo 모터 정지",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "servo_"
+        },
+        {
+          "id": "pca9685_dcmotor_setup",
+          "description": "PCA9685 DC모터 드라이버 설정",
+          "inputs": [
+            "NUM",
+            "ADDRESS"
+          ],
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const addr = block.getFieldValue('ADDR') || '0x40';\r\n\r\n  // 보드 분기 처리\r\n  var isEsp32 = Arduino.selectedBoard && Arduino...."
+        },
+        {
+          "id": "pca9685_dcmotor_wheel_a",
+          "description": "PCA9685 A바퀴 제어",
+          "inputs": [
+            "NUM",
+            "DIRECTION",
+            "SPEED"
+          ],
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const dir = generator.valueToCode(block, 'DIR', Arduino.ORDER_ATOMIC) || '0';\r\n  const speed = generator.valueToCode(bl..."
+        },
+        {
+          "id": "pca9685_dcmotor_wheel_b",
+          "description": "PCA9685 B바퀴 제어",
+          "inputs": [
+            "NUM",
+            "DIRECTION",
+            "SPEED"
+          ],
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const dir = generator.valueToCode(block, 'DIR', Arduino.ORDER_ATOMIC) || '0';\r\n  const speed = generator.valueToCode(bl..."
+        },
+        {
+          "id": "pca9685_dcmotor_stop",
+          "description": "PCA9685 모터 정지",
+          "inputs": [
+            "NUM"
+          ],
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const target = block.getFieldValue('TARGET') || 'ALL';\r\n\r\n  let code = '';\r\n  if (target === 'ALL') {\r\n    code = `// S..."
+        },
+        {
+          "id": "geekservo_wheel_timed",
+          "description": "긱서보 바퀴 시간 제어",
+          "codePattern": "servo_"
+        },
+        {
+          "id": "green_geekservo_setup",
+          "description": "그린 긱서보 초기화",
+          "codePattern": "var pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '9';\r\n  var pinVar = pin.replace('A', '');\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n..."
+        },
+        {
+          "id": "green_geekservo_wheel",
+          "description": "그린 긱서보 바퀴 제어",
+          "codePattern": "servo_"
+        },
+        {
+          "id": "green_geekservo_wheel_timed",
+          "description": "그린 긱서보 바퀴 시간 제어",
+          "codePattern": "servo_"
+        },
+        {
+          "id": "green_geekservo_stop",
+          "description": "그린 긱서보 정지",
+          "codePattern": "servo_"
+        },
+        {
+          "id": "pca9685_dcmotor_wheel_a_timed",
+          "description": "PCA9685 DC모터 A바퀴 시간 제어",
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const dir = generator.valueToCode(block, 'DIR', Arduino.ORDER_ATOMIC) || '0';\r\n  const speed = generator.valueToCode(bl..."
+        },
+        {
+          "id": "pca9685_dcmotor_wheel_b_timed",
+          "description": "PCA9685 DC모터 B바퀴 시간 제어",
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const dir = generator.valueToCode(block, 'DIR', Arduino.ORDER_ATOMIC) || '0';\r\n  const speed = generator.valueToCode(bl..."
+        }
+      ]
+    },
+    "OUTPUT": {
+      "name": "출력 장치 (부저, MP3, SD카드)",
+      "blocks": [
+        {
+          "id": "output_flag",
+          "description": "출력 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "buzzer_tone_setup",
+          "description": "부저 톤 초기화",
+          "codePattern": "// 설정 블록에서만 라이브러리를 선언합니다.\r\n  generator.definitions_['include_buzzer_tone'] = '#include \"tone.h\"';\r\n\r\n  // 버저 객체와 템포 변수를 전역으로 선언합니다.\r\n  generator.definitions_['buzzer_object'] = 'DFRobot_Tone buzzer;';..."
+        },
+        {
+          "id": "buzzer_set_tempo",
+          "description": "부저 템포 설정",
+          "inputs": [
+            "BPM"
+          ],
+          "codePattern": "buzzer_tempo = ${bpm};\\n"
+        },
+        {
+          "id": "buzzer_play_note",
+          "description": "부저 음 재생",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "const pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '7';\r\n  const frequency = block.getFieldValue('NOTE');\r\n  const beat = block.getFieldValue('BEAT');\r\n\r\n  // 박자를 밀리초(ms) 단위의 연주 ..."
+        },
+        {
+          "id": "buzzer_stop",
+          "description": "부저 정지",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "const pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '7';\r\n  const code = `buzzer.stop(${pin});\\n`;\r\n  return code;"
+        },
+        {
+          "id": "mp3_setup_kt403a",
+          "description": "KT403A MP3 초기화",
+          "inputs": [
+            "RX",
+            "TX",
+            "VOL"
+          ],
+          "codePattern": "const dev = block.getFieldValue('DEVICE') || '0x02';\r\n  const rx = generator.valueToCode(block, 'RX', Arduino.ORDER_ATOMIC) || '2';\r\n  const tx = generator.valueToCode(block, 'TX', Arduino.ORDER_ATOMI..."
+        },
+        {
+          "id": "mp3_play_index",
+          "description": "MP3 인덱스 재생",
+          "inputs": [
+            "INDEX"
+          ],
+          "codePattern": "SpecifyMusicPlay((uint16_t)(${idx}));\\n"
+        },
+        {
+          "id": "mp3_play_folder",
+          "description": "MP3 폴더/파일 재생",
+          "inputs": [
+            "FOLDER",
+            "FILE"
+          ],
+          "codePattern": "SpecifyfolderPlay((uint8_t)(${folder}), (uint8_t)(${file}));\\n"
+        },
+        {
+          "id": "mp3_set_volume",
+          "description": "MP3 볼륨 설정",
+          "inputs": [
+            "VOL"
+          ],
+          "codePattern": "SetVolume((uint8_t)(${v}));\\n"
+        },
+        {
+          "id": "mp3_control",
+          "description": "MP3 제어 (재생/정지/다음/이전)",
+          "codePattern": "PlayNext();\\n"
+        },
+        {
+          "id": "mp3_query_status",
+          "description": "MP3 상태 조회",
+          "output": "Number",
+          "codePattern": "return ['QueryPlayStatus()', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sd_setup",
+          "description": "SD 카드 초기화",
+          "inputs": [
+            "NUM",
+            "CS",
+            "MOSI",
+            "MISO",
+            "SCK"
+          ],
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const csPin = generator.valueToCode(block, 'CS', Arduino.ORDER_ATOMIC) || '10';\r\n  const mosiPin = generator.valueToCod..."
+        },
+        {
+          "id": "sd_open_file",
+          "description": "SD 파일 열기",
+          "inputs": [
+            "FILE_VAR",
+            "FILENAME"
+          ],
+          "codePattern": "${fileVar.replace(/"
+        },
+        {
+          "id": "sd_write_file",
+          "description": "SD 파일 쓰기",
+          "inputs": [
+            "FILE_VAR",
+            "DATA"
+          ],
+          "codePattern": "if (${fileVar.replace(/"
+        },
+        {
+          "id": "sd_read_file",
+          "description": "SD 파일 읽기",
+          "inputs": [
+            "FILE_VAR"
+          ],
+          "output": "String",
+          "codePattern": "const fileVar = generator.valueToCode(block, 'FILE_VAR', Arduino.ORDER_ATOMIC) || 'myFile';\r\n\r\n  const code = `(${fileVar.replace(/\"/g, '')}.available() ? ${fileVar.replace(/\"/g, '')}.readString() : \"..."
+        },
+        {
+          "id": "sd_file_exists",
+          "description": "SD 파일 존재 여부",
+          "inputs": [
+            "NUM",
+            "FILENAME"
+          ],
+          "output": "Boolean",
+          "codePattern": "const num = generator.valueToCode(block, 'NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const filename = generator.valueToCode(block, 'FILENAME', Arduino.ORDER_ATOMIC) || '\"data.txt\"';\r\n\r\n  const code = `SD...."
+        },
+        {
+          "id": "sd_file_size",
+          "description": "SD 파일 크기",
+          "inputs": [
+            "FILE_VAR"
+          ],
+          "output": "Number",
+          "codePattern": "const fileVar = generator.valueToCode(block, 'FILE_VAR', Arduino.ORDER_ATOMIC) || 'myFile';\r\n\r\n  const code = `(${fileVar.replace(/\"/g, '')} ? ${fileVar.replace(/\"/g, '')}.size() : 0)`;\r\n  return [cod..."
+        },
+        {
+          "id": "sd_close_file",
+          "description": "SD 파일 닫기",
+          "inputs": [
+            "FILE_VAR"
+          ],
+          "codePattern": "if (${fileVar.replace(/"
+        },
+        {
+          "id": "sd_remove_file",
+          "description": "SD 파일 삭제",
+          "inputs": [
+            "NUM",
+            "FILENAME"
+          ],
+          "codePattern": "SD.remove(${filename});\\n"
+        },
+        {
+          "id": "sd_make_directory",
+          "description": "SD 폴더 생성",
+          "inputs": [
+            "NUM",
+            "PATH"
+          ],
+          "codePattern": "SD.mkdir(${path});\\n"
+        },
+        {
+          "id": "sd_file_available",
+          "description": "SD 파일 가용 데이터",
+          "inputs": [
+            "FILE_VAR"
+          ],
+          "output": "Boolean",
+          "codePattern": "const fileVar = generator.valueToCode(block, 'FILE_VAR', Arduino.ORDER_ATOMIC) || 'myFile';\r\n\r\n  const code = `(${fileVar.replace(/\"/g, '')} ? ${fileVar.replace(/\"/g, '')}.available() : 0)`;\r\n  return..."
+        }
+      ]
+    },
+    "COMMUNICATION": {
+      "name": "통신 (IR, RF, GPS)",
+      "blocks": [
+        {
+          "id": "comm_flag",
+          "description": "통신 플래그 (장식용)",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "ir_setup",
+          "description": "IR 수신기 초기화",
+          "inputs": [
+            "PIN"
+          ],
+          "codePattern": "const pin = generator.valueToCode(block, 'PIN', Arduino.ORDER_ATOMIC) || '11';\r\n\r\n  // 조건부 컴파일: AVR은 구버전 IR 라이브러리, ESP32는 IRremote v4.x\r\n  generator.definitions_['include_ir'] =\r\n    '#if defined(__AV..."
+        },
+        {
+          "id": "ir_available",
+          "description": "IR 신호 수신 여부",
+          "output": "Boolean",
+          "codePattern": "// loop()에서 IR 데이터 폴링하는 코드 추가\r\n  generator.loops_['ir_poll'] =\r\n    '#if defined(__AVR__)\\n' +\r\n    '  if (_irrecv.decode(&_ir_results)) {\\n' +\r\n    '    if (_ir_results.value != 0xFFFFFFFF) {\\n' +\r\n ..."
+        },
+        {
+          "id": "ir_read_button",
+          "description": "IR 버튼 읽기",
+          "output": "String",
+          "codePattern": "// loop()에서 IR 데이터 폴링하는 코드 추가\r\n  generator.loops_['ir_poll'] =\r\n    '#if defined(__AVR__)\\n' +\r\n    '  if (_irrecv.decode(&_ir_results)) {\\n' +\r\n    '    if (_ir_results.value != 0xFFFFFFFF) {\\n' +\r\n ..."
+        },
+        {
+          "id": "ir_read_raw",
+          "description": "IR 원시값 읽기",
+          "output": "Number",
+          "codePattern": "// loop()에서 IR 데이터 폴링하는 코드 추가\r\n  generator.loops_['ir_poll'] =\r\n    '#if defined(__AVR__)\\n' +\r\n    '  if (_irrecv.decode(&_ir_results)) {\\n' +\r\n    '    if (_ir_results.value != 0xFFFFFFFF) {\\n' +\r\n ..."
+        },
+        {
+          "id": "ir_button_is",
+          "description": "IR 버튼 비교",
+          "output": "Boolean",
+          "codePattern": "const button = block.getFieldValue('BUTTON');\r\n\r\n  // loop()에서 IR 데이터 폴링하는 코드 추가\r\n  generator.loops_['ir_poll'] =\r\n    '#if defined(__AVR__)\\n' +\r\n    '  if (_irrecv.decode(&_ir_results)) {\\n' +\r\n    ..."
+        },
+        {
+          "id": "rf433_setup",
+          "description": "RF433 송신기 초기화",
+          "codePattern": "generator.definitions_['include_rf433'] = '#if defined(ESP32) || defined(ARDUINO_ARCH_RP2040)\\n' +\r\n    '  #include <RH_ASK.h>\\n' +\r\n    '  RH_ASK rf433_driver;\\n' +\r\n    '#else\\n' +\r\n    '  #include ..."
+        },
+        {
+          "id": "rf433_config",
+          "description": "RF433 설정",
+          "inputs": [
+            "TX_PIN",
+            "MESSAGE"
+          ],
+          "codePattern": "const txPin = generator.valueToCode(block, 'TX_PIN', Arduino.ORDER_ATOMIC) || '12';\r\n  const message = generator.valueToCode(block, 'MESSAGE', Arduino.ORDER_ATOMIC) || '\"Hello\"';\r\n\r\n  let code = '';\r\n..."
+        },
+        {
+          "id": "rf433_rx_setup",
+          "description": "RF433 수신기 초기화",
+          "inputs": [
+            "RX_PIN",
+            "SPEED"
+          ],
+          "codePattern": "const rxPin = generator.valueToCode(block, 'RX_PIN', Arduino.ORDER_ATOMIC) || '11';\r\n  const speed = generator.valueToCode(block, 'SPEED', Arduino.ORDER_ATOMIC) || '2000';\r\n\r\n  let code = '';\r\n  code ..."
+        },
+        {
+          "id": "rf433_rx_start",
+          "description": "RF433 수신 시작",
+          "codePattern": "let code = '';\r\n  code += '#if !defined(ESP32) && !defined(ARDUINO_ARCH_RP2040)\\n';\r\n  code += '  vw_rx_start();\\n';\r\n  code += '#endif\\n';\r\n  return code;"
+        },
+        {
+          "id": "rf433_have_message",
+          "description": "RF433 메시지 수신 여부",
+          "output": "Boolean",
+          "codePattern": "const code = '(defined(ESP32) || defined(ARDUINO_ARCH_RP2040) ? rf433_driver.available() : vw_have_message())';\r\n  return [code, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "rf433_get_message",
+          "description": "RF433 메시지 읽기",
+          "output": "String",
+          "codePattern": "let code = '';\r\n  code += '#if defined(ESP32) || defined(ARDUINO_ARCH_RP2040)\\n';\r\n  code += '  uint8_t rf433_buf[RH_ASK_MAX_MESSAGE_LEN];\\n';\r\n  code += '  uint8_t rf433_buflen = sizeof(rf433_buf);\\n..."
+        },
+        {
+          "id": "rf433_read_data",
+          "description": "RF433 데이터 읽기",
+          "output": "String",
+          "codePattern": "generator.definitions_['var_rf433_result'] = 'String rf433_result = \"\";';\r\n\r\n  const code = '(rf433_result = String((char*)rf433_buf).substring(0, rf433_buflen), rf433_result)';\r\n  return [code, Ardui..."
+        },
+        {
+          "id": "gps_setup_tinygps",
+          "description": "TinyGPS 초기화",
+          "inputs": [
+            "BAUD",
+            "RX",
+            "TX"
+          ],
+          "codePattern": "const ser = block.getFieldValue('SER') || 'Serial';\r\n  const baud = generator.valueToCode(block, 'BAUD', Arduino.ORDER_ATOMIC) || '9600';\r\n  const rx = generator.valueToCode(block, 'RX', Arduino.ORDER..."
+        },
+        {
+          "id": "gps_update_from_serial",
+          "description": "GPS 데이터 업데이트",
+          "codePattern": "while (GPS_SERIAL_USED.available()) { gps.encode(GPS_SERIAL_USED.read()); }\\n"
+        },
+        {
+          "id": "gps_read_value",
+          "description": "GPS 값 읽기",
+          "output": "Number",
+          "codePattern": "const w = block.getFieldValue('WHAT');\r\n  switch (w) {\r\n    case 'LAT': return ['gps.location.lat()', Arduino.ORDER_FUNCTION_CALL];\r\n    case 'LNG': return ['gps.location.lng()', Arduino.ORDER_FUNCTIO..."
+        },
+        {
+          "id": "gps_has_fix",
+          "description": "GPS Fix 상태",
+          "output": "Boolean",
+          "codePattern": "return ['(gps.location.isValid() ? 1 : 0)', Arduino.ORDER_CONDITIONAL];"
+        },
+        {
+          "id": "gps_between_calc",
+          "description": "GPS 거리/방향 계산",
+          "inputs": [
+            "LAT1",
+            "LNG1",
+            "LAT2",
+            "LNG2"
+          ],
+          "output": "Number",
+          "codePattern": "const what = block.getFieldValue('WHAT');\r\n  const lat1 = generator.valueToCode(block, 'LAT1', Arduino.ORDER_COMMA) || '0';\r\n  const lng1 = generator.valueToCode(block, 'LNG1', Arduino.ORDER_COMMA) ||..."
+        },
+        {
+          "id": "gps_cardinal",
+          "description": "GPS 방위 문자열",
+          "inputs": [
+            "COURSE"
+          ],
+          "output": "String",
+          "codePattern": "const deg = generator.valueToCode(block, 'COURSE', Arduino.ORDER_ATOMIC) || '0';\r\n  return ['TinyGPSPlus::cardinal(' + deg + ')', Arduino.ORDER_FUNCTION_CALL];"
+        }
+      ]
+    },
+    "BLUETOOTH": {
+      "name": "블루투스",
+      "blocks": [
+        {
+          "id": "arduino_bt_setup",
+          "description": "아두이노 BT(JDY-33) 설정",
+          "inputs": [
+            "RX",
+            "TX",
+            "NAME",
+            "BAUD"
+          ],
+          "codePattern": "var rx = generator.valueToCode(block, 'RX', Arduino.ORDER_ATOMIC) || '2';\r\n  var tx = generator.valueToCode(block, 'TX', Arduino.ORDER_ATOMIC) || '3';\r\n  var name = generator.valueToCode(block, 'NAME'..."
+        },
+        {
+          "id": "arduino_bt_read",
+          "description": "BT 수신 메시지",
+          "output": "String",
+          "codePattern": "([](){ String s = _bt_last_msg; _bt_msg_ready = false; return s; }())"
+        },
+        {
+          "id": "arduino_bt_read_raw",
+          "description": "BT 수신 바이트 값",
+          "output": "Number",
+          "codePattern": "(_bt_raw_data.length() > 0 ? (int)((uint8_t)_bt_raw_data[0]) : (_bt_serial.available() > 0 ? _bt_serial.read() : 0))"
+        },
+        {
+          "id": "arduino_bt_read_auto",
+          "description": "BT 수신 데이터 (자동 변환)",
+          "output": "String",
+          "codePattern": "([](){ String src = _bt_raw_data.length() > 0 ? _bt_raw_data : "
+        },
+        {
+          "id": "arduino_bt_read_hex",
+          "description": "BT 수신 데이터 (HEX)",
+          "output": "String",
+          "codePattern": "([](){ String src = _bt_raw_data.length() > 0 ? _bt_raw_data : "
+        },
+        {
+          "id": "arduino_bt_write",
+          "description": "BT 데이터 전송",
+          "inputs": [
+            "CONTENT"
+          ],
+          "codePattern": "_bt_serial.println(String(${content}));\\n"
+        },
+        {
+          "id": "arduino_bt_available",
+          "description": "BT 데이터 수신 여부",
+          "output": "Boolean",
+          "codePattern": "return ['(_bt_raw_data.length() > 0 || _bt_serial.available() > 0)', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "arduino_bt_msg_ready",
+          "description": "BT 메시지 완성 여부",
+          "output": "Boolean",
+          "codePattern": "([](){ _bt_raw_data = "
+        },
+        {
+          "id": "arduino_bt_parse",
+          "description": "BT 데이터 구분자 파싱",
+          "inputs": [
+            "DELIMITER"
+          ],
+          "codePattern": "_bt_parsed_data = _bt_last_msg;\\n"
+        },
+        {
+          "id": "arduino_bt_get_value",
+          "description": "BT 파싱 값 가져오기",
+          "inputs": [
+            "INDEX"
+          ],
+          "output": "String",
+          "codePattern": "var n = generator.valueToCode(block, 'N', Arduino.ORDER_ATOMIC) || '1';\r\n  var code = `([](int n){\r\n    int count = 0;\r\n    int start = 0;\r\n    int end = _bt_parsed_data.indexOf(_bt_parsed_delim);\r\n  ..."
+        },
+        {
+          "id": "arduino_bt_raw_available",
+          "description": "BT 원시 데이터 수신 여부",
+          "output": "Boolean",
+          "codePattern": "return ['(_bt_raw_data.length() > 0 || _bt_serial.available() > 0)', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "esp32_bt_setup",
+          "description": "ESP32 블루투스 설정",
+          "inputs": [
+            "NAME"
+          ],
+          "codePattern": "var name = generator.valueToCode(block, 'NAME', Arduino.ORDER_ATOMIC) || '\"Brixel_BT\"';\r\n\r\n  var btVarsCommon = `\r\nString _bt_rx_buffer = \"\";\r\nString _bt_last_msg = \"\";\r\nString _bt_raw_data = \"\";\r\nboo..."
+        }
+      ]
+    },
+    "HUSKYLENS": {
+      "name": "허스키렌즈 (AI 카메라)",
+      "blocks": [
+        {
+          "id": "huskylens_setup_i2c",
+          "description": "허스키렌즈 I2C 연결 설정",
+          "codePattern": "generator.definitions_['include_wire'] = '#include <Wire.h>';\r\n  generator.definitions_['include_huskylens'] = '#include \"HUSKYLENS.h\"';\r\n  generator.definitions_['var_huskylens'] = 'HUSKYLENS huskyle..."
+        },
+        {
+          "id": "huskylens_setup_serial",
+          "description": "허스키렌즈 시리얼 연결",
+          "inputs": [
+            "RX",
+            "TX"
+          ],
+          "codePattern": "const rx = generator.valueToCode(block, 'RX', Arduino.ORDER_ATOMIC) || '10';\r\n  const tx = generator.valueToCode(block, 'TX', Arduino.ORDER_ATOMIC) || '11';\r\n\r\n  generator.definitions_['include_softse..."
+        },
+        {
+          "id": "huskylens_set_algorithm",
+          "description": "허스키렌즈 알고리즘 설정",
+          "codePattern": "huskylens.writeAlgorithm(${algorithm});\\n"
+        },
+        {
+          "id": "huskylens_request",
+          "description": "허스키렌즈 데이터 요청",
+          "codePattern": "huskylens.request();\\n"
+        },
+        {
+          "id": "huskylens_request_by_id",
+          "description": "허스키렌즈 ID별 데이터 요청",
+          "inputs": [
+            "ID"
+          ],
+          "codePattern": "huskylens.request(${id});\\n"
+        },
+        {
+          "id": "huskylens_available",
+          "description": "허스키렌즈 객체 감지 여부",
+          "output": "Boolean",
+          "codePattern": "const code = '(huskylens.available() > 0)';\r\n  return [code, Arduino.ORDER_RELATIONAL];"
+        },
+        {
+          "id": "huskylens_block_info",
+          "description": "허스키렌즈 중앙 블록 정보",
+          "output": "Number",
+          "codePattern": "const property = block.getFieldValue('PROPERTY');\r\n\r\n  // 헬퍼 함수 정의\r\n  generator.definitions_['func_huskylens_center_block'] = `\r\nHUSKYLENSResult _huskylens_getCenterBlock() {\r\n  int32_t distMin = INT3..."
+        },
+        {
+          "id": "huskylens_block_info_by_id",
+          "description": "허스키렌즈 ID별 블록 정보",
+          "inputs": [
+            "ID"
+          ],
+          "output": "Number",
+          "codePattern": "const id = generator.valueToCode(block, 'ID', Arduino.ORDER_ATOMIC) || '1';\r\n  const property = block.getFieldValue('PROPERTY');\r\n\r\n  const code = `huskylens.blocks.read(${id}).${property}`;\r\n  return..."
+        },
+        {
+          "id": "huskylens_arrow_info",
+          "description": "허스키렌즈 중앙 화살표 정보",
+          "output": "Number",
+          "codePattern": "const property = block.getFieldValue('PROPERTY');\r\n\r\n  // 헬퍼 함수 정의\r\n  generator.definitions_['func_huskylens_center_arrow'] = `\r\nHUSKYLENSResult _huskylens_getCenterArrow() {\r\n  int32_t distMin = INT3..."
+        },
+        {
+          "id": "huskylens_arrow_info_by_id",
+          "description": "허스키렌즈 ID별 화살표 정보",
+          "inputs": [
+            "ID"
+          ],
+          "output": "Number",
+          "codePattern": "const id = generator.valueToCode(block, 'ID', Arduino.ORDER_ATOMIC) || '1';\r\n  const property = block.getFieldValue('PROPERTY');\r\n\r\n  const code = `huskylens.arrows.read(${id}).${property}`;\r\n  return..."
+        },
+        {
+          "id": "huskylens_count_blocks",
+          "description": "허스키렌즈 블록(사각형) 개수",
+          "output": "Number",
+          "codePattern": "const code = 'huskylens.countBlocks()';\r\n  return [code, Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "huskylens_count_arrows",
+          "description": "허스키렌즈 화살표(선) 개수",
+          "output": "Number",
+          "codePattern": "const code = 'huskylens.countArrows()';\r\n  return [code, Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "huskylens_count_learned_ids",
+          "description": "허스키렌즈 학습 ID 개수",
+          "output": "Number",
+          "codePattern": "const code = 'huskylens.countLearnedIDs()';\r\n  return [code, Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "huskylens_is_learned",
+          "description": "허스키렌즈 ID 학습 여부",
+          "inputs": [
+            "ID"
+          ],
+          "output": "Boolean",
+          "codePattern": "const id = generator.valueToCode(block, 'ID', Arduino.ORDER_ATOMIC) || '1';\r\n  const code = `huskylens.isLearned(${id})`;\r\n  return [code, Arduino.ORDER_FUNCTION_CALL];"
+        },
+        {
+          "id": "huskylens_learn_once",
+          "description": "허스키렌즈 학습 실행",
+          "inputs": [
+            "ID"
+          ],
+          "codePattern": "huskylens.learnOnece(${id});\\n"
+        },
+        {
+          "id": "huskylens_forget",
+          "description": "허스키렌즈 학습 내용 삭제",
+          "codePattern": "huskylens.forgetLearn();\\n"
+        },
+        {
+          "id": "huskylens_save_model",
+          "description": "허스키렌즈 모델 저장",
+          "inputs": [
+            "SLOT"
+          ],
+          "codePattern": "huskylens.saveModelToTFCard(${index});\\n"
+        },
+        {
+          "id": "huskylens_load_model",
+          "description": "허스키렌즈 모델 불러오기",
+          "inputs": [
+            "SLOT"
+          ],
+          "codePattern": "huskylens.loadModelFromTFCard(${index});\\n"
+        },
+        {
+          "id": "huskylens_screenshot",
+          "description": "허스키렌즈 스크린샷 저장",
+          "codePattern": "huskylens.screenshotToSDCard();\\n"
+        },
+        {
+          "id": "huskylens_write_osd",
+          "description": "허스키렌즈 OSD 텍스트 표시",
+          "inputs": [
+            "TEXT",
+            "X",
+            "Y"
+          ],
+          "codePattern": "huskylens.writeOSD(String(${text}), ${x}, ${y});\\n"
+        },
+        {
+          "id": "huskylens_clear_osd",
+          "description": "허스키렌즈 OSD 텍스트 지우기",
+          "codePattern": "huskylens.clearOSD();\\n"
+        }
+      ]
+    },
+    "WEB_BLE": {
+      "name": "웹 BLE 통신 (ESP32 전용)",
+      "blocks": [
+        {
+          "id": "sys_webble_setup",
+          "description": "웹 BLE 초기화",
+          "inputs": [
+            "NAME"
+          ],
+          "codePattern": "var name = generator.valueToCode(block, 'NAME', Arduino.ORDER_ATOMIC) || '\"Brixel_BLE\"';\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.se..."
+        },
+        {
+          "id": "sys_webble_connected",
+          "description": "BLE 연결 상태",
+          "output": "Boolean",
+          "codePattern": "var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPico = Arduino.selectedBoard && (Arduino.selectedBoard.startsWith('pico') || Arduino.selectedBoard.startsWith..."
+        },
+        {
+          "id": "sys_webble_available",
+          "description": "BLE 수신 데이터 여부",
+          "output": "Boolean",
+          "codePattern": "return ['_webble_msg_ready', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sys_webble_read",
+          "description": "BLE 데이터 읽기",
+          "output": "String",
+          "codePattern": "([](){ String s = _webble_last_msg; _webble_msg_ready = false; return s; }())"
+        },
+        {
+          "id": "sys_webble_write",
+          "description": "BLE 데이터 전송",
+          "inputs": [
+            "CONTENT"
+          ],
+          "codePattern": "if (deviceConnected && (millis() - _webble_last_tx >= 20)) { pTxCharacteristic->setValue((String(${content}) + "
+        },
+        {
+          "id": "sys_webble_parse",
+          "description": "BLE 데이터 파싱",
+          "inputs": [
+            "DELIMITER"
+          ],
+          "codePattern": "_webble_parsed_data = _webble_last_msg;\\n"
+        },
+        {
+          "id": "sys_webble_get_value",
+          "description": "BLE 파싱 값 가져오기",
+          "inputs": [
+            "N"
+          ],
+          "output": "String",
+          "codePattern": "var n = generator.valueToCode(block, 'N', Arduino.ORDER_ATOMIC) || '1';\r\n  var code = `([](int n){ \r\n    int count = 0;\r\n    int start = 0;\r\n    int end = _webble_parsed_data.indexOf(_webble_parsed_de..."
+        }
+      ]
+    },
+    "WIFI": {
+      "name": "WiFi 통신 (ESP32 전용)",
+      "blocks": [
+        {
+          "id": "wifi_setup",
+          "description": "WiFi 연결",
+          "inputs": [
+            "SSID",
+            "PASS"
+          ],
+          "codePattern": "var ssid = generator.valueToCode(block, 'SSID', Arduino.ORDER_ATOMIC) || '\"SSID\"';\r\n  var pass = generator.valueToCode(block, 'PASS', Arduino.ORDER_ATOMIC) || '\"PASSWORD\"';\r\n  var isEsp32 = Arduino.se..."
+        },
+        {
+          "id": "wifi_ws_server_setup",
+          "description": "WebSocket 서버 초기화",
+          "inputs": [
+            "PORT"
+          ],
+          "codePattern": "var port = generator.valueToCode(block, 'PORT', Arduino.ORDER_ATOMIC) || '81';\r\n  var isEsp32 = Arduino.selectedBoard && Arduino.selectedBoard.startsWith('esp32');\r\n  var isPicoW = Arduino.selectedBoa..."
+        },
+        {
+          "id": "wifi_is_connected",
+          "description": "WiFi 연결 상태",
+          "output": "Boolean",
+          "codePattern": "return ['(WiFi.status() == WL_CONNECTED)', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "wifi_local_ip",
+          "description": "로컬 IP 주소",
+          "output": "String",
+          "codePattern": "return ['WiFi.localIP().toString()', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "wifi_ws_available",
+          "description": "WebSocket 데이터 여부",
+          "output": "Boolean",
+          "codePattern": "return ['_ws_msg_ready', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "wifi_ws_read",
+          "description": "WebSocket 데이터 읽기",
+          "output": "String",
+          "codePattern": "(_ws_msg_ready = false, _ws_last_msg)"
+        },
+        {
+          "id": "wifi_ws_send",
+          "description": "WebSocket 데이터 전송",
+          "inputs": [
+            "DATA"
+          ],
+          "codePattern": "webSocket.broadcastTXT(String(${data}) + "
+        },
+        {
+          "id": "wifi_ws_send_raw",
+          "description": "WebSocket 원시 전송",
+          "inputs": [
+            "DATA"
+          ],
+          "codePattern": "webSocket.broadcastTXT(String(${data}));\\n"
+        },
+        {
+          "id": "wifi_ws_send_label_value",
+          "description": "WebSocket 라벨:값 전송",
+          "inputs": [
+            "LABEL",
+            "VALUE"
+          ],
+          "codePattern": "webSocket.broadcastTXT(String(${label}) + "
+        }
+      ]
+    },
+    "SERIAL": {
+      "name": "시리얼 통신",
+      "blocks": [
+        {
+          "id": "sys_serial_begin",
+          "description": "시리얼 초기화",
+          "inputs": [
+            "RX",
+            "TX",
+            "BAUD"
+          ],
+          "codePattern": "var rx = generator.valueToCode(block, 'RX', Arduino.ORDER_ATOMIC) || '0';\r\n  var tx = generator.valueToCode(block, 'TX', Arduino.ORDER_ATOMIC) || '1';\r\n  var baud = generator.valueToCode(block, 'BAUD'..."
+        },
+        {
+          "id": "sys_serial_connected",
+          "description": "시리얼 연결 상태",
+          "output": "Boolean",
+          "codePattern": "return ['(bool)(_sys_stream)', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sys_serial_print",
+          "description": "시리얼 출력",
+          "inputs": [
+            "CONTENT"
+          ],
+          "codePattern": "var content = generator.valueToCode(block, 'CONTENT', Arduino.ORDER_ATOMIC) || '\"\"';\r\n  var newline = block.getFieldValue('NEWLINE') == 'TRUE';\r\n  return newline ? `_sys_stream->println(${content});\\n..."
+        },
+        {
+          "id": "sys_serial_send_change",
+          "description": "시리얼 변경 시 전송",
+          "inputs": [
+            "CONTENT"
+          ],
+          "codePattern": "\r\n{\r\n  static String ${varName} = "
+        },
+        {
+          "id": "sys_serial_print_continuous",
+          "description": "시리얼 연속 출력",
+          "inputs": [
+            "CONTENT"
+          ],
+          "codePattern": "var content = generator.valueToCode(block, 'CONTENT', Arduino.ORDER_ATOMIC) || '\"\"';\r\n  var newline = block.getFieldValue('NEWLINE') == 'TRUE';\r\n  return newline ? `_sys_stream->println(${content});\\n..."
+        },
+        {
+          "id": "sys_serial_print_multi",
+          "description": "시리얼 다중 출력",
+          "inputs": [
+            "CONTENT"
+          ],
+          "codePattern": "_sys_stream->println(${content});\\n"
+        },
+        {
+          "id": "sys_serial_send_key_val",
+          "description": "시리얼 키:값 전송",
+          "inputs": [
+            "KEY",
+            "VAL"
+          ],
+          "codePattern": "_sys_stream->print(${key}); _sys_stream->print("
+        },
+        {
+          "id": "sys_serial_poll",
+          "description": "시리얼 폴링",
+          "codePattern": "_sys_poll_serial();\\n"
+        },
+        {
+          "id": "sys_serial_available",
+          "description": "시리얼 수신 여부",
+          "output": "Boolean",
+          "codePattern": "return ['_sys_msg_ready', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sys_serial_read_raw",
+          "description": "시리얼 원시 읽기",
+          "output": "String",
+          "codePattern": "return ['_sys_last_msg', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sys_serial_flush",
+          "description": "시리얼 버퍼 비우기",
+          "codePattern": "_sys_msg_ready = false; _sys_last_msg = "
+        },
+        {
+          "id": "sys_serial_parse_delimiter",
+          "description": "시리얼 구분자 파싱",
+          "inputs": [
+            "DELIMITER"
+          ],
+          "codePattern": "_sys_parsed_data = _sys_last_msg; _sys_parsed_delim = ${delim}[0];\\n"
+        },
+        {
+          "id": "sys_parsed_value_get",
+          "description": "파싱된 값 가져오기",
+          "inputs": [
+            "INDEX"
+          ],
+          "output": "String",
+          "codePattern": "addParseHelper(generator);\r\n  var idx = generator.valueToCode(block, 'INDEX', Arduino.ORDER_ATOMIC) || '1';\r\n  return [`_sys_get_token(_sys_parsed_data, _sys_parsed_delim, ${idx} - 1)`, Arduino.ORDER_..."
+        },
+        {
+          "id": "sys_parsed_count",
+          "description": "파싱된 값 개수",
+          "output": "Number",
+          "codePattern": "addCountHelper(generator);\r\n  return ['_sys_count_tokens(_sys_parsed_data, _sys_parsed_delim)', Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sys_parse_csv_get",
+          "description": "CSV 파싱",
+          "inputs": [
+            "INDEX",
+            "STRING"
+          ],
+          "output": "String",
+          "codePattern": "addParseHelper(generator);\r\n  var str = generator.valueToCode(block, 'STRING', Arduino.ORDER_ATOMIC) || '\"\"';\r\n  var idx = generator.valueToCode(block, 'INDEX', Arduino.ORDER_ATOMIC) || '1';\r\n  // 사용자..."
+        },
+        {
+          "id": "sys_parse_count",
+          "description": "CSV 항목 개수",
+          "inputs": [
+            "STRING"
+          ],
+          "output": "Number",
+          "codePattern": "addCountHelper(generator);\r\n  var str = generator.valueToCode(block, 'STRING', Arduino.ORDER_ATOMIC) || '\"\"';\r\n  return [`_sys_count_tokens(${str}, ',')`, Arduino.ORDER_ATOMIC];"
+        },
+        {
+          "id": "sys_util_to_number",
+          "description": "문자열 → 숫자",
+          "inputs": [
+            "STRING"
+          ],
+          "output": "Number",
+          "codePattern": "var str = generator.valueToCode(block, 'STRING', Arduino.ORDER_ATOMIC) || '\"\"';\r\n  return [`String(${str}).toFloat()`, Arduino.ORDER_ATOMIC];"
+        }
+      ]
+    },
+    "ESP32CAM": {
+      "name": "ESP32-CAM",
+      "blocks": [
+        {
+          "id": "esp32cam_declare",
+          "description": "ESP32-CAM 선언",
+          "codePattern": "generator.definitions_['esp32cam_includes'] = `#include \"esp_camera.h\"\r\n#include <WiFi.h>\r\n#include <WiFiUdp.h>`;\r\n\r\n  generator.definitions_['esp32cam_pinmap'] = `\r\n// AI-Thinker ESP32-CAM 핀맵\r\n#defin..."
+        },
+        {
+          "id": "esp32cam_wifi_config",
+          "description": "ESP32-CAM WiFi 설정",
+          "inputs": [
+            "SSID",
+            "PASSWORD"
+          ],
+          "codePattern": "var ssid = generator.valueToCode(block, 'SSID', Arduino.ORDER_ATOMIC) || '\"exllu_2401\"';\r\n  var password = generator.valueToCode(block, 'PASSWORD', Arduino.ORDER_ATOMIC) || '\"11112222\"';\r\n\r\n  generato..."
+        },
+        {
+          "id": "esp32cam_receiver_config",
+          "description": "ESP32-CAM 수신자 설정",
+          "inputs": [
+            "IP",
+            "PORT",
+            "CHUNK_SIZE"
+          ],
+          "codePattern": "var ip = generator.valueToCode(block, 'IP', Arduino.ORDER_ATOMIC) || '\"192.168.137.1\"';\r\n  var port = generator.valueToCode(block, 'PORT', Arduino.ORDER_ATOMIC) || '8888';\r\n  var chunkSize = generator..."
+        },
+        {
+          "id": "esp32cam_setup",
+          "description": "ESP32-CAM 초기화",
+          "inputs": [
+            "JPEG_QUALITY",
+            "BRIGHTNESS",
+            "CONTRAST",
+            "SATURATION"
+          ],
+          "codePattern": "var frameSize = block.getFieldValue('FRAME_SIZE');\r\n  var jpegQuality = generator.valueToCode(block, 'JPEG_QUALITY', Arduino.ORDER_ATOMIC) || '12';\r\n  var brightness = generator.valueToCode(block, 'BR..."
+        },
+        {
+          "id": "esp32cam_loop",
+          "description": "ESP32-CAM 루프",
+          "codePattern": "\r\n  // 카메라 프레임 획득\r\n  camera_fb_t * fb = esp_camera_fb_get();\r\n  if (!fb) {\r\n    Serial.println("
+        },
+        {
+          "id": "esp32cam_led_control",
+          "description": "ESP32-CAM LED 제어",
+          "codePattern": "  digitalWrite(4, ${state});  // ESP32-CAM 플래시 LED (GPIO 4)\r\n"
+        },
+        {
+          "id": "esp32s3cam_declare",
+          "description": "ESP32-S3 CAM 선언",
+          "codePattern": "generator.definitions_['esp32s3cam_includes'] = `#include \"esp_camera.h\"\r\n#include <WiFi.h>\r\n#include <WiFiUdp.h>`;\r\n\r\n  generator.definitions_['esp32s3cam_pinmap'] = `\r\n// Freenove ESP32-S3 CAM (ESP3..."
+        },
+        {
+          "id": "esp32s3cam_setup",
+          "description": "ESP32-S3 CAM 초기화",
+          "inputs": [
+            "JPEG_QUALITY",
+            "BRIGHTNESS",
+            "CONTRAST",
+            "SATURATION"
+          ],
+          "codePattern": "var frameSize = block.getFieldValue('FRAME_SIZE');\r\n  var jpegQuality = generator.valueToCode(block, 'JPEG_QUALITY', Arduino.ORDER_ATOMIC) || '12';\r\n  var brightness = generator.valueToCode(block, 'BR..."
+        },
+        {
+          "id": "esp32cam_flip",
+          "description": "ESP32-CAM 화면 뒤집기/미러",
+          "codePattern": "\r\n  {\r\n    sensor_t * s = esp_camera_sensor_get();\r\n    if (s != NULL) {\r\n      s->set_${type}(s, ${enable});\r\n    }\r\n  }\r\n"
+        }
+      ]
+    },
+    "GUIDE": {
+      "name": "가이드/정보",
+      "blocks": [
+        {
+          "id": "developer_info_block",
+          "description": "개발자 정보 블록",
+          "codePattern": "// 정보 제공용 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "custom_ad_block",
+          "description": "광고 블록",
+          "codePattern": "// 아무 기능이 없으므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "go_to_ai_robot_scratch",
+          "description": "AI 로봇 스크래치 링크",
+          "codePattern": "// 바로가기 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "go_to_bowerbird_pro",
+          "description": "Bowerbird Pro 링크",
+          "codePattern": "// 바로가기 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "go_to_k12_projectHub",
+          "description": "K12 프로젝트 허브 링크",
+          "codePattern": "// 바로가기 블록이므로 생성되는 코드는 없습니다.\r\n  return '';"
+        },
+        {
+          "id": "go_to_circuit_config",
+          "description": "Circuit Config 도구 링크"
+        }
+      ]
+    },
+    "TINYML": {
+      "name": "TinyML (AI/ML)",
+      "blocks": [
+        {
+          "id": "tinyml_model_setup",
+          "description": "TinyML 모델 초기화",
+          "codePattern": "var modelName = generator.valueToCode(block, 'MODEL_NAME', Arduino.ORDER_ATOMIC) || '\"my_model\"';\r\n  var arenaSize = generator.valueToCode(block, 'ARENA_SIZE', Arduino.ORDER_ATOMIC) || '10000';\r\n\r\n  /..."
+        },
+        {
+          "id": "tinyml_model_info",
+          "description": "TinyML 모델 정보",
+          "output": "String",
+          "codePattern": "var infoType = block.getFieldValue('INFO_TYPE');\r\n  var code;\r\n  switch (infoType) {\r\n    case 'INPUT_SIZE':\r\n      code = 'tflInputTensor->bytes';\r\n      break;\r\n    case 'OUTPUT_SIZE':\r\n      code =..."
+        },
+        {
+          "id": "tinyml_collect_imu",
+          "description": "TinyML IMU 데이터 수집",
+          "codePattern": "collectIMUData("
+        },
+        {
+          "id": "tinyml_collect_analog",
+          "description": "TinyML 아날로그 데이터 수집",
+          "codePattern": "collectAnalogData("
+        },
+        {
+          "id": "tinyml_collect_sound",
+          "description": "TinyML 소리 데이터 수집",
+          "codePattern": "collectSoundData("
+        },
+        {
+          "id": "tinyml_inference_start",
+          "description": "TinyML 추론 시작",
+          "codePattern": "tinyml_runInference();\\n"
+        },
+        {
+          "id": "tinyml_classification_result",
+          "description": "TinyML 분류 결과",
+          "output": "String",
+          "codePattern": "(tinyml_best_index >= 0 && tinyml_best_index < tinyml_num_classes ? String(tinyml_labels[tinyml_best_index]) : String("
+        },
+        {
+          "id": "tinyml_confidence",
+          "description": "TinyML 신뢰도",
+          "output": "Number",
+          "codePattern": "((int)(tinyml_best_score * 100.0))"
+        },
+        {
+          "id": "tinyml_result_is",
+          "description": "TinyML 결과 일치 확인",
+          "output": "Boolean",
+          "codePattern": "(tinyml_best_index >= 0 && String(tinyml_labels[tinyml_best_index]) == String("
+        },
+        {
+          "id": "tinyml_anomaly_detected",
+          "description": "TinyML 이상 감지",
+          "output": "Boolean",
+          "codePattern": "tinyml_anomaly"
+        }
+      ]
+    },
+    "CONTROL_BUILTIN": {
+      "name": "제어 (Blockly 내장)",
+      "blocks": [
+        {
+          "id": "controls_if",
+          "description": "만약~이라면 (조건문)",
+          "codePattern": "if (CONDITION) { SUBSTACK }"
+        },
+        {
+          "id": "controls_repeat_ext",
+          "description": "반복 (횟수 지정)",
+          "codePattern": "for (int count = 0; count < TIMES; count++) { SUBSTACK }"
+        },
+        {
+          "id": "controls_whileUntil",
+          "description": "반복 (조건 기반)",
+          "codePattern": "while (CONDITION) { SUBSTACK }"
+        },
+        {
+          "id": "controls_flow_statements",
+          "description": "반복 제어 (break/continue)",
+          "codePattern": "break; / continue;"
+        },
+        {
+          "id": "controls_for",
+          "description": "for 반복문",
+          "codePattern": "for (int VAR = FROM; VAR <= TO; VAR += BY) { SUBSTACK }"
+        }
+      ]
+    },
+    "LOGIC_BUILTIN": {
+      "name": "논리 (Blockly 내장)",
+      "blocks": [
+        {
+          "id": "logic_compare",
+          "description": "비교 연산 (=, ≠, <, >, ≤, ≥)",
+          "output": "Boolean",
+          "codePattern": "A OP B"
+        },
+        {
+          "id": "logic_operation",
+          "description": "논리 연산 (그리고/또는)",
+          "output": "Boolean",
+          "codePattern": "A && B / A || B"
+        },
+        {
+          "id": "logic_negate",
+          "description": "논리 부정 (아닌)",
+          "output": "Boolean",
+          "codePattern": "!BOOL"
+        },
+        {
+          "id": "logic_boolean",
+          "description": "참/거짓 값",
+          "output": "Boolean",
+          "codePattern": "true / false"
+        },
+        {
+          "id": "logic_null",
+          "description": "null 값",
+          "output": "null",
+          "codePattern": "NULL"
+        },
+        {
+          "id": "logic_ternary",
+          "description": "삼항 연산자",
+          "output": "Any",
+          "codePattern": "CONDITION ? THEN : ELSE"
+        }
+      ]
+    },
+    "MATH_BUILTIN": {
+      "name": "수학 (Blockly 내장)",
+      "blocks": [
+        {
+          "id": "math_number",
+          "description": "숫자 값",
+          "output": "Number",
+          "codePattern": "NUM"
+        },
+        {
+          "id": "math_arithmetic",
+          "description": "사칙연산 (+, -, ×, ÷, ^)",
+          "output": "Number",
+          "codePattern": "A OP B"
+        },
+        {
+          "id": "math_single",
+          "description": "단항 연산 (절대값, 루트 등)",
+          "output": "Number",
+          "codePattern": "abs(NUM) / sqrt(NUM)"
+        },
+        {
+          "id": "math_trig",
+          "description": "삼각함수 (sin, cos, tan)",
+          "output": "Number",
+          "codePattern": "sin(NUM) / cos(NUM)"
+        },
+        {
+          "id": "math_constant",
+          "description": "수학 상수 (π, e 등)",
+          "output": "Number",
+          "codePattern": "M_PI / M_E"
+        },
+        {
+          "id": "math_number_property",
+          "description": "숫자 속성 (짝수, 홀수 등)",
+          "output": "Boolean"
+        },
+        {
+          "id": "math_round",
+          "description": "반올림/올림/내림",
+          "output": "Number",
+          "codePattern": "round(NUM)"
+        },
+        {
+          "id": "math_modulo",
+          "description": "나머지 연산",
+          "output": "Number",
+          "codePattern": "A % B"
+        },
+        {
+          "id": "math_constrain",
+          "description": "범위 제한",
+          "output": "Number",
+          "codePattern": "constrain(NUM, LOW, HIGH)"
+        },
+        {
+          "id": "math_random_int",
+          "description": "랜덤 정수",
+          "output": "Number",
+          "codePattern": "random(FROM, TO)"
+        },
+        {
+          "id": "math_random_float",
+          "description": "랜덤 소수 (0~1)",
+          "output": "Number",
+          "codePattern": "(float)random(0, 1000) / 1000.0"
+        },
+        {
+          "id": "math_atan2",
+          "description": "atan2 함수",
+          "output": "Number",
+          "codePattern": "atan2(Y, X)"
+        },
+        {
+          "id": "math_change",
+          "description": "변수 값 변경",
+          "codePattern": "VAR += DELTA;"
+        }
+      ]
+    },
+    "TEXT_BUILTIN": {
+      "name": "텍스트 (Blockly 내장)",
+      "blocks": [
+        {
+          "id": "text",
+          "description": "텍스트 값",
+          "output": "String",
+          "codePattern": "\"TEXT\""
+        },
+        {
+          "id": "text_append",
+          "description": "텍스트 이어붙이기",
+          "codePattern": "VAR += TEXT;"
+        },
+        {
+          "id": "text_changeCase",
+          "description": "대소문자 변환",
+          "output": "String"
+        },
+        {
+          "id": "text_trim",
+          "description": "공백 제거",
+          "output": "String"
+        },
+        {
+          "id": "text_isEmpty",
+          "description": "텍스트 비어있는지",
+          "output": "Boolean",
+          "codePattern": "TEXT.length() == 0"
+        },
+        {
+          "id": "text_getSubstring",
+          "description": "부분 문자열",
+          "output": "String"
+        }
+      ]
+    },
+    "VARIABLES_BUILTIN": {
+      "name": "변수 (Blockly 내장)",
+      "blocks": [
+        {
+          "id": "variables_get",
+          "description": "변수 값 읽기",
+          "output": "Any",
+          "codePattern": "varName"
+        },
+        {
+          "id": "variables_set",
+          "description": "변수 값 설정",
+          "codePattern": "varName = VALUE;"
+        },
+        {
+          "id": "variables_get_dynamic",
+          "description": "동적 변수 읽기",
+          "output": "Any"
+        },
+        {
+          "id": "variables_set_dynamic",
+          "description": "동적 변수 설정"
+        }
+      ]
+    },
+    "FUNCTIONS_BUILTIN": {
+      "name": "함수 (Blockly 내장)",
+      "blocks": [
+        {
+          "id": "procedures_defnoreturn",
+          "description": "반환값 없는 함수 정의",
+          "codePattern": "void funcName() { ... }"
+        },
+        {
+          "id": "procedures_defreturn",
+          "description": "반환값 있는 함수 정의",
+          "codePattern": "type funcName() { ... return val; }"
+        },
+        {
+          "id": "procedures_callnoreturn",
+          "description": "함수 호출 (반환값 없음)",
+          "codePattern": "funcName();"
+        },
+        {
+          "id": "procedures_callreturn",
+          "description": "함수 호출 (반환값 있음)",
+          "output": "Any",
+          "codePattern": "funcName()"
+        },
+        {
+          "id": "procedures_ifreturn",
+          "description": "조건부 반환",
+          "codePattern": "if (COND) { return VAL; }"
+        },
+        {
+          "id": "procedures_ifreturn_void",
+          "description": "조건부 중단",
+          "codePattern": "if (COND) { return; }"
+        },
+        {
+          "id": "procedures_defnoreturn_dynamic",
+          "description": "동적 함수 정의 (반환 없음)"
+        },
+        {
+          "id": "procedures_defreturn_dynamic",
+          "description": "동적 함수 정의 (반환 있음)"
+        },
+        {
+          "id": "procedures_callnoreturn_dynamic",
+          "description": "동적 함수 호출 (반환 없음)"
+        },
+        {
+          "id": "procedures_callreturn_dynamic",
+          "description": "동적 함수 호출 (반환 있음)",
+          "output": "Any"
+        }
+      ]
+    }
+  },
+  "totalBlocks": 562,
+  "totalCategories": 32
+}

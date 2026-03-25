@@ -1,0 +1,204 @@
+{
+  "version": "1.0",
+  "description": "브릭셀 에디터 지원 보드별 핀배열 데이터 - AI 회로 안내용",
+  "generated": "2026-03-26",
+  "boards": {
+    "uno": {
+      "name": "Arduino Uno",
+      "mcu": "ATmega328P",
+      "voltage": "5V",
+      "clock": "16MHz",
+      "flash": "32KB",
+      "sram": "2KB",
+      "digital_pins": 14,
+      "analog_pins": 6,
+      "pwm_pins": [3, 5, 6, 9, 10, 11],
+      "pins": {
+        "D0":  {"type": "digital", "alt": "RX (시리얼 수신)", "note": "시리얼 통신에 사용 - 업로드 시 분리 필요"},
+        "D1":  {"type": "digital", "alt": "TX (시리얼 송신)", "note": "시리얼 통신에 사용 - 업로드 시 분리 필요"},
+        "D2":  {"type": "digital", "alt": "INT0 (외부 인터럽트)", "recommend": "버튼, IR 수신"},
+        "D3":  {"type": "digital/PWM", "alt": "INT1, PWM", "recommend": "서보, LED 밝기, 부저"},
+        "D4":  {"type": "digital", "recommend": "일반 디지털 입출력"},
+        "D5":  {"type": "digital/PWM", "alt": "PWM", "recommend": "서보, LED 밝기, 모터 속도"},
+        "D6":  {"type": "digital/PWM", "alt": "PWM", "recommend": "서보, LED 밝기, 모터 속도"},
+        "D7":  {"type": "digital", "recommend": "일반 디지털 입출력"},
+        "D8":  {"type": "digital", "recommend": "일반 디지털 입출력"},
+        "D9":  {"type": "digital/PWM", "alt": "PWM", "recommend": "서보, 부저, LED 밝기"},
+        "D10": {"type": "digital/PWM", "alt": "SS (SPI), PWM", "recommend": "SPI 장치, LED 밝기"},
+        "D11": {"type": "digital/PWM", "alt": "MOSI (SPI), PWM", "recommend": "SPI 장치, LED 매트릭스"},
+        "D12": {"type": "digital", "alt": "MISO (SPI)", "recommend": "SPI 장치"},
+        "D13": {"type": "digital", "alt": "SCK (SPI), 내장 LED", "recommend": "테스트용 LED, SPI"},
+        "A0":  {"type": "analog/digital", "recommend": "아날로그 센서 (조도, 온도, 습도)"},
+        "A1":  {"type": "analog/digital", "recommend": "아날로그 센서"},
+        "A2":  {"type": "analog/digital", "recommend": "아날로그 센서"},
+        "A3":  {"type": "analog/digital", "recommend": "아날로그 센서"},
+        "A4":  {"type": "analog/digital", "alt": "SDA (I2C)", "recommend": "I2C 장치 (LCD, OLED, 센서)"},
+        "A5":  {"type": "analog/digital", "alt": "SCL (I2C)", "recommend": "I2C 장치 (LCD, OLED, 센서)"}
+      },
+      "special_pins": {
+        "I2C": {"SDA": "A4", "SCL": "A5", "devices": "LCD I2C, OLED, MPU6050, BMP280, RTC 등"},
+        "SPI": {"MOSI": "D11", "MISO": "D12", "SCK": "D13", "SS": "D10", "devices": "SD카드, LED 매트릭스, RFID"},
+        "Serial": {"RX": "D0", "TX": "D1", "note": "하드웨어 시리얼 1개. SoftwareSerial로 다른 핀 사용 가능"},
+        "Interrupt": {"INT0": "D2", "INT1": "D3"}
+      },
+      "shield": {
+        "name": "브릭셀 실드 (고릴라셀)",
+        "description": "Arduino Uno에 장착하는 센서/모터 확장 실드",
+        "pin_mapping": {
+          "서보1": "D3", "서보2": "D5", "서보3": "D6", "서보4": "D9",
+          "DC모터A": "D10+D12", "DC모터B": "D11+D13",
+          "부저": "D4", "버튼": "D2",
+          "NeoPixel": "D7", "IR수신": "D8",
+          "I2C": "A4(SDA)+A5(SCL)",
+          "아날로그1": "A0", "아날로그2": "A1", "아날로그3": "A2", "아날로그4": "A3"
+        }
+      }
+    },
+    "nano": {
+      "name": "Arduino Nano",
+      "mcu": "ATmega328P",
+      "voltage": "5V",
+      "clock": "16MHz",
+      "flash": "32KB",
+      "sram": "2KB",
+      "digital_pins": 14,
+      "analog_pins": 8,
+      "pwm_pins": [3, 5, 6, 9, 10, 11],
+      "note": "Uno와 핀 호환. A6, A7 아날로그 전용 (디지털 출력 불가)",
+      "extra_pins": {
+        "A6": {"type": "analog_only", "note": "아날로그 입력 전용"},
+        "A7": {"type": "analog_only", "note": "아날로그 입력 전용"}
+      },
+      "special_pins": {
+        "I2C": {"SDA": "A4", "SCL": "A5"},
+        "SPI": {"MOSI": "D11", "MISO": "D12", "SCK": "D13", "SS": "D10"},
+        "Serial": {"RX": "D0", "TX": "D1"}
+      }
+    },
+    "mega": {
+      "name": "Arduino Mega 2560",
+      "mcu": "ATmega2560",
+      "voltage": "5V",
+      "clock": "16MHz",
+      "flash": "256KB",
+      "sram": "8KB",
+      "digital_pins": 54,
+      "analog_pins": 16,
+      "pwm_pins": [2,3,4,5,6,7,8,9,10,11,12,13],
+      "special_pins": {
+        "I2C": {"SDA": "D20", "SCL": "D21"},
+        "SPI": {"MOSI": "D51", "MISO": "D50", "SCK": "D52", "SS": "D53"},
+        "Serial0": {"RX": "D0", "TX": "D1"},
+        "Serial1": {"RX": "D19", "TX": "D18"},
+        "Serial2": {"RX": "D17", "TX": "D16"},
+        "Serial3": {"RX": "D15", "TX": "D14"},
+        "Interrupt": ["D2", "D3", "D18", "D19", "D20", "D21"]
+      },
+      "note": "핀이 많아 대규모 프로젝트에 적합. 4개 하드웨어 시리얼."
+    },
+    "esp32": {
+      "name": "ESP32 Dev Module",
+      "mcu": "ESP32-WROOM-32",
+      "voltage": "3.3V",
+      "clock": "240MHz (듀얼코어)",
+      "flash": "4MB",
+      "sram": "520KB",
+      "wifi": true,
+      "bluetooth": true,
+      "digital_pins": 34,
+      "analog_pins": 18,
+      "pwm_pins": "모든 출력 가능 핀 (LEDC PWM)",
+      "dac_pins": [25, 26],
+      "touch_pins": [4, 0, 2, 15, 13, 12, 14, 27, 33, 32],
+      "pins": {
+        "GPIO0":  {"type": "digital/touch", "note": "부트 모드 핀 - 풀업 필요"},
+        "GPIO2":  {"type": "digital/ADC/touch", "note": "부트 시 LOW 필요. 내장 LED (일부 보드)"},
+        "GPIO4":  {"type": "digital/ADC/touch", "recommend": "일반 입출력, 터치"},
+        "GPIO5":  {"type": "digital", "alt": "VSPI SS", "recommend": "SPI CS"},
+        "GPIO12": {"type": "digital/ADC/touch", "note": "부트 시 LOW 권장"},
+        "GPIO13": {"type": "digital/ADC/touch", "recommend": "일반 입출력"},
+        "GPIO14": {"type": "digital/ADC/touch", "recommend": "일반 입출력"},
+        "GPIO15": {"type": "digital/ADC/touch", "recommend": "일반 입출력"},
+        "GPIO16": {"type": "digital", "recommend": "일반 입출력, UART2 RX"},
+        "GPIO17": {"type": "digital", "recommend": "일반 입출력, UART2 TX"},
+        "GPIO18": {"type": "digital", "alt": "VSPI SCK", "recommend": "SPI"},
+        "GPIO19": {"type": "digital", "alt": "VSPI MISO", "recommend": "SPI"},
+        "GPIO21": {"type": "digital", "alt": "I2C SDA", "recommend": "I2C 장치"},
+        "GPIO22": {"type": "digital", "alt": "I2C SCL", "recommend": "I2C 장치"},
+        "GPIO23": {"type": "digital", "alt": "VSPI MOSI", "recommend": "SPI"},
+        "GPIO25": {"type": "digital/DAC/ADC", "recommend": "아날로그 출력, 오디오"},
+        "GPIO26": {"type": "digital/DAC/ADC", "recommend": "아날로그 출력, 오디오"},
+        "GPIO27": {"type": "digital/ADC/touch", "recommend": "일반 입출력"},
+        "GPIO32": {"type": "digital/ADC/touch", "recommend": "아날로그 센서"},
+        "GPIO33": {"type": "digital/ADC/touch", "recommend": "아날로그 센서"},
+        "GPIO34": {"type": "input_only/ADC", "note": "입력 전용 (출력 불가)"},
+        "GPIO35": {"type": "input_only/ADC", "note": "입력 전용 (출력 불가)"},
+        "GPIO36": {"type": "input_only/ADC", "alt": "VP", "note": "입력 전용"},
+        "GPIO39": {"type": "input_only/ADC", "alt": "VN", "note": "입력 전용"}
+      },
+      "special_pins": {
+        "I2C": {"SDA": "GPIO21", "SCL": "GPIO22"},
+        "SPI(VSPI)": {"MOSI": "GPIO23", "MISO": "GPIO19", "SCK": "GPIO18", "SS": "GPIO5"},
+        "Serial0": {"RX": "GPIO3", "TX": "GPIO1", "note": "USB 시리얼"},
+        "Serial2": {"RX": "GPIO16", "TX": "GPIO17"},
+        "DAC": ["GPIO25", "GPIO26"],
+        "InputOnly": ["GPIO34", "GPIO35", "GPIO36", "GPIO39"]
+      },
+      "warning": "3.3V 로직! 5V 센서 사용 시 레벨 시프터 필요. GPIO6~11은 내부 플래시 연결이므로 사용 금지."
+    },
+    "esp32cam": {
+      "name": "ESP32-CAM",
+      "mcu": "ESP32-S",
+      "voltage": "3.3V",
+      "wifi": true,
+      "bluetooth": true,
+      "camera": "OV2640 (2MP)",
+      "available_gpio": [0, 2, 4, 12, 13, 14, 15, 16],
+      "note": "카메라가 GPIO 대부분을 사용. 사용 가능한 핀이 제한됨. GPIO4는 플래시 LED.",
+      "special_pins": {
+        "Flash_LED": "GPIO4",
+        "Serial": {"RX": "GPIO3", "TX": "GPIO1"}
+      },
+      "warning": "USB 포트 없음. FTDI 어댑터로 업로드. GPIO0을 GND에 연결 후 업로드."
+    },
+    "pico": {
+      "name": "Raspberry Pi Pico",
+      "mcu": "RP2040",
+      "voltage": "3.3V",
+      "clock": "133MHz (듀얼코어)",
+      "flash": "2MB",
+      "sram": "264KB",
+      "digital_pins": 26,
+      "analog_pins": 3,
+      "pwm_pins": "모든 GPIO (16 슬라이스)",
+      "pins": {
+        "GP0":  {"type": "digital/PWM", "alt": "UART0 TX, I2C0 SDA, SPI0 RX"},
+        "GP1":  {"type": "digital/PWM", "alt": "UART0 RX, I2C0 SCL, SPI0 CS"},
+        "GP2":  {"type": "digital/PWM", "alt": "I2C1 SDA, SPI0 SCK"},
+        "GP3":  {"type": "digital/PWM", "alt": "I2C1 SCL, SPI0 TX"},
+        "GP4":  {"type": "digital/PWM", "alt": "UART1 TX, I2C0 SDA, SPI0 RX"},
+        "GP5":  {"type": "digital/PWM", "alt": "UART1 RX, I2C0 SCL, SPI0 CS"},
+        "GP26": {"type": "digital/ADC", "alt": "ADC0", "recommend": "아날로그 센서"},
+        "GP27": {"type": "digital/ADC", "alt": "ADC1", "recommend": "아날로그 센서"},
+        "GP28": {"type": "digital/ADC", "alt": "ADC2", "recommend": "아날로그 센서"}
+      },
+      "special_pins": {
+        "I2C0": {"SDA": "GP0/GP4/GP8/GP12/GP16/GP20", "SCL": "GP1/GP5/GP9/GP13/GP17/GP21"},
+        "I2C1": {"SDA": "GP2/GP6/GP10/GP14/GP18/GP26", "SCL": "GP3/GP7/GP11/GP15/GP19/GP27"},
+        "SPI0": {"RX": "GP0/GP4/GP16", "TX": "GP3/GP7/GP19", "SCK": "GP2/GP6/GP18", "CS": "GP1/GP5/GP17"},
+        "UART0": {"TX": "GP0/GP12/GP16", "RX": "GP1/GP13/GP17"},
+        "UART1": {"TX": "GP4/GP8", "RX": "GP5/GP9"},
+        "ADC": ["GP26", "GP27", "GP28"]
+      },
+      "note": "PIO(Programmable I/O) 지원. 핀 멀티플렉싱이 유연함. I2C/SPI/UART를 거의 모든 핀에 배정 가능."
+    },
+    "picow": {
+      "name": "Raspberry Pi Pico W",
+      "mcu": "RP2040 + CYW43439",
+      "voltage": "3.3V",
+      "wifi": true,
+      "bluetooth": true,
+      "note": "Pico와 동일 핀배열. WiFi/BLE 추가. 내장 LED는 GPIO25 대신 CYW43439의 GPIO를 사용."
+    }
+  }
+}
