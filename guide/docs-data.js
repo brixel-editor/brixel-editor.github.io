@@ -784,11 +784,15 @@ var DOCS_DATA = {
   'motor': {
     title: '모터',
     color: '#50B91A',
-    description: '서보, GeekServo, DC, 스테퍼, PCA9685 모터 드라이버 블록',
+    description: '서보, 5Kg GeekServo, Green GeekServo, 긱서보 DC모터, DC, 스테퍼, PCA9685 모터 드라이버 블록',
     hardwareImages: [
       { src: 'assets/M_006_MG90S_Servo.png', label: 'MG90S 서보' },
-      { src: 'assets/M_007_Geek_Servo_360.jpg', label: '긱서보 360' },
       { src: 'assets/M_008_Geek_Servo_360_5Kg.png', label: '긱서보 5Kg' },
+      { src: 'assets/M_024_Grey_Geek_Servo_360.webp', label: '회색 긱서보 2KG' },
+      { src: 'assets/M_023_Orange_Geek__Servo_Motor.webp', label: '주황 긱서보 0.7KG' },
+      { src: 'assets/M_022_Green_Geek_Servo_Motor.webp', label: '초록 긱 연속회전' },
+      { src: 'assets/M_025_Red_Square_Geek_DC_Motor.webp', label: '빨강 긱 DC 2KG' },
+      { src: 'assets/M_026_Blue_Geek__DC_Motor.webp', label: '하늘색 긱 DC 0.7KG' },
       { src: 'assets/M_012_Blue_Lego_DC_Motor.png', label: 'DC 모터' },
       { src: 'assets/M_013_Step_Motor_Driver_A4988.jpg', label: 'A4988 드라이버' },
       { src: 'assets/M_014_Step_Motor.png', label: '스텝 모터' },
@@ -809,12 +813,22 @@ var DOCS_DATA = {
         ]
       },
       {
-        label: 'GeekServo',
+        label: '5Kg Big GeekServo',
         blocks: [
-          { id: 'geekservo_setup', name: 'GeekServo 초기화', params: ['PIN'], output: null, description: 'GeekServo 핀 설정 (각도: 500-2500μs, 모터: 3000-5000μs)' },
-          { id: 'geekservo_angle_360', name: 'GeekServo 각도', params: ['PIN', 'ANGLE'], output: null, description: '360도 위치 제어 (0~360)' },
-          { id: 'geekservo_wheel', name: 'GeekServo 바퀴', params: ['PIN', 'SPEED', 'DIR'], output: null, description: '무한 회전 속도/방향 (5Kg 모델)' },
-          { id: 'geekservo_stop', name: 'GeekServo 정지', params: ['PIN'], output: null, description: 'GeekServo 모터 정지' }
+          { id: 'geekservo_setup', name: '5Kg 긱서보 초기화', params: ['PIN'], output: null, description: '5Kg GeekServo 핀 설정 (각도: 500-2500μs, 바퀴: 3000-5000μs)' },
+          { id: 'geekservo_angle_360', name: '5Kg 긱서보 각도', params: ['PIN', 'ANGLE'], output: null, description: '360도 위치 제어 (0~360)' },
+          { id: 'geekservo_wheel', name: '5Kg 긱서보 바퀴', params: ['PIN', 'SPEED', 'DIR'], output: null, description: '무한 회전 속도/방향 (3000-5000μs)' },
+          { id: 'geekservo_wheel_timed', name: '5Kg 긱서보 바퀴 (시간)', params: ['PIN', 'SPEED', 'DIR', 'DURATION'], output: null, description: '지정 시간(ms) 동안 바퀴 회전 후 자동 정지' },
+          { id: 'geekservo_stop', name: '5Kg 긱서보 정지', params: ['PIN'], output: null, description: '5Kg GeekServo 모터 정지' }
+        ]
+      },
+      {
+        label: 'Green GeekServo (연속회전)',
+        blocks: [
+          { id: 'green_geekservo_setup', name: '그린 긱서보 초기화', params: ['PIN'], output: null, description: 'Green GeekServo 핀 설정 (500-2500μs 연속회전)' },
+          { id: 'green_geekservo_wheel', name: '그린 긱서보 바퀴', params: ['PIN', 'SPEED', 'DIR'], output: null, description: '연속회전 속도/방향 (500-2500μs)' },
+          { id: 'green_geekservo_wheel_timed', name: '그린 긱서보 바퀴 (시간)', params: ['PIN', 'SPEED', 'DIR', 'DURATION'], output: null, description: '지정 시간(ms) 동안 바퀴 회전 후 자동 정지' },
+          { id: 'green_geekservo_stop', name: '그린 긱서보 정지', params: ['PIN'], output: null, description: 'Green GeekServo 모터 정지' }
         ]
       },
       {

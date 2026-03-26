@@ -785,11 +785,15 @@ var DOCS_DATA = {
   'motor': {
     title: 'Motor',
     color: '#50B91A',
-    description: 'Servo, GeekServo, DC, Stepper, PCA9685 motor driver blocks',
+    description: 'Servo, 5Kg GeekServo, Green GeekServo, Geek DC Motor, DC, Stepper, PCA9685 motor driver blocks',
     hardwareImages: [
       { src: 'assets/M_006_MG90S_Servo.png', label: 'MG90S Servo' },
-      { src: 'assets/M_007_Geek_Servo_360.jpg', label: 'GeekServo 360' },
       { src: 'assets/M_008_Geek_Servo_360_5Kg.png', label: 'GeekServo 5Kg' },
+      { src: 'assets/M_024_Grey_Geek_Servo_360.webp', label: 'Grey GeekServo 2KG' },
+      { src: 'assets/M_023_Orange_Geek__Servo_Motor.webp', label: 'Orange GeekServo 0.7KG' },
+      { src: 'assets/M_022_Green_Geek_Servo_Motor.webp', label: 'Green GeekServo' },
+      { src: 'assets/M_025_Red_Square_Geek_DC_Motor.webp', label: 'Red Geek DC 2KG' },
+      { src: 'assets/M_026_Blue_Geek__DC_Motor.webp', label: 'Blue Geek DC 0.7KG' },
       { src: 'assets/M_012_Blue_Lego_DC_Motor.png', label: 'DC Motor' },
       { src: 'assets/M_013_Step_Motor_Driver_A4988.jpg', label: 'A4988 Driver' },
       { src: 'assets/M_014_Step_Motor.png', label: 'Stepper Motor' },
@@ -810,12 +814,22 @@ var DOCS_DATA = {
         ]
       },
       {
-        label: 'GeekServo',
+        label: '5Kg Big GeekServo',
         blocks: [
-          { id: 'geekservo_setup', name: 'GeekServo Init', params: ['PIN'], output: null, description: 'Setup GeekServo pin (angle: 500-2500μs, motor: 3000-5000μs)' },
-          { id: 'geekservo_angle_360', name: 'GeekServo Angle', params: ['PIN', 'ANGLE'], output: null, description: '360-degree position control (0~360)' },
-          { id: 'geekservo_wheel', name: 'GeekServo Wheel', params: ['PIN', 'SPEED', 'DIR'], output: null, description: 'Continuous rotation speed/direction (5Kg model)' },
-          { id: 'geekservo_stop', name: 'GeekServo Stop', params: ['PIN'], output: null, description: 'Stop GeekServo motor' }
+          { id: 'geekservo_setup', name: '5Kg GeekServo Init', params: ['PIN'], output: null, description: 'Setup 5Kg GeekServo pin (angle: 500-2500μs, wheel: 3000-5000μs)' },
+          { id: 'geekservo_angle_360', name: '5Kg GeekServo Angle', params: ['PIN', 'ANGLE'], output: null, description: '360-degree position control (0~360)' },
+          { id: 'geekservo_wheel', name: '5Kg GeekServo Wheel', params: ['PIN', 'SPEED', 'DIR'], output: null, description: 'Continuous rotation speed/direction (3000-5000μs)' },
+          { id: 'geekservo_wheel_timed', name: '5Kg GeekServo Wheel (Timed)', params: ['PIN', 'SPEED', 'DIR', 'DURATION'], output: null, description: 'Rotate wheel for specified duration (ms) then auto-stop' },
+          { id: 'geekservo_stop', name: '5Kg GeekServo Stop', params: ['PIN'], output: null, description: 'Stop 5Kg GeekServo motor' }
+        ]
+      },
+      {
+        label: 'Green GeekServo (Continuous)',
+        blocks: [
+          { id: 'green_geekservo_setup', name: 'Green GeekServo Init', params: ['PIN'], output: null, description: 'Setup Green GeekServo pin (500-2500μs continuous rotation)' },
+          { id: 'green_geekservo_wheel', name: 'Green GeekServo Wheel', params: ['PIN', 'SPEED', 'DIR'], output: null, description: 'Continuous rotation speed/direction (500-2500μs)' },
+          { id: 'green_geekservo_wheel_timed', name: 'Green GeekServo Wheel (Timed)', params: ['PIN', 'SPEED', 'DIR', 'DURATION'], output: null, description: 'Rotate wheel for specified duration (ms) then auto-stop' },
+          { id: 'green_geekservo_stop', name: 'Green GeekServo Stop', params: ['PIN'], output: null, description: 'Stop Green GeekServo motor' }
         ]
       },
       {
