@@ -1,0 +1,193 @@
+=== BOARDS ===
+partId | name | category
+-------|------|--------
+board-013 | Microbit | MCU
+board-005 | Arduino | MCU
+board-001 | Mabit Shield V2 | MCU
+board-004 | 00duino V3 | MCU
+board-012 | Data Science Lab Mabit | MCU
+board-002 | Data Science Lab | MCU
+board-014 | Arduino Nano Shield | MCU
+board-006 | Arduino Gorilla Shield | MCU
+board-007 | Rich Shield V3 | MCU
+board-015 | Pico Py Shield | MCU
+board-010 | ESP32 | MCU
+board-003 | ESP32 Shield V3 | MCU
+board-008 | Mega SuperRich | MCU
+board-009 | ESP SuperRich | MCU
+board-011 | DSL Mini V2 | MCU
+
+=== MODULES ===
+partId | name | category | pins
+-------|------|----------|-----
+
+--- 아날로그센서(Analog) ---
+a-001 | High Temperature Sensor | A | 3
+a-002 | High Temperature Sensor Prob | A | 2
+a-003 | Water Temp | A | 3
+a-004 | Water Temp Prob | A | 2
+a-005 | NTC Temp | A | 3
+a-006 | Light Sensor | A | 3
+a-007 | UV Sensor V2 | A | 3
+a-008 | Moisture Sensor | A | 3
+a-009 | PH Sensor | A | 3
+a-010 | PH Sensor Prob | A | 2
+a-011 | Electrical Conduction | A | 3
+a-012 | Electrical Conduction Sensor | A | 2
+a-013 | Turbidity Sensor | A | 3
+a-014 | Turbidity Sensor Prob | A | 2
+a-015 | Water Sensor | A | 3
+a-016 | Fine Dust | A | 4
+a-017 | Fine Dust Prob | A | 2
+a-018 | Fine Dust Sensor | A | 2
+a-019 | Vibration Sensor | A | 3
+a-020 | Vibration Sensor Prob | A | 2
+a-021 | Magnet | A | 3
+a-022 | Analog Touch Sensor | A | 3
+a-023 | FSR Sensor | A | 3
+a-024 | FSR Sensor Prob | A | 2
+a-025 | Rotation Sensor | A | 3
+a-026 | Infinite Rotation Sensor | A | 3
+a-027 | Slider | A | 3
+a-028 | Joystick | A | 4
+a-029 | Line Finder | A | 3
+a-030 | Sound V2 | A | 3
+a-031 | IR Object | A | 3
+a-032 | Current Sensor 1A | A | 3
+a-033 | Current Sensor 1A Prob | A | 2
+a-034 | Voltage Sensor | A | 3
+a-050 | Gas MQ2 | A | 3
+a-051 | Gas MQ3 | A | 3
+a-052 | Gas MQ4 | A | 3
+a-053 | Gas MQ5 | A | 3
+a-054 | Gas MQ6 | A | 3
+a-055 | Gas MQ7 | A | 3
+a-056 | Gas MQ8 | A | 3
+a-057 | Gas MQ9 | A | 3
+a-058 | Gas MQ135 | A | 3
+
+--- 통신장치(Communication) ---
+c-001 | Bluetooth 4.0 (JDY33) | C | 4
+c-002 | WiFi ESP12E | C | 4
+c-003 | RF 433MHz Tx | C | 3
+c-004 | RF 433MHz Rx | C | 3
+c-005 | IR Transmitter | C | 3
+c-006 | IR Receiver | C | 3
+c-007 | USB to UART Converter | C | 4
+c-008 | Wireless Uploader | C | 6
+c-009 | Wireless Uploader Dongle | C | 0
+c-010 | ESP32CAM | C | 2
+
+--- 디지털센서(Digital) ---
+d-001 | Temp and Humi (DHT11) | D | 3
+d-002 | Temp and Humi DHT22 | D | 3
+d-003 | CO2 Sensor Z219D | D | 4
+d-004 | PMS7003 Sensor | D | 4
+d-005 | PMS3003 Adapter | D | 4
+d-006 | PMS3003 Sensor | D | 2
+d-007 | Ultrasonic Sensor | D | 4
+d-008 | Ultrasonic Sensor Adapter | D | 4
+d-009 | Ultrasonic Sensor V2 | D | 4
+d-010 | Water Level | D | 3
+d-011 | Water Level Prob | D | 2
+d-012 | Photoresistor | D | 3
+d-013 | Human Sensor | D | 3
+d-015 | Tilt | D | 3
+d-016 | Vibration | D | 3
+d-017 | Button Blue | D | 3
+d-018 | Button Green | D | 3
+d-019 | Button Red | D | 3
+d-020 | Button Yellow | D | 3
+d-021 | Locker SW | D | 3
+d-022 | Touch Sensor | D | 3
+d-023 | Color Touch Sensor Red | D | 3
+d-024 | Color Touch Sensor Blue | D | 3
+d-025 | Color Touch Sensor Green | D | 3
+d-026 | Color Touch Sensor Colorful | D | 3
+d-027 | Fire Sensor | D | 3
+d-028 | Rotary Encoder | D | 5
+d-029 | Fingerprint Sensor (AS608) | D | 4
+d-030 | Fingerprint Sensor Adapter | D | 2
+d-031 | GPS | D | 4
+d-032 | GPS Antenna | D | 2
+
+--- 디스플레이(Display) ---
+dis-001 | I2C 1602 LCD | DIS | 4
+dis-002 | RGB LED | DIS | 5
+dis-003 | Traffic Light LED | DIS | 5
+dis-004 | LED Red | DIS | 3
+dis-005 | LED Yellow | DIS | 3
+dis-006 | LED Blue | DIS | 3
+dis-007 | LED Green | DIS | 3
+dis-008 | Laser 90 | DIS | 3
+dis-009 | Laser 180 | DIS | 3
+dis-010 | 7 Segment | DIS | 4
+dis-011 | OLED 0.96 (SSD1306) | DIS | 4
+dis-012 | OLED 1.3 (SH1106) | DIS | 4
+dis-013 | Neo Pixels Ring | DIS | 3
+dis-014 | Neo Pixels Square | DIS | 3
+dis-015 | Dot Matrix 8x8 SPI | DIS | 5
+dis-016 | Dot Matrix 8x8 I2C | DIS | 4
+dis-017 | Dot Matrix 8x16 SPI | DIS | 5
+dis-018 | Dot Matrix 8x16 I2C | DIS | 4
+
+--- I2C센서(I2C) ---
+i2c-001 | RTC (DS1307) | I2C | 4
+i2c-002 | Temp and Humi SHT31 | I2C | 4
+i2c-003 | Non Contact Temp (MAX90614) | I2C | 4
+i2c-004 | CO2 Sensor (SGP30) | I2C | 4
+i2c-005 | CO2 CCS811 Sensor | I2C | 4
+i2c-006 | Barometric Altitude (BMP280) | I2C | 4
+i2c-007 | 6 Axis Gyro (MPU6050) | I2C | 4
+i2c-008 | Gesture Sensor (APDS9960) | I2C | 6
+i2c-009 | Distance Sensor (VL053L0x) | I2C | 4
+i2c-010 | Weight Sensor (HX711) | I2C | 4
+i2c-011 | Weight Sensor Plate | I2C | 2
+i2c-012 | Color Sensor (TCS34725) | I2C | 4
+i2c-013 | Heartbit (MAX30102) | I2C | 4
+
+--- 모터(Motor) ---
+m-001 | Vibration Motor | M | 3
+m-002 | Fan Motor (L9110) | M | 4
+m-003 | Fan Motor Fan | M | 0
+m-004 | Gear Motor | M | 4
+m-005 | Motor Wheel | M | 0
+m-006 | MG90S Servo | M | 3
+m-008 | Geek Servo 360 5Kg | M | 3
+m-022 | Green Geek Servo Motor | M | 3
+m-023 | Orange Geek Servo Motor | M | 3
+m-024 | Grey Geek Servo 360 | M | 3
+m-025 | Red Square Geek DC Motor | M | 2
+m-026 | Blue Geek DC Motor | M | 2
+m-009 | Gray Lego Servo | M | 3
+m-011 | Red Lego DC Motor | M | 2
+m-013 | Step Motor Driver (A4988) | M | 4
+m-014 | Step Motor | M | 2
+m-015 | Step Motor Power | M | 2
+m-016 | TT Motor Right | M | 2
+m-017 | TT Motor Left | M | 2
+m-018 | Dual Motor Driver (PCA9685) | M | 4
+m-019 | L293DD Motor Driver | M | 4
+m-020 | 16Ch Servo Driver (PCA9685) | M | 4
+m-021 | 5V Buck Converter | M | 2
+m-027 | 5V Buck Converter V2 | M | 34
+
+--- 출력장치(Output) ---
+o-001 | Buzzer | O | 3
+o-002 | MP3 Player (KT403A) | O | 4
+o-003 | MP3 Player Speaker | O | 2
+o-004 | Electromagnet | O | 3
+o-005 | Relay | O | 3
+o-006 | Pump Relay V2 | O | 3
+o-007 | Water Pump | O | 2
+o-008 | TF Card Adapter V2 | O | 6
+
+--- 유틸리티(Utility) ---
+u-001 | Battery Case | U | 2
+u-002 | Solar Panel 3V | U | 2
+u-003 | Remote Control | U | 0
+u-004 | Motor Wheel | U | 0
+
+총 보드: 15개
+총 모듈: 151개
+합계: 166개
