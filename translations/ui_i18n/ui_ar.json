@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 مستشعر الإيماءات (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ مستشعر الضغط/الحرارة (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 مستشعر اللون (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ مستشعر الحرارة (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ مستشعر حرارة الماء (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ مستشعر الحرارة/الرطوبة (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 مستشعر البصمة",
   "BKY_SENSOR_LABEL_HX711": "⚖️ خلية الحمل (HX711)",

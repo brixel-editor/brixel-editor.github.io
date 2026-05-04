@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 Capteur de Gestes (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ Capteur Barom./Temp. (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 Capteur de Couleur (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Capteur de Temp. (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Capteur Temp. Eau (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ Capteur Temp./Humid. (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 Capteur d'Empreinte",
   "BKY_SENSOR_LABEL_HX711": "⚖️ Cellule de Charge (HX711)",

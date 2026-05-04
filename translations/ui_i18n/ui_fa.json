@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 سنسور حرکتی (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ سنسور فشار/دما (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 سنسور رنگ (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ سنسور دما (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ سنسور دمای آب (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ سنسور دما/رطوبت (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 سنسور اثر انگشت",
   "BKY_SENSOR_LABEL_HX711": "⚖️ سلول بار (HX711)",

@@ -355,7 +355,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 Gesture Sensor (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ Barometric/Temp Sensor (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 Color Sensor (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Temperature Sensor (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Water Temperature Sensor (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ Temp/Humidity Sensor (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 Fingerprint Sensor",
   "BKY_SENSOR_LABEL_HX711": "⚖️ Load Cell (HX711)",

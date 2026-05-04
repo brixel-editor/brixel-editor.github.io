@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 Датчик жестов (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ Барометр/Темп. (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 Датчик цвета (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Датчик темп. (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Датчик темп. воды (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ Темп./Влажность (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 Датчик отпечатков",
   "BKY_SENSOR_LABEL_HX711": "⚖️ Тензодатчик (HX711)",

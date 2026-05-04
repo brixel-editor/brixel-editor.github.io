@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 Czujnik gestów (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ Barometr/Temp. (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 Czujnik koloru (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Czujnik temp. (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Czujnik temp. wody (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ Temp./Wilgotność (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 Czujnik odcisków palców",
   "BKY_SENSOR_LABEL_HX711": "⚖️ Tensometr (HX711)",

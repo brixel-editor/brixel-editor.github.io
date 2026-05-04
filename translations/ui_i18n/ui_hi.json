@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 जेस्चर सेंसर (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ बैरोमीटर/तापमान सेंसर (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 रंग सेंसर (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ तापमान सेंसर (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ जल तापमान सेंसर (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ तापमान/आर्द्रता सेंसर (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 फिंगरप्रिंट सेंसर",
   "BKY_SENSOR_LABEL_HX711": "⚖️ लोड सेल (HX711)",

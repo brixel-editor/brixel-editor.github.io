@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 Hareket Sensörü (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ Barometre/Sıcaklık (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 Renk Sensörü (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Sıcaklık Sensörü (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Su Sıcaklık Sensörü (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ Sıcaklık/Nem (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 Parmak İzi Sensörü",
   "BKY_SENSOR_LABEL_HX711": "⚖️ Yük Hücresi (HX711)",

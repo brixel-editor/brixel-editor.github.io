@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 Cảm Biến Cử Chỉ (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ Cảm Biến Áp Suất/Nhiệt Độ (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 Cảm Biến Màu Sắc (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Cảm Biến Nhiệt Độ (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Cảm Biến Nhiệt Độ Nước (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ Cảm Biến Nhiệt Độ/Độ Ẩm (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 Cảm Biến Vân Tay",
   "BKY_SENSOR_LABEL_HX711": "⚖️ Cảm Biến Tải (HX711)",

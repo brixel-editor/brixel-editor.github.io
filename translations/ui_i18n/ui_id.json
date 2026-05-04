@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 Sensor Gerakan (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ Sensor Barometrik/Suhu (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 Sensor Warna (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Sensor Suhu (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Sensor Suhu Air (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ Sensor Suhu/Kelembaban (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 Sensor Sidik Jari",
   "BKY_SENSOR_LABEL_HX711": "⚖️ Sel Beban (HX711)",

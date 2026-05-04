@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 Gebaarherkenning (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ Barometer/Temp Sensor (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 Kleursensor (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Temperatuursensor (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Watertemperatuursensor (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ Temp./Vochtigheid (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 Vingerafdruksensor",
   "BKY_SENSOR_LABEL_HX711": "⚖️ Weegsensor (HX711)",

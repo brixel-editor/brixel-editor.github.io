@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 Imo-ishora sensori (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ Barometr/Harorat (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 Rang sensori (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Harorat sensori (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ Suv harorat sensori (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ Harorat/Namlik (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 Barmoq izi sensori",
   "BKY_SENSOR_LABEL_HX711": "⚖️ Yuk hujayrasi (HX711)",

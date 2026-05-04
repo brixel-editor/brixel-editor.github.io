@@ -995,7 +995,7 @@
   "BKY_SENSOR_LABEL_APDS9960": "👋 เซ็นเซอร์ท่าทาง (APDS9960)",
   "BKY_SENSOR_LABEL_BMP280": "🌡️ เซ็นเซอร์บารอมิเตอร์/อุณหภูมิ (BMP280)",
   "BKY_SENSOR_LABEL_COLOR": "🎨 เซ็นเซอร์สี (TCS34725)",
-  "BKY_SENSOR_LABEL_DALLAS": "🌡️ เซ็นเซอร์อุณหภูมิ (DS18B20)",
+  "BKY_SENSOR_LABEL_DALLAS": "🌡️ เซ็นเซอร์อุณหภูมิน้ำ (DS18B20)",
   "BKY_SENSOR_LABEL_DHT": "🌡️ เซ็นเซอร์อุณหภูมิ/ความชื้น (DHT)",
   "BKY_SENSOR_LABEL_FINGERPRINT": "👆 เซ็นเซอร์ลายนิ้วมือ",
   "BKY_SENSOR_LABEL_HX711": "⚖️ โหลดเซลล์ (HX711)",
