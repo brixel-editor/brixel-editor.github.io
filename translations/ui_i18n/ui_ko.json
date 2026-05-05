@@ -965,7 +965,7 @@
   "BKY_SH110X_BITMAP_DOWNARROW": "아래 화살표",
   "BKY_SH110X_BITMAP_DOWN_EYE": "아래 보는 눈",
   "BKY_SH110X_BITMAP_GORILLACELL": "고릴라셀",
-  "BKY_DISPLAY_LABEL_FACE": "👤 소셜 로봇 표정",
+  "BKY_DISPLAY_LABEL_FACE": "👤 소셜 로봇 표정 (0.96″/1.3″ 공용)",
   "BKY_OLED_FACE_EYE_LEFT": "OLED %1 왼쪽 눈 표정 %2",
   "BKY_OLED_FACE_EYE_LEFT_TIP": "왼쪽 눈 표정을 OLED 좌상단에 출력합니다 (40×32, 좌표 10,10).",
   "BKY_OLED_FACE_EYE_RIGHT": "OLED %1 오른쪽 눈 표정 %2",
