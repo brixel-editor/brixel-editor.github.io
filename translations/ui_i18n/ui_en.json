@@ -1818,6 +1818,17 @@
   "BKY_BT_LABEL_SEND": "📤 Send (auto \\n)",
   "BKY_BT_LABEL_RECV": "📥 Receive (auto coalesce)",
   "BKY_BT_LABEL_PARSE": "🔍 Parse",
+
+  "BKY_JDY33_LABEL_CONFIG": "🔧 JDY-33 Permanent Config (run once, then remove)",
+  "BKY_JDY33_AT_TEST": "🔧 JDY-33 AT response test RX %1 TX %2 current baud %3",
+  "BKY_JDY33_AT_TEST_TIP": "Sends AT to check module response. 'OK' on Serial Monitor = working. (only when not paired)",
+  "BKY_JDY33_SET_NAME": "🔧 JDY-33 set name RX %1 TX %2 new name %3 current baud %4",
+  "BKY_JDY33_SET_NAME_TIP": "Permanently change JDY-33 SPP & BLE name. Run once then remove. (only when not paired)",
+  "BKY_JDY33_SET_BAUD": "🔧 JDY-33 set baud RX %1 TX %2 current baud %3 → new baud %4",
+  "BKY_JDY33_SET_BAUD_TIP": "Permanently change JDY-33 baud rate. Applies on next boot. (only when not paired)",
+  "BKY_JDY33_FACTORY_RESET": "🔧 JDY-33 factory reset RX %1 TX %2 current baud %3",
+  "BKY_JDY33_FACTORY_RESET_TIP": "Restore JDY-33 to factory defaults (name: JDY-33, baud: 9600). (only when not paired)",
+
   "BKY_WIFI_WS_WHEN_CHANGED": "📥 When WS message received",
   "BKY_WIFI_WS_WHEN_CHANGED_TIP": "Run only when a different message arrives (auto coalesce)",
   "BKY_WIFI_WS_GET_RECEIVED": "📥 WS received value",

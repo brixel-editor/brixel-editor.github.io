@@ -1851,6 +1851,16 @@
   "BKY_BT_LABEL_RECV": "📥 수신 (자동 코얼레스)",
   "BKY_BT_LABEL_PARSE": "🔍 분석",
 
+  "BKY_JDY33_LABEL_CONFIG": "🔧 JDY-33 모듈 영구 설정 (1회만 실행 후 제거)",
+  "BKY_JDY33_AT_TEST": "🔧 JDY-33 AT 응답 확인 RX %1 TX %2 현재속도 %3",
+  "BKY_JDY33_AT_TEST_TIP": "AT 명령을 보내 모듈 응답을 확인합니다. 시리얼모니터에 'OK'가 보이면 정상. (페어링 해제 상태에서만 동작)",
+  "BKY_JDY33_SET_NAME": "🔧 JDY-33 이름 변경 RX %1 TX %2 새 이름 %3 현재속도 %4",
+  "BKY_JDY33_SET_NAME_TIP": "JDY-33의 SPP·BLE 이름을 영구 변경합니다. 1회 실행 후 블록 제거. (페어링 해제 상태에서만 동작)",
+  "BKY_JDY33_SET_BAUD": "🔧 JDY-33 통신속도 변경 RX %1 TX %2 현재속도 %3 → 새 속도 %4",
+  "BKY_JDY33_SET_BAUD_TIP": "JDY-33의 통신속도를 영구 변경합니다. 변경 후 다음 부팅부터 새 속도 적용. (페어링 해제 상태에서만 동작)",
+  "BKY_JDY33_FACTORY_RESET": "🔧 JDY-33 공장 초기화 RX %1 TX %2 현재속도 %3",
+  "BKY_JDY33_FACTORY_RESET_TIP": "JDY-33을 공장 초기화합니다 (이름: JDY-33, 통신속도: 9600). (페어링 해제 상태에서만 동작)",
+
   "BKY_WIFI_WS_SEND": "📤 WS %1 보내기",
   "BKY_WIFI_WS_SEND_TIP": "값을 WebSocket 으로 전송 (자동 \\n 부착)",
   "BKY_WIFI_WS_WHEN_CHANGED": "📥 WS 메시지 받았을 때",
