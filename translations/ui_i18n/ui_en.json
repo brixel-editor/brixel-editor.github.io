@@ -1817,6 +1817,9 @@
   "BKY_BT_PARSED_GET_TOOLTIP": "Nth BT split value (1-based)",
   "BKY_BT_LABEL_SEND": "📤 Send (auto \\n)",
   "BKY_BT_LABEL_RECV": "📥 Receive (auto coalesce)",
+  "BKY_BT_LABEL_IMMEDIATE": "📥 Immediate (for game controllers)",
+  "BKY_BT_GET_IMMEDIATE": "📥 BT immediate received value",
+  "BKY_BT_GET_IMMEDIATE_TOOLTIP": "Returns raw data immediately without newline. For game controller apps (BLEjoy, etc). Clears buffer on read — store in variable.",
   "BKY_BT_LABEL_PARSE": "🔍 Parse",
 
   "BKY_JDY33_LABEL_CONFIG": "🔧 JDY-33 Permanent Config (run once, then remove)",

@@ -1849,6 +1849,9 @@
   "BKY_BT_PARSED_GET_TOOLTIP": "BT 나누기 결과의 N번째 값 (1부터 시작)",
   "BKY_BT_LABEL_SEND": "📤 송신 (자동 \\n)",
   "BKY_BT_LABEL_RECV": "📥 수신 (자동 코얼레스)",
+  "BKY_BT_LABEL_IMMEDIATE": "📥 즉시 수신 (게임 컨트롤러용)",
+  "BKY_BT_GET_IMMEDIATE": "📥 BT 즉시 받은 값",
+  "BKY_BT_GET_IMMEDIATE_TOOLTIP": "줄바꿈(\\n) 없이 도착한 raw 데이터를 즉시 반환. BLEjoy 등 게임 컨트롤러 앱용. 호출 즉시 버퍼 클리어 — 변수에 저장해서 사용 권장",
   "BKY_BT_LABEL_PARSE": "🔍 분석",
 
   "BKY_JDY33_LABEL_CONFIG": "🔧 JDY-33 모듈 영구 설정 (1회만 실행 후 제거)",
