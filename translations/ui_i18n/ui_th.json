@@ -99,7 +99,7 @@
   "BKY_ARDUINO_BT_READ_RAW": "📱 ค่าไบต์ที่ได้รับจาก BT",
   "BKY_ARDUINO_BT_READ_RAW_TIP": "ส่งกลับไบต์แรกที่ได้รับเป็นตัวเลข เช่น ได้รับ \"A\" ← ส่งกลับ 65 เก็บในตัวแปรตัวเลข",
   "BKY_ARDUINO_BT_READ_TIP": "อ่านข้อมูลที่ได้รับผ่านโมดูลบลูทูธ",
-  "BKY_ARDUINO_BT_SETUP": "📱 ตั้งค่า Arduino BT(JDY-33) RX %1 TX %2 ชื่อ %3 บอด %4",
+  "BKY_ARDUINO_BT_SETUP": "📱 ตั้งค่า Arduino BT(JDY-33) RX %1 TX %2 บอด %3",
   "BKY_ARDUINO_BT_SETUP_TIP": "ตั้งค่าโมดูลบลูทูธภายนอก (JDY-33 ฯลฯ) ที่เชื่อมต่อกับ Arduino",
   "BKY_ARDUINO_BT_WRITE": "📱 ส่ง %1 ผ่านโมดูล BT",
   "BKY_ARDUINO_BT_WRITE_TIP": "ส่งข้อมูลผ่านโมดูลบลูทูธ",

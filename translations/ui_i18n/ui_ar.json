@@ -99,7 +99,7 @@
   "BKY_ARDUINO_BT_READ_RAW": "📱 قيمة البايت المستلم عبر BT",
   "BKY_ARDUINO_BT_READ_RAW_TIP": "يعيد أول بايت مستلم كرقم. مثال: استلام \"A\" ← إرجاع 65. خزّن في متغير رقمي.",
   "BKY_ARDUINO_BT_READ_TIP": "قراءة البيانات المستلمة عبر وحدة البلوتوث.",
-  "BKY_ARDUINO_BT_SETUP": "📱 إعداد Arduino BT(JDY-33) RX %1 TX %2 الاسم %3 سرعة البود %4",
+  "BKY_ARDUINO_BT_SETUP": "📱 إعداد Arduino BT(JDY-33) RX %1 TX %2 سرعة البود %3",
   "BKY_ARDUINO_BT_SETUP_TIP": "إعداد وحدة بلوتوث خارجية (JDY-33 إلخ) متصلة بالأردوينو.",
   "BKY_ARDUINO_BT_WRITE": "📱 إرسال %1 عبر وحدة BT",
   "BKY_ARDUINO_BT_WRITE_TIP": "إرسال البيانات عبر وحدة البلوتوث.",

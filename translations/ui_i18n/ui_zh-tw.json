@@ -99,7 +99,7 @@
   "BKY_ARDUINO_BT_READ_RAW": "📱 BT接收位元組值",
   "BKY_ARDUINO_BT_READ_RAW_TIP": "傳回第一個接收位元組的數值。例：接收\"A\"→傳回65。存入數值變數。",
   "BKY_ARDUINO_BT_READ_TIP": "讀取透過藍牙模組接收的資料。",
-  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) 設定 RX %1 TX %2 名稱 %3 鮑率 %4",
+  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) 設定 RX %1 TX %2 鮑率 %3",
   "BKY_ARDUINO_BT_SETUP_TIP": "設定連接到Arduino的外部藍牙模組（JDY-33等）。",
   "BKY_ARDUINO_BT_WRITE": "📱 透過BT模組傳送 %1",
   "BKY_ARDUINO_BT_WRITE_TIP": "透過藍牙模組傳送資料。",

@@ -99,7 +99,7 @@
   "BKY_ARDUINO_BT_READ_RAW": "📱 BT alınan bayt değeri",
   "BKY_ARDUINO_BT_READ_RAW_TIP": "İlk alınan baytı sayı olarak döndürür. Ör. \"A\" alındı → 65 döndürüldü. Sayı değişkeninde saklayın.",
   "BKY_ARDUINO_BT_READ_TIP": "Bluetooth modülü üzerinden alınan verileri okur.",
-  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) Kurulum RX %1 TX %2 İsim %3 Baud %4",
+  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) Kurulum RX %1 TX %2 Baud %3",
   "BKY_ARDUINO_BT_SETUP_TIP": "Arduino'ya bağlı harici Bluetooth modülünü (JDY-33, vb.) kurar.",
   "BKY_ARDUINO_BT_WRITE": "📱 BT modülü üzerinden %1 gönder",
   "BKY_ARDUINO_BT_WRITE_TIP": "Bluetooth modülü üzerinden veri iletir.",

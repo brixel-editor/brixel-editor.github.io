@@ -99,7 +99,7 @@
   "BKY_ARDUINO_BT_READ_RAW": "📱 BT ontvangen bytewaarde",
   "BKY_ARDUINO_BT_READ_RAW_TIP": "Retourneert eerste ontvangen byte als getal. Bijv. \"A\" ontvangen → 65 geretourneerd. Sla op in getalvariabele.",
   "BKY_ARDUINO_BT_READ_TIP": "Leest gegevens ontvangen via Bluetooth-module.",
-  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) Instelling RX %1 TX %2 Naam %3 Baudrate %4",
+  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) Instelling RX %1 TX %2 Baudrate %3",
   "BKY_ARDUINO_BT_SETUP_TIP": "Stel externe Bluetooth-module (JDY-33, enz.) aangesloten op Arduino in.",
   "BKY_ARDUINO_BT_WRITE": "📱 Verzend %1 via BT-module",
   "BKY_ARDUINO_BT_WRITE_TIP": "Verzendt gegevens via Bluetooth-module.",

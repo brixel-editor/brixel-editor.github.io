@@ -99,7 +99,7 @@
   "BKY_ARDUINO_BT_READ_RAW": "📱 BT प्राप्त बाइट मान",
   "BKY_ARDUINO_BT_READ_RAW_TIP": "पहला प्राप्त बाइट संख्या के रूप में लौटाता है। उदा. \"A\" प्राप्त ← 65 लौटाया। संख्या वेरिएबल में स्टोर करें।",
   "BKY_ARDUINO_BT_READ_TIP": "ब्लूटूथ मॉड्यूल से प्राप्त डेटा पढ़ें।",
-  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) सेटअप RX %1 TX %2 नाम %3 बॉड %4",
+  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) सेटअप RX %1 TX %2 बॉड %3",
   "BKY_ARDUINO_BT_SETUP_TIP": "Arduino से जुड़े बाहरी ब्लूटूथ मॉड्यूल (JDY-33 आदि) को सेटअप करें।",
   "BKY_ARDUINO_BT_WRITE": "📱 BT मॉड्यूल से %1 भेजें",
   "BKY_ARDUINO_BT_WRITE_TIP": "ब्लूटूथ मॉड्यूल के माध्यम से डेटा ट्रांसमिट करें।",

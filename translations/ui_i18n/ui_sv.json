@@ -99,7 +99,7 @@
   "BKY_ARDUINO_BT_READ_RAW": "📱 BT mottaget bytevärde",
   "BKY_ARDUINO_BT_READ_RAW_TIP": "Returnerar första mottagna byte som tal. T.ex. \"A\" mottaget → 65 returnerat. Spara i talvariabel.",
   "BKY_ARDUINO_BT_READ_TIP": "Läser data mottagna via Bluetooth-modul.",
-  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) Inställning RX %1 TX %2 Namn %3 Baudrate %4",
+  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) Inställning RX %1 TX %2 Baudrate %3",
   "BKY_ARDUINO_BT_SETUP_TIP": "Ställ in extern Bluetooth-modul (JDY-33, etc.) ansluten till Arduino.",
   "BKY_ARDUINO_BT_WRITE": "📱 Skicka %1 via BT-modul",
   "BKY_ARDUINO_BT_WRITE_TIP": "Överför data via Bluetooth-modul.",

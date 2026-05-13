@@ -99,7 +99,7 @@
   "BKY_ARDUINO_BT_READ_RAW": "📱 مقدار بایت دریافتی BT",
   "BKY_ARDUINO_BT_READ_RAW_TIP": "اولین بایت دریافتی را به عنوان عدد برمی‌گرداند. مثال: \"A\" دریافت شد ← 65 برگردانده شد. در متغیر عددی ذخیره کنید.",
   "BKY_ARDUINO_BT_READ_TIP": "داده‌های دریافتی از طریق ماژول بلوتوث را می‌خواند.",
-  "BKY_ARDUINO_BT_SETUP": "📱 تنظیمات Arduino BT(JDY-33) RX %1 TX %2 نام %3 نرخ باود %4",
+  "BKY_ARDUINO_BT_SETUP": "📱 تنظیمات Arduino BT(JDY-33) RX %1 TX %2 نرخ باود %3",
   "BKY_ARDUINO_BT_SETUP_TIP": "ماژول بلوتوث خارجی (JDY-33 و غیره) متصل به آردوینو را تنظیم می‌کند.",
   "BKY_ARDUINO_BT_WRITE": "📱 ارسال %1 از طریق ماژول BT",
   "BKY_ARDUINO_BT_WRITE_TIP": "داده‌ها را از طریق ماژول بلوتوث ارسال می‌کند.",

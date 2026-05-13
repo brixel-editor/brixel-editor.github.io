@@ -99,7 +99,7 @@
   "BKY_ARDUINO_BT_READ_RAW": "📱 BT qabul qilingan bayt qiymati",
   "BKY_ARDUINO_BT_READ_RAW_TIP": "Birinchi qabul qilingan baytni raqam sifatida qaytaradi. mas. \"A\" qabul qilindi → 65 qaytarildi. Raqam o'zgaruvchisida saqlang.",
   "BKY_ARDUINO_BT_READ_TIP": "Bluetooth moduli orqali qabul qilingan ma'lumotlarni o'qiydi.",
-  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) Sozlash RX %1 TX %2 Nomi %3 Baud %4",
+  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) Sozlash RX %1 TX %2 Baud %3",
   "BKY_ARDUINO_BT_SETUP_TIP": "Arduino ga ulangan tashqi Bluetooth modulini (JDY-33 va boshq.) sozlaydi.",
   "BKY_ARDUINO_BT_WRITE": "📱 BT moduli orqali %1 yuborish",
   "BKY_ARDUINO_BT_WRITE_TIP": "Bluetooth moduli orqali ma'lumotlarni uzatadi.",

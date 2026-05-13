@@ -99,7 +99,7 @@
   "BKY_ARDUINO_BT_READ_RAW": "📱 BT受信バイト値",
   "BKY_ARDUINO_BT_READ_RAW_TIP": "最初に受信したバイトを数値として返します。例：\"A\"受信→65返却。数値変数に保存。",
   "BKY_ARDUINO_BT_READ_TIP": "Bluetoothモジュール経由で受信されたデータを読み込みます。",
-  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) セットアップ RX %1 TX %2 名前 %3 ボーレート %4",
+  "BKY_ARDUINO_BT_SETUP": "📱 Arduino BT(JDY-33) セットアップ RX %1 TX %2 ボーレート %3",
   "BKY_ARDUINO_BT_SETUP_TIP": "Arduinoに接続された外部Bluetoothモジュール（JDY-33等）を設定します。",
   "BKY_ARDUINO_BT_WRITE": "📱 BTモジュール経由で %1 を送信",
   "BKY_ARDUINO_BT_WRITE_TIP": "Bluetoothモジュール経由でデータを送信します。",
