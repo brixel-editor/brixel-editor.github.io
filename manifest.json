@@ -1,0 +1,41 @@
+{
+  "name": "Brixel Editor",
+  "short_name": "Brixel",
+  "description": "Arduino · ESP32 블록코딩 웹 IDE (안드로이드 태블릿/폰 호환)",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#F8FAFC",
+  "theme_color": "#4F46E5",
+  "lang": "ko",
+  "categories": ["education", "developer", "productivity"],
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "블록 코딩",
+      "short_name": "블록",
+      "description": "Blockly 블록 코딩 모드로 바로 진입",
+      "url": "/?mode=block"
+    },
+    {
+      "name": "텍스트 코딩",
+      "short_name": "코드",
+      "description": "Monaco 텍스트 에디터 모드로 바로 진입",
+      "url": "/?mode=text"
+    }
+  ]
+}
