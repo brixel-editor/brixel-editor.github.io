@@ -2,6 +2,7 @@
 
 > **브라우저에서 바로 쓰는 아두이노 / ESP32 / 라즈베리파이 피코 블록 코딩 IDE.**
 > 설치 없이 시작 → 블록 조립 → 실제 보드에 업로드까지 한 흐름으로.
+> **Windows · macOS · Chromebook · Android** — 4개 운영체제에서 동작합니다.
 
 🌐 **사이트**: [brixel.gorillacell.kr](https://brixel.gorillacell.kr) · [brixel-editor.github.io](https://brixel-editor.github.io)
 📌 **버전**: 2.7.0
@@ -28,6 +29,22 @@
 | Raspberry Pi Pico / Pico W | – | Pico W만 ✓ | – |
 
 보드를 바꾸면 **사용 가능한 블록 도구상자가 자동으로 조정**됩니다.
+
+---
+
+## 💻 4개 운영체제에서 동작
+
+| 운영체제 | 컴파일·업로드 방식 | 지원 보드 |
+|---|---|---|
+| **Windows · macOS** | PC 에이전트 (설치형, Arduino CLI 내장) | **Arduino · ESP32 전 계열** (Uno·Nano·Mega · ESP32 시리즈 · Pico) |
+| **Chromebook** | 설치 불필요 — 브라우저 WASM 컴파일 + Web Serial 업로드 | **Arduino 계열** (Uno · Nano · Mega) |
+| **Android** | BrixelDroid 앱 (기기 내 로컬 에이전트) | **Arduino 계열** (Uno · Nano · Mega) |
+
+- **Windows · macOS** — PC 에이전트가 Arduino CLI 로 컴파일하고 USB 로 업로드합니다. **ESP32 · Pico 까지 전부** 지원.
+- **Chromebook** — 크롬OS 의 Web Serial 덕분에 **에이전트도 서버도 없이** 브라우저가 직접 컴파일(WASM avr-gcc)·업로드합니다.
+- **Android** — BrixelDroid 앱이 기기에서 직접 컴파일·업로드합니다.
+
+> Chromebook · Android 은 현재 **아두이노 AVR 계열(Uno · Nano · Mega)** 만 지원합니다. ESP32 가 필요하면 Windows · macOS 를 사용하세요.
 
 ---
 
@@ -58,12 +75,12 @@
 2. 왼쪽 도구상자에서 블록을 드래그
 3. 오른쪽에서 자동 생성된 Arduino C++ 코드 확인
 
-### 2️⃣ 실제 보드에 업로드 (PC 에이전트 필요)
-1. IDE 우측 패널에서 **PC 에이전트** 다운로드 (Windows · macOS · Chromebook)
-2. 설치 후 실행 → 웹 IDE와 자동으로 연결됩니다
-3. 보드 / 포트 선택 → **컴파일** → **업로드**
+### 2️⃣ 실제 보드에 업로드 (운영체제별)
+- **Windows · macOS** — IDE 우측 패널에서 **PC 에이전트** 다운로드·설치 → 웹 IDE와 자동 연결 → 보드/포트 선택 → **컴파일·업로드** (Arduino · ESP32 전 계열)
+- **Chromebook** — 설치 불필요. **보드 연결** 버튼 → USB 포트 선택 → 브라우저가 직접 **컴파일·업로드** (Arduino 계열)
+- **Android** — **BrixelDroid** 앱 설치 → 웹 IDE와 연결 → **컴파일·업로드** (Arduino 계열)
 
-> PC 에이전트에는 Arduino CLI 와 40개 이상의 아두이노 라이브러리가 미리 포함되어 있어 별도 설치가 필요 없습니다.
+> PC 에이전트 · BrixelDroid 에는 Arduino CLI(또는 컴파일러)와 40개 이상의 라이브러리가 미리 포함되어 별도 설치가 필요 없습니다.
 
 ---
 
@@ -84,6 +101,9 @@ Google Blockly 기반 블록 모드와 Monaco Editor (VS Code 엔진) 텍스트 
 
 ### 🌗 다크 모드 & 반응형
 블록 워크스페이스, 텍스트 에디터, 콘솔까지 모든 UI에 적용되는 완전한 다크 테마. PC · 태블릿 · 모바일 화면에 자동 대응합니다.
+
+### 📱 앱으로 설치 (PWA)
+`manifest.json` 과 서비스 워커(`sw.js`)로 **홈 화면 · 바탕화면에 앱처럼 설치**할 수 있고, 한 번 연 뒤에는 **오프라인에서도** 에디터가 열립니다 (Windows · macOS · Chromebook · Android 공통).
 
 ### 🔗 프로젝트 공유 & 임베드
 URL 한 번으로 공유, 카카오톡 · 구글 클래스룸 · 팀즈 · 트위터 등 SNS 직접 공유, `<iframe>`으로 외부 사이트나 LMS에 임베드 가능합니다.
