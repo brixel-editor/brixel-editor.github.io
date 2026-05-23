@@ -1530,6 +1530,8 @@
   "agentOsLinux": "適用於 Linux",
   "agentOsMac": "適用於 macOS",
   "agentOsWin": "適用於 Windows",
+
+  "agentOsAndroid": "適用於 Android",
   "agent_compile_fail": "❌ 編譯失敗：{errorMsg}",
   "agent_compile_mode": "目前模式：{modeName}",
   "agent_compile_no_code": "沒有要編譯的程式碼。",

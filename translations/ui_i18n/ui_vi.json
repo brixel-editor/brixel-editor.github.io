@@ -1530,6 +1530,8 @@
   "agentOsLinux": "Cho Linux",
   "agentOsMac": "Cho macOS",
   "agentOsWin": "Cho Windows",
+
+  "agentOsAndroid": "Cho Android",
   "agent_compile_fail": "❌ Biên dịch thất bại: {errorMsg}",
   "agent_compile_mode": "Chế độ hiện tại: {modeName}",
   "agent_compile_no_code": "Không có mã để biên dịch.",

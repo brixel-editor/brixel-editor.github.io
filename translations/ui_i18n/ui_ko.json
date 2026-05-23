@@ -161,6 +161,7 @@
   "agentOsLinux": "Linux 용",
   "agentOsMac": "macOS 용",
   "agentOsWin": "Windows 용",
+  "agentOsAndroid": "Android 용",
   "agent_compile_fail": "❌ 컴파일 실패: {errorMsg}",
   "agent_compile_mode": "현재 모드: {modeName}",
   "agent_compile_no_code": "컴파일할 코드가 없습니다.",

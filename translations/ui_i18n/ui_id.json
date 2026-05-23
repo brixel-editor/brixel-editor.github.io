@@ -1530,6 +1530,8 @@
   "agentOsLinux": "Untuk Linux",
   "agentOsMac": "Untuk macOS",
   "agentOsWin": "Untuk Windows",
+
+  "agentOsAndroid": "Untuk Android",
   "agent_compile_fail": "❌ Kompilasi gagal: {errorMsg}",
   "agent_compile_mode": "Mode saat ini: {modeName}",
   "agent_compile_no_code": "Tidak ada kode untuk dikompilasi.",

@@ -1530,6 +1530,8 @@
   "agentOsLinux": "สำหรับ Linux",
   "agentOsMac": "สำหรับ macOS",
   "agentOsWin": "สำหรับ Windows",
+
+  "agentOsAndroid": "สำหรับ Android",
   "agent_compile_fail": "❌ คอมไพล์ล้มเหลว: {errorMsg}",
   "agent_compile_mode": "โหมดปัจจุบัน: {modeName}",
   "agent_compile_no_code": "ไม่มีโค้ดสำหรับคอมไพล์",

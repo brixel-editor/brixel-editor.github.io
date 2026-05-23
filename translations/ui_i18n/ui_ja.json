@@ -1530,6 +1530,8 @@
   "agentOsLinux": "Linux用",
   "agentOsMac": "macOS用",
   "agentOsWin": "Windows用",
+
+  "agentOsAndroid": "Android用",
   "agent_compile_fail": "❌ コンパイル失敗: {errorMsg}",
   "agent_compile_mode": "現在のモード: {modeName}",
   "agent_compile_no_code": "コンパイルするコードがありません。",

@@ -1530,6 +1530,8 @@
   "agentOsLinux": "Для Linux",
   "agentOsMac": "Для macOS",
   "agentOsWin": "Для Windows",
+
+  "agentOsAndroid": "Для Android",
   "agent_compile_fail": "❌ Ошибка компиляции: {errorMsg}",
   "agent_compile_mode": "Текущий режим: {modeName}",
   "agent_compile_no_code": "Нет кода для компиляции.",

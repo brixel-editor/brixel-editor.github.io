@@ -1530,6 +1530,8 @@
   "agentOsLinux": "Linux uchun",
   "agentOsMac": "macOS uchun",
   "agentOsWin": "Windows uchun",
+
+  "agentOsAndroid": "Android uchun",
   "agent_compile_fail": "❌ Kompilyatsiya muvaffaqiyatsiz: {errorMsg}",
   "agent_compile_mode": "Joriy rejim: {modeName}",
   "agent_compile_no_code": "Kompilyatsiya qilish uchun kod yo‘q.",

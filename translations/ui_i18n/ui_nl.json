@@ -1530,6 +1530,8 @@
   "agentOsLinux": "Voor Linux",
   "agentOsMac": "Voor macOS",
   "agentOsWin": "Voor Windows",
+
+  "agentOsAndroid": "Voor Android",
   "agent_compile_fail": "❌ Compilatie mislukt: {errorMsg}",
   "agent_compile_mode": "Huidige modus: {modeName}",
   "agent_compile_no_code": "Geen code om te compileren.",

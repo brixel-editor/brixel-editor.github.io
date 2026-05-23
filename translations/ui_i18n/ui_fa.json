@@ -1530,6 +1530,8 @@
   "agentOsLinux": "برای لینوکس",
   "agentOsMac": "برای macOS",
   "agentOsWin": "برای ویندوز",
+
+  "agentOsAndroid": "برای Android",
   "agent_compile_fail": "❌ خطا در کامپایل: {errorMsg}",
   "agent_compile_mode": "حالت فعلی: {modeName}",
   "agent_compile_no_code": "هیچ کدی برای کامپایل وجود ندارد.",

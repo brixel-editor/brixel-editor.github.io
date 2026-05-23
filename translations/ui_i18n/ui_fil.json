@@ -1530,6 +1530,8 @@
   "agentOsLinux": "Para sa Linux",
   "agentOsMac": "Para sa macOS",
   "agentOsWin": "Para sa Windows",
+
+  "agentOsAndroid": "Para sa Android",
   "agent_compile_fail": "❌ Nabigo ang pag-compile: {errorMsg}",
   "agent_compile_mode": "Kasalukuyang mode: {modeName}",
   "agent_compile_no_code": "Walang code na ipo-compile.",

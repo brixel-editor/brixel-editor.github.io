@@ -1530,6 +1530,8 @@
   "agentOsLinux": "Linux için",
   "agentOsMac": "macOS için",
   "agentOsWin": "Windows için",
+
+  "agentOsAndroid": "Android için",
   "agent_compile_fail": "❌ Derleme başarısız: {errorMsg}",
   "agent_compile_mode": "Geçerli mod: {modeName}",
   "agent_compile_no_code": "Derlenecek kod yok.",

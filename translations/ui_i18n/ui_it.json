@@ -1530,6 +1530,8 @@
   "agentOsLinux": "Per Linux",
   "agentOsMac": "Per macOS",
   "agentOsWin": "Per Windows",
+
+  "agentOsAndroid": "Per Android",
   "agent_compile_fail": "❌ Compilazione fallita: {errorMsg}",
   "agent_compile_mode": "Modalità corrente: {modeName}",
   "agent_compile_no_code": "Nessun codice da compilare.",

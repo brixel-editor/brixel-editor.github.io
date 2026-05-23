@@ -1530,6 +1530,8 @@
   "agentOsLinux": "لـ Linux",
   "agentOsMac": "لـ macOS",
   "agentOsWin": "لـ Windows",
+
+  "agentOsAndroid": "لـ Android",
   "agent_compile_fail": "❌ فشل في الترجمة: {errorMsg}",
   "agent_compile_mode": "الوضع الحالي: {modeName}",
   "agent_compile_no_code": "لا يوجد كود للترجمة.",

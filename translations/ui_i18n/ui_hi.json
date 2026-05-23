@@ -1530,6 +1530,8 @@
   "agentOsLinux": "लिनक्स के लिए",
   "agentOsMac": "macOS के लिए",
   "agentOsWin": "विंडोज के लिए",
+
+  "agentOsAndroid": "Android के लिए",
   "agent_compile_fail": "❌ संकलन विफल: {errorMsg}",
   "agent_compile_mode": "वर्तमान मोड: {modeName}",
   "agent_compile_no_code": "संकलन के लिए कोई कोड नहीं।",
