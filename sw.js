@@ -8,7 +8,7 @@
  *  (coi-serviceworker 와 scope `/` 충돌을 피하려고 COI 로직을 여기로 병합)
  */
 
-const CACHE_VERSION = 'brixel-v6';
+const CACHE_VERSION = 'brixel-v7';
 const CACHE_STATIC  = `${CACHE_VERSION}-static`;
 const CACHE_DYNAMIC = `${CACHE_VERSION}-dynamic`;
 
