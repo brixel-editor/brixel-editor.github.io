@@ -122,6 +122,7 @@ export class BrixelWasmCompiler {
   _waitFor(marker, timeoutMs) {
     return new Promise((resolve, reject) => {
       const t0 = Date.now();
+      let timer = null;
       const test = () => {
         if (marker instanceof RegExp) return this._captureBuf.match(marker);
         const i = this._captureBuf.indexOf(marker);
@@ -129,13 +130,15 @@ export class BrixelWasmCompiler {
       };
       const tryResolve = () => {
         const r = test();
-        if (r !== null && r !== undefined) { this._waiters.delete(w); resolve(r); return true; }
-        if (Date.now() - t0 > timeoutMs) { this._waiters.delete(w); reject(new Error('timeout: ' + marker)); return true; }
+        if (r !== null && r !== undefined) { this._waiters.delete(w); if (timer) clearTimeout(timer); resolve(r); return true; }
+        if (Date.now() - t0 > timeoutMs) { this._waiters.delete(w); if (timer) clearTimeout(timer); reject(new Error('timeout: ' + marker)); return true; }
         return false;
       };
       const w = () => tryResolve();
       if (tryResolve()) return;
       this._waiters.add(w);
+      // VM 이 출력 없이 멈춰도 타임아웃이 발동하도록 강제 타이머. (onWrite 콜백이 안 와도 reject)
+      timer = setTimeout(() => tryResolve(), timeoutMs + 50);
     });
   }
 
@@ -236,6 +239,9 @@ export class BrixelWasmCompiler {
       this.onProgress(100, 'ready');
       this.onLog('✅ WASM 컴파일러 준비 완료');
     })();
+    // 초기화 실패(예: 대용량 다운로드 중 네트워크 끊김)가 영구 캐시되지 않도록 리셋 →
+    // 다음 호출에서 재시도 가능(새로고침 불필요).
+    this._ready.catch(() => { this._ready = null; });
     return this._ready;
   }
 
