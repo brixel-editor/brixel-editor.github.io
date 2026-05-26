@@ -1,0 +1,186 @@
+/* ==============================================
+   Brixel i18n - Language Selector & RTL Styles
+   ============================================== */
+
+/* ── Language Selector ── */
+.brixel-i18n-selector {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: 'Noto Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.brixel-i18n-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(20, 16, 36, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+    color: #e0e0e0;
+    font-size: 14px;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.brixel-i18n-btn:hover {
+    background: rgba(30, 26, 56, 0.95);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+.brixel-i18n-globe {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.brixel-i18n-label {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* ── Language Panel ── */
+.brixel-i18n-panel {
+    position: absolute;
+    bottom: 52px;
+    right: 0;
+    width: 320px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: rgba(20, 16, 36, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px) scale(0.95);
+    transition: all 0.2s ease;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+.brixel-i18n-panel.brixel-i18n-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.brixel-i18n-lang-item {
+    padding: 10px 12px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #c0c0c0;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.brixel-i18n-lang-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.brixel-i18n-lang-item.active {
+    background: rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    border-color: rgba(99, 102, 241, 0.3);
+    font-weight: 600;
+}
+
+/* ── Panel Scrollbar ── */
+.brixel-i18n-panel::-webkit-scrollbar {
+    width: 4px;
+}
+.brixel-i18n-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+.brixel-i18n-panel::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+}
+
+/* ── Mobile Responsive ── */
+@media (max-width: 480px) {
+    .brixel-i18n-selector {
+        bottom: 12px;
+        right: 12px;
+    }
+
+    .brixel-i18n-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .brixel-i18n-panel {
+        width: calc(100vw - 24px);
+        right: 0;
+        bottom: 48px;
+        grid-template-columns: 1fr 1fr;
+        max-height: 60vh;
+    }
+}
+
+/* ── RTL Support ── */
+html[dir="rtl"] .brixel-i18n-selector {
+    right: auto;
+    left: 20px;
+}
+
+html[dir="rtl"] .brixel-i18n-panel {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .brixel-i18n-lang-item {
+    text-align: right;
+}
+
+/* RTL overrides for main page */
+html[dir="rtl"] .card-description {
+    text-align: right;
+}
+
+html[dir="rtl"] .card-link::after {
+    content: '←';
+}
+
+html[dir="rtl"] .tagline {
+    direction: rtl;
+}
+
+html[dir="rtl"] .card-tags {
+    direction: rtl;
+}
+
+html[dir="rtl"] .footer {
+    direction: rtl;
+}
+
+/* RTL for sub-pages common elements */
+html[dir="rtl"] .hero-description,
+html[dir="rtl"] .section-description,
+html[dir="rtl"] .content-text {
+    text-align: right;
+}
+
+/* ── FOUC Prevention ── */
+html.i18n-loading [data-i18n] {
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}

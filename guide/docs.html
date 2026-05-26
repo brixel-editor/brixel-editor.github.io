@@ -976,5 +976,38 @@ class BrixelDocs {
 /* ── Launch ── */
 // Initialization is handled by the data script onload callback above
 </script>
+<!-- i18n 다국어(구글번역) 선택기 -->
+<script src="i18n/i18n.js" data-base="i18n/" data-page="guide" data-gt-mode="true"></script>
+<!-- Google Translate (GT combo 방식) -->
+<div id="google_translate_element" style="display:none"></div>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'ko',
+    autoDisplay:false,
+    includedLanguages:'en,ja,zh-CN,zh-TW,es,fr,de,ru,ar,fa,tr,vi,pt,hi,id,it,nl,th,tl,sv,pl,uz'
+  },'google_translate_element');
+  setTimeout(function(){
+    var saved = localStorage.getItem('brixel-lang');
+    var lang = saved || 'ko';
+    var gtMap = {'fil':'tl','zh':'zh-CN','zh-tw':'zh-TW'};
+    var gtLang = gtMap[lang] || lang;
+    if(lang !== 'ko'){
+      var sel = document.querySelector('.goog-te-combo');
+      if(sel){ sel.value = gtLang; sel.dispatchEvent(new Event('change')); }
+    }
+  }, 1500);
+}
+(function(){
+  var saved = localStorage.getItem('brixel-lang');
+  var lang = saved || (navigator.language||navigator.userLanguage||'ko').toLowerCase().split('-')[0];
+  if(lang !== 'ko'){
+    var s=document.createElement('script');
+    s.src='//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    document.body.appendChild(s);
+  }
+})();
+</script>
+<style>.goog-te-banner-frame,.skiptranslate{display:none!important}body{top:0!important}</style>
 </body>
 </html>
