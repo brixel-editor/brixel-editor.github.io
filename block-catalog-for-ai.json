@@ -5202,19 +5202,36 @@
           "id": "dallas_temp_setup",
           "label_ko": "💦 수온 센서 설정 데이터 핀 %1",
           "label_en": "💦 Set up water temperature sensor pin %1",
-          "description": "수온 센서를 설정합니다. 데이터 핀 번호를 지정하세요.",
-          "description_en": "Configure the water temperature sensor. Specify the data pin number.",
+          "description": "수온 센서를 설정합니다. 데이터 핀을 선택하세요. 고릴라셀 키트는 아날로그 포트(A0~A5)에 연결하며 기본값은 A0입니다. 0, 1번 핀은 시리얼 통신용이므로 사용 불가.",
+          "description_en": "Configure the water temperature sensor. Select the data pin. On the GorillaCell kit it plugs into an analog port (A0~A5, default A0). Pins 0 and 1 are reserved for serial communication.",
           "inputs": [
             {
               "name": "PIN",
-              "type": "field_number",
-              "default": 2,
-              "min": 0,
-              "max": 53
+              "type": "field_dropdown",
+              "options": [
+                "A0",
+                "A1",
+                "A2",
+                "A3",
+                "A4",
+                "A5",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13"
+              ]
             }
           ],
           "codePattern": "var pin = block.getFieldValue('PIN');\r\n\r\n  // 속성 초기화 확인\r\n  if (!generator.definitions_) generator.definitions_ = {};\r\n  if (!generator.setups_) generator.setups_ = {};\r\n\r\n  // 라이브러리 추가 (includes_ 대신 d...",
-          "xmlExample": "<block type=\"dallas_temp_setup\"><field name=\"PIN\">2</field></block>",
+          "xmlExample": "<block type=\"dallas_temp_setup\"><field name=\"PIN\">A0</field></block>",
           "dependency": {
             "role": "setup",
             "required_in": "SETUP",
