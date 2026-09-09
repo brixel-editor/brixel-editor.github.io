@@ -8,7 +8,7 @@
  *  (coi-serviceworker 와 scope `/` 충돌을 피하려고 COI 로직을 여기로 병합)
  */
 
-const CACHE_VERSION = 'brixel-v9';
+const CACHE_VERSION = 'brixel-v10';
 const CACHE_STATIC  = `${CACHE_VERSION}-static`;
 const CACHE_DYNAMIC = `${CACHE_VERSION}-dynamic`;
 
@@ -16,11 +16,12 @@ const CACHE_DYNAMIC = `${CACHE_VERSION}-dynamic`;
 const PRECACHE_URLS = [
     './',
     'index.html',
-    'ide-styles.css',
+    'assets/styles.min.css',
     'styles.css',
     'manifest.json',
     'icon.png',
     'brixel-logo.svg',
+    'brixel-editor-logo.svg',
     'brixel-logo-transparent.svg'
 ];
 
