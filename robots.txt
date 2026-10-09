@@ -1,18 +1,30 @@
-# robots.txt for Brixel Web Editor
-# https://www.gorillacell.kr/webide/
+# robots.txt — Brixel Editor (브릭셀 에디터)  https://brixel-editor.github.io/
+#
+# 검색엔진과 AI 크롤러 모두에게 전체를 공개한다.
+# AI 안내 파일:  /llms.txt (요약) · /llms-full.txt (상세) · /block-catalog-for-ai.json · /brixel_block_id_catalog.json
+# 🔴 AI 학습용 크롤러(GPTBot·ClaudeBot·Google-Extended·CCBot·Applebot-Extended·Meta-ExternalAgent)까지 허용한 것은
+#    「AI 에게 정보를 제공한다」는 운영자 의도(2026-10-10)다. 학습만 막으려면 아래 그룹에서 해당 줄을 지우고 개별로 Disallow: / 를 둘 것.
 
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://www.gorillacell.kr/webide/sitemap.xml
+# 사용자 질문에 답하려고 실시간으로 읽는 AI 검색·어시스턴트
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Amazonbot
+Allow: /
 
-# Disallow certain directories if needed
-# Disallow: /private/
-# Disallow: /temp/
+# AI 모델 학습·색인용 크롤러
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Meta-ExternalAgent
+Allow: /
 
-# Allow search engines to crawl everything
-Disallow:
-
-# Crawl-delay (optional, adjust as needed)
-# Crawl-delay: 1
+Sitemap: https://brixel-editor.github.io/sitemap.xml

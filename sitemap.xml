@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 사이트맵 — GitHub Pages 주소(brixel-editor.github.io)와 같은 호스트만 적는다(2026-10-10: 옛 gorillacell.kr/webide 주소 교체).
+     첫 <lastmod> 는 `node 09_tools/bump-web-version.js` 가 버전을 올릴 때 자동 갱신한다. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Main Page - 브릭셀 웹에디터 -->
+  <!-- 메인 페이지 — 브릭셀 에디터 -->
   <url>
-    <loc>https://www.gorillacell.kr/webide/</loc>
-    <lastmod>2025-12-16</lastmod>
+    <loc>https://brixel-editor.github.io/</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://brixel-editor.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://brixel-editor.github.io/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brixel-editor.github.io/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://brixel-editor.github.io/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://brixel-editor.github.io/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://brixel-editor.github.io/?lang=ar"/>
+  </url>
 
-    <!-- Multilingual alternatives for SEO -->
-    <xhtml:link
-        rel="alternate"
-        hreflang="ko"
-        href="https://www.gorillacell.kr/webide/?lang=ko"/>
-    <xhtml:link
-        rel="alternate"
-        hreflang="en"
-        href="https://www.gorillacell.kr/webide/?lang=en"/>
-    <xhtml:link
-        rel="alternate"
-        hreflang="ja"
-        href="https://www.gorillacell.kr/webide/?lang=ja"/>
-    <xhtml:link
-        rel="alternate"
-        hreflang="zh"
-        href="https://www.gorillacell.kr/webide/?lang=zh"/>
-    <xhtml:link
-        rel="alternate"
-        hreflang="ar"
-        href="https://www.gorillacell.kr/webide/?lang=ar"/>
+  <!-- 가이드 -->
+  <url>
+    <loc>https://brixel-editor.github.io/guide/docs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://brixel-editor.github.io/guide/brixel_guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://brixel-editor.github.io/guide/youtube.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
 </urlset>

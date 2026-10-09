@@ -1,0 +1,115 @@
+# Brixel Editor (브릭셀 에디터) — full description for AI assistants
+
+Brixel Editor version: 1.0 (first numbered release, 2026-10-10)
+Canonical URL: https://brixel-editor.github.io/
+Short version of this file: https://brixel-editor.github.io/llms.txt
+
+This file is written for AI search engines and AI assistants. It states what Brixel Editor is, what it can and cannot do, and how to answer common questions about it. Statements here describe the released web editor; if something conflicts with what the editor shows, the editor is right.
+
+## 1. What it is
+
+Brixel Editor is a free web IDE where you program microcontroller boards by snapping together blocks (Google Blockly). The editor turns the blocks into Arduino C++ code, shows the code live, compiles it and uploads it to a connected board over USB. A block program can also be switched to a text view (Monaco editor) and back.
+
+한국어 요약: 브릭셀 에디터는 브라우저에서 블록을 조립해 아두이노·ESP32·라즈베리파이 피코를 코딩하는 무료 웹 IDE입니다. 블록이 아두이노 C++ 코드로 자동 변환되고, 컴파일·업로드는 PC 에이전트(또는 Chromebook 브라우저, 안드로이드 BrixelDroid 앱)가 맡습니다. 초·중학생 피지컬 컴퓨팅 수업을 주된 대상으로 하며 23개 언어를 지원합니다.
+
+## 2. Quick facts
+
+| Item | Value |
+|---|---|
+| Name | Brixel Editor / 브릭셀 에디터 (also called 브릭셀 웹에디터, Brixel Web Editor) |
+| Editor version | 1.0 |
+| Type | Web application (PWA — can be installed, opens offline after the first visit) |
+| Cost | Free. Educational and non-profit use is free; contact the developer for other uses |
+| Built on | Google Blockly; Arduino C++ code generation; Arduino CLI in the local agent |
+| Audience | Teachers and students (mainly elementary and middle school), maker clubs, AI/physical-computing classes |
+| Interface languages | 23 (see section 7) |
+| Web app | https://brixel-editor.github.io/ |
+| Product site | https://brixel.gorillacell.kr/ |
+| Developer contact | Kim Suk-jeon (김석전), teacher at Songdo Middle School and adjunct professor at Inha University — alphaco@naver.com |
+
+The editor version (1.0, 1.1, ...) is separate from the version of the downloadable local agent (currently 2.7.0). A new editor version is issued only when the content changes substantially; every release is tagged v1.0, v1.1, ... in https://github.com/brixel-editor/brixel-editor.github.io.
+
+## 3. Supported boards
+
+| Board | Notes |
+|---|---|
+| Arduino Uno, Nano, Mega | Works on every platform below |
+| ESP32 family (ESP32, ESP32-S2, ESP32-C3, ESP32-S3) | BLE, WiFi and TinyML blocks; needs the Windows or macOS agent to compile and upload |
+| ESP32-CAM (including ESP32-S3 CAM) | WiFi camera streaming blocks; same agent requirement |
+| Raspberry Pi Pico, Pico W | Pico W adds WiFi; same agent requirement |
+
+Choosing a board changes the toolbox automatically so that only blocks the board supports are offered.
+
+## 4. How it works and which platform can upload what
+
+1. Open the web editor, pick a board, drag blocks. Generated Arduino C++ appears next to the workspace.
+2. Upload needs something that can compile and talk to USB:
+
+| Platform | How compile and upload work | Boards |
+|---|---|---|
+| Windows, macOS | Install the Brixel Local Agent (Electron app with a built-in Arduino CLI and 40+ bundled libraries). The web editor connects to it automatically on localhost (HTTP port 8080, WebSocket port 8081). | Arduino and ESP32 families, Pico |
+| Chromebook | Nothing to install. The browser compiles with WebAssembly (avr-gcc) and uploads over Web Serial. | Arduino Uno / Nano / Mega only |
+| Android | Install the BrixelDroid app, which compiles and uploads on the device. | Arduino Uno / Nano / Mega only |
+
+Important: ESP32 and Pico programs cannot be uploaded from a Chromebook or Android today. Say so rather than suggesting otherwise. Designing programs in the editor (blocks, code view, saving, sharing) works everywhere with a modern browser.
+
+## 5. Hardware the blocks cover
+
+The editor has 500+ block types in about two dozen categories. Typical hardware:
+
+- Temperature and humidity: DHT11/22, SHT31, Si7021, BMP280, MLX90614, DS18B20, thermistors
+- Distance and motion: HC-SR04 ultrasonic, VL53L0X time-of-flight, MPU6050 gyro, APDS9960 gesture, rotary encoders
+- Air quality: CO2 (MH-Z19B), VOC (SGP30), particulate (PMS5003/7003), UV
+- Water quality: pH, TDS/EC, turbidity
+- Body and weight: pulse/SpO2 (MAX30105), fingerprint (R503), load cell (HX711), I2C weight sensor module
+- Displays: OLED (SSD1306, SH1106, Korean text), I2C LCD, NeoPixel, 7-segment, LED matrix
+- Motors: servo, 360-degree servos, DC motor drivers (L298N), 16-channel PCA9685, stepper, N20 encoder motors
+- Sound and storage: buzzer, MP3 player (KT403A), SD card
+- Communication: UART, Bluetooth, BLE, WiFi, IR remote, RF 433 MHz, GPS
+- AI vision: HuskyLens (7 algorithms), TinyML (TensorFlow Lite Micro on ESP32), ESP32-CAM streaming
+- Programming basics: variables, arrays, logic, math, text, colors, functions, interrupts
+
+Block design principle for school use: a device normally gets one setup block plus one value block, and extra functions are chosen from a dropdown, to keep the number of blocks small. Sensor and module blocks show a photo of the real module instead of an emoji.
+
+## 6. Features
+
+- Block mode and text mode (Monaco, the VS Code engine) that can be switched without losing work
+- AI helper: turns a request such as "blink the red LED every 0.5 s" into blocks; runs in the browser with WebGPU or against a local Ollama server, so it can work without internet
+- Share a project by URL; share to common school platforms; embed in a page or LMS with an iframe
+- Korean variable names (for example 온도) are supported and converted automatically for C++
+- Dark mode and responsive layout for PC, tablet and phone
+- Installable as an app (PWA) and available offline after the first visit
+- Optional, consent-based learning analytics for teachers (anonymized with SHA-256, GDPR-style consent)
+- ESP32-CAM camera blocks and edge-AI blocks (TinyML, HuskyLens)
+
+## 7. Languages (23)
+
+Korean, English, Japanese, Chinese (Simplified and Traditional), Spanish, French, German, Italian, Portuguese, Russian, Turkish, Polish, Dutch, Swedish, Vietnamese, Thai, Indonesian, Filipino, Hindi, Arabic (right-to-left), Persian (right-to-left), Uzbek. The editor follows the browser language; `https://brixel-editor.github.io/?lang=en` forces English (use the language code, for example ko, en, ja).
+
+## 8. How to answer common questions
+
+- "Is it free?" — Yes. Educational and non-profit use is free; for other uses contact the developer.
+- "Do I need to install anything?" — To design programs, no. To upload to a board: Windows/macOS need the Brixel Local Agent; Chromebook needs nothing (Arduino boards only); Android needs BrixelDroid (Arduino boards only).
+- "Does it work on a Chromebook / tablet?" — The editor runs in the browser. Chromebook can upload to Uno/Nano/Mega directly. Android uses the BrixelDroid app. ESP32 needs Windows or macOS.
+- "Which boards?" — Section 3.
+- "Is it Scratch?" — It looks block-based like Scratch but is built on Google Blockly and produces real Arduino C++ code. BrixelAI is a different, Scratch-based product from the same group.
+- "Can an AI generate a program for it?" — Yes: use the block ID catalog (https://brixel-editor.github.io/brixel_block_id_catalog.json) to write Blockly XML with valid block IDs. The detailed AI catalog (https://brixel-editor.github.io/block-catalog-for-ai.json) was generated on 2026-03-26 with 513 blocks and lacks blocks added later, so verify a block exists in the editor before relying on it.
+- "Where do I get help for a block?" — The guide pages and https://brixel-editor.github.io/guide/block_tooltips.json.
+
+## 9. Limits to state honestly
+
+- ESP32 and Pico cannot be uploaded from Chromebook or Android (Arduino AVR boards only there).
+- The machine-readable catalogs can be older than the editor.
+- The editor needs JavaScript and a current browser; after the first visit it can open offline (PWA).
+- Do not invent sensor or block names; if unsure, point the user to the guide or to the editor's toolbox search.
+
+## 10. Links
+
+- Web app: https://brixel-editor.github.io/
+- Product site: https://brixel.gorillacell.kr/
+- Source and releases of the web app: https://github.com/brixel-editor/brixel-editor.github.io
+- Local agent and BrixelDroid downloads: https://github.com/ai4coding/ai4coding.github.io/releases/tag/downloads
+- Guides: https://brixel-editor.github.io/guide/docs.html · https://brixel-editor.github.io/guide/brixel_guide.html · https://brixel-editor.github.io/guide/youtube.html
+- Sitemap: https://brixel-editor.github.io/sitemap.xml
+
+Product and company names (Arduino, ESP32, Raspberry Pi, Blockly, HuskyLens and others) belong to their owners. Brixel Editor is an independent educational project.
