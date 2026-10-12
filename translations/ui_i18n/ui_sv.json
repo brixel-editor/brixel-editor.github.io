@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Konverterar mottagen text till heltal eller flyttal, eller ger ASCII-byten för första tecknet.",
   "BKY_MB_COMM_CONVERT_INT": "heltal",
   "BKY_MB_COMM_CONVERT_FLOAT": "flyttal",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCII-byte"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCII-byte",
+  "BKY_NEO_EFFECT": "⭕NeoPixel-effekt %1 | List %2 | R %3 G %4 B %5 | Hastighet %6 ms | Gånger %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Tänd en i taget",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Släck en i taget",
+  "BKY_NEO_EFFECT_CHASE": "Ett ljus rör sig →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Ett ljus rör sig ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Ett ljus fram och tillbaka",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Tänd slumpmässigt en i taget",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Släck slumpmässigt en i taget",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Slumpmässig lysdiod blinkar",
+  "BKY_NEO_EFFECT_TIP": "Spelar en ljuseffekt: tänd eller släck en i taget, ett rörligt ljus (→ ← fram och tillbaka), slumpmässig tändning eller släckning, eller slumpmässig blinkning. Hastighet är väntetiden per steg (ms), Gånger är antal upprepningar. Väntar tills effekten är klar."
 }

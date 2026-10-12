@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Kino-convert ang natanggap na teksto sa integer o float, o ibinibigay ang ASCII byte ng unang character.",
   "BKY_MB_COMM_CONVERT_INT": "Integer",
   "BKY_MB_COMM_CONVERT_FLOAT": "Float",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCII Byte"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCII Byte",
+  "BKY_NEO_EFFECT": "⭕Epekto ng NeoPixel %1 | Strip %2 | R %3 G %4 B %5 | Bilis %6 ms | Beses %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Sindihan nang isa-isa",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Patayin nang isa-isa",
+  "BKY_NEO_EFFECT_CHASE": "Isang ilaw ang gumagalaw →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Isang ilaw ang gumagalaw ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Isang ilaw pabalik-balik",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Sindihan nang isa-isa nang random",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Patayin nang isa-isa nang random",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Random na isang LED ang kumukurap",
+  "BKY_NEO_EFFECT_TIP": "Nagpapatugtog ng epekto ng ilaw: pagsindi o pagpatay nang isa-isa, isang gumagalaw na ilaw (→ ← pabalik-balik), random na pagsindi o pagpatay, o random na pagkislap. Ang bilis ay ang paghihintay bawat hakbang (ms), ang Beses ay kung ilang beses uulitin. Maghihintay hanggang matapos ang epekto."
 }

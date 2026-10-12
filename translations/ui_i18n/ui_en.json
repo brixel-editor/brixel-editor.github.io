@@ -2090,5 +2090,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Converts received text to an integer or a decimal number, or gives the ASCII byte of its first character.",
   "BKY_MB_COMM_CONVERT_INT": "integer",
   "BKY_MB_COMM_CONVERT_FLOAT": "float",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCII byte"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCII byte",
+  "BKY_NEO_EFFECT": "⭕NeoPixel effect %1 | Strip %2 | R %3 G %4 B %5 | Speed %6 ms | Times %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Light up one by one",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Turn off one by one",
+  "BKY_NEO_EFFECT_CHASE": "One light moves →",
+  "BKY_NEO_EFFECT_CHASE_REV": "One light moves ←",
+  "BKY_NEO_EFFECT_BOUNCE": "One light bounces back and forth",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Light up randomly one by one",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Turn off randomly one by one",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Random one blinks",
+  "BKY_NEO_EFFECT_TIP": "Plays a light effect: light up or turn off one by one, one light moving (→ ← back and forth), random on/off, or a random sparkle. Speed is the wait per step (ms); Times is how many times to repeat. Waits until the effect finishes."
 }

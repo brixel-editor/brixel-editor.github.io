@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Zet ontvangen tekst om naar een geheel of reëel getal, of geeft de ASCII-byte van het eerste teken.",
   "BKY_MB_COMM_CONVERT_INT": "geheel getal",
   "BKY_MB_COMM_CONVERT_FLOAT": "reëel getal",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCII-byte"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCII-byte",
+  "BKY_NEO_EFFECT": "⭕NeoPixel-effect %1 | Strip %2 | R %3 G %4 B %5 | Snelheid %6 ms | Keer %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Een voor een aanzetten",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Een voor een uitzetten",
+  "BKY_NEO_EFFECT_CHASE": "Eén lichtje beweegt →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Eén lichtje beweegt ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Eén lichtje heen en weer",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Willekeurig een voor een aanzetten",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Willekeurig een voor een uitzetten",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Willekeurig lampje knippert",
+  "BKY_NEO_EFFECT_TIP": "Speelt een lichteffect af: een voor een aan- of uitzetten, één bewegend lichtje (→ ← heen en weer), willekeurig aan- of uitzetten of een willekeurige flits. Snelheid is de wachttijd per stap (ms), Keer is het aantal herhalingen. Wacht tot het effect klaar is."
 }

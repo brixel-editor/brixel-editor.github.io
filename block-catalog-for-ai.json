@@ -1,10 +1,10 @@
 {
-  "version": "3.4.0-AI",
-  "description": "Brixel Editor AI 코딩 도우미용 블록 카탈로그 (V3 - 실제 Blockly 등록 ID 기반, 상세 필드 정보 포함) | 2026-10-12 재생성(웹 에디터 1.0): 등록 블록 588종 기준 — categories = AI 가 쓸 수 있는 블록(483)과 deprecated 표시 블록(70, AI 에게 숨김), internalBlocks = 등록은 됐지만 단독으로 쓰지 않는 블록(35)",
+  "version": "3.5.0-AI",
+  "description": "Brixel Editor AI 코딩 도우미용 블록 카탈로그 (V3 - 실제 Blockly 등록 ID 기반, 상세 필드 정보 포함) | 2026-10-12 재생성(웹 에디터 1.1): 등록 블록 589종 기준 — categories = AI 가 쓸 수 있는 블록(484)과 deprecated 표시 블록(70, AI 에게 숨김), internalBlocks = 등록은 됐지만 단독으로 쓰지 않는 블록(35)",
   "generated_at": "2026-10-12",
-  "editor_version": "1.0",
-  "totalBlocks": 588,
-  "totalUsableBlocks": 483,
+  "editor_version": "1.1",
+  "totalBlocks": 589,
+  "totalUsableBlocks": 484,
   "totalDeprecatedBlocks": 70,
   "totalCategories": 26,
   "nav_structure": [
@@ -3376,7 +3376,8 @@
             "role": "setup",
             "required_in": "SETUP",
             "enables": [
-              "neopixel_screen"
+              "neopixel_screen",
+              "neopixel_effect"
             ]
           }
         },
@@ -3677,6 +3678,65 @@
           ],
           "codePattern": "var picked = spec.pick(function (name) { return block.getFieldValue(name); });\n    var oldGen = Arduino.forBlock[picked[0]];\n    if (typeof oldGen !== 'function') {\n      return '// [메뉴 블록 ' + spec.ty...",
           "xmlExample": "<block type=\"neopixel_screen\"><value name=\"STRIP_NUM\"><shadow type=\"math_number\"><field name=\"NUM\">1</field></shadow></value></block>",
+          "dependency": {
+            "requires_setup": "neopixel_setup",
+            "setup_description": "네오픽셀 객체를 생성하고 begin/clear/show로 초기화합니다."
+          }
+        },
+        {
+          "id": "neopixel_effect",
+          "label_ko": "⭕네오픽셀 효과 %1 | 스트립 %2 | R %3 G %4 B %5 | 속도 %6 ms | 횟수 %7",
+          "label_en": "⭕NeoPixel effect %1 | Strip %2 | R %3 G %4 B %5 | Speed %6 ms | Times %7",
+          "description": "LED 를 효과대로 켜고 끕니다. 차례로 켜기·끄기, 한 개만 켜서 이동(→ ← 왕복), 무작위로 하나씩 켜기·끄기, 무작위 한 개 반짝. 속도는 한 단계마다 기다리는 시간(ms), 횟수는 효과를 몇 번 되풀이할지입니다. 효과가 끝날 때까지 기다립니다.",
+          "description_en": "Plays a light effect: light up or turn off one by one, one light moving (→ ← back and forth), random on/off, or a random sparkle. Speed is the wait per step (ms); Times is how many times to repeat. Waits until the effect finishes.",
+          "inputs": [
+            {
+              "name": "EFFECT",
+              "type": "field_dropdown",
+              "options": [
+                "FILL_SEQ",
+                "UNFILL_SEQ",
+                "CHASE",
+                "CHASE_REV",
+                "BOUNCE",
+                "RANDOM_ON",
+                "RANDOM_OFF",
+                "RANDOM_BLINK"
+              ]
+            },
+            {
+              "name": "STRIP_NUM",
+              "type": "input_value",
+              "check": "Number"
+            },
+            {
+              "name": "R",
+              "type": "input_value",
+              "check": "Number"
+            },
+            {
+              "name": "G",
+              "type": "input_value",
+              "check": "Number"
+            },
+            {
+              "name": "B",
+              "type": "input_value",
+              "check": "Number"
+            },
+            {
+              "name": "WAIT",
+              "type": "input_value",
+              "check": "Number"
+            },
+            {
+              "name": "REPEAT",
+              "type": "input_value",
+              "check": "Number"
+            }
+          ],
+          "codePattern": "const stripNum = generator.valueToCode(block, 'STRIP_NUM', Arduino.ORDER_ATOMIC) || '1';\r\n  const effect = block.getFieldValue('EFFECT') || 'FILL_SEQ';\r\n  const r = generator.valueToCode(block, 'R', A...",
+          "xmlExample": "<block type=\"neopixel_effect\"><value name=\"STRIP_NUM\"><shadow type=\"math_number\"><field name=\"NUM\">1</field></shadow></value><value name=\"R\"><shadow type=\"math_number\"><field name=\"NUM\">255</field></shadow></value><value name=\"G\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow></value><value name=\"B\"><shadow type=\"math_number\"><field name=\"NUM\">0</field></shadow></value><value name=\"WAIT\"><shadow type=\"math_number\"><field name=\"NUM\">100</field></shadow></value><value name=\"REPEAT\"><shadow type=\"math_number\"><field name=\"NUM\">1</field></shadow></value></block>",
           "dependency": {
             "requires_setup": "neopixel_setup",
             "setup_description": "네오픽셀 객체를 생성하고 begin/clear/show로 초기화합니다."

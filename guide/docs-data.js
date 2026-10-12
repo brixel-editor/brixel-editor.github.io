@@ -344,7 +344,8 @@ var DOCS_DATA = {
           { id: 'neopixel_fill_rgb_all', name: '전체 색상 채우기', params: ['STRIP_NUM', 'R', 'G', 'B'], output: null, description: '모든 LED를 같은 색상으로' },
           { id: 'neopixel_anim_rainbow', name: '무지개 애니메이션', params: ['STRIP_NUM', 'WAIT', 'LOOPS'], output: null, description: '무지개 색 순환 효과' },
           { id: 'neopixel_anim_shift', name: '시프트 애니메이션', params: ['STRIP_NUM', 'STEPS', 'WAIT'], output: null, description: 'LED 색상을 좌/우로 회전 이동' },
-          { id: 'neopixel_anim_breathe', name: '브리딩 애니메이션', params: ['STRIP_NUM', 'R', 'G', 'B'], output: null, description: '밝기 펄스(숨쉬기) 효과' }
+          { id: 'neopixel_anim_breathe', name: '브리딩 애니메이션', params: ['STRIP_NUM', 'R', 'G', 'B'], output: null, description: '밝기 펄스(숨쉬기) 효과' },
+          { id: 'neopixel_effect', name: '네오픽셀 효과: [차례로 켜기/차례로 끄기/한 개만 켜서 이동 →/한 개만 켜서 이동 ←/한 개만 켜서 왕복/무작위로 하나씩 켜기/무작위로 하나씩 끄기/무작위 한 개 반짝]', params: ['STRIP_NUM', 'R', 'G', 'B', 'WAIT', 'REPEAT'], output: null, description: 'LED 를 효과대로 켜고 끕니다. 속도(ms)는 한 단계마다 기다리는 시간, 횟수는 효과를 되풀이할 횟수입니다. 효과가 끝날 때까지 기다립니다.' }
         ]
       }
     ],

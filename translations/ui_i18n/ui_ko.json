@@ -2115,5 +2115,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "받은 글자를 정수나 실수로 바꾸거나, 첫 글자의 ASCII 바이트를 구합니다.",
   "BKY_MB_COMM_CONVERT_INT": "정수로 변환",
   "BKY_MB_COMM_CONVERT_FLOAT": "실수로 변환",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCII 바이트로 변환"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCII 바이트로 변환",
+  "BKY_NEO_EFFECT": "⭕네오픽셀 효과 %1 | 스트립 %2 | R %3 G %4 B %5 | 속도 %6 ms | 횟수 %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "차례로 켜기",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "차례로 끄기",
+  "BKY_NEO_EFFECT_CHASE": "한 개만 켜서 이동 →",
+  "BKY_NEO_EFFECT_CHASE_REV": "한 개만 켜서 이동 ←",
+  "BKY_NEO_EFFECT_BOUNCE": "한 개만 켜서 왕복",
+  "BKY_NEO_EFFECT_RANDOM_ON": "무작위로 하나씩 켜기",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "무작위로 하나씩 끄기",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "무작위 한 개 반짝",
+  "BKY_NEO_EFFECT_TIP": "LED 를 효과대로 켜고 끕니다. 차례로 켜기·끄기, 한 개만 켜서 이동(→ ← 왕복), 무작위로 하나씩 켜기·끄기, 무작위 한 개 반짝. 속도는 한 단계마다 기다리는 시간(ms), 횟수는 효과를 몇 번 되풀이할지입니다. 효과가 끝날 때까지 기다립니다."
 }

@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "แปลงข้อความที่รับมาเป็นจำนวนเต็มหรือจำนวนจริง หรือหาไบต์ ASCII ของอักขระตัวแรก",
   "BKY_MB_COMM_CONVERT_INT": "จำนวนเต็ม",
   "BKY_MB_COMM_CONVERT_FLOAT": "จำนวนจริง",
-  "BKY_MB_COMM_CONVERT_ASCII": "ไบต์ ASCII"
+  "BKY_MB_COMM_CONVERT_ASCII": "ไบต์ ASCII",
+  "BKY_NEO_EFFECT": "⭕เอฟเฟกต์ NeoPixel %1 | แถบ %2 | R %3 G %4 B %5 | ความเร็ว %6 มิลลิวินาที | จำนวนครั้ง %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "เปิดทีละดวง",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "ปิดทีละดวง",
+  "BKY_NEO_EFFECT_CHASE": "ไฟดวงเดียวเลื่อนไป →",
+  "BKY_NEO_EFFECT_CHASE_REV": "ไฟดวงเดียวเลื่อนกลับ ←",
+  "BKY_NEO_EFFECT_BOUNCE": "ไฟดวงเดียววิ่งไปกลับ",
+  "BKY_NEO_EFFECT_RANDOM_ON": "เปิดทีละดวงแบบสุ่ม",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "ปิดทีละดวงแบบสุ่ม",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "สุ่มไฟหนึ่งดวงกะพริบ",
+  "BKY_NEO_EFFECT_TIP": "เล่นเอฟเฟกต์แสง: เปิดหรือปิดทีละดวง ไฟดวงเดียวเคลื่อนที่ (→ ← ไปกลับ) เปิดหรือปิดแบบสุ่ม หรือกะพริบแบบสุ่ม ความเร็วคือเวลารอต่อหนึ่งขั้น (มิลลิวินาที) จำนวนครั้งคือจำนวนรอบที่ทำซ้ำ จะรอจนเอฟเฟกต์จบ"
 }

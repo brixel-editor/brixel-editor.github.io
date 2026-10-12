@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Преобразует полученный текст в целое или вещественное число либо даёт ASCII-байт первого символа.",
   "BKY_MB_COMM_CONVERT_INT": "целое число",
   "BKY_MB_COMM_CONVERT_FLOAT": "вещественное число",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCII-байт"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCII-байт",
+  "BKY_NEO_EFFECT": "⭕Эффект NeoPixel %1 | Лента %2 | R %3 G %4 B %5 | Скорость %6 мс | Раз %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Зажигать по одному",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Гасить по одному",
+  "BKY_NEO_EFFECT_CHASE": "Один огонёк движется →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Один огонёк движется ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Один огонёк туда-обратно",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Зажигать случайно по одному",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Гасить случайно по одному",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Случайный светодиод мигает",
+  "BKY_NEO_EFFECT_TIP": "Воспроизводит световой эффект: зажигать или гасить по одному, один движущийся огонёк (→ ← туда-обратно), случайно зажигать или гасить, случайное мерцание. Скорость — пауза на каждом шаге (мс), Раз — сколько раз повторить. Ждёт окончания эффекта."
 }

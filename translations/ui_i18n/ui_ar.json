@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "يحوّل النص المستلم إلى عدد صحيح أو عشري، أو يعطي بايت ASCII للحرف الأول.",
   "BKY_MB_COMM_CONVERT_INT": "عدد صحيح",
   "BKY_MB_COMM_CONVERT_FLOAT": "عدد عشري",
-  "BKY_MB_COMM_CONVERT_ASCII": "بايت ASCII"
+  "BKY_MB_COMM_CONVERT_ASCII": "بايت ASCII",
+  "BKY_NEO_EFFECT": "⭕تأثير نيوبيكسل %1 | الشريط %2 | R %3 G %4 B %5 | السرعة %6 مللي ثانية | المرات %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "إضاءة واحدة تلو الأخرى",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "إطفاء واحدة تلو الأخرى",
+  "BKY_NEO_EFFECT_CHASE": "ضوء واحد يتحرك →",
+  "BKY_NEO_EFFECT_CHASE_REV": "ضوء واحد يتحرك ←",
+  "BKY_NEO_EFFECT_BOUNCE": "ضوء واحد ذهابًا وإيابًا",
+  "BKY_NEO_EFFECT_RANDOM_ON": "إضاءة عشوائية واحدة تلو الأخرى",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "إطفاء عشوائي واحدة تلو الأخرى",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "وميض LED عشوائي",
+  "BKY_NEO_EFFECT_TIP": "يشغّل تأثيرًا ضوئيًا: إضاءة أو إطفاء واحدة تلو الأخرى، أو ضوء واحد متحرك (→ ← ذهابًا وإيابًا)، أو إضاءة وإطفاء عشوائي، أو وميض عشوائي. السرعة هي زمن الانتظار لكل خطوة (مللي ثانية)، والمرات هي عدد التكرارات. ينتظر حتى ينتهي التأثير."
 }

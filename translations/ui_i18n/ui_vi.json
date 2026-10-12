@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Chuyển chuỗi đã nhận thành số nguyên hoặc số thực, hoặc lấy byte ASCII của ký tự đầu tiên.",
   "BKY_MB_COMM_CONVERT_INT": "số nguyên",
   "BKY_MB_COMM_CONVERT_FLOAT": "số thực",
-  "BKY_MB_COMM_CONVERT_ASCII": "byte ASCII"
+  "BKY_MB_COMM_CONVERT_ASCII": "byte ASCII",
+  "BKY_NEO_EFFECT": "⭕Hiệu ứng NeoPixel %1 | Dải %2 | R %3 G %4 B %5 | Tốc độ %6 ms | Số lần %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Bật từng đèn một",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Tắt từng đèn một",
+  "BKY_NEO_EFFECT_CHASE": "Một đèn di chuyển →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Một đèn di chuyển ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Một đèn chạy đi chạy lại",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Bật ngẫu nhiên từng đèn một",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Tắt ngẫu nhiên từng đèn một",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Một đèn ngẫu nhiên nhấp nháy",
+  "BKY_NEO_EFFECT_TIP": "Phát hiệu ứng ánh sáng: bật hoặc tắt từng đèn một, một đèn di chuyển (→ ← đi lại), bật hoặc tắt ngẫu nhiên, hoặc nhấp nháy ngẫu nhiên. Tốc độ là thời gian chờ mỗi bước (ms), Số lần là số lần lặp lại. Chờ đến khi hiệu ứng kết thúc."
 }

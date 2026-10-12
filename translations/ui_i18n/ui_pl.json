@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Zamienia odebrany tekst na liczbę całkowitą lub rzeczywistą albo podaje bajt ASCII pierwszego znaku.",
   "BKY_MB_COMM_CONVERT_INT": "liczbę całkowitą",
   "BKY_MB_COMM_CONVERT_FLOAT": "liczbę rzeczywistą",
-  "BKY_MB_COMM_CONVERT_ASCII": "bajt ASCII"
+  "BKY_MB_COMM_CONVERT_ASCII": "bajt ASCII",
+  "BKY_NEO_EFFECT": "⭕Efekt NeoPixel %1 | Taśma %2 | R %3 G %4 B %5 | Szybkość %6 ms | Razy %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Zapalaj po jednej",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Gaś po jednej",
+  "BKY_NEO_EFFECT_CHASE": "Jedno światło przesuwa się →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Jedno światło przesuwa się ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Jedno światło tam i z powrotem",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Zapalaj losowo po jednej",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Gaś losowo po jednej",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Losowa dioda mruga",
+  "BKY_NEO_EFFECT_TIP": "Odtwarza efekt świetlny: zapalanie lub gaszenie po jednej diodzie, przesuwające się światło (→ ← tam i z powrotem), losowe zapalanie lub gaszenie albo losowe migotanie. Szybkość to czas oczekiwania na krok (ms), Razy to liczba powtórzeń. Czeka do końca efektu."
 }

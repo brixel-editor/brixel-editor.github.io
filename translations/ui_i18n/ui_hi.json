@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "मिले हुए टेक्स्ट को पूर्णांक या दशमलव संख्या में बदलता है, या पहले अक्षर का ASCII बाइट देता है।",
   "BKY_MB_COMM_CONVERT_INT": "पूर्णांक",
   "BKY_MB_COMM_CONVERT_FLOAT": "दशमलव",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCII बाइट"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCII बाइट",
+  "BKY_NEO_EFFECT": "⭕नियोपिक्सल प्रभाव %1 | स्ट्रिप %2 | R %3 G %4 B %5 | गति %6 ms | बार %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "एक-एक करके जलाएँ",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "एक-एक करके बुझाएँ",
+  "BKY_NEO_EFFECT_CHASE": "एक लाइट आगे बढ़ती है →",
+  "BKY_NEO_EFFECT_CHASE_REV": "एक लाइट पीछे जाती है ←",
+  "BKY_NEO_EFFECT_BOUNCE": "एक लाइट आगे-पीछे",
+  "BKY_NEO_EFFECT_RANDOM_ON": "यादृच्छिक रूप से एक-एक जलाएँ",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "यादृच्छिक रूप से एक-एक बुझाएँ",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "यादृच्छिक एक LED टिमटिमाए",
+  "BKY_NEO_EFFECT_TIP": "रोशनी का प्रभाव चलाता है: एक-एक करके जलाना या बुझाना, एक चलती हुई लाइट (→ ← आगे-पीछे), यादृच्छिक रूप से जलाना या बुझाना, या यादृच्छिक टिमटिमाहट। गति हर चरण का प्रतीक्षा समय (ms) है, बार दोहराने की संख्या है। प्रभाव पूरा होने तक प्रतीक्षा करता है।"
 }

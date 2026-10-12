@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Convertit le texte reçu en entier ou en nombre décimal, ou donne l'octet ASCII de son premier caractère.",
   "BKY_MB_COMM_CONVERT_INT": "entier",
   "BKY_MB_COMM_CONVERT_FLOAT": "réel",
-  "BKY_MB_COMM_CONVERT_ASCII": "octet ASCII"
+  "BKY_MB_COMM_CONVERT_ASCII": "octet ASCII",
+  "BKY_NEO_EFFECT": "⭕Effet NeoPixel %1 | Bandeau %2 | R %3 G %4 B %5 | Vitesse %6 ms | Fois %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Allumer un par un",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Éteindre un par un",
+  "BKY_NEO_EFFECT_CHASE": "Une seule lumière avance →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Une seule lumière recule ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Une seule lumière en va-et-vient",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Allumer au hasard un par un",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Éteindre au hasard un par un",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Une lumière au hasard clignote",
+  "BKY_NEO_EFFECT_TIP": "Joue un effet lumineux : allumer ou éteindre un par un, une lumière qui se déplace (→ ← va-et-vient), allumer ou éteindre au hasard, ou un scintillement au hasard. La vitesse est l'attente par étape (ms) ; Fois est le nombre de répétitions. Attend la fin de l'effet."
 }

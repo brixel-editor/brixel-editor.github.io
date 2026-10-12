@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Converte o texto recebido em um inteiro ou em um número decimal, ou dá o byte ASCII do seu primeiro caractere.",
   "BKY_MB_COMM_CONVERT_INT": "inteiro",
   "BKY_MB_COMM_CONVERT_FLOAT": "real",
-  "BKY_MB_COMM_CONVERT_ASCII": "byte ASCII"
+  "BKY_MB_COMM_CONVERT_ASCII": "byte ASCII",
+  "BKY_NEO_EFFECT": "⭕Efeito NeoPixel %1 | Fita %2 | R %3 G %4 B %5 | Velocidade %6 ms | Vezes %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Acender um a um",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Apagar um a um",
+  "BKY_NEO_EFFECT_CHASE": "Uma luz avança →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Uma luz recua ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Uma luz vai e volta",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Acender aleatoriamente um a um",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Apagar aleatoriamente um a um",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Um LED aleatório pisca",
+  "BKY_NEO_EFFECT_TIP": "Executa um efeito de luz: acender ou apagar um a um, uma luz que se move (→ ← vai e volta), acender ou apagar aleatoriamente, ou uma cintilação aleatória. A velocidade é a espera por passo (ms); Vezes é quantas vezes repetir. Espera até o efeito terminar."
 }

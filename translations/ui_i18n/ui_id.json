@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Mengubah teks yang diterima menjadi bilangan bulat atau bilangan real, atau memberi byte ASCII dari karakter pertama.",
   "BKY_MB_COMM_CONVERT_INT": "Bilangan Bulat",
   "BKY_MB_COMM_CONVERT_FLOAT": "Bilangan Real",
-  "BKY_MB_COMM_CONVERT_ASCII": "Byte ASCII"
+  "BKY_MB_COMM_CONVERT_ASCII": "Byte ASCII",
+  "BKY_NEO_EFFECT": "⭕Efek NeoPixel %1 | Strip %2 | R %3 G %4 B %5 | Kecepatan %6 ms | Kali %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Nyalakan satu per satu",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Matikan satu per satu",
+  "BKY_NEO_EFFECT_CHASE": "Satu lampu bergerak →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Satu lampu bergerak ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Satu lampu bolak-balik",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Nyalakan acak satu per satu",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Matikan acak satu per satu",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Satu LED acak berkedip",
+  "BKY_NEO_EFFECT_TIP": "Memutar efek cahaya: menyalakan atau mematikan satu per satu, satu lampu bergerak (→ ← bolak-balik), menyalakan atau mematikan secara acak, atau kedipan acak. Kecepatan adalah waktu tunggu per langkah (ms), Kali adalah jumlah pengulangan. Menunggu sampai efek selesai."
 }

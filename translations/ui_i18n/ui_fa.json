@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "متن دریافت‌شده را به عدد صحیح یا اعشاری تبدیل می‌کند، یا بایت ASCII اولین نویسه را می‌دهد.",
   "BKY_MB_COMM_CONVERT_INT": "عدد صحیح",
   "BKY_MB_COMM_CONVERT_FLOAT": "عدد اعشاری",
-  "BKY_MB_COMM_CONVERT_ASCII": "بایت ASCII"
+  "BKY_MB_COMM_CONVERT_ASCII": "بایت ASCII",
+  "BKY_NEO_EFFECT": "⭕افکت نئوپیکسل %1 | نوار %2 | R %3 G %4 B %5 | سرعت %6 میلی‌ثانیه | تعداد %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "روشن کردن یکی‌یکی",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "خاموش کردن یکی‌یکی",
+  "BKY_NEO_EFFECT_CHASE": "یک چراغ حرکت می‌کند →",
+  "BKY_NEO_EFFECT_CHASE_REV": "یک چراغ برمی‌گردد ←",
+  "BKY_NEO_EFFECT_BOUNCE": "یک چراغ رفت‌وبرگشت",
+  "BKY_NEO_EFFECT_RANDOM_ON": "روشن کردن تصادفی یکی‌یکی",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "خاموش کردن تصادفی یکی‌یکی",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "یک LED تصادفی چشمک می‌زند",
+  "BKY_NEO_EFFECT_TIP": "یک افکت نوری اجرا می‌کند: روشن یا خاموش کردن یکی‌یکی، یک چراغ متحرک (→ ← رفت‌وبرگشت)، روشن یا خاموش کردن تصادفی، یا چشمک تصادفی. سرعت زمان انتظار هر مرحله است (میلی‌ثانیه) و تعداد، دفعات تکرار است. تا پایان افکت منتظر می‌ماند."
 }

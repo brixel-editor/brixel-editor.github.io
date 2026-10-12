@@ -345,7 +345,8 @@ var DOCS_DATA = {
           { id: 'neopixel_fill_rgb_all', name: 'Fill All Color', params: ['STRIP_NUM', 'R', 'G', 'B'], output: null, description: 'Set all LEDs to same color' },
           { id: 'neopixel_anim_rainbow', name: 'Rainbow Animation', params: ['STRIP_NUM', 'WAIT', 'LOOPS'], output: null, description: 'Rainbow color cycle effect' },
           { id: 'neopixel_anim_shift', name: 'Shift Animation', params: ['STRIP_NUM', 'STEPS', 'WAIT'], output: null, description: 'Rotate LED colors left/right' },
-          { id: 'neopixel_anim_breathe', name: 'Breathe Animation', params: ['STRIP_NUM', 'R', 'G', 'B'], output: null, description: 'Brightness pulse (breathing) effect' }
+          { id: 'neopixel_anim_breathe', name: 'Breathe Animation', params: ['STRIP_NUM', 'R', 'G', 'B'], output: null, description: 'Brightness pulse (breathing) effect' },
+          { id: 'neopixel_effect', name: 'NeoPixel effect: [light up one by one / turn off one by one / one light moves → / one light moves ← / one light bounces back and forth / light up randomly one by one / turn off randomly one by one / random one blinks]', params: ['STRIP_NUM', 'R', 'G', 'B', 'WAIT', 'REPEAT'], output: null, description: 'Plays a light effect on the strip. Speed (ms) is the wait per step; Times is how many times to repeat. Waits until the effect finishes.' }
         ]
       }
     ],

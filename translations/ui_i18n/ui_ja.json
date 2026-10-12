@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "受け取った文字を整数や実数に変換したり、先頭文字のASCIIバイトを求めたりします。",
   "BKY_MB_COMM_CONVERT_INT": "整数に変換",
   "BKY_MB_COMM_CONVERT_FLOAT": "実数に変換",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCIIバイトに変換"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCIIバイトに変換",
+  "BKY_NEO_EFFECT": "⭕ネオピクセル効果 %1 | ストリップ %2 | R %3 G %4 B %5 | 速さ %6 ms | 回数 %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "順番に点灯",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "順番に消灯",
+  "BKY_NEO_EFFECT_CHASE": "1つだけ点灯して移動 →",
+  "BKY_NEO_EFFECT_CHASE_REV": "1つだけ点灯して移動 ←",
+  "BKY_NEO_EFFECT_BOUNCE": "1つだけ点灯して往復",
+  "BKY_NEO_EFFECT_RANDOM_ON": "ランダムに1つずつ点灯",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "ランダムに1つずつ消灯",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "ランダムに1つ点滅",
+  "BKY_NEO_EFFECT_TIP": "光り方を選んで再生します。順番に点灯・消灯、1つだけ点灯して移動(→ ← 往復)、ランダムに1つずつ点灯・消灯、ランダム点滅。速さは1ステップの待ち時間(ms)、回数は繰り返す回数です。効果が終わるまで待ちます。"
 }

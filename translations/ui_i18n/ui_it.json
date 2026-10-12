@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Converte il testo ricevuto in un intero o in un numero decimale, oppure dà il byte ASCII del suo primo carattere.",
   "BKY_MB_COMM_CONVERT_INT": "intero",
   "BKY_MB_COMM_CONVERT_FLOAT": "reale",
-  "BKY_MB_COMM_CONVERT_ASCII": "byte ASCII"
+  "BKY_MB_COMM_CONVERT_ASCII": "byte ASCII",
+  "BKY_NEO_EFFECT": "⭕Effetto NeoPixel %1 | Striscia %2 | R %3 G %4 B %5 | Velocità %6 ms | Volte %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Accendi uno alla volta",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Spegni uno alla volta",
+  "BKY_NEO_EFFECT_CHASE": "Una luce si sposta →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Una luce si sposta ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Una luce avanti e indietro",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Accendi a caso uno alla volta",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Spegni a caso uno alla volta",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Un LED a caso lampeggia",
+  "BKY_NEO_EFFECT_TIP": "Riproduce un effetto luminoso: accendere o spegnere uno alla volta, una luce che si sposta (→ ← avanti e indietro), accendere o spegnere a caso, o un lampeggio casuale. La velocità è l'attesa per passo (ms); Volte è il numero di ripetizioni. Attende la fine dell'effetto."
 }

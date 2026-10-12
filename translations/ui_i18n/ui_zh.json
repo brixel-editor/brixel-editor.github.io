@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "把收到的文字转换为整数或实数，或求出第一个字符的 ASCII 字节。",
   "BKY_MB_COMM_CONVERT_INT": "转换为整数",
   "BKY_MB_COMM_CONVERT_FLOAT": "转换为实数",
-  "BKY_MB_COMM_CONVERT_ASCII": "转换为 ASCII 字节"
+  "BKY_MB_COMM_CONVERT_ASCII": "转换为 ASCII 字节",
+  "BKY_NEO_EFFECT": "⭕灯带效果 %1 | 灯带 %2 | R %3 G %4 B %5 | 速度 %6 毫秒 | 次数 %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "依次点亮",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "依次熄灭",
+  "BKY_NEO_EFFECT_CHASE": "单灯移动 →",
+  "BKY_NEO_EFFECT_CHASE_REV": "单灯移动 ←",
+  "BKY_NEO_EFFECT_BOUNCE": "单灯往返移动",
+  "BKY_NEO_EFFECT_RANDOM_ON": "随机逐个点亮",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "随机逐个熄灭",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "随机单灯闪烁",
+  "BKY_NEO_EFFECT_TIP": "播放灯光效果：依次点亮或熄灭、单个灯移动（→ ← 往返）、随机逐个点亮或熄灭、随机闪烁。速度是每一步等待的时间（毫秒），次数是重复次数。会等到效果结束。"
 }

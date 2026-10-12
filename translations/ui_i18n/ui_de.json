@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Wandelt empfangenen Text in eine Ganzzahl oder Dezimalzahl um oder gibt das ASCII-Byte seines ersten Zeichens zurück.",
   "BKY_MB_COMM_CONVERT_INT": "Ganzzahl",
   "BKY_MB_COMM_CONVERT_FLOAT": "Gleitkommazahl",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCII-Byte"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCII-Byte",
+  "BKY_NEO_EFFECT": "⭕NeoPixel-Effekt %1 | Streifen %2 | R %3 G %4 B %5 | Tempo %6 ms | Mal %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Nacheinander einschalten",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Nacheinander ausschalten",
+  "BKY_NEO_EFFECT_CHASE": "Ein Licht wandert →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Ein Licht wandert ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Ein Licht pendelt hin und her",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Zufällig nacheinander einschalten",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Zufällig nacheinander ausschalten",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Zufällige LED blinkt",
+  "BKY_NEO_EFFECT_TIP": "Spielt einen Lichteffekt ab: nacheinander ein- oder ausschalten, ein wanderndes Licht (→ ← hin und her), zufällig ein- oder ausschalten oder zufälliges Funkeln. Tempo ist die Wartezeit pro Schritt (ms), Mal ist die Anzahl der Wiederholungen. Wartet, bis der Effekt beendet ist."
 }

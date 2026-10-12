@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Alınan metni tamsayıya veya ondalığa çevirir ya da ilk karakterin ASCII baytını verir.",
   "BKY_MB_COMM_CONVERT_INT": "tamsayıya çevir",
   "BKY_MB_COMM_CONVERT_FLOAT": "ondalığa çevir",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCII baytına çevir"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCII baytına çevir",
+  "BKY_NEO_EFFECT": "⭕NeoPixel efekti %1 | Şerit %2 | R %3 G %4 B %5 | Hız %6 ms | Tekrar %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Tek tek yak",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Tek tek söndür",
+  "BKY_NEO_EFFECT_CHASE": "Tek ışık ilerler →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Tek ışık geri gider ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Tek ışık gidip gelir",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Rastgele tek tek yak",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Rastgele tek tek söndür",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Rastgele bir LED yanıp söner",
+  "BKY_NEO_EFFECT_TIP": "Bir ışık efekti oynatır: tek tek yakma veya söndürme, hareket eden tek ışık (→ ← gidip gelme), rastgele yakma veya söndürme, rastgele parıldama. Hız, adım başına bekleme süresidir (ms); Tekrar, kaç kez tekrarlanacağıdır. Efekt bitene kadar bekler."
 }

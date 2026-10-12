@@ -2010,5 +2010,15 @@
   "BKY_MB_COMM_CONVERT_TIP": "Qabul qilingan matnni butun yoki haqiqiy songa o'tkazadi, yoki birinchi belgining ASCII baytini beradi.",
   "BKY_MB_COMM_CONVERT_INT": "butun songa",
   "BKY_MB_COMM_CONVERT_FLOAT": "haqiqiy songa",
-  "BKY_MB_COMM_CONVERT_ASCII": "ASCII baytiga"
+  "BKY_MB_COMM_CONVERT_ASCII": "ASCII baytiga",
+  "BKY_NEO_EFFECT": "⭕NeoPixel effekti %1 | Lenta %2 | R %3 G %4 B %5 | Tezlik %6 ms | Marta %7",
+  "BKY_NEO_EFFECT_FILL_SEQ": "Birma-bir yoqish",
+  "BKY_NEO_EFFECT_UNFILL_SEQ": "Birma-bir o'chirish",
+  "BKY_NEO_EFFECT_CHASE": "Bitta chiroq oldinga yuradi →",
+  "BKY_NEO_EFFECT_CHASE_REV": "Bitta chiroq orqaga yuradi ←",
+  "BKY_NEO_EFFECT_BOUNCE": "Bitta chiroq borib-keladi",
+  "BKY_NEO_EFFECT_RANDOM_ON": "Tasodifiy birma-bir yoqish",
+  "BKY_NEO_EFFECT_RANDOM_OFF": "Tasodifiy birma-bir o'chirish",
+  "BKY_NEO_EFFECT_RANDOM_BLINK": "Tasodifiy bitta LED miltillaydi",
+  "BKY_NEO_EFFECT_TIP": "Yorug'lik effektini ijro etadi: birma-bir yoqish yoki o'chirish, harakatlanuvchi bitta chiroq (→ ← borib-kelish), tasodifiy yoqish yoki o'chirish yoki tasodifiy miltillash. Tezlik — har bir qadam uchun kutish vaqti (ms), Marta — takrorlash soni. Effekt tugaguncha kutadi."
 }
