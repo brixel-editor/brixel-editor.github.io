@@ -1,6 +1,6 @@
 # Brixel Editor (브릭셀 에디터) — full description for AI assistants
 
-Brixel Editor version: 1.0 (first numbered release, 2026-10-10)
+Brixel Editor version: 1.1 (first numbered release, 2026-10-10)
 Canonical URL: https://brixel-editor.github.io/
 Short version of this file: https://brixel-editor.github.io/llms.txt
 
@@ -93,8 +93,8 @@ Korean, English, Japanese, Chinese (Simplified and Traditional), Spanish, French
 - "Does it work on a Chromebook / tablet?" — The editor runs in the browser. Chromebook can upload to Uno/Nano/Mega directly. Android uses the BrixelDroid app. ESP32 needs Windows or macOS.
 - "Which boards?" — Section 3.
 - "Is it Scratch?" — It looks block-based like Scratch but is built on Google Blockly and produces real Arduino C++ code. BrixelAI is a different, Scratch-based product from the same group.
-- "Can an AI generate a program for it?" — Yes: use the block ID catalog (https://brixel-editor.github.io/brixel_block_id_catalog.json) to write Blockly XML with valid block IDs. The detailed AI catalog (https://brixel-editor.github.io/block-catalog-for-ai.json) was generated on 2026-03-26 with 513 blocks and lacks blocks added later, so verify a block exists in the editor before relying on it.
-- "Where do I get help for a block?" — The guide pages and https://brixel-editor.github.io/guide/block_tooltips.json.
+- "Can an AI generate a program for it?" — Yes: use the block ID catalog (https://brixel-editor.github.io/brixel_block_id_catalog.json) to write Blockly XML with valid block IDs. The detailed AI catalog (https://brixel-editor.github.io/block-catalog-for-ai.json) was regenerated on 2026-10-10 for editor version 1.0: `categories` holds the blocks an AI can use (each with labels in Korean and English, inputs, example XML and, where known, the setup block it needs first), `internalBlocks` lists registered helper blocks that must not be used directly, and `totalBlocks` / `totalUsableBlocks` give the counts. It can lag behind later editor releases, so verify a block exists in the editor before relying on it.
+- "Where do I get help for a block?" — The editor manual (https://brixel.gorillacell.kr/10_docs/01_manual/03_editor/), the guide pages and https://brixel-editor.github.io/guide/block_tooltips.json. The in-editor "Usage Guide" block opens the same manual from its right-click Help.
 
 ## 9. Limits to state honestly
 
@@ -109,7 +109,8 @@ Korean, English, Japanese, Chinese (Simplified and Traditional), Spanish, French
 - Product site: https://brixel.gorillacell.kr/
 - Source and releases of the web app: https://github.com/brixel-editor/brixel-editor.github.io
 - Local agent and BrixelDroid downloads: https://github.com/ai4coding/ai4coding.github.io/releases/tag/downloads
-- Guides: https://brixel-editor.github.io/guide/docs.html · https://brixel-editor.github.io/guide/brixel_guide.html · https://brixel-editor.github.io/guide/youtube.html
+- Editor manual (official guide): https://brixel.gorillacell.kr/10_docs/01_manual/03_editor/
+- Other guide pages: https://brixel-editor.github.io/guide/brixel_guide.html · https://brixel-editor.github.io/guide/youtube.html
 - Sitemap: https://brixel-editor.github.io/sitemap.xml
 
 Product and company names (Arduino, ESP32, Raspberry Pi, Blockly, HuskyLens and others) belong to their owners. Brixel Editor is an independent educational project.

@@ -65,10 +65,9 @@ var DOCS_DATA = {
     color: '#6190DF',
     description: 'Blocks for direct control of Arduino digital/analog pins',
     blocks: [
-      { id: 'pin_mode', name: 'Set Pin Mode', params: ['PIN'], output: null, description: 'Set pin as INPUT or OUTPUT' },
-      { id: 'read_digital_pin', name: 'Read Digital Pin', params: ['PIN'], output: 'Number', description: 'Read HIGH/LOW value from digital pin' },
+      { id: 'read_digital_pin', name: 'Read Digital Pin', params: ['PIN'], output: 'Number', description: 'Read HIGH/LOW value from digital pin (input mode is set automatically)' },
       { id: 'read_analog_pin', name: 'Read Analog Pin', params: ['PIN'], output: 'Number', description: 'Read analog pin value (0~1023)' },
-      { id: 'set_digital_pin', name: 'Digital Pin Output', params: ['PIN'], output: null, description: 'Output HIGH or LOW to pin' },
+      { id: 'set_digital_pin', name: 'Digital Pin Output', params: ['PIN'], output: null, description: 'Output HIGH or LOW to pin (output mode is set automatically — no pin mode block needed)' },
       { id: 'set_pwm_pin', name: 'PWM Output', params: ['PIN', 'VALUE'], output: null, description: 'Output PWM value (0~255)' },
       { id: 'servo_setup', name: 'Servo Setup', params: ['PIN'], output: null, description: 'Connect servo motor pin' },
       { id: 'set_servo_angle', name: 'Set Servo Angle', params: ['PIN', 'ANGLE'], output: null, description: 'Set servo motor angle (0~180)' },
@@ -318,9 +317,7 @@ var DOCS_DATA = {
           { id: 'lcd_i2c_print', name: 'LCD Print Text', params: ['LCD_NUM', 'ROW', 'COL', 'TEXT'], output: null, description: 'Print text at specified position' },
           { id: 'lcd_i2c_clear', name: 'LCD Clear', params: ['LCD_NUM'], output: null, description: 'Clear LCD screen' },
           { id: 'lcd_i2c_set_cursor', name: 'LCD Move Cursor', params: ['LCD_NUM', 'ROW', 'COL'], output: null, description: 'Move cursor position' },
-          { id: 'lcd_i2c_cursor', name: 'LCD Show Cursor', params: ['LCD_NUM'], output: null, description: 'Show/hide cursor control' },
-          { id: 'lcd_i2c_backlight', name: 'LCD Backlight', params: ['LCD_NUM'], output: null, description: 'Backlight ON/OFF' },
-          { id: 'lcd_i2c_display', name: 'LCD Display ON/OFF', params: ['LCD_NUM'], output: null, description: 'LCD display on/off' },
+          { id: 'lcd_i2c_onoff', name: 'LCD ( ): [Backlight/Screen/Cursor/Cursor blink] [ON/OFF]', params: ['LCD_NUM'], output: null, description: 'Turns the LCD backlight, screen, cursor or cursor blink on or off.' },
           { id: 'lcd_i2c_scroll', name: 'LCD Scroll', params: ['LCD_NUM'], output: null, description: 'LCD screen left/right scroll' }
         ]
       },
@@ -343,9 +340,8 @@ var DOCS_DATA = {
           { id: 'neopixel_setup', name: 'NeoPixel Init', params: ['PIN', 'LED_COUNT', 'TYPE'], output: null, description: 'Initialize NeoPixel LED strip' },
           { id: 'neopixel_set_rgb', name: 'Set RGB Color', params: ['STRIP_NUM', 'LED_INDEX', 'R', 'G', 'B'], output: null, description: 'Set RGB color of specific LED' },
           { id: 'neopixel_set_rgbw', name: 'Set RGBW Color', params: ['STRIP_NUM', 'LED_INDEX', 'R', 'G', 'B', 'W'], output: null, description: 'Set RGBW color of specific LED (with White)' },
-          { id: 'neopixel_show', name: 'NeoPixel Update', params: ['STRIP_NUM'], output: null, description: 'Apply color settings to LEDs' },
+          { id: 'neopixel_screen', name: 'NeoPixel [Show/Clear all] | STRIP ( )', params: ['STRIP_NUM'], output: null, description: 'Shows the colors you set on the NeoPixel strip, or turns all LEDs off.' },
           { id: 'neopixel_brightness', name: 'Set Brightness', params: ['STRIP_NUM', 'BRI'], output: null, description: 'Adjust overall brightness' },
-          { id: 'neopixel_clear', name: 'NeoPixel Off', params: ['STRIP_NUM'], output: null, description: 'Turn off all LEDs' },
           { id: 'neopixel_fill_rgb_all', name: 'Fill All Color', params: ['STRIP_NUM', 'R', 'G', 'B'], output: null, description: 'Set all LEDs to same color' },
           { id: 'neopixel_anim_rainbow', name: 'Rainbow Animation', params: ['STRIP_NUM', 'WAIT', 'LOOPS'], output: null, description: 'Rainbow color cycle effect' },
           { id: 'neopixel_anim_shift', name: 'Shift Animation', params: ['STRIP_NUM', 'STEPS', 'WAIT'], output: null, description: 'Rotate LED colors left/right' },
@@ -372,8 +368,7 @@ var DOCS_DATA = {
         blocks: [
           { id: 'ssd1306_setup_i2c', name: 'SSD1306 Init', params: ['NUM', 'RST'], output: null, description: 'Initialize SSD1306 OLED via I2C' },
           { id: 'ssd1306_text', name: 'Display Text', params: ['NUM', 'TEXT', 'X', 'Y', 'SIZE'], output: null, description: 'Show text on OLED' },
-          { id: 'ssd1306_control', name: 'Display Control', params: ['NUM'], output: null, description: 'display/clear control' },
-          { id: 'ssd1306_dim', name: 'Brightness', params: ['NUM'], output: null, description: 'Switch OLED brightness dim/bright' },
+          { id: 'ssd1306_screen', name: 'OLED ( ) [Display/Clear/Invert/Normal/Dim screen/Bright screen]', params: ['NUM'], output: null, description: 'Shows, clears, inverts or dims the OLED screen. Text and drawings appear only after Display.' },
           { id: 'ssd1306_pixel', name: 'Draw Pixel', params: ['NUM', 'X', 'Y'], output: null, description: 'Draw single pixel' },
           { id: 'ssd1306_line', name: 'Draw Line', params: ['NUM', 'X1', 'Y1', 'X2', 'Y2'], output: null, description: 'Draw line between two points' },
           { id: 'ssd1306_rect', name: 'Draw Rectangle', params: ['NUM', 'X', 'Y', 'W', 'H'], output: null, description: 'Draw rectangle' },
@@ -397,10 +392,8 @@ var DOCS_DATA = {
         blocks: [
           { id: 'ht16k33_setup', name: 'HT16K33 Init', params: ['BRI'], output: null, description: 'Initialize LED matrix' },
           { id: 'ht16k33_scroll_text', name: 'Scroll Text', params: ['NUM', 'TEXT', 'SEC'], output: null, description: 'Scroll text display' },
-          { id: 'ht16k33_show', name: 'Update Display', params: ['NUM'], output: null, description: 'Render buffer to matrix' },
-          { id: 'ht16k33_clear', name: 'Clear Display', params: ['NUM'], output: null, description: 'Clear matrix' },
+          { id: 'ht16k33_screen', name: 'I2C Matrix ( ) | [Display/Clear screen/Blink off/Blink 2 Hz/Blink 1 Hz/Blink 0.5 Hz]', params: ['NUM'], output: null, description: 'Shows or clears the dot matrix, or sets blinking. Pixels and patterns appear only after Display.' },
           { id: 'ht16k33_set_brightness', name: 'Set Brightness', params: null, output: null, description: 'Adjust matrix brightness' },
-          { id: 'ht16k33_set_blink', name: 'Set Blink', params: null, output: null, description: 'Set matrix blink rate' },
           { id: 'ht16k33_pixel', name: 'Pixel (Mono)', params: ['NUM', 'ROW', 'COL'], output: null, description: 'Mono LED matrix pixel ON/OFF' },
           { id: 'ht16k33_bicolor_pixel', name: 'Pixel (Bicolor)', params: ['NUM', 'ROW', 'COL', 'COLOR'], output: null, description: 'Bicolor matrix pixel color' },
           { id: 'ht16k33_pattern_8x8', name: '8x8 Pattern', params: ['NUM'], output: null, description: 'Display 8x8 LED pattern' },
@@ -415,9 +408,7 @@ var DOCS_DATA = {
         blocks: [
           { id: 'sh110x_setup_i2c', name: 'SH110X Init', params: ['NUM', 'RST', 'WIDTH', 'HEIGHT'], output: null, description: 'Initialize SH110X OLED' },
           { id: 'sh110x_text', name: 'Display Text', params: ['NUM', 'TXT', 'X', 'Y', 'SIZE'], output: null, description: 'SH110X text display' },
-          { id: 'sh110x_display', name: 'Show Display', params: ['NUM'], output: null, description: 'Render buffer to screen' },
-          { id: 'sh110x_clear', name: 'Clear Display', params: ['NUM'], output: null, description: 'Clear screen' },
-          { id: 'sh110x_control', name: 'Display Control', params: ['NUM'], output: null, description: 'display/clear/invert control' },
+          { id: 'sh110x_screen', name: 'OLED ( ) [Display/Clear/Invert/Normal/Screen on/Screen off]', params: ['NUM'], output: null, description: 'Shows, clears, inverts or turns the OLED screen on/off. Text and drawings appear only after Display.' },
           { id: 'sh110x_pixel', name: 'Draw Pixel', params: ['NUM', 'X', 'Y'], output: null, description: 'Draw single pixel' },
           { id: 'sh110x_line', name: 'Draw Line', params: ['NUM', 'X1', 'Y1', 'X2', 'Y2'], output: null, description: 'Draw line between two points' },
           { id: 'sh110x_rect', name: 'Draw Rectangle', params: ['NUM', 'X', 'Y', 'W', 'H'], output: null, description: 'Draw rectangle' },
@@ -487,8 +478,7 @@ var DOCS_DATA = {
         label: 'DHT Temp/Humidity',
         blocks: [
           { id: 'dht_setup', name: 'DHT Init', params: ['PIN', 'TYPE'], output: null, description: 'Setup DHT11/DHT22 sensor' },
-          { id: 'dht_read_temperature', name: 'Read Temperature', params: ['PIN'], output: 'Number', description: 'Return temperature in Celsius' },
-          { id: 'dht_read_humidity', name: 'Read Humidity', params: ['PIN'], output: 'Number', description: 'Return relative humidity (%)' },
+          { id: 'dht_read', name: 'DHT Sensor: Pin ( ) Read [Temperature (°C)/Temperature (°F)/Humidity (%)]', params: ['PIN'], output: 'Number', description: 'Reads temperature or humidity from the DHT sensor on the pin.' },
           { id: 'dht_convert_temperature', name: 'Convert Temperature', params: ['TEMP', 'FROM', 'TO'], output: 'Number', description: 'Convert Celsius↔Fahrenheit' },
           { id: 'dht_heat_index', name: 'Heat Index', params: ['TEMPERATURE', 'HUMIDITY'], output: 'Number', description: 'Calculate heat index' }
         ]
@@ -506,30 +496,27 @@ var DOCS_DATA = {
         label: 'Load Cell (HX711)',
         blocks: [
           { id: 'hx711_setup', name: 'HX711 Init', params: ['DOUT_PIN', 'CLK_PIN', 'GAIN'], output: null, description: 'Initialize load cell amplifier' },
-          { id: 'hx711_get_weight', name: 'Read Weight', params: null, output: 'Number', description: 'Return calibrated weight (g)' },
+          { id: 'hx711_read', name: 'HX711 Weight Sensor [Weight/Raw value/Average value/Actual value]', params: null, output: 'Number', description: 'Reads the weight or raw data from the HX711 weight sensor.' },
           { id: 'hx711_tare', name: 'Tare', params: ['TIMES'], output: null, description: 'Set zero point (average count)' },
           { id: 'hx711_set_scale', name: 'Set Scale', params: ['SCALE'], output: null, description: 'Set calibration factor' },
           { id: 'hx711_is_ready', name: 'Is Ready', params: null, output: 'Boolean', description: 'Check HX711 data ready' },
           { id: 'hx711_power_control', name: 'Power Control', params: null, output: null, description: 'HX711 power ON/OFF' },
-          { id: 'hx711_read_data', name: 'Read Data', params: null, output: 'Number', description: 'Read HX711 raw/average/unit data' }
         ]
       },
       {
         label: 'I2C Weight Sensor',
         blocks: [
           { id: 'i2c_weight_setup', name: 'I2C Weight Init', params: ['ADDR'], output: null, description: 'Set I2C weight sensor slave address' },
-          { id: 'i2c_weight_read', name: 'Read Weight', params: null, output: 'Number', description: 'Read I2C weight value' },
+          { id: 'i2c_weight_value', name: 'Read [Weight (g)/Byte 0 (Status)/Byte 1 (High)/Byte 2 (Low)] from I2C sensor', params: null, output: 'Number', description: 'Reads the weight in grams (or a raw byte) from the I2C weight sensor. Returns -1 if there is no response.' },
           { id: 'i2c_weight_available', name: 'Sensor Available', params: null, output: 'Boolean', description: 'Check I2C weight sensor response' },
-          { id: 'i2c_weight_raw_data', name: 'Raw Data', params: null, output: 'Number', description: 'Read I2C weight sensor raw bytes' }
         ]
       },
       {
         label: 'Rotary Encoder',
         blocks: [
           { id: 'rotary_setup', name: 'Rotary Init', params: ['DT_PIN', 'CLK_PIN'], output: null, description: 'Setup rotary encoder pins' },
-          { id: 'rotary_get_value', name: 'Read Value', params: null, output: 'Number', description: 'Current rotation value' },
+          { id: 'rotary_read', name: 'Rotary Encoder [Rotation value/Cumulative counter]', params: null, output: 'Number', description: 'Reads the rotation value or the cumulative counter of the rotary encoder.' },
           { id: 'rotary_direction', name: 'Direction', params: null, output: 'Number', description: 'Rotation direction (CW/CCW)' },
-          { id: 'rotary_counter', name: 'Counter', params: null, output: 'Number', description: 'Cumulative rotation count' },
           { id: 'rotary_reset_counter', name: 'Reset Counter', params: null, output: null, description: 'Reset rotation count' }
         ]
       },
@@ -537,19 +524,15 @@ var DOCS_DATA = {
         label: 'Thermistor (NTC)',
         blocks: [
           { id: 'thermistor_setup', name: 'Thermistor Init', params: ['PIN'], output: null, description: 'Setup NTC thermistor pin' },
-          { id: 'thermistor_read_temperature', name: 'Read Temperature', params: null, output: 'Number', description: 'Return thermistor temperature' },
-          { id: 'thermistor_read_raw', name: 'Read Raw', params: null, output: 'Number', description: 'Return analog raw value' },
-          { id: 'thermistor_get_resistance', name: 'Read Resistance', params: null, output: 'Number', description: 'Return thermistor resistance (Ω)' }
+          { id: 'thermistor_read', name: 'Thermistor Temperature Sensor [Temperature (°C)/Temperature (°F)/Raw value/Resistance value]', params: null, output: 'Number', description: 'Reads temperature, raw value or resistance from the thermistor.' },
         ]
       },
       {
         label: 'Particulate Sensor (PMS)',
         blocks: [
           { id: 'pms_setup', name: 'PMS Init', params: ['RX_PIN', 'TX_PIN', 'BAUD'], output: null, description: 'Setup PMS particulate sensor' },
-          { id: 'pms_power_control', name: 'PMS Power', params: null, output: null, description: 'PMS sensor power ON/OFF' },
-          { id: 'pms_set_mode', name: 'PMS Mode', params: null, output: null, description: 'Set PMS operating mode (active/passive)' },
+          { id: 'pms_control', name: 'PMS Fine Dust Sensor [Wake up/Sleep mode/Active mode/Passive mode/Request a reading (passive mode)]', params: null, output: null, description: 'Wakes or sleeps the PMS sensor, changes its mode, or requests a reading in passive mode.' },
           { id: 'pms_read_data', name: 'Read Particulate', params: null, output: 'Number', description: 'PM1.0/PM2.5/PM10 concentration (μg/m³)' },
-          { id: 'pms_request_read', name: 'Request Data', params: null, output: null, description: 'Request data in passive mode' },
           { id: 'pms_data_available', name: 'Data Available', params: null, output: 'Boolean', description: 'Check PMS data reception complete' }
         ]
       },
@@ -680,14 +663,11 @@ var DOCS_DATA = {
         blocks: [
           { id: 'sgp30_setup', name: 'SGP30 Init', params: ['EBASE', 'TBASE'], output: null, description: 'Initialize gas sensor (baseline setup)' },
           { id: 'sgp30_measure', name: 'Measure', params: null, output: null, description: 'Execute gas concentration measurement' },
-          { id: 'sgp30_get_eco2', name: 'eCO2 Value', params: null, output: 'Number', description: 'Return CO2 concentration (ppm)' },
-          { id: 'sgp30_get_tvoc', name: 'TVOC Value', params: null, output: 'Number', description: 'Return total volatile organic compounds (ppb)' },
+          { id: 'sgp30_read', name: 'SGP30 [eCO2 (ppm)/TVOC (ppb)]', params: null, output: 'Number', description: 'Reads eCO2 or TVOC measured by the SGP30. Run the measure block first.' },
           { id: 'sgp30_set_humidity', name: 'Set Humidity', params: null, output: null, description: 'Set humidity compensation value' },
           { id: 'sgp30_set_baseline', name: 'Set Baseline', params: null, output: null, description: 'Manually set SGP30 baseline' },
-          { id: 'sgp30_eeprom_save_baseline_fixed', name: 'EEPROM Save Baseline (Fixed)', params: null, output: null, description: 'Save baseline to EEPROM at fixed address' },
-          { id: 'sgp30_eeprom_load_baseline_fixed', name: 'EEPROM Load Baseline (Fixed)', params: null, output: null, description: 'Load baseline from EEPROM at fixed address' },
-          { id: 'sgp30_eeprom_save_baseline', name: 'EEPROM Save Baseline', params: ['ADDR'], output: null, description: 'Save baseline to EEPROM at specified address' },
-          { id: 'sgp30_eeprom_load_baseline', name: 'EEPROM Load Baseline', params: ['ADDR'], output: null, description: 'Load baseline from EEPROM at specified address' }
+          { id: 'sgp30_baseline_fixed', name: 'SGP30 [Save/Load] Baseline (EEPROM Fixed Address)', params: null, output: null, description: 'Saves or loads the SGP30 baseline at a fixed EEPROM address.' },
+          { id: 'sgp30_baseline_addr', name: 'SGP30 [Save/Load] Baseline | eCO2 Address ( ) | TVOC Address ( )', params: ['ADDR_E', 'ADDR_T'], output: null, description: 'Saves or loads the SGP30 baseline at the EEPROM addresses you choose.' },
         ]
       },
       {
@@ -705,11 +685,9 @@ var DOCS_DATA = {
           { id: 'sht31_setup', name: 'SHT31 Init', params: ['ADDRESS'], output: null, description: 'Initialize high-precision temp/humidity sensor' },
           { id: 'sht31_read', name: 'Trigger Measurement', params: null, output: null, description: 'Trigger temperature/humidity measurement' },
           { id: 'sht31_is_connected', name: 'Connection Check', params: null, output: 'Boolean', description: 'Check sensor connection status' },
-          { id: 'sht31_get_data', name: 'Read Value', params: null, output: 'Number', description: 'Return temperature/humidity' },
-          { id: 'sht31_heater_control', name: 'Heater Control', params: null, output: null, description: 'Built-in heater ON/OFF' },
+          { id: 'sht31_value', name: 'SHT31 [Temperature (°C)/Temperature (°F)/Humidity (%)/Error code]', params: null, output: 'Number', description: 'Gets the temperature, humidity or error code from the last SHT31 reading.' },
+          { id: 'sht31_control', name: 'SHT31 [Heater on/Heater off/Soft Reset/Hard Reset]', params: null, output: null, description: 'Turns the SHT31 heater on/off or resets the sensor.' },
           { id: 'sht31_is_heater_on', name: 'Heater Status', params: null, output: 'Boolean', description: 'Check heater operating status' },
-          { id: 'sht31_reset', name: 'Sensor Reset', params: null, output: null, description: 'SHT31 soft reset' },
-          { id: 'sht31_get_error', name: 'Error Status', params: null, output: 'Number', description: 'Return sensor error code' }
         ]
       },
       {
@@ -734,8 +712,7 @@ var DOCS_DATA = {
         blocks: [
           { id: 'apds9960_setup', name: 'APDS9960 Init', params: null, output: null, description: 'Initialize gesture/light/proximity sensor' },
           { id: 'apds9960_sensor_control', name: 'Sensor Control', params: null, output: null, description: 'Enable/disable sensor functions' },
-          { id: 'apds9960_read_light', name: 'Read Light', params: null, output: 'Number', description: 'Return ambient/R/G/B light values' },
-          { id: 'apds9960_read_proximity', name: 'Proximity Value', params: null, output: 'Number', description: 'Return proximity sensor value' },
+          { id: 'apds9960_read', name: 'APDS9960 [Ambient light/Red light/Green light/Blue light/Proximity value]', params: null, output: 'Number', description: 'Reads light (ambient/red/green/blue) or proximity from the APDS9960.' },
           { id: 'apds9960_gesture_available', name: 'Gesture Detected', params: null, output: 'Boolean', description: 'Check gesture data available' },
           { id: 'apds9960_gesture_control', name: 'Read/Check Gesture', params: null, output: 'Number', description: 'Read gesture or check specific gesture' }
         ]
@@ -744,24 +721,17 @@ var DOCS_DATA = {
         label: 'Heart Rate/SpO2 (MAX30105)',
         blocks: [
           { id: 'max30105_setup_basic', name: 'Heart Rate Sensor Init', params: null, output: null, description: 'MAX30105 heart rate/oxygen sensor basic setup' },
-          { id: 'max30105_finger_detected', name: 'Finger Detected', params: null, output: 'Boolean', description: 'Detect finger presence on sensor' },
-          { id: 'max30105_get_heartrate', name: 'Heart Rate', params: null, output: 'Number', description: 'Return heart rate (BPM)' },
-          { id: 'max30105_get_spo2', name: 'SpO2', params: null, output: 'Number', description: 'Return blood oxygen saturation (%)' },
-          { id: 'max30105_beat_detected', name: 'Beat Detected', params: null, output: 'Boolean', description: 'Detect new heartbeat' },
-          { id: 'max30105_sensor_ready', name: 'Sensor Ready', params: null, output: 'Boolean', description: 'Check if measurement data is sufficient' },
-          { id: 'max30105_get_temperature', name: 'Sensor Temperature', params: null, output: 'Number', description: 'Return sensor internal temperature (°C)' },
+          { id: 'max30105_is', name: '[finger detected/heartbeat detected/sensor ready]', params: null, output: 'Boolean', description: 'True when a finger is detected, a heartbeat is detected, or the sensor is ready.' },
+          { id: 'max30105_read', name: '[heart rate (BPM)/blood oxygen (%)/sensor temperature (°C)/raw red LED value/raw infrared LED value]', params: null, output: 'Number', description: 'Reads heart rate, blood oxygen, sensor temperature or raw LED values from the MAX30102.' },
           { id: 'max30105_setup_advanced', name: 'Advanced Setup', params: null, output: null, description: 'Configure sensor advanced parameters' },
-          { id: 'max30105_get_red_raw', name: 'Red LED Raw', params: null, output: 'Number', description: 'Red LED raw sensor value (advanced)' },
-          { id: 'max30105_get_ir_raw', name: 'IR LED Raw', params: null, output: 'Number', description: 'Infrared LED raw sensor value (advanced)' }
         ]
       },
       {
         label: 'Temp/Humidity (SI7021)',
         blocks: [
           { id: 'si7021_setup', name: 'SI7021 Init', params: null, output: null, description: 'Initialize SI7021 temp/humidity sensor' },
-          { id: 'si7021_read_value', name: 'Read Value', params: null, output: 'Number', description: 'Return temperature/humidity' },
+          { id: 'si7021_read', name: 'Si7021 Read Value: [Temperature(℃)/Humidity(%)/Serial number A/Serial number B]', params: null, output: 'Number', description: 'Reads temperature, humidity or the serial number from the Si7021.' },
           { id: 'si7021_reset', name: 'Sensor Reset', params: null, output: null, description: 'SI7021 soft reset' },
-          { id: 'si7021_get_serial', name: 'Serial Number', params: null, output: 'String', description: 'Return sensor unique serial number' }
         ]
       },
       {
@@ -803,13 +773,11 @@ var DOCS_DATA = {
       {
         label: 'Servo Motor',
         blocks: [
-          { id: 'attach_servo', name: 'Attach Servo', params: ['PIN'], output: null, description: 'Assign servo motor pin' },
+          { id: 'servo_connect', name: 'Servo Pin ( ) [Attach/Detach]', params: ['PIN'], output: null, description: 'Attaches the servo on the pin (it holds its angle) or detaches it (it goes limp).' },
           { id: 'attach_servo_minmax', name: 'Attach Servo (Range)', params: ['PIN', 'MIN', 'MAX'], output: null, description: 'Attach servo with min/max pulse width' },
-          { id: 'detach_servo', name: 'Detach Servo', params: ['PIN'], output: null, description: 'Release servo pin' },
           { id: 'set_servo_angle', name: 'Servo Angle', params: ['PIN', 'ANGLE'], output: null, description: 'Set angle 0~180 degrees' },
           { id: 'set_servo_microseconds', name: 'Servo Microseconds', params: ['PIN', 'US'], output: null, description: 'Precise position control via pulse width (μs)' },
-          { id: 'read_servo_angle', name: 'Read Servo Angle', params: ['PIN'], output: 'Number', description: 'Return current angle' },
-          { id: 'read_servo_microseconds', name: 'Read Servo Microseconds', params: ['PIN'], output: 'Number', description: 'Return current pulse width (μs)' },
+          { id: 'servo_read', name: 'Read Servo Pin ( ) [Angle/Microseconds]', params: ['PIN'], output: 'Number', description: 'Reads the last angle (or pulse width in microseconds) sent to the servo on the pin.' },
           { id: 'is_servo_attached', name: 'Is Servo Attached', params: ['PIN'], output: 'Boolean', description: 'Check if servo is attached to pin' }
         ]
       },
@@ -844,8 +812,7 @@ var DOCS_DATA = {
         label: 'PCA9685 DC Motor Driver',
         blocks: [
           { id: 'pca9685_dcmotor_setup', name: 'PCA9685 DC Motor Setup', params: ['NUM', 'ADDRESS'], output: null, description: 'PCA9685 DC motor driver I2C setup' },
-          { id: 'pca9685_dcmotor_wheel_a', name: 'Wheel A Control', params: ['NUM', 'DIRECTION', 'SPEED'], output: null, description: 'Channel A motor direction/speed (0~100%)' },
-          { id: 'pca9685_dcmotor_wheel_b', name: 'Wheel B Control', params: ['NUM', 'DIRECTION', 'SPEED'], output: null, description: 'Channel B motor direction/speed (0~100%)' },
+          { id: 'pca9685_dcmotor_wheel', name: 'Motor Driver ( ) Wheel [A/B] Direction ( ) Speed ( ) %', params: ['NUM', 'DIR', 'SPEED'], output: null, description: 'Drives wheel A or B of the PCA9685 motor driver. Direction 0/1, speed 0~100%.' },
           { id: 'pca9685_dcmotor_stop', name: 'Motor Stop', params: ['NUM'], output: null, description: 'Stop all PCA9685 motors' }
         ]
       },
@@ -924,11 +891,10 @@ var DOCS_DATA = {
           { id: 'sd_write_file', name: 'Write File', params: ['FILE_VAR', 'DATA'], output: null, description: 'Write data to file' },
           { id: 'sd_read_file', name: 'Read File', params: ['FILE_VAR'], output: 'String', description: 'Read file contents' },
           { id: 'sd_file_exists', name: 'File Exists', params: ['FILENAME'], output: 'Boolean', description: 'Check if file exists' },
-          { id: 'sd_file_size', name: 'File Size', params: ['FILE_VAR'], output: 'Number', description: 'Return file size (bytes)' },
+          { id: 'sd_file_info', name: '[File size/Available bytes] ( )', params: ['FILE_VAR'], output: 'Number', description: 'Gets the size of the open file, or how many bytes are left to read.' },
           { id: 'sd_close_file', name: 'Close File', params: ['FILE_VAR'], output: null, description: 'Close file handle' },
           { id: 'sd_remove_file', name: 'Delete File', params: ['FILENAME'], output: null, description: 'Delete file from SD card' },
           { id: 'sd_make_directory', name: 'Create Folder', params: ['DIRNAME'], output: null, description: 'Create folder on SD card' },
-          { id: 'sd_file_available', name: 'Data Available', params: ['FILE_VAR'], output: 'Boolean', description: 'Check if data remains to read from file' }
         ]
       }
     ],
@@ -954,8 +920,7 @@ var DOCS_DATA = {
         blocks: [
           { id: 'ir_setup', name: 'IR Receiver Init', params: ['PIN'], output: null, description: 'Setup infrared receiver' },
           { id: 'ir_available', name: 'Signal Received', params: null, output: 'Boolean', description: 'Check IR signal received (non-blocking)' },
-          { id: 'ir_read_button', name: 'Read Button', params: null, output: 'String', description: 'Return remote button number' },
-          { id: 'ir_read_raw', name: 'Read Raw Code', params: null, output: 'Number', description: 'Return IR raw code value' },
+          { id: 'ir_read', name: 'IR Remote [Button number/Raw code value]', params: null, output: 'Number', description: 'Reads the button number or the raw code of the last IR remote signal.' },
           { id: 'ir_button_is', name: 'Button Compare', params: null, output: 'Boolean', description: 'Check if specific button is pressed' }
         ]
       },
@@ -1017,9 +982,7 @@ var DOCS_DATA = {
         blocks: [
           { id: 'huskylens_available', name: 'Object Detected', params: null, output: 'Boolean', description: 'Check if recognized objects exist' },
           { id: 'huskylens_is_learned', name: 'ID Learned', params: ['ID'], output: 'Boolean', description: 'Check if specific ID has been learned' },
-          { id: 'huskylens_count_learned_ids', name: 'Learned ID Count', params: null, output: 'Number', description: 'Total number of learned IDs' },
-          { id: 'huskylens_count_blocks', name: 'Block Count', params: null, output: 'Number', description: 'Number of detected rectangles (blocks)' },
-          { id: 'huskylens_count_arrows', name: 'Arrow Count', params: null, output: 'Number', description: 'Number of detected lines (arrows)' }
+          { id: 'huskylens_count', name: 'HuskyLens [Learned ID/Block/Arrow] Count', params: null, output: 'Number', description: 'Counts learned IDs, detected blocks (boxes) or arrows (lines) in the last HuskyLens result.' },
         ]
       },
       {
@@ -1054,8 +1017,7 @@ var DOCS_DATA = {
         label: 'SD Card',
         blocks: [
           { id: 'huskylens_screenshot', name: 'Screenshot', params: null, output: null, description: 'Save current screen to SD card' },
-          { id: 'huskylens_save_model', name: 'Save Model', params: ['SLOT'], output: null, description: 'Save learned model to slot' },
-          { id: 'huskylens_load_model', name: 'Load Model', params: ['SLOT'], output: null, description: 'Load saved model' }
+          { id: 'huskylens_model', name: 'HuskyLens Model ( ) [Save/Load]', params: ['INDEX'], output: null, description: 'Saves the current model to the SD card slot, or loads it back.' },
         ]
       }
     ],

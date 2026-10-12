@@ -65,10 +65,9 @@ var DOCS_DATA = {
     color: '#6190DF',
     description: '아두이노 디지털/아날로그 핀을 직접 제어하는 블록',
     blocks: [
-      { id: 'pin_mode', name: '핀 모드 설정', params: ['PIN'], output: null, description: '핀을 INPUT 또는 OUTPUT으로 설정' },
-      { id: 'read_digital_pin', name: '디지털 핀 읽기', params: ['PIN'], output: 'Number', description: '디지털 핀의 HIGH/LOW 값을 읽음' },
+      { id: 'read_digital_pin', name: '디지털 핀 읽기', params: ['PIN'], output: 'Number', description: '디지털 핀의 HIGH/LOW 값을 읽음 (입력 모드는 자동 설정)' },
       { id: 'read_analog_pin', name: '아날로그 핀 읽기', params: ['PIN'], output: 'Number', description: '아날로그 핀 값을 읽음 (0~1023)' },
-      { id: 'set_digital_pin', name: '디지털 핀 출력', params: ['PIN'], output: null, description: '핀에 HIGH 또는 LOW 출력' },
+      { id: 'set_digital_pin', name: '디지털 핀 출력', params: ['PIN'], output: null, description: '핀에 HIGH 또는 LOW 출력 (출력 모드는 자동 설정 — 핀 모드 블록 필요 없음)' },
       { id: 'set_pwm_pin', name: 'PWM 출력', params: ['PIN', 'VALUE'], output: null, description: 'PWM 값 출력 (0~255)' },
       { id: 'servo_setup', name: '서보 모터 설정', params: ['PIN'], output: null, description: '서보 모터 핀 연결' },
       { id: 'set_servo_angle', name: '서보 각도 설정', params: ['PIN', 'ANGLE'], output: null, description: '서보 모터 각도 지정 (0~180)' },
@@ -317,9 +316,7 @@ var DOCS_DATA = {
           { id: 'lcd_i2c_print', name: 'LCD 텍스트 출력', params: ['LCD_NUM', 'ROW', 'COL', 'TEXT'], output: null, description: '지정 위치에 텍스트 출력' },
           { id: 'lcd_i2c_clear', name: 'LCD 화면 지우기', params: ['LCD_NUM'], output: null, description: 'LCD 화면 전체 지우기' },
           { id: 'lcd_i2c_set_cursor', name: 'LCD 커서 이동', params: ['LCD_NUM', 'ROW', 'COL'], output: null, description: '커서 위치 이동' },
-          { id: 'lcd_i2c_cursor', name: 'LCD 커서 표시', params: ['LCD_NUM'], output: null, description: '커서 표시/숨김 제어' },
-          { id: 'lcd_i2c_backlight', name: 'LCD 백라이트', params: ['LCD_NUM'], output: null, description: '백라이트 ON/OFF' },
-          { id: 'lcd_i2c_display', name: 'LCD 디스플레이 ON/OFF', params: ['LCD_NUM'], output: null, description: 'LCD 화면 표시/끄기' },
+          { id: 'lcd_i2c_onoff', name: 'LCD ( )번: [백라이트/화면/커서/커서 깜빡임] [켜기/끄기]', params: ['LCD_NUM'], output: null, description: 'LCD의 백라이트·화면·커서·커서 깜빡임을 켜거나 끕니다.' },
           { id: 'lcd_i2c_scroll', name: 'LCD 스크롤', params: ['LCD_NUM'], output: null, description: 'LCD 화면 좌/우 스크롤' }
         ]
       },
@@ -342,9 +339,8 @@ var DOCS_DATA = {
           { id: 'neopixel_setup', name: 'NeoPixel 초기화', params: ['PIN', 'LED_COUNT', 'TYPE'], output: null, description: 'NeoPixel LED 스트립 초기화' },
           { id: 'neopixel_set_rgb', name: 'RGB 색상 설정', params: ['STRIP_NUM', 'LED_INDEX', 'R', 'G', 'B'], output: null, description: '특정 LED의 RGB 색상 설정' },
           { id: 'neopixel_set_rgbw', name: 'RGBW 색상 설정', params: ['STRIP_NUM', 'LED_INDEX', 'R', 'G', 'B', 'W'], output: null, description: '특정 LED의 RGBW 색상 설정 (White 포함)' },
-          { id: 'neopixel_show', name: 'NeoPixel 업데이트', params: ['STRIP_NUM'], output: null, description: '설정한 색상을 LED에 반영' },
+          { id: 'neopixel_screen', name: '네오픽셀 [화면에 나타내기/모두 지우기] | 스트립 ( )', params: ['STRIP_NUM'], output: null, description: '정해 둔 색을 네오픽셀에 나타내거나, LED를 모두 끕니다.' },
           { id: 'neopixel_brightness', name: '밝기 설정', params: ['STRIP_NUM', 'BRI'], output: null, description: '전체 밝기 조절' },
-          { id: 'neopixel_clear', name: 'NeoPixel 끄기', params: ['STRIP_NUM'], output: null, description: '모든 LED 끄기' },
           { id: 'neopixel_fill_rgb_all', name: '전체 색상 채우기', params: ['STRIP_NUM', 'R', 'G', 'B'], output: null, description: '모든 LED를 같은 색상으로' },
           { id: 'neopixel_anim_rainbow', name: '무지개 애니메이션', params: ['STRIP_NUM', 'WAIT', 'LOOPS'], output: null, description: '무지개 색 순환 효과' },
           { id: 'neopixel_anim_shift', name: '시프트 애니메이션', params: ['STRIP_NUM', 'STEPS', 'WAIT'], output: null, description: 'LED 색상을 좌/우로 회전 이동' },
@@ -371,8 +367,7 @@ var DOCS_DATA = {
         blocks: [
           { id: 'ssd1306_setup_i2c', name: 'SSD1306 초기화', params: ['NUM', 'RST'], output: null, description: 'SSD1306 OLED I2C 초기화' },
           { id: 'ssd1306_text', name: '텍스트 출력', params: ['NUM', 'TEXT', 'X', 'Y', 'SIZE'], output: null, description: 'OLED에 텍스트 표시' },
-          { id: 'ssd1306_control', name: '디스플레이 제어', params: ['NUM'], output: null, description: 'display/clear 제어' },
-          { id: 'ssd1306_dim', name: '밝기 조절', params: ['NUM'], output: null, description: 'OLED 밝기 어둡게/밝게 전환' },
+          { id: 'ssd1306_screen', name: 'OLED ( ) [화면 표시/화면 지우기/화면 반전/정상 표시/화면 어둡게/화면 밝게]', params: ['NUM'], output: null, description: 'OLED 화면을 표시·지우기·반전하거나 밝기를 바꿉니다. 글자와 그림은 「화면 표시」를 해야 보입니다.' },
           { id: 'ssd1306_pixel', name: '픽셀 그리기', params: ['NUM', 'X', 'Y'], output: null, description: '단일 픽셀 표시' },
           { id: 'ssd1306_line', name: '선 그리기', params: ['NUM', 'X1', 'Y1', 'X2', 'Y2'], output: null, description: '두 점 사이 직선' },
           { id: 'ssd1306_rect', name: '사각형 그리기', params: ['NUM', 'X', 'Y', 'W', 'H'], output: null, description: '사각형 도형' },
@@ -396,10 +391,8 @@ var DOCS_DATA = {
         blocks: [
           { id: 'ht16k33_setup', name: 'HT16K33 초기화', params: ['BRI'], output: null, description: 'LED 매트릭스 초기화' },
           { id: 'ht16k33_scroll_text', name: '텍스트 스크롤', params: ['NUM', 'TEXT', 'SEC'], output: null, description: '텍스트 스크롤 표시' },
-          { id: 'ht16k33_show', name: '화면 업데이트', params: ['NUM'], output: null, description: '버퍼 내용을 매트릭스에 반영' },
-          { id: 'ht16k33_clear', name: '화면 지우기', params: ['NUM'], output: null, description: '매트릭스 초기화' },
+          { id: 'ht16k33_screen', name: 'I2C 매트릭스 ( )번 | [화면에 나타내기/화면 지우기/깜빡임 끄기/깜빡임 2 Hz/깜빡임 1 Hz/깜빡임 0.5 Hz]', params: ['NUM'], output: null, description: '도트매트릭스 화면을 나타내거나 지우고, 깜빡임을 설정합니다. 점·패턴은 「화면에 나타내기」를 해야 보입니다.' },
           { id: 'ht16k33_set_brightness', name: '밝기 설정', params: null, output: null, description: '매트릭스 밝기 조절' },
-          { id: 'ht16k33_set_blink', name: '깜빡임 설정', params: null, output: null, description: '매트릭스 깜빡임 속도' },
           { id: 'ht16k33_pixel', name: '픽셀 (단색)', params: ['NUM', 'ROW', 'COL'], output: null, description: '단색 매트릭스 LED ON/OFF' },
           { id: 'ht16k33_bicolor_pixel', name: '픽셀 (양색)', params: ['NUM', 'ROW', 'COL', 'COLOR'], output: null, description: '양색 매트릭스 LED 색상 설정' },
           { id: 'ht16k33_pattern_8x8', name: '8x8 패턴', params: ['NUM'], output: null, description: '8x8 LED 패턴 표시' },
@@ -414,9 +407,7 @@ var DOCS_DATA = {
         blocks: [
           { id: 'sh110x_setup_i2c', name: 'SH110X 초기화', params: ['NUM', 'RST', 'WIDTH', 'HEIGHT'], output: null, description: 'SH110X OLED 초기화' },
           { id: 'sh110x_text', name: '텍스트 출력', params: ['NUM', 'TXT', 'X', 'Y', 'SIZE'], output: null, description: 'SH110X 텍스트 표시' },
-          { id: 'sh110x_display', name: '화면 표시', params: ['NUM'], output: null, description: '버퍼를 화면에 반영' },
-          { id: 'sh110x_clear', name: '화면 지우기', params: ['NUM'], output: null, description: '화면 초기화' },
-          { id: 'sh110x_control', name: '디스플레이 제어', params: ['NUM'], output: null, description: 'display/clear/invert 제어' },
+          { id: 'sh110x_screen', name: 'OLED ( ) [화면 표시하기/화면 지우기/화면 반전/정상 표시/화면 켜기/화면 끄기]', params: ['NUM'], output: null, description: 'OLED 화면을 표시·지우기·반전하거나 켜고 끕니다. 글자와 그림은 「화면 표시하기」를 해야 보입니다.' },
           { id: 'sh110x_pixel', name: '픽셀 그리기', params: ['NUM', 'X', 'Y'], output: null, description: '단일 픽셀 표시' },
           { id: 'sh110x_line', name: '선 그리기', params: ['NUM', 'X1', 'Y1', 'X2', 'Y2'], output: null, description: '두 점 사이 직선' },
           { id: 'sh110x_rect', name: '사각형 그리기', params: ['NUM', 'X', 'Y', 'W', 'H'], output: null, description: '사각형 도형' },
@@ -486,8 +477,7 @@ var DOCS_DATA = {
         label: 'DHT 온습도 센서',
         blocks: [
           { id: 'dht_setup', name: 'DHT 초기화', params: ['PIN', 'TYPE'], output: null, description: 'DHT11/DHT22 센서 설정' },
-          { id: 'dht_read_temperature', name: '온도 읽기', params: ['PIN'], output: 'Number', description: '섭씨 온도 반환' },
-          { id: 'dht_read_humidity', name: '습도 읽기', params: ['PIN'], output: 'Number', description: '상대 습도(%) 반환' },
+          { id: 'dht_read', name: 'DHT 센서: ( )번 핀 [온도 (°C)/온도 (°F)/습도 (%)] 읽기', params: ['PIN'], output: 'Number', description: '그 핀에 연결한 DHT 센서의 온도나 습도를 읽습니다.' },
           { id: 'dht_convert_temperature', name: '온도 변환', params: ['TEMP', 'FROM', 'TO'], output: 'Number', description: '섭씨↔화씨 온도 변환' },
           { id: 'dht_heat_index', name: '체감온도', params: ['TEMPERATURE', 'HUMIDITY'], output: 'Number', description: '체감온도 계산' }
         ]
@@ -505,30 +495,27 @@ var DOCS_DATA = {
         label: '무게 센서 (HX711)',
         blocks: [
           { id: 'hx711_setup', name: 'HX711 초기화', params: ['DOUT_PIN', 'CLK_PIN', 'GAIN'], output: null, description: '로드셀 앰프 초기화' },
-          { id: 'hx711_get_weight', name: '무게 읽기', params: null, output: 'Number', description: '보정된 무게 값 반환(g)' },
+          { id: 'hx711_read', name: 'HX711 무게 센서 [무게 측정/원본 값/평균 값/실제 값]', params: null, output: 'Number', description: 'HX711 무게 센서에서 무게나 원본 데이터를 읽습니다.' },
           { id: 'hx711_tare', name: '영점 조정', params: ['TIMES'], output: null, description: '저울 영점 설정 (평균 횟수)' },
           { id: 'hx711_set_scale', name: '스케일 설정', params: ['SCALE'], output: null, description: '보정 계수 설정' },
           { id: 'hx711_is_ready', name: '준비 상태', params: null, output: 'Boolean', description: 'HX711 데이터 읽기 준비 확인' },
           { id: 'hx711_power_control', name: '전원 제어', params: null, output: null, description: 'HX711 전원 ON/OFF' },
-          { id: 'hx711_read_data', name: '데이터 읽기', params: null, output: 'Number', description: 'HX711 원시/평균/단위 데이터 읽기' }
         ]
       },
       {
         label: 'I2C 무게 센서',
         blocks: [
           { id: 'i2c_weight_setup', name: 'I2C 무게 초기화', params: ['ADDR'], output: null, description: 'I2C 무게 센서 슬레이브 주소 설정' },
-          { id: 'i2c_weight_read', name: '무게 읽기', params: null, output: 'Number', description: 'I2C 무게 센서 값 읽기' },
+          { id: 'i2c_weight_value', name: 'I2C 센서에서 [무게 (g)/Byte 0 (상태)/Byte 1 (상위)/Byte 2 (하위)] 읽기', params: null, output: 'Number', description: 'I2C 무게 센서에서 무게(g)나 원시 데이터를 읽습니다. 응답이 없으면 -1' },
           { id: 'i2c_weight_available', name: '센서 연결 확인', params: null, output: 'Boolean', description: 'I2C 무게 센서 응답 확인' },
-          { id: 'i2c_weight_raw_data', name: '원시 데이터', params: null, output: 'Number', description: 'I2C 무게 센서 원시 바이트 읽기' }
         ]
       },
       {
         label: '로터리 엔코더',
         blocks: [
           { id: 'rotary_setup', name: '로터리 초기화', params: ['DT_PIN', 'CLK_PIN'], output: null, description: '로터리 엔코더 핀 설정' },
-          { id: 'rotary_get_value', name: '값 읽기', params: null, output: 'Number', description: '현재 회전값' },
+          { id: 'rotary_read', name: '로터리 엔코더 [회전 값/누적 카운터]', params: null, output: 'Number', description: '로터리 엔코더의 회전 값이나 누적 카운터를 읽습니다.' },
           { id: 'rotary_direction', name: '방향', params: null, output: 'Number', description: '회전 방향 (CW/CCW)' },
-          { id: 'rotary_counter', name: '카운터', params: null, output: 'Number', description: '누적 회전 카운트' },
           { id: 'rotary_reset_counter', name: '카운터 초기화', params: null, output: null, description: '회전 카운트 리셋' }
         ]
       },
@@ -536,19 +523,15 @@ var DOCS_DATA = {
         label: '서미스터 (NTC)',
         blocks: [
           { id: 'thermistor_setup', name: '서미스터 초기화', params: ['PIN'], output: null, description: 'NTC 서미스터 핀 설정' },
-          { id: 'thermistor_read_temperature', name: '온도 읽기', params: null, output: 'Number', description: '서미스터 온도 값 반환' },
-          { id: 'thermistor_read_raw', name: '원시값 읽기', params: null, output: 'Number', description: '아날로그 원시값 반환' },
-          { id: 'thermistor_get_resistance', name: '저항값 읽기', params: null, output: 'Number', description: '서미스터 저항값(Ω) 반환' }
+          { id: 'thermistor_read', name: '서미스터 온도 센서 [온도 (°C)/온도 (°F)/원본 값/저항 값]', params: null, output: 'Number', description: '서미스터의 온도, 원본 값, 저항 값을 읽습니다.' },
         ]
       },
       {
         label: '미세먼지 센서 (PMS)',
         blocks: [
           { id: 'pms_setup', name: 'PMS 초기화', params: ['RX_PIN', 'TX_PIN', 'BAUD'], output: null, description: 'PMS 미세먼지 센서 설정' },
-          { id: 'pms_power_control', name: 'PMS 전원 제어', params: null, output: null, description: 'PMS 센서 전원 ON/OFF' },
-          { id: 'pms_set_mode', name: 'PMS 모드 설정', params: null, output: null, description: 'PMS 작동 모드(능동/수동) 설정' },
+          { id: 'pms_control', name: 'PMS 미세먼지 센서 [깨우기/절전 모드/활성 모드/수동 모드/읽기 요청 (수동 모드)]', params: null, output: null, description: 'PMS 센서를 깨우거나 재우고, 모드를 바꾸거나, 수동 모드에서 읽기를 요청합니다.' },
           { id: 'pms_read_data', name: '미세먼지 읽기', params: null, output: 'Number', description: 'PM1.0/PM2.5/PM10 농도(μg/m³)' },
-          { id: 'pms_request_read', name: '데이터 요청', params: null, output: null, description: '수동 모드에서 데이터 요청' },
           { id: 'pms_data_available', name: '데이터 유효', params: null, output: 'Boolean', description: 'PMS 데이터 수신 완료 확인' }
         ]
       },
@@ -679,14 +662,11 @@ var DOCS_DATA = {
         blocks: [
           { id: 'sgp30_setup', name: 'SGP30 초기화', params: ['EBASE', 'TBASE'], output: null, description: '가스 센서 초기화 (기준선 설정)' },
           { id: 'sgp30_measure', name: '측정', params: null, output: null, description: '가스 농도 측정 실행' },
-          { id: 'sgp30_get_eco2', name: 'eCO2 값', params: null, output: 'Number', description: 'CO2 농도(ppm) 반환' },
-          { id: 'sgp30_get_tvoc', name: 'TVOC 값', params: null, output: 'Number', description: '총 휘발성 유기화합물(ppb) 반환' },
+          { id: 'sgp30_read', name: 'SGP30 [eCO2 (ppm)/TVOC (ppb)]', params: null, output: 'Number', description: 'SGP30이 측정한 eCO2나 TVOC 값을 가져옵니다. 먼저 측정 실행 블록을 쓰세요.' },
           { id: 'sgp30_set_humidity', name: '습도 설정', params: null, output: null, description: '습도 보정값 설정' },
           { id: 'sgp30_set_baseline', name: '기준선 설정', params: null, output: null, description: 'SGP30 기준선 수동 설정' },
-          { id: 'sgp30_eeprom_save_baseline_fixed', name: 'EEPROM 기준선 저장 (고정)', params: null, output: null, description: '기준선을 EEPROM 고정 주소에 저장' },
-          { id: 'sgp30_eeprom_load_baseline_fixed', name: 'EEPROM 기준선 로드 (고정)', params: null, output: null, description: 'EEPROM 고정 주소에서 기준선 로드' },
-          { id: 'sgp30_eeprom_save_baseline', name: 'EEPROM 기준선 저장', params: ['ADDR'], output: null, description: '기준선을 EEPROM 지정 주소에 저장' },
-          { id: 'sgp30_eeprom_load_baseline', name: 'EEPROM 기준선 로드', params: ['ADDR'], output: null, description: 'EEPROM 지정 주소에서 기준선 로드' }
+          { id: 'sgp30_baseline_fixed', name: 'SGP30 베이스라인 [저장/불러오기] (EEPROM 고정 주소)', params: null, output: null, description: 'SGP30 베이스라인을 EEPROM 고정 주소에 저장하거나 불러옵니다.' },
+          { id: 'sgp30_baseline_addr', name: 'SGP30 베이스라인 [저장/불러오기] | eCO2 주소 ( ) | TVOC 주소 ( )', params: ['ADDR_E', 'ADDR_T'], output: null, description: 'SGP30 베이스라인을 정한 EEPROM 주소에 저장하거나 불러옵니다.' },
         ]
       },
       {
@@ -704,11 +684,9 @@ var DOCS_DATA = {
           { id: 'sht31_setup', name: 'SHT31 초기화', params: ['ADDRESS'], output: null, description: '고정밀 온습도 센서 초기화' },
           { id: 'sht31_read', name: '측정 실행', params: null, output: null, description: '온습도 측정 트리거' },
           { id: 'sht31_is_connected', name: '연결 확인', params: null, output: 'Boolean', description: '센서 연결 상태 확인' },
-          { id: 'sht31_get_data', name: '값 읽기', params: null, output: 'Number', description: '온도/습도 반환' },
-          { id: 'sht31_heater_control', name: '히터 제어', params: null, output: null, description: '센서 내장 히터 ON/OFF' },
+          { id: 'sht31_value', name: 'SHT31 [온도 (°C)/온도 (°F)/습도 (%)/에러 코드]', params: null, output: 'Number', description: '마지막으로 읽은 SHT31 값에서 온도·습도·에러 코드를 가져옵니다.' },
+          { id: 'sht31_control', name: 'SHT31 [히터 켜기/히터 끄기/소프트 리셋/하드 리셋]', params: null, output: null, description: 'SHT31 히터를 켜고 끄거나 센서를 리셋합니다.' },
           { id: 'sht31_is_heater_on', name: '히터 상태', params: null, output: 'Boolean', description: '히터 동작 여부 확인' },
-          { id: 'sht31_reset', name: '센서 리셋', params: null, output: null, description: 'SHT31 소프트 리셋' },
-          { id: 'sht31_get_error', name: '에러 상태', params: null, output: 'Number', description: '센서 에러 코드 반환' }
         ]
       },
       {
@@ -733,8 +711,7 @@ var DOCS_DATA = {
         blocks: [
           { id: 'apds9960_setup', name: 'APDS9960 초기화', params: null, output: null, description: '제스처/조도/근접 센서 초기화' },
           { id: 'apds9960_sensor_control', name: '센서 제어', params: null, output: null, description: '센서 기능 활성화/비활성화' },
-          { id: 'apds9960_read_light', name: '조도 읽기', params: null, output: 'Number', description: '조도/R/G/B 광량 값 반환' },
-          { id: 'apds9960_read_proximity', name: '근접 값', params: null, output: 'Number', description: '근접 센서 값 반환' },
+          { id: 'apds9960_read', name: 'APDS9960 [주변광 조도/빨강 조도/초록 조도/파랑 조도/근접 센서 값]', params: null, output: 'Number', description: 'APDS9960의 조도(주변광·빨강·초록·파랑)나 근접 값을 읽습니다.' },
           { id: 'apds9960_gesture_available', name: '제스처 감지', params: null, output: 'Boolean', description: '제스처 데이터 사용 가능 확인' },
           { id: 'apds9960_gesture_control', name: '제스처 읽기/확인', params: null, output: 'Number', description: '제스처 읽기 또는 특정 제스처 확인' }
         ]
@@ -743,24 +720,17 @@ var DOCS_DATA = {
         label: '심박/SpO2 센서 (MAX30105)',
         blocks: [
           { id: 'max30105_setup_basic', name: '심박 센서 초기화', params: null, output: null, description: 'MAX30105 심박/산소 센서 기본 설정' },
-          { id: 'max30105_finger_detected', name: '손가락 감지', params: null, output: 'Boolean', description: '센서 위 손가락 유무' },
-          { id: 'max30105_get_heartrate', name: '심박수', params: null, output: 'Number', description: '심박수(BPM) 반환' },
-          { id: 'max30105_get_spo2', name: 'SpO2', params: null, output: 'Number', description: '혈중 산소포화도(%) 반환' },
-          { id: 'max30105_beat_detected', name: '심박 비트 감지', params: null, output: 'Boolean', description: '새로운 심박 비트 감지 여부' },
-          { id: 'max30105_sensor_ready', name: '센서 준비', params: null, output: 'Boolean', description: '측정 데이터 충분 여부 확인' },
-          { id: 'max30105_get_temperature', name: '센서 온도', params: null, output: 'Number', description: '센서 자체 온도(°C) 반환' },
+          { id: 'max30105_is', name: '[손가락이 감지됨/심장박동 감지됨/센서 준비됨]', params: null, output: 'Boolean', description: '손가락이 감지되거나, 심장박동이 감지되거나, 센서가 준비되면 참입니다.' },
+          { id: 'max30105_read', name: '[심박수 (BPM)/혈중산소포화도 (%)/센서 온도 (°C)/적색 LED 원시값/적외선 LED 원시값]', params: null, output: 'Number', description: 'MAX30102에서 심박수·혈중산소포화도·센서 온도·LED 원시값을 읽습니다.' },
           { id: 'max30105_setup_advanced', name: '고급 설정', params: null, output: null, description: '센서 고급 파라미터 설정' },
-          { id: 'max30105_get_red_raw', name: 'Red LED 원시값', params: null, output: 'Number', description: '적색 LED 원시 센서 값 (고급)' },
-          { id: 'max30105_get_ir_raw', name: 'IR LED 원시값', params: null, output: 'Number', description: '적외선 LED 원시 센서 값 (고급)' }
         ]
       },
       {
         label: '온습도 센서 (SI7021)',
         blocks: [
           { id: 'si7021_setup', name: 'SI7021 초기화', params: null, output: null, description: 'SI7021 온습도 센서 초기화' },
-          { id: 'si7021_read_value', name: '값 읽기', params: null, output: 'Number', description: '온도/습도 반환' },
+          { id: 'si7021_read', name: 'Si7021 값 읽기: [온도(℃)/습도(%)/시리얼 번호 A/시리얼 번호 B]', params: null, output: 'Number', description: 'Si7021의 온도, 습도, 시리얼 번호를 읽습니다.' },
           { id: 'si7021_reset', name: '센서 리셋', params: null, output: null, description: 'SI7021 소프트 리셋' },
-          { id: 'si7021_get_serial', name: '시리얼 번호', params: null, output: 'String', description: '센서 고유 시리얼 번호 반환' }
         ]
       },
       {
@@ -802,13 +772,11 @@ var DOCS_DATA = {
       {
         label: '서보 모터',
         blocks: [
-          { id: 'attach_servo', name: '서보 연결', params: ['PIN'], output: null, description: '서보 모터 핀 할당' },
+          { id: 'servo_connect', name: '서보 핀 ( ) [연결/분리]', params: ['PIN'], output: null, description: '그 핀의 서보를 연결(각도를 붙잡음)하거나 분리(힘을 뺌)합니다.' },
           { id: 'attach_servo_minmax', name: '서보 연결 (범위)', params: ['PIN', 'MIN', 'MAX'], output: null, description: '최소/최대 펄스폭 지정 서보 연결' },
-          { id: 'detach_servo', name: '서보 분리', params: ['PIN'], output: null, description: '서보 핀 해제' },
           { id: 'set_servo_angle', name: '서보 각도', params: ['PIN', 'ANGLE'], output: null, description: '0~180도 각도 설정' },
           { id: 'set_servo_microseconds', name: '서보 마이크로초', params: ['PIN', 'US'], output: null, description: '펄스폭(μs)으로 정밀 위치 제어' },
-          { id: 'read_servo_angle', name: '서보 각도 읽기', params: ['PIN'], output: 'Number', description: '현재 각도 반환' },
-          { id: 'read_servo_microseconds', name: '서보 마이크로초 읽기', params: ['PIN'], output: 'Number', description: '현재 펄스폭(μs) 반환' },
+          { id: 'servo_read', name: '서보 핀 ( ) [각도/마이크로초] 읽기', params: ['PIN'], output: 'Number', description: '그 핀의 서보에 마지막으로 보낸 각도(또는 마이크로초)를 읽습니다.' },
           { id: 'is_servo_attached', name: '서보 연결 확인', params: ['PIN'], output: 'Boolean', description: '서보가 핀에 연결되어 있는지 확인' }
         ]
       },
@@ -843,8 +811,7 @@ var DOCS_DATA = {
         label: 'PCA9685 DC 모터 드라이버',
         blocks: [
           { id: 'pca9685_dcmotor_setup', name: 'PCA9685 DC모터 설정', params: ['NUM', 'ADDRESS'], output: null, description: 'PCA9685 DC 모터 드라이버 I2C 설정' },
-          { id: 'pca9685_dcmotor_wheel_a', name: 'A바퀴 제어', params: ['NUM', 'DIRECTION', 'SPEED'], output: null, description: 'A채널 모터 방향/속도 (0~100%)' },
-          { id: 'pca9685_dcmotor_wheel_b', name: 'B바퀴 제어', params: ['NUM', 'DIRECTION', 'SPEED'], output: null, description: 'B채널 모터 방향/속도 (0~100%)' },
+          { id: 'pca9685_dcmotor_wheel', name: '모터 드라이버 ( ) [A/B]바퀴 방향 ( ) 속도 ( ) %', params: ['NUM', 'DIR', 'SPEED'], output: null, description: 'PCA9685 모터 드라이버의 A 또는 B 바퀴를 돌립니다. 방향 0/1, 속도 0~100%' },
           { id: 'pca9685_dcmotor_stop', name: '모터 정지', params: ['NUM'], output: null, description: 'PCA9685 모터 전체 정지' }
         ]
       },
@@ -923,11 +890,10 @@ var DOCS_DATA = {
           { id: 'sd_write_file', name: '파일 쓰기', params: ['FILE_VAR', 'DATA'], output: null, description: '파일에 데이터 기록' },
           { id: 'sd_read_file', name: '파일 읽기', params: ['FILE_VAR'], output: 'String', description: '파일 내용 읽기' },
           { id: 'sd_file_exists', name: '파일 존재 확인', params: ['FILENAME'], output: 'Boolean', description: '파일 존재 여부 확인' },
-          { id: 'sd_file_size', name: '파일 크기', params: ['FILE_VAR'], output: 'Number', description: '파일 크기(바이트) 반환' },
+          { id: 'sd_file_info', name: '[파일 크기/읽을 수 있는 바이트] ( )', params: ['FILE_VAR'], output: 'Number', description: '열어 둔 파일의 크기나, 아직 읽을 수 있는 바이트 수를 가져옵니다.' },
           { id: 'sd_close_file', name: '파일 닫기', params: ['FILE_VAR'], output: null, description: '파일 핸들 닫기' },
           { id: 'sd_remove_file', name: '파일 삭제', params: ['FILENAME'], output: null, description: 'SD 카드에서 파일 삭제' },
           { id: 'sd_make_directory', name: '폴더 생성', params: ['DIRNAME'], output: null, description: 'SD 카드에 폴더 생성' },
-          { id: 'sd_file_available', name: '읽기 가능', params: ['FILE_VAR'], output: 'Boolean', description: '파일에서 읽을 데이터 남음 확인' }
         ]
       }
     ],
@@ -953,8 +919,7 @@ var DOCS_DATA = {
         blocks: [
           { id: 'ir_setup', name: 'IR 수신기 초기화', params: ['PIN'], output: null, description: '적외선 수신기 설정' },
           { id: 'ir_available', name: '수신 여부', params: null, output: 'Boolean', description: 'IR 신호 수신 확인 (논블로킹)' },
-          { id: 'ir_read_button', name: '버튼 읽기', params: null, output: 'String', description: '리모컨 버튼 번호 반환' },
-          { id: 'ir_read_raw', name: '원시 코드 읽기', params: null, output: 'Number', description: 'IR 원본 코드값 반환' },
+          { id: 'ir_read', name: 'IR 리모컨 [버튼 번호/원본 코드 값]', params: null, output: 'Number', description: '마지막으로 받은 IR 리모컨 신호의 버튼 번호나 원본 코드를 읽습니다.' },
           { id: 'ir_button_is', name: '버튼 비교', params: null, output: 'Boolean', description: '특정 버튼 눌림 확인' }
         ]
       },
@@ -1016,9 +981,7 @@ var DOCS_DATA = {
         blocks: [
           { id: 'huskylens_available', name: '객체 감지 여부', params: null, output: 'Boolean', description: '인식된 객체 존재 확인' },
           { id: 'huskylens_is_learned', name: 'ID 학습 여부', params: ['ID'], output: 'Boolean', description: '특정 ID 학습 완료 확인' },
-          { id: 'huskylens_count_learned_ids', name: '학습된 ID 수', params: null, output: 'Number', description: '학습된 ID의 총 개수' },
-          { id: 'huskylens_count_blocks', name: '블록 개수', params: null, output: 'Number', description: '감지된 사각형(블록) 수' },
-          { id: 'huskylens_count_arrows', name: '화살표 개수', params: null, output: 'Number', description: '감지된 선(화살표) 수' }
+          { id: 'huskylens_count', name: '허스키렌즈 [학습된 ID/블록(사각형)/화살표(선)] 개수', params: null, output: 'Number', description: '마지막 결과에서 학습된 ID, 블록(사각형), 화살표(선)의 개수를 셉니다.' },
         ]
       },
       {
@@ -1053,8 +1016,7 @@ var DOCS_DATA = {
         label: 'SD 카드',
         blocks: [
           { id: 'huskylens_screenshot', name: '스크린샷', params: null, output: null, description: '현재 화면을 SD카드에 저장' },
-          { id: 'huskylens_save_model', name: '모델 저장', params: ['SLOT'], output: null, description: '학습 모델을 슬롯에 저장' },
-          { id: 'huskylens_load_model', name: '모델 불러오기', params: ['SLOT'], output: null, description: '저장된 모델 로드' }
+          { id: 'huskylens_model', name: '허스키렌즈 모델 ( ) 번 [저장/불러오기]', params: ['INDEX'], output: null, description: '지금 모델을 SD 카드의 그 번호에 저장하거나 불러옵니다.' },
         ]
       }
     ],
