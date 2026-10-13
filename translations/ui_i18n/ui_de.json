@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 IR Fernbedienungs-Sender Setup Pin %1",
+  "BKY_IR_SEND_BUTTON": "📱 IR Fernbedienung Taste %1 senden",
+  "BKY_IR_SEND_RAW": "📱 IR Fernbedienung rohen Code %1 senden",
+  "BKY_IR_SEND_SETUP_TIP": "Richtet den Infrarot-Sender ein. Uno/Nano senden immer an Pin 3, Mega an Pin 9 (durch den Timer festgelegt); die Pin-Nummer zählt nur bei ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Sendet eine IR-Fernbedienungstaste. Ein Brixel-IR-Empfänger liest sie genau wie diese Taste der Fernbedienung.",
+  "BKY_IR_SEND_RAW_TIP": "Sendet einen rohen IR-Code (fortgeschritten). Uno/Nano/Mega senden einen 32-Bit-NEC-Code, ESP32/Pico einen 8-Bit-Befehl. Ein Code, der nicht auf der Fernbedienung ist, vermischt sich nicht mit deren Tasten; lies ihn mit dem Block „roher Code-Wert“."
 }

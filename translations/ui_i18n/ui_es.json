@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 Configuración del Transmisor Remoto IR Pin %1",
+  "BKY_IR_SEND_BUTTON": "📱 Enviar botón %1 del remoto IR",
+  "BKY_IR_SEND_RAW": "📱 Enviar código bruto %1 del remoto IR",
+  "BKY_IR_SEND_SETUP_TIP": "Configura el transmisor infrarrojo. Uno/Nano siempre transmiten por el pin 3 y Mega por el pin 9 (fijado por el temporizador); el número de pin solo importa en ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Envía un botón del remoto IR. Un receptor IR de Brixel lo lee exactamente como ese botón del remoto.",
+  "BKY_IR_SEND_RAW_TIP": "Envía un código IR bruto (avanzado). Uno/Nano/Mega envían un código NEC de 32 bits; ESP32/Pico, un comando de 8 bits. Un código que no está en el remoto no se mezcla con sus botones; léelo con el bloque «Valor del Código Bruto»."
 }

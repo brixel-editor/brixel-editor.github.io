@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 IRリモート送信機セットアップ ピン %1",
+  "BKY_IR_SEND_BUTTON": "📱 IRリモートボタン %1 を送信",
+  "BKY_IR_SEND_RAW": "📱 IRリモート生コード %1 を送信",
+  "BKY_IR_SEND_SETUP_TIP": "赤外線送信機を設定します。Uno/Nanoは常に3番ピン、Megaは9番ピンで送信します（タイマーで固定）。ピン番号が効くのはESP32/Picoだけです。",
+  "BKY_IR_SEND_BUTTON_TIP": "IRリモコンのボタンを送信します。受信側のBrixelのIR受信機は、リモコンのそのボタンを押したときとまったく同じに読み取ります。",
+  "BKY_IR_SEND_RAW_TIP": "IR生コードを送信します（上級者向け）。Uno/Nano/Megは32ビットNECコード、ESP32/Picoは8ビットコマンドです。リモコンにない番号はリモコンのボタンと混ざりません。受信側は「生コード値」ブロックで読みます。"
 }

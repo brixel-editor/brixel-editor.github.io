@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 ตั้งค่าตัวส่งรีโมต IR ขา %1",
+  "BKY_IR_SEND_BUTTON": "📱 ส่งปุ่มรีโมต IR %1",
+  "BKY_IR_SEND_RAW": "📱 ส่งรหัสดิบรีโมต IR %1",
+  "BKY_IR_SEND_SETUP_TIP": "ตั้งค่าตัวส่งอินฟราเรด Uno/Nano ส่งที่ขา 3 เสมอ และ Mega ที่ขา 9 (ตายตัวเพราะไทเมอร์) หมายเลขขามีผลเฉพาะ ESP32/Pico",
+  "BKY_IR_SEND_BUTTON_TIP": "ส่งปุ่มของรีโมต IR ตัวรับ IR ของ Brixel จะอ่านได้เหมือนกดปุ่มนั้นบนรีโมตทุกประการ",
+  "BKY_IR_SEND_RAW_TIP": "ส่งรหัส IR ดิบ (ขั้นสูง) Uno/Nano/Mega ส่งรหัส NEC 32 บิต ส่วน ESP32/Pico ส่งคำสั่ง 8 บิต รหัสที่ไม่มีบนรีโมตจะไม่ปนกับปุ่มของรีโมต ให้อ่านด้วยบล็อก ค่ารหัสดิบ"
 }

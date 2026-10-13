@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 Setup ng IR Remote Transmitter Pin %1",
+  "BKY_IR_SEND_BUTTON": "📱 Ipadala ang Pindutan %1 ng IR Remote",
+  "BKY_IR_SEND_RAW": "📱 Ipadala ang Raw na Code %1 ng IR Remote",
+  "BKY_IR_SEND_SETUP_TIP": "Sine-setup ang infrared transmitter. Laging sa pin 3 nagpapadala ang Uno/Nano at sa pin 9 ang Mega (nakapirmi dahil sa timer); mahalaga lang ang numero ng pin sa ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Nagpapadala ng pindutan ng IR remote. Binabasa ito ng Brixel IR receiver na parang pinindot ang pindutang iyon sa remote.",
+  "BKY_IR_SEND_RAW_TIP": "Nagpapadala ng raw na IR code (advanced). Ang Uno/Nano/Mega ay 32-bit na NEC code; ang ESP32/Pico ay 8-bit na command. Ang code na wala sa remote ay hindi sasama sa mga pindutan ng remote; basahin ito gamit ang block na Raw na Halaga ng Code."
 }

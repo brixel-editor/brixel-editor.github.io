@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 تنظیم فرستنده ریموت مادون قرمز پین %1",
+  "BKY_IR_SEND_BUTTON": "📱 ارسال دکمه %1 ریموت مادون قرمز",
+  "BKY_IR_SEND_RAW": "📱 ارسال کد خام %1 ریموت مادون قرمز",
+  "BKY_IR_SEND_SETUP_TIP": "فرستنده مادون قرمز را تنظیم می‌کند. Uno/Nano همیشه از پین 3 و Mega از پین 9 می‌فرستند (به‌خاطر تایمر ثابت است)؛ شماره پین فقط در ESP32/Pico اهمیت دارد.",
+  "BKY_IR_SEND_BUTTON_TIP": "یک دکمه ریموت مادون قرمز را می‌فرستد. گیرنده IR بردهای Brixel آن را دقیقاً مثل فشردن همان دکمه روی ریموت می‌خواند.",
+  "BKY_IR_SEND_RAW_TIP": "یک کد خام مادون قرمز می‌فرستد (پیشرفته). Uno/Nano/Mega کد NEC ۳۲ بیتی و ESP32/Pico یک فرمان ۸ بیتی می‌فرستند. کدی که روی ریموت نیست با دکمه‌های ریموت قاطی نمی‌شود؛ آن را با بلوک «مقدار کد خام» بخوانید."
 }

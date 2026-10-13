@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 Ustawienia Nadajnika Podczerwieni Pin %1",
+  "BKY_IR_SEND_BUTTON": "📱 Wyślij Przycisk %1 Pilota Podczerwieni",
+  "BKY_IR_SEND_RAW": "📱 Wyślij Surowy Kod %1 Pilota Podczerwieni",
+  "BKY_IR_SEND_SETUP_TIP": "Ustawia nadajnik podczerwieni. Uno/Nano zawsze nadają na pinie 3, a Mega na pinie 9 (stałe przez timer); numer pinu ma znaczenie tylko w ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Wysyła przycisk pilota na podczerwień. Odbiornik IR Brixel odczytuje go dokładnie tak, jak ten przycisk na pilocie.",
+  "BKY_IR_SEND_RAW_TIP": "Wysyła surowy kod IR (zaawansowane). Uno/Nano/Mega wysyłają 32-bitowy kod NEC, ESP32/Pico 8-bitowe polecenie. Kod spoza pilota nie miesza się z jego przyciskami; odczytaj go blokiem Surowa Wartość Kodu."
 }

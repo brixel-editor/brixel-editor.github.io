@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 Thiết lập bộ phát điều khiển từ xa IR chân %1",
+  "BKY_IR_SEND_BUTTON": "📱 Gửi nút điều khiển từ xa IR %1",
+  "BKY_IR_SEND_RAW": "📱 Gửi mã thô điều khiển từ xa IR %1",
+  "BKY_IR_SEND_SETUP_TIP": "Thiết lập bộ phát hồng ngoại. Uno/Nano luôn phát ở chân 3 và Mega ở chân 9 (cố định do bộ định thời); số chân chỉ có tác dụng trên ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Gửi một nút của điều khiển từ xa IR. Bộ thu IR của Brixel đọc nó y hệt như nhấn nút đó trên điều khiển.",
+  "BKY_IR_SEND_RAW_TIP": "Gửi mã IR thô (nâng cao). Uno/Nano/Mega gửi mã NEC 32 bit; ESP32/Pico gửi lệnh 8 bit. Mã không có trên điều khiển sẽ không lẫn với các nút của nó; hãy đọc bằng khối Giá trị mã thô."
 }

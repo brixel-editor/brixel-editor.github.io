@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 Kızılötesi Uzaktan Kumanda Vericisi Kurulumu Pin %1",
+  "BKY_IR_SEND_BUTTON": "📱 Kızılötesi Uzaktan Kumanda Düğmesi %1 Gönder",
+  "BKY_IR_SEND_RAW": "📱 Kızılötesi Uzaktan Kumanda Ham Kod %1 Gönder",
+  "BKY_IR_SEND_SETUP_TIP": "Kızılötesi vericiyi kurar. Uno/Nano her zaman 3. pinden, Mega 9. pinden gönderir (zamanlayıcı yüzünden sabit); pin numarası yalnızca ESP32/Pico'da önemlidir.",
+  "BKY_IR_SEND_BUTTON_TIP": "Kızılötesi kumandanın bir düğmesini gönderir. Brixel IR alıcısı bunu kumandadaki o düğmeye basılmış gibi okur.",
+  "BKY_IR_SEND_RAW_TIP": "Ham bir kızılötesi kod gönderir (ileri düzey). Uno/Nano/Mega 32 bit NEC kodu, ESP32/Pico 8 bit komut gönderir. Kumandada olmayan bir kod kumanda düğmeleriyle karışmaz; Ham Kod Değeri bloğuyla okuyun."
 }

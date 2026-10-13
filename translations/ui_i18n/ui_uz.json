@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 IR Masofadan Boshqarish Pulti Uzatuvchisini Pin %1 da Sozlash",
+  "BKY_IR_SEND_BUTTON": "📱 IR Masofadan Boshqarish Pulti Tugmasi %1 ni Yuborish",
+  "BKY_IR_SEND_RAW": "📱 IR Masofadan Boshqarish Pulti Xom Kod %1 ni Yuborish",
+  "BKY_IR_SEND_SETUP_TIP": "Infraqizil uzatuvchini sozlaydi. Uno/Nano doim 3-pindan, Mega 9-pindan yuboradi (taymer sabab qat'iy); pin raqami faqat ESP32/Pico da ahamiyatli.",
+  "BKY_IR_SEND_BUTTON_TIP": "IR pultining tugmasini yuboradi. Brixel IR qabul qiluvchisi uni pultdagi o'sha tugma bosilgandek o'qiydi.",
+  "BKY_IR_SEND_RAW_TIP": "Xom IR kodini yuboradi (ilg'or). Uno/Nano/Mega 32 bitli NEC kodini, ESP32/Pico 8 bitli buyruqni yuboradi. Pultda yo'q kod pult tugmalari bilan aralashmaydi; uni «Xom Kod Qiymati» bloki bilan o'qing."
 }

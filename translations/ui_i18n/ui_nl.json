@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 IR Afstandsbediening Zender Setup Pin %1",
+  "BKY_IR_SEND_BUTTON": "📱 IR Afstandsbediening Knop %1 verzenden",
+  "BKY_IR_SEND_RAW": "📱 IR Afstandsbediening Ruwe Code %1 verzenden",
+  "BKY_IR_SEND_SETUP_TIP": "Stelt de infraroodzender in. Uno/Nano zenden altijd op pin 3 en Mega op pin 9 (vast door de timer); het pinnummer telt alleen bij ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Verzendt een knop van de IR-afstandsbediening. Een Brixel IR-ontvanger leest die precies zoals die knop op de afstandsbediening.",
+  "BKY_IR_SEND_RAW_TIP": "Verzendt een ruwe IR-code (geavanceerd). Uno/Nano/Mega sturen een 32-bit NEC-code, ESP32/Pico een 8-bit commando. Een code die niet op de afstandsbediening staat, vermengt zich niet met de knoppen; lees hem met het blok Ruwe Codewaarde."
 }

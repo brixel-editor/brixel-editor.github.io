@@ -2146,5 +2146,11 @@
   "circuitPanelPickSensor": "연결한 센서·장치 고르기",
   "circuitPanelPickHint": "핀에 연결한 센서·장치 종류를 골라 주세요.",
   "circuitPanelResetLayout": "자동 배치로 되돌리기",
-  "circuitPanelDragHint": "부품을 끌어 옮기면 선이 따라와요."
+  "circuitPanelDragHint": "부품을 끌어 옮기면 선이 따라와요.",
+  "BKY_IR_SEND_SETUP": "📱 IR 리모컨 송신기 설정: 핀 %1",
+  "BKY_IR_SEND_BUTTON": "📱 IR 리모컨 버튼 %1 보내기",
+  "BKY_IR_SEND_RAW": "📱 IR 리모컨 원본 코드 %1 보내기",
+  "BKY_IR_SEND_SETUP_TIP": "적외선 송신기를 설정합니다. 우노·나노는 3번 핀, 메가는 9번 핀으로 고정이고(타이머 때문), ESP32·피코에서만 핀 번호가 쓰입니다.",
+  "BKY_IR_SEND_BUTTON_TIP": "IR 리모컨 버튼 신호를 보냅니다. 받는 보드의 IR 수신기에서는 리모컨의 그 버튼을 누른 것과 똑같이 읽힙니다.",
+  "BKY_IR_SEND_RAW_TIP": "IR 원본 코드를 보냅니다(고급 사용자용). 우노·나노·메가는 32비트 NEC 코드, ESP32·피코는 8비트 명령입니다. 리모컨에 없는 번호는 리모컨 버튼과 섞이지 않으며, 받는 쪽은 「원본 코드 값」 블록으로 읽습니다."
 }

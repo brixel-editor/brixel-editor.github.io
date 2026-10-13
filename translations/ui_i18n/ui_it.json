@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 Configurazione Trasmettitore IR Telecomando Pin %1",
+  "BKY_IR_SEND_BUTTON": "📱 Invia Pulsante %1 Telecomando IR",
+  "BKY_IR_SEND_RAW": "📱 Invia Codice Grezzo %1 Telecomando IR",
+  "BKY_IR_SEND_SETUP_TIP": "Configura il trasmettitore a infrarossi. Uno/Nano trasmettono sempre sul pin 3 e Mega sul pin 9 (fisso per via del timer); il numero del pin conta solo su ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Invia un pulsante del telecomando IR. Un ricevitore IR Brixel lo legge esattamente come quel pulsante del telecomando.",
+  "BKY_IR_SEND_RAW_TIP": "Invia un codice IR grezzo (avanzato). Uno/Nano/Mega inviano un codice NEC a 32 bit; ESP32/Pico un comando a 8 bit. Un codice che non è sul telecomando non si mescola ai suoi pulsanti; leggilo con il blocco «Valore Codice Grezzo»."
 }

@@ -2121,5 +2121,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 IR Remote Transmitter Setup Pin %1",
+  "BKY_IR_SEND_BUTTON": "📱 IR Remote Send Button %1",
+  "BKY_IR_SEND_RAW": "📱 IR Remote Send Raw Code %1",
+  "BKY_IR_SEND_SETUP_TIP": "Sets up the infrared transmitter. Uno/Nano always transmit on pin 3 and Mega on pin 9 (fixed by the timer); the pin number only matters on ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Sends an IR remote button. A Brixel IR receiver reads it exactly like that button on the remote.",
+  "BKY_IR_SEND_RAW_TIP": "Sends a raw IR code (advanced). Uno/Nano/Mega send a 32-bit NEC code; ESP32/Pico send an 8-bit command. A code that is not on the remote does not mix with remote buttons; read it with the Raw Code Value block."
 }

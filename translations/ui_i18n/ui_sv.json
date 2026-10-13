@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 IR Fjärrsändare Inställning Pin %1",
+  "BKY_IR_SEND_BUTTON": "📱 IR Fjärr skicka knapp %1",
+  "BKY_IR_SEND_RAW": "📱 IR Fjärr skicka råkod %1",
+  "BKY_IR_SEND_SETUP_TIP": "Ställer in infraröd sändare. Uno/Nano sänder alltid på pin 3 och Mega på pin 9 (låst av timern); pinnumret spelar bara roll på ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Skickar en knapp på IR-fjärrkontrollen. En Brixel IR-mottagare läser den precis som den knappen på fjärrkontrollen.",
+  "BKY_IR_SEND_RAW_TIP": "Skickar en rå IR-kod (avancerat). Uno/Nano/Mega skickar en 32-bitars NEC-kod, ESP32/Pico ett 8-bitars kommando. En kod som inte finns på fjärrkontrollen blandas inte med dess knappar; läs den med blocket Råkod Värde."
 }

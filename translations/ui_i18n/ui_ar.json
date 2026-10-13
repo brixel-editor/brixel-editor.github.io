@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 إعداد مرسل الأشعة تحت الحمراء عن بعد دبوس %1",
+  "BKY_IR_SEND_BUTTON": "📱 إرسال زر الأشعة تحت الحمراء عن بعد %1",
+  "BKY_IR_SEND_RAW": "📱 إرسال كود خام للأشعة تحت الحمراء عن بعد %1",
+  "BKY_IR_SEND_SETUP_TIP": "يُعدّ مرسل الأشعة تحت الحمراء. يرسل Uno/Nano دائمًا من الدبوس 3 و Mega من الدبوس 9 (ثابت بسبب المؤقت)؛ رقم الدبوس مهم فقط في ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "يرسل زرًا من ريموت الأشعة تحت الحمراء. يقرؤه مستقبل IR في لوحة Brixel الأخرى تمامًا كالضغط على ذلك الزر في الريموت.",
+  "BKY_IR_SEND_RAW_TIP": "يرسل كودًا خامًا للأشعة تحت الحمراء (للمتقدمين). يرسل Uno/Nano/Mega كود NEC بطول 32 بت، و ESP32/Pico أمرًا بطول 8 بت. الكود غير الموجود في الريموت لا يختلط بأزراره، ويُقرأ بكتلة «القيمة الخام للكود»."
 }

@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 आईआर रिमोट ट्रांसमीटर सेटअप पिन %1",
+  "BKY_IR_SEND_BUTTON": "📱 आईआर रिमोट बटन %1 भेजें",
+  "BKY_IR_SEND_RAW": "📱 आईआर रिमोट कच्चा कोड %1 भेजें",
+  "BKY_IR_SEND_SETUP_TIP": "इन्फ्रारेड ट्रांसमीटर सेट करता है। Uno/Nano हमेशा पिन 3 से और Mega पिन 9 से भेजते हैं (टाइमर के कारण तय); पिन नंबर केवल ESP32/Pico में मायने रखता है।",
+  "BKY_IR_SEND_BUTTON_TIP": "आईआर रिमोट का एक बटन भेजता है। Brixel का आईआर रिसीवर उसे रिमोट के उसी बटन दबाने की तरह पढ़ता है।",
+  "BKY_IR_SEND_RAW_TIP": "कच्चा आईआर कोड भेजता है (उन्नत)। Uno/Nano/Mega 32-बिट NEC कोड और ESP32/Pico 8-बिट कमांड भेजते हैं। रिमोट पर न होने वाला कोड रिमोट के बटनों में नहीं मिलता; इसे \"कच्चा कोड मान\" ब्लॉक से पढ़ें।"
 }

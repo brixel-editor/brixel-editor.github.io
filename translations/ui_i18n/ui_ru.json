@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 ИК пульт передатчик настроить пин %1",
+  "BKY_IR_SEND_BUTTON": "📱 ИК пульт отправить кнопку %1",
+  "BKY_IR_SEND_RAW": "📱 ИК пульт отправить сырой код %1",
+  "BKY_IR_SEND_SETUP_TIP": "Настраивает ИК-передатчик. Uno/Nano всегда передают через пин 3, Mega — через пин 9 (задано таймером); номер пина важен только для ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Отправляет кнопку ИК-пульта. ИК-приёмник Brixel читает её точно так же, как нажатие этой кнопки на пульте.",
+  "BKY_IR_SEND_RAW_TIP": "Отправляет сырой ИК-код (для опытных). Uno/Nano/Mega отправляют 32-битный код NEC, ESP32/Pico — 8-битную команду. Код, которого нет на пульте, не смешивается с кнопками пульта; читайте его блоком «значение сырого кода»."
 }

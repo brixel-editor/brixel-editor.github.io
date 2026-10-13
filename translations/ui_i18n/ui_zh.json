@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 红外遥控发射器设置 引脚 %1",
+  "BKY_IR_SEND_BUTTON": "📱 发送红外遥控按钮 %1",
+  "BKY_IR_SEND_RAW": "📱 发送红外遥控原始代码 %1",
+  "BKY_IR_SEND_SETUP_TIP": "设置红外发射器。Uno/Nano 固定用 3 号引脚发射，Mega 固定用 9 号引脚（受定时器限制）；引脚编号只在 ESP32/Pico 上起作用。",
+  "BKY_IR_SEND_BUTTON_TIP": "发送红外遥控器的按钮。接收端的 Brixel 红外接收器会把它当作按下遥控器上的那个按钮。",
+  "BKY_IR_SEND_RAW_TIP": "发送红外原始代码（高级）。Uno/Nano/Mega 发送 32 位 NEC 码，ESP32/Pico 发送 8 位命令。遥控器上没有的编号不会和遥控器按钮混在一起，接收端用“原始代码值”积木读取。"
 }

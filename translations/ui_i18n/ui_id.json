@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 Setup Pemancar Remote IR Pin %1",
+  "BKY_IR_SEND_BUTTON": "📱 Kirim Tombol %1 Remote IR",
+  "BKY_IR_SEND_RAW": "📱 Kirim Kode Mentah %1 Remote IR",
+  "BKY_IR_SEND_SETUP_TIP": "Mengatur pemancar inframerah. Uno/Nano selalu memancar di pin 3 dan Mega di pin 9 (tetap karena timer); nomor pin hanya berpengaruh di ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Mengirim tombol remote IR. Penerima IR Brixel membacanya persis seperti menekan tombol itu di remote.",
+  "BKY_IR_SEND_RAW_TIP": "Mengirim kode IR mentah (lanjutan). Uno/Nano/Mega mengirim kode NEC 32-bit; ESP32/Pico mengirim perintah 8-bit. Kode yang tidak ada di remote tidak tercampur dengan tombol remote; bacalah dengan blok Nilai Kode Mentah."
 }

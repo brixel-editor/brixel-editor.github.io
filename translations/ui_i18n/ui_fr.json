@@ -2041,5 +2041,11 @@
   "circuitPanelPickSensor": "Choose the connected sensor or device",
   "circuitPanelPickHint": "Pick the sensor or device you connected to each pin.",
   "circuitPanelResetLayout": "Reset to automatic layout",
-  "circuitPanelDragHint": "Drag parts to move them; the wires follow."
+  "circuitPanelDragHint": "Drag parts to move them; the wires follow.",
+  "BKY_IR_SEND_SETUP": "📱 Configuration de l'émetteur de télécommande IR Broche %1",
+  "BKY_IR_SEND_BUTTON": "📱 Envoyer le bouton %1 de la télécommande IR",
+  "BKY_IR_SEND_RAW": "📱 Envoyer le code brut %1 de la télécommande IR",
+  "BKY_IR_SEND_SETUP_TIP": "Configure l'émetteur infrarouge. Uno/Nano émettent toujours sur la broche 3 et Mega sur la broche 9 (imposé par le timer) ; le numéro de broche ne compte que sur ESP32/Pico.",
+  "BKY_IR_SEND_BUTTON_TIP": "Envoie un bouton de télécommande IR. Un récepteur IR Brixel le lit exactement comme ce bouton de la télécommande.",
+  "BKY_IR_SEND_RAW_TIP": "Envoie un code IR brut (avancé). Uno/Nano/Mega envoient un code NEC 32 bits ; ESP32/Pico une commande 8 bits. Un code absent de la télécommande ne se mélange pas à ses boutons ; lisez-le avec le bloc « Valeur de code brute »."
 }
