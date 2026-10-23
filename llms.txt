@@ -2,7 +2,7 @@
 
 > Brixel Editor is a free, browser-based block-coding IDE (built on Google Blockly) for Arduino, ESP32 and Raspberry Pi Pico. Students drag blocks, the editor generates Arduino C++ code, and a small local agent compiles and uploads it to the board over USB. It targets K-12 physical-computing education (mainly elementary and middle school) and runs in 23 interface languages. 브릭셀 에디터는 아두이노·ESP32·라즈베리파이 피코를 블록으로 코딩하는 무료 웹 IDE입니다.
 
-- Brixel Editor version: 1.3
+- Brixel Editor version: 1.3.1
 - Web app (no install to start): https://brixel-editor.github.io/
 - Boards: Arduino Uno / Nano / Mega, ESP32 family (ESP32, S2, C3, S3), ESP32-CAM, Raspberry Pi Pico / Pico W
 - Platforms: Windows and macOS (PC agent compiles ESP32 and Pico too), Chromebook (in-browser compile, Arduino AVR boards only), Android (BrixelDroid app, Arduino AVR boards only)

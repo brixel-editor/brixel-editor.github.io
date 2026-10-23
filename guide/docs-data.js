@@ -595,6 +595,13 @@ var DOCS_DATA = {
         ]
       },
       {
+        label: '수중 초음파 센서 (UART)',
+        blocks: [
+          { id: 'uwsonar_setup', name: '수중 초음파 설정', params: ['RX_PIN', 'TX_PIN', 'BAUD'], output: null, description: '방수 UART 초음파 센서(DFRobot SEN0598)의 RX핀·TX핀·통신 속도(115200) 설정' },
+          { id: 'uwsonar_distance', name: '수중 초음파 거리', params: ['UNIT'], output: 'Number', description: '물속 거리 측정(cm/mm). 응답이 없으면 -1, 물에 넣지 않으면 0' }
+        ]
+      },
+      {
         label: '필터 / 교정 도구',
         blocks: [
           { id: 'util_filter_moving_avg', name: '이동평균 필터', params: ['VALUE', 'SAMPLES'], output: 'Number', description: '노이즈 제거용 이동평균 필터' },

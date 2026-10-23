@@ -596,6 +596,13 @@ var DOCS_DATA = {
         ]
       },
       {
+        label: 'Underwater Ultrasonic Sensor (UART)',
+        blocks: [
+          { id: 'uwsonar_setup', name: 'Underwater Ultrasonic Setup', params: ['RX_PIN', 'TX_PIN', 'BAUD'], output: null, description: 'Set RX pin, TX pin and baud rate (115200) of the waterproof UART ultrasonic sensor (DFRobot SEN0598)' },
+          { id: 'uwsonar_distance', name: 'Underwater Ultrasonic Distance', params: ['UNIT'], output: 'Number', description: 'Measure distance in water (cm/mm). -1 if no answer, 0 if the sensor is not in water' }
+        ]
+      },
+      {
         label: 'Filter / Calibration Tools',
         blocks: [
           { id: 'util_filter_moving_avg', name: 'Moving Average Filter', params: ['VALUE', 'SAMPLES'], output: 'Number', description: 'Noise reduction moving average filter' },
